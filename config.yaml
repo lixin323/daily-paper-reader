@@ -25,3 +25,65 @@ subscriptions:
     stage: A
     diff_threshold_pct: 15
   keyword_recall_mode: or
+  intent_profiles:
+    - tag: embodied-ai
+      description: 机器人，具身智能，强化学习，机器人交互，世界模型，VLA
+      enabled: true
+      paper_sources:
+        - arxiv
+      keywords:
+        - keyword: reinforcement learning
+          keyword_cn: 强化学习
+          query: reinforcement learning for robotics
+        - keyword: embodied AI
+          keyword_cn: 具身智能
+          query: embodied artificial intelligence robotics
+        - keyword: world model
+          keyword_cn: 世界模型
+          query: world model in robotics
+        - keyword: robot learning
+          keyword_cn: 机器人学习
+          query: robot learning from demonstration or reinforcement
+        - keyword: robotic manipulation
+          keyword_cn: 机器人操作
+          query: robotic manipulation using learned policies
+        - keyword: sim-to-real transfer
+          keyword_cn: 仿真到现实迁移
+          query: sim-to-real transfer reinforcement learning
+      intent_queries:
+        - query: How to apply reinforcement learning to embodied AI robots?
+          query_cn: 如何将强化学习应用于具身智能机器人？
+          enabled: true
+          source: manual
+          note: ''
+        - query: Learning world models for robot interaction
+          query_cn: 为机器人交互学习世界模型
+          enabled: true
+          source: manual
+          note: ''
+        - query: Vision language action models for robotic manipulation
+          query_cn: 用于机器人操作的视觉语言动作模型
+          enabled: true
+          source: manual
+          note: ''
+        - query: Sim to real transfer in robotics
+          query_cn: 机器人中的仿真到现实迁移
+          enabled: true
+          source: manual
+          note: ''
+      updated_at: '2026-06-07T14:14:53.345Z'
+source_backends:
+  arxiv:
+    papers_table: arxiv_papers
+    use_vector_rpc: true
+    vector_rpc: match_arxiv_papers
+    vector_rpc_exact: match_arxiv_papers_exact
+    use_bm25_rpc: true
+    bm25_rpc: match_arxiv_papers_bm25
+    sync_table: arxiv_sync_status
+    sync_success_value: success
+    schema: public
+    kind: supabase
+    enabled: true
+    url: https://lyucdwgefyfbmaiopjbk.supabase.co
+    anon_key: sb_publishable_lX-oi64Uxyd7SIVv3_w2Uw_MTOojeKq
