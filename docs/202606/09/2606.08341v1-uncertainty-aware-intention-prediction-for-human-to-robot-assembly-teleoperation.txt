@@ -1,0 +1,325 @@
+Title: Uncertainty-Aware Intention Prediction for Human-to-Robot Assembly Teleoperation
+
+URL Source: https://arxiv.org/pdf/2606.08341v1
+
+Published Time: Tue, 09 Jun 2026 00:53:14 GMT
+
+Number of Pages: 7
+
+Markdown Content:
+> 1
+
+# Uncertainty-Aware Intention Prediction for Human-to-Robot Assembly Teleoperation 
+
+Fnu Heman 1,2∗, Yixuan Wang 1∗, Kolin Xu 1∗, Conner Wallace 1, John Dang 1,Akhil Joshi 1, Jun Sheng 1, Pinhas Ben-Tzvi 2, Mingyu Cai 1†
+
+Abstract —In assisted teleoperation for human-robot collab-oration, accurate intention prediction is critical for enabling timely and reliable robotic assistance during long-horizon ma-nipulation and assembly tasks. These systems require continuous understanding of user behavior to recognize actions, anticipate intentions, and detect mistakes in real time. However, robot teleoperation demonstrations are costly and hardware-limited, whereas human demonstrations are easier to collect and provide rich temporal structure. To address this challenge, we propose an uncertainty-aware human-to-robot intention prediction frame-work that combines: (1) hierarchical transfer learning, where MS-TCN++ is pretrained on human hand demonstrations and fine-tuned on limited robot teleoperation data to capture low-level actions and high-level task intentions; (2) a conformal prediction module that provides frame-level prediction sets with statistical coverage guarantees for reliable uncertainty quan-tification and early intention estimation; and (3) VLM-guided segment correction, which selectively reviews low-confidence or temporally uncertain segments using visual and temporal context. The framework supports action recognition, temporal segmenta-tion, intention anticipation, and mistake detection for assisted teleoperation. Experiments on robot assembly demonstrations with 22 action classes show that human-to-robot fine-tuning improves the robot test-set Edit score from 70.50 to 80.70 using only 16 robot demonstrations. Edit-safe VLM correction further improves frame accuracy from 45.21% to 46.42% and increases F1@25 and F1@50 while preserving the Edit score. These results show that human demonstrations provide scalable pretraining data for robust, uncertainty-aware robot action segmentation. Code and data: project website. 
+
+I. I NTRODUCTION 
+
+During assembly, actions such as picking up, aligning, and fastening a screw occur continuously without explicit boundaries. Detecting transitions between actions is therefore critical for step verification and for identifying anomalies such as skipped or repeated operations during robotic execution. Temporal action segmentation (TAS) methods, including MS-TCN++ [1], ASFormer [2], and TCN-based approaches [3], address this problem by assigning action labels to untrimmed video sequences and localizing transitions between actions [3]. Although these methods achieve strong performance on human activity benchmarks such as 50Salads [4] and Breakfast [5], they typically require large annotated datasets. This dependency is problematic for robotic assembly, where collecting teleoperated robot demonstrations is expensive due to hardware setup, safety constraints, and execution complex-ity. Prior work has studied intention estimation in teleoperated 
+
+> ∗
+
+These authors contributed equally to this work. †Corresponding author. 
+
+> 1
+
+Mechanical Engineering, University of California, Riverside, CA, USA. 2
+
+Electrical and Computer Engineering, University of Miami, FL, USA. 
+
+assembly and human-robot collaboration through hierarchical deep learning [6], probabilistic programming [7], explainable dynamic graph neural networks [8], and hierarchical intention tracking [9]. These works show the importance of modeling operator intent during teleoperated manipulation, while our work focuses on data-efficient human-to-robot temporal action segmentation with uncertainty-aware prediction and selective VLM-based correction. In contrast, human demonstrations are easier to collect and often share the same underlying task structure as robot executions, despite visual differences. While transfer learning from human demonstrations has improved visual representation learning [10], [11], extending transfer to full TAS pipelines under limited robot demonstrations remains largely unexplored. Despite recent advances, TAS models often produce over-segmented predictions that fragment actions into short noisy segments, especially in long-horizon robot tasks. Moreover, existing methods [1], [2], [12] provide limited uncertainty quantification, making unreliable predictions difficult to de-tect in safety-critical robotic settings. Recent vision-language models (VLMs), such as LLaVA [13] and Qwen2-VL [14], offer strong zero-shot visual understanding and can help verify uncertain segments. However, applying VLMs to every frame is computationally prohibitive, motivating selective querying strategies focused on uncertain regions. To address these limitations, we propose a hierarchical uncertainty-aware framework for human-to-robot action seg-mentation and intention prediction. Our approach builds on MS-TCN++ [1], pre-trained on human hand demonstrations and fine-tuned on limited teleoperated robot data to capture both low-level actions and high-level task intentions. We further integrate conformal prediction(CP) [15], [16] with temperature scaling to produce calibrated prediction sets with statistical coverage guarantees. Maximum softmax probability is additionally used as a frame-level confidence measure. Seg-ments identified as uncertain through low confidence or short duration are selectively verified using blind VLM querying to avoid anchoring bias, and corrections are accepted only when they preserve or improve the video-level edit score. Experiments on our collected cross-embodiment assembly dataset show that pre-training on human demonstrations signif-icantly improves robot action segmentation, increasing the Edit score from 70.50 to 80.70 and frame accuracy from 40 .22% 
+
+to 45 .21% compared to training from scratch on the same 16 robot demonstrations. The proposed edit-safe VLM correction maintains the Edit score at 80.68 without degrading frame accuracy. In addition, the conformal predictor achieves at least 
+
+> arXiv:2606.08341v1 [cs.RO] 6 Jun 2026 2
+
+95% empirical coverage across multiple target levels with a mean prediction set size of 18.3 out of 22 classes. Our main contributions are as follows:  
+
+> •
+
+We collect and annotate a cross-embodiment assembly dataset containing hand demonstrations captured via UMI gripper [17] and teleoperated robot demonstrations using the ALOHA stationary platform.  
+
+> •
+
+We integrate CP to produce prediction sets with coverage guarantees for temporal action segmentation, providing a measure of prediction uncertainty.  
+
+> •
+
+We introduce an VLM correction stage that queries a vision-language model on uncertain segments, accepting corrections only when the segmentation edit score is preserved. II. R ELATED WORK 
+
+Transfer Learning for Robot Manipulation. A major chal-lenge in robot learning is the high cost of collecting la-beled robot data. Foundation visual representations such as R3M [10] and MVP [11], trained on large-scale human activity videos, have demonstrated strong transfer to robot manipula-tion tasks with minimal robot-specific data. Data collection platforms such as ALOHA [18] and UMI [17] further reduce demonstration costs through teleoperation and hand-guided demonstrations, while Open X-Embodiment [19] shows that shared representations can generalize across robotic embod-iments. However, existing work primarily focuses on trans-ferable visual features or low-level control policies. Whether an entire temporal action segmentation pipeline, including both the visual backbone and temporal reasoning model, can transfer from human demonstrations to robot manipulation remains largely unexplored. 
+
+Temporal Action Segmentation. Temporal action segmen-tation assigns an action label to each frame in an untrimmed video, enabling dense understanding of long-horizon tasks [3]. In robot assembly, this corresponds to segmenting actions such as pick up bolt , insert bolt , and tighten bolt . Early temporal convolutional methods [20] modeled local depen-dencies, while MS-TCN [12] and MS-TCN++ [1] improved performance through multi-stage refinement and reduced over-segmentation. Recent attention- and diffusion-based methods, such as ASFormer [2] and DiffAct [21], further capture long-range temporal structure. Standard benchmarks include 50Sal-ads [4], Breakfast [5], GTEA [22], and Assembly101 [23]. Assembly101 is the closest related benchmark, but it con-tains human demonstrations only and does not address robot teleoperation, cross-embodiment transfer, or uncertainty quan-tification. Robust segmentation under limited robot data and cross-embodiment shift therefore remains open. 
+
+Uncertainty Quantification. Uncertainty in visual recognition is commonly estimated using Bayesian approaches [24] and ensemble methods, which rely on model variability at infer-ence time. While effective in practice, these methods do not provide explicit guarantees on the correctness of individual predictions. Conformal prediction [15], [16], [25] addresses this limitation by constructing prediction sets with a finite-sample coverage guarantee, without requiring changes to the underlying model. Subsequent work has focused on improving its practical use. Some methods aim to reduce the size of prediction sets while maintaining coverage [26], [27]. Others consider distribution shift and class imbalance [28], [29], ad-justing the calibration procedure to better match the test data. Conformal methods have also been used for out-of-distribution detection and for dependent data in cyber-physical systems [30], where temporal correlations must be taken into account. Most of these studies focus on image-based tasks such as classification, object detection, and semantic segmentation. In comparison, applying conformal prediction to temporal action segmentation is less explored [27], as predictions across frames are strongly correlated and standard assumptions may not hold. 
+
+Vision-Language Models for Action Understanding. VLMs such as LLaVA [13], Qwen2-VL [14], and GPT-4V [31] demonstrate strong zero-shot visual understanding and have been applied to task planning [32] and instruction follow-ing [33] in robotics. However, their use for correcting temporal segmentation errors remains largely unexplored. A key chal-lenge is anchoring bias, where VLMs tend to confirm model predictions rather than independently evaluate visual evidence. We address this by querying the VLM without exposing predicted labels, applying it only to uncertain segments, and accepting corrections only when they preserve the edit score. III. M ETHOD 
+
+A. Problem Formulation 
+
+As illustrated in Fig. 2, we consider two domains: a source domain DS of fully annotated human assembly demonstra-tions, and a target domain DT of teleoperated robot demon-strations. Both domains share the label space Y = {1, . . . , C }
+
+with C=22 action classes, yet differ substantially in visual appearance and manipulator embodiment. Given an untrimmed video V = {f1, . . . , f T } drawn from 
+
+DT , the goal is to assign each frame ft a label ˆyt ∈ Y . This task presents three interrelated challenges. First, the scarcity of robot demonstrations makes training from scratch suboptimal, motivating cross-domain transfer from DS (Section III-C). Second, temporal segmentation models are prone to over-segmentation, producing spurious short-duration action bound-aries; we address this with a VLM-guided boundary refinement step (Section III-E). Third, reliable action recognition requires not merely a point prediction but a prediction set C(ft) ⊆ Y 
+
+with a formal coverage guarantee, which we obtain via con-formal prediction (Section III-D). As illustrated in Fig. 1, our framework addresses these three challenges across the following subsections. 
+
+B. Feature Extraction 
+
+We represent each frame using X3D-M [34], a video recog-nition network pre-trained on Kinetics-400 [35]. X3D-M is chosen for its balance between computational efficiency and representational quality, making it well suited for processing long robot demonstration videos. For each frame ft, a temporal clip of 16 consecutive frames centered at ft is passed through the frozen backbone, producing a 192-dimensional feature 3
+
+Fig. 1: Overview of the proposed pipeline. (1) Pre-train on hand demonstrations: We train on annotated human hand demonstrations using X3D-M features and temporal action segmentation. ( 2) Fine-tune on robot demonstrations: The pretrained XTAS model is fine-tuned on limited annotated robot demonstrations. ( 3) Inference: CP estimates frame-level uncertainty, and low-confidence frames are selectively corrected using a VLM query. vector xt ∈ R192 . The full video is thus represented as 
+
+X ∈ R192 ×T , which is then passed to the temporal seg-mentation model. The backbone is kept frozen throughout all experiments, as our goal is to evaluate the transferability of pre-trained visual representations to the robot domain without any visual fine-tuning. 
+
+C. Cross-Domain Temporal Action Segmentation 
+
+We use MS-TCN++ [1] as the temporal segmenta-tion model. Given the X3D-M feature sequence X =
+
+{x1, . . . , xT }, MS-TCN++ uses multi-stage refinement with dual-dilated temporal convolutional layers to predict frame-wise action probabilities ˆpt ∈ RC , with the final prediction 
+
+ˆyt = arg max c∈Y ˆpt,c . The model is trained with intermediate supervision at every stage: 
+
+L =
+
+> S
+
+X
+
+> s=1
+
+
+
+L(s)cls + λ L(s)sm 
+
+
+
+, (1) where L(s)cls is class-weighted frame-wise cross-entropy and 
+
+L(s)sm = 1
+
+T C 
+
+> T
+
+X
+
+> t=2
+> C
+
+X
+
+> c=1
+
+min 
+
+
+
+log ˆ p(s) 
+
+> t,c
+
+− log ˆ p(s) 
+
+> t−1,c
+
+, τ 
+
+2
+
+, (2) with λ=0 .15 and τ =4 .0, penalising abrupt frame-to-frame changes while tolerating genuine transitions. Class weights are set inversely proportional to class frequency. Because both domains share the same C=22 action vocab-ulary and R192 feature space, all parameters transfer without architectural modification. The X3D-M backbone remains frozen throughout, so all domain adaptation occurs within MS-TCN++. MS-TCN++ is first trained from random initialization on DS :
+
+θ∗ 
+
+> S
+
+= arg min 
+
+> θ
+
+X
+
+> (X,y)∈D S
+
+L(X, y; θ). (3) Pretraining on NS =51 human demonstrations encodes domain-invariant priors—action transition structure, segment-duration statistics, and long-range assembly ordering—that cannot be learned from NT =16 robot demonstrations alone. The source checkpoint then initializes target training: 
+
+θ∗ 
+
+> T
+
+= arg min 
+
+> θ
+
+X
+
+> (X,y)∈D T
+
+L(X, y; θ), θ(0) = θ∗ 
+
+> S
+
+, (4) where Lsm acts as a regularizer, preventing DT from over-writing the priors in θ∗ 
+
+> S
+
+.
+
+D. Uncertainty Quantification with Conformal Prediction 
+
+For each robot video frame ft, MS-TCN++ produces class probabilities ˆpt(c) after temperature scaling. We use these probabilities to construct a CP set C(ft) ⊆ Y, so that uncertainty is represented by a set of possible action labels rather than a single top prediction. 
+
+Temperature scaling. Before computing conformal scores, we apply temperature scaling to the MS-TCN++ logits. Given the logit vector zt, the calibrated probability for class c is 
+
+ˆpt(c) = exp( zt,c /T )
+
+PCc′=1 exp( zt,c ′ /T ) , (5) The temperature T is fitted on the validation split by min-imizing the negative log-likelihood. We then compute the conformal thresholds on an independent robot calibration split, which is not used for model training or temperature fitting. 
+
+Nonconformity score. For each calibration frame fi with ground-truth action label yi, we use si = 1 − ˆpi(yi) as the nonconformity score, where ˆpi(yi) is the temperature-scaled probability assigned to the true label. A larger value of si
+
+indicates that the model assigns less probability mass to the correct action. Let Ical be the set of calibration frames and 
+
+n = |I cal |. The global split-conformal threshold is computed as 
+
+ˆqglobal = Quantile 
+
+
+
+{si : i ∈ I cal }, ⌈(n + 1)(1 − α)⌉
+
+n
+
+
+
+(6) Under the standard exchangeability assumption between cal-ibration and test examples, this threshold gives marginal coverage at level 1 − α.
+
+Regularized class-conditional conformal prediction. Aglobal conformal threshold does not account for the fact that different action classes may have different score distributions. In temporal action segmentation, this can arise from class-dependent visual ambiguity, action duration, and confusion with neighboring actions. We therefore compute a class-specific threshold and regularize it using the global threshold. For class c, let Sc = {si : i ∈ I cal , y i = c, n c = |S c|} , the class-specific empirical threshold is 
+
+ˆqraw  
+
+> c
+
+= Quantile 
+
+
+
+Sc, ⌈(nc + 1)(1 − α)⌉
+
+nc
+
+
+
+(7) For any class absent from the calibration split, we skip the class-wise quantile and use ˆqglobal as its threshold. Because 
+
+nc can vary substantially across action classes, directly using 4
+
+Fig. 2: Human and robot demonstration frames (top) with ground-truth (GT) and predicted (Pred) temporal segmentation bars on a held-out robot sequence (bottom). Colors denote action classes. 
+
+ˆqraw  
+
+> c
+
+may give unstable thresholds for classes with limited calibration support. We regularize the class-specific threshold toward the global threshold using λc = nc 
+
+> nc+κ
+
+, where κ controls the shrinkage strength. We set κ to the median nonzero class count in the calibration split. The final threshold for class c is 
+
+ˆqc = max (ˆ qraw  
+
+> c
+
+, λ c ˆqraw  
+
+> c
+
++ (1 − λc)ˆ qglobal ) (8) This one-sided form pulls overly small class-specific thresh-olds toward the global threshold, while leaving thresholds unchanged when the class-specific threshold is already larger. Since increasing ˆqc only enlarges the prediction set, the regularization is applied in the conservative direction. 
+
+Prediction sets. At inference time, each candidate action class is compared with its own calibrated threshold: 
+
+C(ft) = {c ∈ Y : ˆ pt(c) ≥ 1 − ˆqc} . (9) Thus, C(ft) contains action labels whose probabilities exceed their class-specific conformal thresholds. Larger sets indicate higher uncertainty, while smaller sets indicate more confident predictions. The conformal module is applied post hoc to the temperature-scaled outputs without modifying the X3D backbone or MS-TCN++ temporal model, providing frame-level uncertainty estimates for segmentation predictions. The VLM module operates separately and only revises segments flagged by low confidence or short duration. The coverage guarantee relies on the standard exchangeability assumption between calibration and test samples. In temporal action segmentation, this assumption is only approximate because video frames are strongly correlated and robot demonstrations are limited. We therefore report empirical coverage on held-out robot videos alongside the nominal target coverage. 
+
+E. VLM-Guided Boundary Correction 
+
+MS-TCN++ produces systematic errors at action bound-aries: short over-segmented fragments and single-frame noise spikes that rule-based smoothing cannot resolve. We route only uncertain segments to a VLM, keeping inference cost proportional to model uncertainty. 
+
+a) Flagging.: A predicted segment [ts, t e] is flagged if: 
+
+¯c[ts,t e] < τ conf or (te − ts) < τ seg , (10) where ¯c[ts,t e] is the mean peak softmax confidence over the segment. We set τconf = 0 .50 and τseg = 30 frames; 99 .1% 
+
+of ground-truth segments in DS exceed this length, so shorter predictions are likely artifacts. 
+
+b) Querying.: Frames are sampled uniformly from a 40-frame context window centred on the flagged segment (B EFORE , F LAGGED , A FTER ), resized to 336 ×336 . For very short segments ( ℓ < 20 frames), the VLM chooses among absorbing into the B EFORE action, the A FTER action, or re-taining the current label. For longer segments, it performs full 
+
+C=22 classification; the model’s predicted label is withheld to prevent anchoring bias. Both modes return a fixed parseable format ( ACTION: <label> ). 
+
+c) Edit-Safe Acceptance.: Corrections for a video are applied jointly and accepted only if the edit score does not decrease: 
+
+ˆy∗ 
+
+> t
+
+=
+
+(
+
+yVLM if flagged by (10) and Edit(ˆ y∗) ≥ Edit(ˆ y)ˆyt otherwise. (11) Queries run on Qwen2-VL-7B-Instruct [14] in 4-bit NF4 quantisation. IV. E XPERIMENTS 
+
+Data Collection and Annotation. We recorded toy car as-sembly demonstrations across two platforms (Fig. 3), cover-ing picking, placing, inserting, screw-driving, fastening, and inspection. UMI [17] is used to collect hand demonstrations (source domain) using a handheld gripper with an egocentric GoPro camera. ALOHA [18] is used to collect teleoperated robot demonstrations (target domain) using a bimanual robot with left and right wrist-mounted RGB cameras at 480 ×640 
+
+resolution. The left camera captures placement and alignment, while the right captures screw-driving and fastening. Although both domains share wrist-centered viewpoints, they differ significantly in visual appearance, embodiment, and contact 5
+
+Fig. 3: Hardware platforms. (a) UMI hand-assembly plat-form used for source-domain demonstrations. (b) ALOHA bimanual robot platform used for target-domain teleoperation demonstrations. TABLE I: Architecture selection on hand validation data.                                     
+
+> Method Edit F1@10 F1@25 F1@50 Acc BiLSTM †14.6 10.4 7.7 4.1 30.3 TCN ‡5.5 6.7 5.8 3.8 57.2 ASFormer †20.0 22.5 17.1 12.7 29.3 MS-TCN++ 10L 29.1 ±1.7 35.9 ±1.4 31.7 ±1.2 25.2 ±0.5 57.1 ±1.0
+> MS-TCN++ 12L 56.7 ±1.4 57.2 ±2.6 50.2 ±3.6 35.3 ±1.5 60.8 ±2.4
+> MS-TCN++ 14L 70.3 ±3.3 65.4 ±2.1 58.7 ±2.6 43.1 ±2.0 68.8 ±0.2
+> †Single run. ‡Mean over two seeds.
+
+dynamics. Each demonstration is annotated with 22 fine-grained action classes at the segment level (Fig. 2), using a shared label vocabulary that enables direct human-to-robot transfer without label alignment. The source domain contains 51 training and 10 validation videos. The 40 ALOHA demon-strations produce 80 synchronized video streams, split into 32 training, 20 validation, 16 test, and 12 conformal calibration videos. Both views from the same demonstration are assigned to the same split to prevent data leakage. The calibration split is used exclusively for conformal threshold estimation (Section III-D). 
+
+Experimental Setup. All methods use identical precomputed features from a frozen X3D-M [34] backbone pretrained on Kinetics-400, producing 192-dimensional frame features and trained on a single NVIDIA A100 GPU. We report frame-level accuracy (Acc), edit score (Edit), and F1 scores at overlap thresholds of 10% , 25% , and 50% ; Edit and F1 better capture over-segmentation in long-horizon assembly tasks. All models use MS-TCN++ with 4 stages, 14 layers, and 64 feature maps, trained for 100 epochs using AdamW, cosine learning-rate decay, class-frequency reweighting, and label smoothing (ϵ=0 .1). Results are reported as mean ± std over three random seeds (42, 123, 456). Robot-Only trains MS-TCN++ from scratch on DT using NT =16 robot demonstrations with learn-ing rate η=5 ×10 −4, weight decay 5×10 −4, dropout p=0 .6,and 5 warmup epochs. Human →Robot first pretrains on the human source dataset DS , then fine-tunes on DT using the same hyperparameters and initialization from the source checkpoint. V. R ESULTS 
+
+Architecture Selection. Table I (left) reports hand valida-tion performance for architecture selection. BiLSTM and TABLE II: Robot test-set evaluation. 
+
+Method Edit F1@10 F1@25 F1@50 Acc Hand-Only 28.93 19.01 14.83 7.00 13.96 Robot-Only 70.50 43.69 36.92 18.46 40.22 Human-to-Robot 80.70 51.23 41.36 22.22 45.21 +VLM 80.68 51.97 41.81 22.98 46.42 
+
+> Test set, seed 456.
+
+ASFormer are included as single-run baselines; Single-stage TCN is averaged over two seeds; MS-TCN++ variants are mean ± std over three seeds. Single-stage TCN achieves 57.2% frame accuracy but only 5.5 Edit, indicating severe over-segmentation. BiLSTM and ASFormer perform poorly overall, with accuracy below 31%. Increasing MS-TCN++ depth to 14 layers substantially improves both metrics, reach-ing 68 .8±0.2% accuracy and 70 .3±3.3 Edit over the 12-layer variant ( 60 .8±2.4% accuracy, 56 .7±1.4 Edit). We therefore adopt MS-TCN++ 14L as the temporal backbone for all robot-domain experiments. 
+
+Human-to-Robot Transfer. Table II (right) reports robot test-set results on the untrimmed video demos for MS-TCN++ 14L under three configurations. The Hand-Only zero-shot baseline applies the hand-pretrained model directly to robot data with-out any fine-tuning, achieving only 13.96% accuracy and 28.93 Edit, confirming a large visual and embodiment gap between hand and robot demonstrations. Robot-Only, trained from random initialization on 16 robot demonstrations, substantially closes this gap (40.22% accuracy, 70.50 Edit). Human-to-Robot transfer, initialized from the hand-pretrained checkpoint and fine-tuned on the same 16 robot demonstrations, improves further to 45.21% accuracy and 80.70 Edit — a gain of 4.99% accuracy and 10.20 Edit points over Robot-Only — confirming that hand-domain pretraining transfers useful action-ordering structure to robot data. 
+
+VLM-Guided Correction. Edit-safe VLM correction (+VLM ) improves frame accuracy (+1.21%), F1@10 (+0.74), F1@25 (+0.45), and F1@50 (+0.76) while preserving temporal ordering (Edit: 80.70). Only low-confidence segments are flagged (avg. 6.5/video), with 2–3 min inference per video via InternVL2-8B, suitable as an offline post-processing step. 
+
+Segmentation Visualization. Figure 4 shows dual-view (left and right camera) predictions closely aligned with GT for dominant action classes; remaining errors occur at transitions between visually similar actions. 
+
+Uncertainty Quantification. We evaluate CP using two met-rics: empirical coverage, the fraction of test frames whose ground-truth label is contained in the prediction set, and mean prediction set size, which measures inefficiency. We compare standard split CP with regularized class-conditional CP. As shown in Fig. 5, standard CP provides the most reliable coverage across target levels. At the 93% target level, it achieves 94 .2% coverage for Robot-Only and 95 .0% for Human-to-Robot; at the 97% target level, coverage increases to 97 .5% and 96 .5% , respectively. However, this reliability 6
+
+Fig. 4: Representative robot test sequence with synchronized left and right wrist camera views. The temporal bars compare ground-truth labels (GT) with MS-TCN++ predictions from the left and right camera streams. comes with large prediction sets, averaging 16 .8–17 .8 labels at the 93% level and nearly 20 labels at the 97% level, indicating that a single global threshold is conservative for 22-class segmentation. Regularized class-conditional CP produces 
+
+(a) Standard conformal prediction. 
+
+(b) Regularized class-conditional. 
+
+Fig. 5: Conformal prediction inefficiency and empirical cov-erage. substantially smaller sets. At the 93% target level, the mean set size decreases to about 12 .5 labels for both Robot-Only and Human-to-Robot, while at the 97% level it remains around 
+
+14 labels. This shows that class-specific thresholds reduce the conservativeness of a global threshold. However, the smaller sets reduce coverage: at the 93% target level, coverage drops to 86 .5% and 89 .3% , and at the 97% level increases to 92 .1% 
+
+and 92 .3% , still below the nominal target. This gap is expected in temporal segmentation, where frames are highly correlated and class-wise calibration is limited by the small number of robot demonstrations. Overall, standard CP provides the strongest marginal cov-erage, while regularized class-conditional CP yields more compact and informative prediction sets by adapting thresholds to class-specific score distributions. VI. C ONCLUSION AND LIMITATIONS 
+
+We presented an uncertainty-aware teleoperation intention prediction framework combining transfer learning, CP, and VLM-guided correction. The results show that human demon-strations provide useful temporal structure for robot tele-operation, enabling stronger long-horizon segmentation than training only on limited robot data. Standard CP achieves nom-inal coverage, while regularized class-conditional prediction gives more compact but lower-coverage sets. VLM correction further improves accuracy and F1 while preserving temporal ordering, though gains remain modest compared with transfer learning. Evaluation is limited to a single platform and a limited task, generalization remains untested. CP coverage guarantees rely on exchangeability between calibration and test examples, an assumption that may only hold approximately for temporally correlated frames in long-horizon demonstrations. VLM struggles with fine-grained distinctions and adds latency that constrains real-time deployment. Future work will extend the framework toward self-assisted teleoperation, where online intention prediction and uncertainty estimation enable the robot to infer the operator’s next subgoal, detect deviations from the expected task sequence, and provide adaptive assis-tance through shared autonomy or corrective guidance during live execution. REFERENCES [1] S.-J. Li, Y. AbuFarha, Y. Liu, M.-M. Cheng, and J. Gall, “MS-TCN++: Multi-stage temporal convolutional network for action segmentation,”                              
+
+> IEEE Transactions on Pattern Analysis and Machine Intelligence ,vol. 45, no. 6, pp. 6647–6658, 2020. [2] F. Yi, H. Wen, and T. Xu, “ASFormer: Transformer for action segmen-tation,” in British Machine Vision Conference (BMVC) , 2021. [3] G. Ding, F. Sener, and A. Yao, “Temporal action segmentation: An analysis of modern techniques,” IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI) , vol. 46, no. 2, pp. 1112–1128, 2024. [4] S. Stein and S. J. McKenna, “Combining embedded accelerometers with computer vision for recognizing food preparation activities,” in ACM International Joint Conference on Pervasive and Ubiquitous Computing (UbiComp) , 2013, pp. 729–738. [5] H. Kuehne, A. Arslan, and T. Serre, “The language of actions: Re-covering the syntax and semantics of goal-directed human activities,” in IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) , 2014, pp. 780–787. [6] M. Cai, K. Patel, S. Iba, and S. Li, “Hierarchical deep learning for intention estimation of teleoperation manipulation in assembly tasks,” in Proceedings of the IEEE International Conference on Robotics and Automation (ICRA) , 2024, pp. 17 814–17 820. [7] A. Xu, S. Li, P. Baskaran, K. Patel, S. Iba, and B. Dariush, “A probabilistic programming approach to intention estimation in human-robot teleoperated assembly tasks,” in Proceedings of the IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) ,2025. [8] P. Baskaran, X. Liu, S. Li, and S. Iba, “explainable intention esti-mation in teleoperated manipulation using deep dynamic graph neural networks,” in Proceedings of the IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) , 2025, pp. 16 551–16 558. [9] Z. Huang, Y.-J. Mun, X. Li, Y. Xie, N. Zhong, W. Liang, J. Geng, T. Chen, and K. Driggs-Campbell, “Hierarchical intention tracking for robust human-robot collaboration in industrial assembly tasks,” in
+> Proceedings of the IEEE International Conference on Robotics and Automation (ICRA) , 2023, pp. 9821–9828. 7
+
+[10] S. Nair, A. Rajeswaran, V. Kumar, C. Finn, and A. Gupta, “R3M: A universal visual representation for robot manipulation,” in Conference on Robot Learning (CoRL) , 2022. [11] I. Radosavovic, B. Shi, L. Fu, K. Goldberg, T. Darrell, and J. Malik, “Real-world robot learning with masked visual pre-training,” in Confer-ence on Robot Learning (CoRL) , 2023. [12] Y. A. Farha and J. Gall, “MS-TCN: Multi-stage temporal convolutional network for action segmentation,” in IEEE/CVF Conference on Com-puter Vision and Pattern Recognition (CVPR) , 2019, pp. 3575–3584. [13] H. Liu, C. Li, Q. Wu, and Y. J. Lee, “Visual instruction tuning,” in 
+
+Advances in Neural Information Processing Systems (NeurIPS) , vol. 36, 2023. [14] P. Wang, S. Bai, S. Tan, S. Wang, Z. Fan, J. Bai, K. Chen, X. Liu, J. Wang, W. Ge et al. , “Qwen2-VL: Enhancing vision-language model’s perception of the world at any resolution,” arXiv preprint arXiv:2409.12191 , 2024. [15] A. N. Angelopoulos and S. Bates, “A gentle introduction to conformal prediction and distribution-free uncertainty quantification,” CoRR , vol. abs/2107.07511, 2021. [Online]. Available: https://arxiv.org/abs/2107. 07511 [16] D. Stutz, A. T. Cemgil, A. Doucet et al. , “Learning optimal conformal classifiers,” arXiv preprint arXiv:2110.09192 , 2021. [17] C. Chi, Z. Xu, C. Pan, E. Cousineau, B. Burchfiel, S. Feng, R. Tedrake, and S. Song, “Universal manipulation interface: In-the-wild robot teach-ing without in-the-wild robots,” in Robotics: Science and Systems (RSS) ,2024. [18] T. Z. Zhao, V. Kumar, S. Levine, and C. Finn, “Learning fine-grained bimanual manipulation with low-cost hardware,” in Robotics: Science and Systems (RSS) , 2023. [19] O. X.-E. Collaboration, “Open x-embodiment: Robotic learning datasets and rt-x models,” arXiv preprint arXiv:2310.08864 , 2023. [20] C. Lea, M. D. Flynn, R. Vidal, A. Reiter, and G. D. Hager, “Tempo-ral convolutional networks for action segmentation and detection,” in 
+
+Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR) , 2017. [21] D. Liu, Q. Li, A. Dinh, T. Jiang, M. Shah, and C. Xu, “Diffusion action segmentation,” in IEEE/CVF International Conference on Computer Vision (ICCV) , 2023, pp. 10 139–10 149. [22] A. Fathi, X. Ren, and J. M. Rehg, “Learning to recognize objects in egocentric activities,” in IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) , 2011, pp. 3281–3288. [23] F. Sener, D. Chatterjee, D. Shelepov, K. He, D. Singhania, R. Wang, and A. Yao, “Assembly101: A large-scale multi-view video dataset for understanding procedural activities,” in IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) , 2022, pp. 21 096– 21 106. [24] Y. Gal and Z. Ghahramani, “Dropout as a bayesian approximation: Representing model uncertainty in deep learning,” in international conference on machine learning . PMLR, 2016, pp. 1050–1059. [25] V. Vovk, A. Gammerman, and G. Shafer, Algorithmic learning in a random world . Springer, 2005. [26] Y. Romano, M. Sesia, and E. Candes, “Classification with valid and adaptive coverage,” Advances in neural information processing systems ,vol. 33, pp. 3581–3591, 2020. [27] A. Angelopoulos, S. Bates, J. Malik, and M. I. Jordan, “Uncertainty sets for image classifiers using conformal prediction,” arXiv preprint arXiv:2009.14193 , 2020. [28] R. J. Tibshirani, R. Foygel Barber, E. Candes, and A. Ramdas, “Con-formal prediction under covariate shift,” Advances in neural information processing systems , vol. 32, 2019. [29] Y. Wang, D. Li, M. Cleaveland, R. Tron, and M. Cai, “Conformalized signal temporal logic inference under covariate shift,” 2026. [Online]. Available: https://arxiv.org/abs/2603.27062 [30] A. Podkopaev and A. Ramdas, “Distribution-free uncertainty quantifi-cation for classification under label shift,” in Uncertainty in artificial intelligence . PMLR, 2021, pp. 844–853. [31] OpenAI, “GPT-4 technical report,” OpenAI, Tech. Rep., 2023. [Online]. Available: https://arxiv.org/abs/2303.08774 [32] M. Ahn, A. Brohan, N. Brown, Y. Chebotar, O. Cortes, B. David, C. Finn, C. Fu, K. Gopalakrishnan, K. Hausman et al. , “Do as I can, not as I say: Grounding language in robot affordances,” in Conference on Robot Learning (CoRL) , 2022. [33] A. Brohan, N. Brown, J. Carbajal, Y. Chebotar, X. Chen, K. Choro-manski, T. Ding, D. Driess, A. Dubey, C. Finn et al. , “RT-2: Vision-language-action models transfer web knowledge to robotic control,” in 
+
+Conference on Robot Learning (CoRL) , 2023. [34] C. Feichtenhofer, “X3D: Expanding architectures for efficient video recognition,” in IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) , 2020, pp. 203–213. [35] J. Carreira and A. Zisserman, “Quo vadis, action recognition? A new model and the kinetics dataset,” in IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) , 2017, pp. 6299–6308.
