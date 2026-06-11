@@ -1,0 +1,386 @@
+Title: Bridging the sim2real gap in the table tennis robot with a transformer-based ball states predictor
+
+URL Source: https://arxiv.org/pdf/2606.11464v1
+
+Published Time: Thu, 11 Jun 2026 00:16:13 GMT
+
+Number of Pages: 9
+
+Markdown Content:
+# Bridging the sim2real gap in the table tennis robot with a transformer-based ball states predictor 
+
+Yin Bi 1, Christian Conti 2, Bilan Yang 2, Alexander Sigrist 1, Peter Dürr 1, Naoya Takahashi 11Sony AI, Zürich, Switzerland 
+
+> 2
+
+Sony AI, Tokyo, Japan 
+
+Abstract — Robotic table tennis is a representative benchmark for high-speed, closed-loop robotic control in dynamic envi-ronments, where accurate and fast prediction of ball states is critical for reliable planning and control. Physics-based ap-proaches rely heavily on accurate parameter identification and precise initial state, while learning-based methods often struggle to capture long-range temporal dependencies and are typically trained on limited or simulated data. We propose a transformer-based framework for table tennis ball state prediction that leverages attention mechanisms to model long-range temporal correlations directly from historical observations, without re-lying on explicit flight or bounce models. To support robust learning and generalization, we collected a large-scale real-world dataset from players of varying skill levels and diverse ball cannon configurations. The combination of a high-capacity transformer architecture and extensive real-world data enables accurate long-horizon forecasting. Building on this capability, we introduce a plug-and-play sim-to-real transfer strategy, Swap Predictor at Deployment (SPAD), which replaces the physics-based simulator used during training with the proposed real-world-trained predictor at deployment, improving the sim-to-real transferability of the policy without requiring retraining. We demonstrate that this simple substitution effectively narrows the sim-to-real gap while preserving the efficiency and scalabil-ity of simulation-based training. 
+
+I. INTRODUCTION 
+
+Table tennis robots have attracted increasing attention since the late 20th century [1], [2], [3], [4], [5], [6], [7], serving as compelling testbeds for integrating perception, mechatronics, control, and learning. Successfully returning a fast-moving ball, up to 35 m/s at professional levels [8], requires estimating not only the current ball position but also its future state (position, velocity, and spin). Thus, accurate and fast prediction of ball states is essential for effective planning and control. Existing physics-based approaches model ball flight and ball-table contact using analytical dynamics with parameters such as drag, restitution, and friction. The current state is estimated from observations using filtering or polynomial fitting [9], [10], [11], and future states are subsequently predicted using physics-based models. While interpretable and physically grounded, these methods rely heavily on accurate parameter identification and initial state estimation. In practice, unmodeled effects, such as time-varying spin, complex non-linear properties of the table and ball, air dis-turbances, and contact uncertainties, can degrade accuracy. Input Predic-on 
+
+> Physics Model
+
+Training in Sim Deployment in Real       
+
+> Type equation Policy
+> 𝝅 𝝓
+> Actions 𝒖 𝒕
+> Input Predic-on
+> Real Predictor
+> Actions 𝒖 𝒕
+> Transformer
+> Encoder
+> Feature Map Transformer
+> Decoder
+> Linear Projec,on
+
+Fig. 1: Sim-to-real transfer via predictor replacement: The control policy is first trained using a simulated predictor and then deployed with the real-world-trained predictor, without policy retraining. In contrast, learning-based approaches learn ball flight and ball-table contact dynamics directly from data, typically using neural networks [12], [13], [14]. They offer greater flexibility and aim to capture complex aerodynamic and contact dynamics implicitly. However, these methods often struggle to model long-range temporal dependencies and are trained on limited real-world datasets or only on simulated data, which can lead to overfitting and sim-to-real discrep-ancies. Most existing works focus on position prediction, leaving spin - critical for trajectory curvature and rebound -largely underexplored. The absence of standardized datasets and evaluation protocols further complicates fair comparison across methods. To address these challenges, we propose a transformer-based predictor for predicting table tennis ball states. Inspired by the success of attention mechanisms in modeling long-range dependencies [15], our predictor similarly leverages the attention mechanisms to capture temporal correlations over extended observation horizons without relying on analytical flight or bounce models. Specifically, the predictor uses an encoder–decoder architecture with multi-head attention and expansion-bottleneck convolutional blocks, taking historical ball positions and spins as input and forecasting future states 
+
+> arXiv:2606.11464v1 [cs.RO] 9 Jun 2026
+
+(positions, velocities, and spins). To ensure robustness and real-world generalization, we collected a large-scale training dataset of over 100k ball trajectories, including players of varying skill levels and ball cannons with diverse configurations. Experimental re-sults show that our predictor outperforms physics-based and learning-based baselines, particularly in long-horizon predic-tion. We will release the testing dataset upon acceptance to enable standardized comparisons in table tennis ball state prediction. Training control policies in simulation is common in table tennis robotics due to its safety, scalability, and efficiency [7], [3], [16]. In typical simulation pipelines, ball trajectories are generated using physics-based models, from which future ball states can be directly derived as policy inputs, making training convenient and computationally efficient. However, inaccuracies in ball dynamics, bounce behavior, and sensor models create a sim-to-real gap that limits real-world perfor-mance. Existing strategies, such as system identification [17], [18], [19], domain randomization and adaptation [20], [21], [22], [23], and incorporating realistic sensor and actuator noise models into simulation [24], [25], [26], can mitigate this gap but are often complex, computationally expensive, or require retraining that is impractical when real-world data are limited. We propose a simple, plug-and-play sim-to-real transfer strategy, Swap Predictor at Deployment (SPAD): after train-ing the control policy entirely in simulation, the physics-based simulator is replaced with a real-world-trained predic-tor at deployment, as illustrated in Fig. 1. This substitution re-quires no policy retraining. Experimental results demonstrate that the proposed approach significantly mitigates the sim-to-real gap. As a result, it preserves the efficiency of simulation-based training while enhancing real-world performance. This strategy may also be applicable to other robotic systems in which predictive models provide inputs to downstream control policies The main contributions of this work are as follows:  
+
+> •
+
+We propose a transformer-based framework for predict-ing table tennis ball states - including ball positions, ve-locities, and spins - that outperforms physics-based and learning-based baselines, particularly for long-horizon predictions.  
+
+> •
+
+We collect a large-scale real-world dataset containing 100k ball trajectories with spin measurements, and release a benchmark dataset for standardizing the eval-uation protocol.  
+
+> •
+
+We propose and validate a simple yet effective sim-to-real transfer strategy, SPAD, which enables efficient simulation-based training while mitigating the sim-to-real gap. 
+
+II. Related Work 
+
+1) Table tennis ball state prediction : Physics-based meth-ods model the ball aerodynamics in flight and ball-table contact using analytical equations with estimated physical parameters[27], [9], [28], [29]. Future ball states are pre-dicted using these models, with the initial states estimated from observations via polynomial fitting or filtering tech-niques such as the Extended Kalman Filter (EKF) or the Unscented Kalman Filter (UKF)[9], [10], [11]. While physi-cally interpretable, these methods rely on accurate parameter and initial state estimation, and unmodeled effects, such as air disturbances and surface uncertainties, can degrade performance in real-world deployment. Learning-based approaches aim to model ball flight and ball-table contact dynamics directly from data, without ex-plicit physics knowledge. Neural networks are often used to predict trajectories before and after bounces, to acquire the hitting point or landing plane [30], [31], [32]. And recurrent architectures are also widely used for efficiently capturing temporal dependencies [12], [33], [13]. Sequence-to-sequence and trajectory autoencoder models [34], [13], [35] further mitigate error accumulation in long-horizon prediction by preventing predicted outputs from being re-cursively fed back into the network as inputs. Despite these advances, most methods predict only position, neglecting velocity and spin, and rely on small or simulated datasets, limiting real-world generalization. For example, [30] uses only 200 real-world and 330 simulated trajectories, which is insufficient to capture the full range of ball dynamics, including velocities up to 35 m/s and angular velocities up to 1000 rad/s [8]. Training on synthetic data generated from physics models also inherits the same limitations when deployed on real robots. Hybrid methods combine physics-based models with learning components, using neural networks to estimate parameters or model deviations while preserving physical plausibility. For example, [36] uses a gray-box model to learn both system dynamics and EKF parameters, while [37] integrates a differentiable physics model with GRU-based trajectory encoders. Although these approaches improve pre-diction accuracy, they are often trained on small datasets (e.g., 2000 simulated and 300 real trajectories in [37]) and still face generalization challenges. 
+
+2) Sim-to-Real Transfer : Sim-to-real transfer seeks to enable control policies trained in simulation to perform reli-ably on physical robots. Common strategies include system identification, domain randomization, and domain adaptation. System identification attempts to reduce the sim-to-real gap by accurately modeling the physical properties of robots and their environments in simulation [17], [38], [18], [19]. While effective, it is sensitive to unmodeled effects and may not generalize well across tasks or environments. Domain randomization improves robustness by varying simulation parameters such as object appearance, textures, lighting, physics properties, and sensor noise [20], [24], [21]. Domain adaptation explicitly aligns simulated and real-world data dis-tributions via feature alignment, adversarial training, or fine-tuning on limited real data [22], [23]. Differences in sensing, actuation, and computational latency between simulation and real robots also affect transfer performance. Incorporating realistic noise, latency, and actuation models can reduce the gap [20], [24], [25], [26], although coverage of real-world variability remains limited. In robotic table tennis, [7] proposes a hybrid procedure that relies on real-world data whenever possible while us-ing simulation to supplement scarce samples. [3] initializes simulation parameters via system identification, applies do-main randomization, and uses curriculum learning to refine policies with real-world data. The iterative approach in [39] alternates between simulation training and real-world deployment, using human-robot interaction data to refine simulators, but requires repeated real-world data collection. Zero-shot strategies [40], [41] rely on high-fidelity simulation to deploy policies without real-world fine-tuning, although they remain sensitive to modeling errors under distribution shifts. 
+
+III. Methods 
+
+A. table tennis ball state predictor 1) Architecture of Predictor: Following the approaches in [42], [43], we adopt an encoder-decoder architecture for our predictor. This architecture generates long temporal sequences in a single forward pass instead of iteratively, significantly improving inference speed while reducing er-ror accumulation from autoregressive conditioning, thereby preserving accuracy over long horizons. An overview of the adopted architecture is shown in Fig. 2. The encoder captures temporal correlations in the input sequence and encodes them into a structured feature matrix. This representation is subsequently utilized by the decoder to refine the predicted future ball states by incorporating information from previously passed balls. Following the design of [15], the encoder consists of 𝐿 𝑒𝑛 identical layers, each comprising three sub-layers. The first sub-layer is a multi-head self-attention mechanism, which is followed by a convolution block including two consecutive 1D convolution layers. The first 1D convolution layer expands the feature dimension to a higher channel space 𝑑 ff , and the second projects it back to a lower-dimensional representation, i.e., 
+
+𝑑 model . The attention mechanism is the standard Scaled Dot-Product Attention [15]. Residual connections and layer normalization are applied to the self-attention layer and the convolution block. The computations of the 𝑙 -th encoder layer are summarized as follows: 
+
+Fl,att en = LayerNorm  Self_Attention (Xlen ) + Xlen 
+
+
+
+Flen = LayerNorm  Conv1D (Conv1D (Fl,att en )) + Fl,att en 
+
+ (1) where Xlen and Flen denote the input and output of the 𝑙 -th encoder layer, respectively. Fl,att en , represents the output of the self-attention sub-layer in the 𝑙 -th encoder layer. Similarly, the decoder consists of 𝐿 𝑑𝑒 identical layers followed by a final linear projection layer that maps the model representation from dimension 𝑑 model to 9. Compared with the encoder, each decoder layer inserts an additional multi-head cross-attention sub-layer between the self-attention sub-layer and the convolution block. This cross-attention mecha-nism attends to the encoder outputs using the decoder states as queries. All sub-layers in the decoder are equipped with residual connections and layer normalization, following the same design principles as the encoder. Encoder           
+
+> Concatenated
+> Feature Ma trix Decoder
+> Ball Posi)ons
+> Ball Spins
+> T1
+> Outputs
+> Ball Posi)ons
+> Ball Spins
+> Ball Veloci)es
+> Posi4onal Encoding Conv1D
+> ⊕⊕
+> Posi4onal Encoding Conv1D
+> Ball Posi)ons
+> Ball Spins
+> Linear Projec4on
+> TNTN
+> T1TN+M
+> ………
+> Mul4 -head Self -aAen4on
+> Expansion Conv1D
+> BoAleneck Conv1D
+> Nx
+> Mul4 -head Cross -aAen4on
+> Expansion Conv1D
+> BoAleneck Conv1D
+> Mul4 -head Self -aAen4on
+> N x
+> Inputs: X en Inputs: X de
+
+Fig. 2: Overview of the table tennis ball states predictor. 
+
+2) Input Representation: The model takes a history of 𝑁 
+
+ball positions and spins as inputs and predicts 𝑀 future ball positions, velocities, and spins. At time 𝑇 , 𝑁 historical ball positions and spins are concatenated to form the encoder input: 
+
+Xen = (p, 𝜔 ) ∈ R𝑁 ×6, (2) where p ∈ R𝑁 ×3 and 𝜔 ∈ R𝑁 ×3 correspond to the 𝑁 histor-ical 3D position and spin vectors of the ball, respectively. For the decoder input, the sequence length is extended to 
+
+𝑁 +𝑀 by concatenating 𝑀 ×6 zero vectors to Xen . These zero vectors serve as placeholders for the future 𝑀 step, enabling one-step-forward inference rather than iterative prediction. For both the encoder and decoder inputs, if the observed position or spin is unavailable in practice, the corresponding entries are set to zero. To preserve the local temporal context of the observations, we employ a standard sinusoidal positional encoding [15] to distinguish the order of observations. This produces a positional encoding matrix P ∈ RN×𝑑 model added to the latent feature representation to inject temporal information. To align the feature dimensions, the observations are projected into a latent feature space using a one-dimensional convolutional layer (with a kernel size of 3 and a stride of 1) after the normalization. 
+
+F = Conv1D (Norm (Xen ), 𝑘 = 3, 𝑠 = 1) (3) The final input representation R is then obtained by combin-ing the projected features with the positional embeddings: 
+
+R = F + P.
+
+B. Sim2Real Transfer 
+
+A common approach to training control policies for robotic table tennis is to rely on simulated environments for policy learning [39], [3], [16], [7], as simulation enables efficient parallelization and scalable data generation. However, poli-cies trained exclusively in simulation often fail to generalize to real-world settings due to the domain gap between syn-thetic and real data. To mitigate this issue, we incorporate a predictor trained on real-world data to provide more accurate estimates of future ball states as inputs to the policy, thereby reducing the sim-to-real discrepancy. At each time step 𝑡 , the robot observes the recent historical ball states 𝑜 1: 𝑡 and its own state 𝑠 𝑡 . A real ball-state predictor 
+
+Preal estimates the future ball states over a prediction horizon 
+
+[𝑡 + 1, 𝑡 + 𝐻 ]:
+
+ˆ𝑋 𝑡 +1: 𝑡 +𝐻 = Preal (𝑜 1: 𝑡 ). (4) The control policy 𝜋 𝜙 then generates the action conditioned on both the robot state and the predicted future ball states: 
+
+𝑢 𝑡 = 𝜋 𝜙 (𝑠 𝑡 , ˆ𝑋 𝑡 +1: 𝑡 +𝐻 ). (5) During training, future ball states are generated by a physics-based simulator Psim , due to its efficiency and scal-ability, which incorporates analytical models of ball flight and ball-table contact dynamics. The simulator is initialized from diverse ball states to cover a wide range of task configurations. The policy is trained entirely in simulation to maximize task reward (e.g., successfully returning the ball) using the robot state and the simulator-generated future ball states as inputs. The primary sim-to-real discrepancy arises from mis-matches between the physics-based simulator Psim used during training and the actual physical dynamics of the real world, where in practice Psim is conditioned on the initial state estimation and also does not perfectly match reality due to unmodeled aerodynamics, spin-dependent effects, contact dynamics, and environmental disturbances. As a result, Psim 
+
+produces incorrect future ball states when applied to real-world observations. Since the policy conditions on future ball states rather than raw sensory inputs, the sim-to-real gap manifests as a distribution mismatch in policy input space: 
+
+Psim (𝑜 1: 𝑡 ) ≠ Preal (𝑜 1: 𝑡 ). (6) Consequently, the action 𝑢 𝑡 generated by the policy may deviate from the optimal real-world control behavior. To mitigate this discrepancy, we correct the policy input, i.e., the future ball states. After training, we obtain a fixed policy 𝜋 𝜙 ∗ . During deployment, we replace the physics-based simulator Psim with the real-world-trained predictor ˆPreal ,while keeping the control policy 𝜋 𝜙 ∗ unchanged. We refer to this approach as Swap Predictor at Deployment (SPAD). The real-world-trained predictor is expected to represent the physical dynamics of the real world more faithfully; this design aligns the distribution of predicted ball states fed into the policy. Instead of adapting the downstream control strategy, we correct the upstream prediction bias introduced by simulation inaccuracies. Once sufficiently accurate future ball states are supplied, the high-level control policy learned in simulation remains effective in the real world. Therefore, predictor replacement alone is sufficient to preserve policy performance without policy retraining. 
+
+Algorithm 1 Sim2Real Transfer via SPAD  
+
+> 1:
+
+Phase 1: Simulation Training  
+
+> 2:
+
+Train control policy 𝜋 𝜙 ∗ in simulation using predictions from physics-based simulator Psim  
+
+> 3:
+
+Phase 2: Real-World Adaptation  
+
+> 4:
+
+Collect real-world ball dataset Dreal  
+
+> 5:
+
+Train real-world predictor ˆPreal using supervised learning on Dreal  
+
+> 6:
+
+Deployment (No Policy Retraining)  
+
+> 7:
+
+Replace predictor: Psim → ˆPreal  
+
+> 8:
+
+for each real-world rally do  
+
+> 9:
+
+Observe ball state 𝑜 1: 𝑡 and robot state 𝑠 𝑡  
+
+> 10:
+
+Predict future ball states ˆ𝑋 𝑡 +1: 𝑡 +𝐻 = ˆPreal (𝑜 1: 𝑡 ) 
+
+> 11:
+
+Execute action 𝑢 𝑡 = 𝜋 𝜙 ∗ (𝑠 𝑡 , ˆ𝑋 𝑡 +1: 𝑡 +𝐻 ) 
+
+> 12:
+
+end for 
+
+Algorithm 1 summarizes the SPAD procedure for sim-to-real transfer. The approach is modular and broadly applicable to robotic systems in which predictive models are used to provide structured inputs to downstream control policies. 
+
+IV. Evaluation and Results 
+
+A. Implementation and Evaluation of Predictor 1) Dataset: The dataset used to train the ball state predic-tor is collected from real-world settings and consists of two categories: game data and ball-cannon data. For the game data, amateur, club-level, semi-professional, and professional players are invited to participate in data collection sessions. Players are paired and instructed to play competitive matches, aiming to win against their opponents. For the ball cannon data, a ball cannon launches balls from predefined positions with varied yaw and pitch angles, initial velocities, and spin rates. Various combinations of these parameters are systematically sampled to increase the diversity of the ball-cannon dataset. During data collection, ball positions and spins are recorded. Six Active Pixel Sensor (APS) cameras are installed around the court to ensure full coverage of the playing area. These cameras locate the ball’s 3D position using a color-based filtering detection algorithm [44], with an error of 3 mm. Predefined dot patterns are applied to the surface of the ball, and the ball’s orientation is reconstructed from these patterns using geometric hashing [45]. The aver-age error of the spin is approximately 5% of its amplitude. Both ball positions and spins are recorded at a sampling frequency of 200 Hz. Ball velocity is then estimated from position data. All recordings are segmented into episodes: for the game data, each episode starts from a racket–ball contact and ends either at rally termination or at the next racket–ball contact; for the ball cannon data, each episode corresponds to a single ball shot. In total, approximately 50k game episodes and 55k ball cannon episodes are collected. Among them, 500 episodes comprising both game and ball cannon episodes are reserved for testing, and the remaining episodes are split into training and evaluation sets with a 9:1 ratio. The testing episodes will be made publicly available upon acceptance to standardize the dataset used in the evaluation of the table tennis ball state predictor. A small subset of these episodes is provided in the supplementary material for review. 
+
+2) Implementation Details: The predictor forecasts 60 future ball states (M=60) based on 12 historical ball states (N=12). The encoder comprises three identical layers ( 𝐿 𝑒𝑛 =
+
+3), while the decoder consists of two identical layers ( 𝐿 𝑑𝑒 =
+
+2). The feature dimension of the attention layers is set to 512 ( 𝑑 𝑚𝑜𝑑𝑒𝑙 = 512 ), and the expanded dimension of the convolution layers in both the encoder and decoder is 1024 (𝑑 𝑓 𝑓 = 1024 ). All attention layers employ 8 attention heads. During training, the batch size is set to 128, and the predictor is trained for 80 epochs using the Adam optimizer [46]. The loss is computed as the mean squared error (MSE) loss over the prediction horizon between the predicted and ground-truth ball states. The initial learning rate is 0.0001 and decays by a factor of 0.95 per epoch. 
+
+3) Evaluation Results: We compare the proposed pre-dictor against a physics-based method and learning-based approaches, including the Trajectory Autoencoder (TAE) and the gated recurrent unit TAE (GRU-TAE). For the physics-based method, an Extended Kalman Filter (EKF) [47] is first used to estimate the initial state based on the first 12 historical ball states. Subsequently, future states are predicted by propagating the estimated state through ball flight [29] and ball-table contact [48] models. For TAE and GRU-TAE, we extend the implementations in [13] by increasing the input and output dimension from 3 (position-only) to 6 and 9, respectively. This modification enables the models to incorporate both ball position and spin as inputs and to simultaneously predict ball position, velocity, and spin. Both are trained using the same training procedure and the same training and evaluation datasets described in Section IV-A.2 and Section IV-A.1. Prediction accuracy is evaluated over horizons from 100 ms to 300 ms with 5 ms temporal resolution. The prediction error is defined as the Euclidean norm of the difference between the predicted state and the corresponding ground-truth state at each prediction time step. Fig. 3 summarizes the mean error and standard deviation across all testing episodes. As shown in Fig. 3, the proposed transformer-based ball state predictor exhibits consistently lower mean prediction error throughout the eval-uated horizon. In addition, the error variance is small over the prediction horizon, indicating stable long-term prediction behavior. 
+
+4) Real-world Deployment: To evaluate real-world perfor-mance, the proposed predictor was integrated into a physical robotic platform for human–robot table tennis rallies. Raw ball positions and spin measurements from external sensors are provided to the predictor, which generates future ball states from 5–300 ms at 5 ms intervals. These predictions are used as inputs to a control policy governing the robotic arm. The policy is a deep reinforcement learning (RL) policy trained entirely on single shots in simulation using the Soft Actor-Critic (SAC) algorithm [49], which learns to defeat the opponent with a set of desired skills using Universal Value Function Approximators [50]. A demonstration video 0.00         
+
+> 0.05
+> 0.10
+> 0.15
+> 0.20
+> 0.25
+> 0.30
+> 0.35
+> Position Error (m)
+> Transformer-based
+> Physics-based
+> TAE
+> GRU_TAE
+> 0.5
+> 0.0
+> 0.5
+> 1.0
+> 1.5
+> 2.0
+> 2.5
+> 3.0
+> Velocity Error (m/s)
+> Transformer-based
+> Physics-based
+> TAE
+> GRU_TAE
+> 100 125 150 175 200 225 250 275 300
+> Time Step (ms)
+> 0
+> 20
+> 40
+> 60
+> 80
+> Spin Error (rad/s)
+> Transformer-based
+> Physics-based
+> TAE
+> GRU_TAE
+
+Fig. 3: Prediction accuracy of ball state (position, velocity, and spin) across horizons from 100-300 ms, reporting mean error and standard deviation for the proposed predictor and the physics-based, TAE, and GRU-TAE baselines. showing the integration of our ball-state predictor with a real system for human-robot rallies is included in the supplemen-tary material .
+
+B. Sim-to-real Transfer 
+
+We evaluate the proposed SPAD sim-to-real transfer method under two settings: sim-to-sim and sim-to-real. In the sim-to-sim setting, we assess policy transfer between two simulated domains with differing physical parameters, enabling a controlled analysis of domain discrepancies. In the sim-to-real setting, a policy trained in simulation is evaluated on real-world data, the primary interest of this work. 
+
+1) Proof of Concept - Sim-to-sim: The sim-to-sim ex-periments serve as a proof of concept in which the policy is trained in one simulation environment and evaluated in another with modified physical parameters. As described in Section IV-A.4, the control policy is trained with deep reinforcement learning using the Soft Actor-Critic algorithm [49] to defeat the opponent with different desired skills via Universal Value Function Approximators [50]. For the ball simulator, established physics-based models are used to describe both ball flight [29] and ball–table contact [48]. Parameters of ball physics models are varied to construct different simulators. Among the key parameters requiring identification are the aerodynamic drag coefficient for ball flight and the table restitution coefficient for ball-table con-tact. We therefore set a drag coefficient to 0.55 and a table restitution coefficient to 0.98 to construct a pseudo "ground-truth" simulator. To emulate modeling inaccuracies, we con-struct "imperfect" simulators by varying these two param-eters. Specifically, three types of imperfect ball simulators are considered: (1) "Imperfect A": only the table restitution coefficient in the ball-table contact model is modified to 0.9; (2) "Imperfect B": only the drag coefficient for ball flight is modified to 0.4; (3) "Imperfect C": both the drag coefficient and the table restitution coefficient are modified to 0.4 and 0.9, respectively. Imperfect A Imperfect B Imperfect C      
+
+> 45
+> 50
+> 55
+> 60
+> 65
+> 70
+> 75
+> 80
+> 85
+> Return Rate(%)
+> 79.75
+> 65.50
+> 71.00
+> 74.00
+> 63.00 63.75
+> Using predictions at 115, 120, 125 ms
+> Imperfect A Imperfect B Imperfect C
+> Return Rate(%)
+> 78.25 76.00
+> 68.75
+> 72.75
+> 68.00
+> 57.00
+> Using predictions at 170, 175, 180 ms
+> Test with Predictions from GT Simulator Test with Predictions from Imperfect Simulator
+
+Fig. 4: Sim-to-sim transfer: Policies are trained using ball trajectories and future-state predictions generated by three "imperfect" simulators (A-C), respectively. At test time, tra-jectories are generated by the "ground-truth" simulator, while future states provided to the policy are predicted by either the "ground-truth" simulator (blue) or the "imperfect" simulator used during training (orange). Return rates are reported for two prediction horizons (115–125 ms and 170–180 ms). Im-proved performance with ground-truth predictions indicates effective transfer. During policy training, the imperfect ball simulator is used to generate ball trajectories from sampled initial ball states. These trajectories represent the balls that the policy is required to return. A short-term horizon of future ball states from the generated trajectories is provided as part of the input to the policy. To evaluate sim-to-sim transfer, test trajectories are generated using the "ground-truth" simulator, and the policy is tasked with returning these balls. Policy performance is evaluated under two conditions: given the first ball state from each test trajectory, future ball states provided to the policy are predicted using either (1) the "ground-truth" simulator or (2) the imperfect simulator (as used during training). Comparing performance under these two conditions allows us to assess transfer between the two simulated domains. Performance is measured by the return rate, defined as the percentage of balls successfully returned to the opponent’s side of the table. Each evaluation consists of 300 episodes. Results are shown in Fig. 4. To ensure robustness, we evaluate two prediction horizons by training policies using predicted future ball states at [115, 120, 125] ms and [170, 175, 180] ms as inputs, respectively, consistent with reported planning and reaction latencies of 100-200 ms in dynamic robotic systems [51]. For each setting, the policy is trained twice to account for stochasticity in training and the mean and variance across these two runs are reported. The results consistently show that when the incoming ball is generated by the "ground-truth" simulator, policies that use future ball states predicted by the "ground-truth" simulator as inputs achieve a higher return rate than those using predictions from the imperfect simulator, even though the policies were trained with an imperfect simulator to generate both the training ball trajectories and the corresponding future ball state predictions. This trend is observed across all three imperfect simulator settings, supporting the effectiveness of predictor replacement for mitigating domain discrepancies. 
+
+2) Real-World Data Testing - Sim-to-real: In the sim-to-real evaluation, the control policy is trained entirely in simulation and then evaluated using real-world ball data, allowing us to assess how effectively the proposed framework bridges the sim-to-real gap. For real-world data evaluation, we collect a diverse test set consisting of 200 rally shots from university-level players (Stroke-Uni), 200 rally shots from professional-level players (Stroke-Pro), and 100 serves (Receive) from both groups. During training, the same control policy and ball simulator described in Section IV-B.1 are used. In the ball simulator, the aerodynamic drag coefficient and the table restitution coefficient are estimated as variable parameters [52], [53]. These parameters are fixed at representative values within their ranges: the drag coefficient is set to 0.4 and the table restitution coefficient to 0.9. During evaluation, each real-world trajectory is replayed to the policy, which uses future ball states as its input. The future ball states are predicted either by the physics-based predictor or by the real-world predictor. To quantify sim-to-real transfer performance, we compare the number of successful hits and returns achieved under these two predictor settings. Table I reports the results for using two different prediction horizons as ball state input (predictions at [115, 120, 125] ms and at [170, 175, 180] ms). Across both prediction horizons and all datasets, using a real-world predictor consistently improves performance over the simulator in terms of the number of hits and returns, especially in the Stroke-Uni shots, illustrating that the proposed ball states predictor can alleviate the sim-to-real gap. To further evaluate the quality of the shots returned by the policy, we analyze four outcome metrics including ball speed, spin rate after the shooting, clearance height over the net at the crossing point, and the estimated winning probability of each return via a trained random forest classifier based on landing ball states and height over the net using the professional player data [54]. For each metric, we report the median value computed over all successfully returned shots as summarized in the following Fig. 5. The results indicate that, when evaluated on real-world data, the policy operating with the proposed real-world predictor consistently produces returns with higher ball speed and greater spin compared to those generated using a simulator. At the same time, the returned balls exhibit a lower clearance height over the net, producing flatter and more aggressive trajectories. Such shot characteristics are generally more difficult for human oppo-nents to intercept and return. These qualitative improvements are further reflected in the estimated winning probability TABLE I: Sim-to-real transfer results with respect to Stroke-Uni, Stroke-Pro, and Receive. 
+
+Using predictions at 115, 120, 125 ms Using predictions at 170, 175, 180 ms Physics-based Predictor Real-world Predictor Physics-based Predictor Real-world Predictor Hits Returns Hits Returns Hits Returns Hits Returns Stroke-Pro 136 81 170 117 114 75 164 92 Stroke-Uni 154 80 195 146 137 86 187 125 Receive 98 68 98 76 96 67 97 68 
+
+(Win Prob.). In particular, for the Stroke-Uni and Stroke-Pro datasets under the 115–125 ms prediction horizon, the use of the proposed real-world predictor approximately doubles the winning probability relative to the simulator. Therefore, in real-world play, using the real-world predictor not only increases the success rate of returns but also leads to higher-quality and more competitive shots. Stroke-Pro Stroke-Uni Receive                       
+
+> 0
+> 1
+> 2
+> 3
+> 4
+> 5
+> 6
+> 7
+> 8
+> Speed (m/s)
+> 6.1 6.4
+> 5.0
+> 3.9 3.6 3.9
+> 6.3 6.5
+> 4.9 5.1 5.4
+> 4.5
+> Stroke-Pro Stroke-Uni Receive
+> 0
+> 50
+> 100
+> 150
+> 200
+> 250
+> 300
+> 350
+> Spin (rad/s)  227.4
+> 291.8
+> 137.1
+> 117.4 136.4
+> 111.4
+> 250.5
+> 285.7
+> 146.2
+> 199.6 200.7
+> 131.3
+> Stroke-Pro Stroke-Uni Receive
+> 0.000
+> 0.025
+> 0.050
+> 0.075
+> 0.100
+> 0.125
+> 0.150
+> 0.175
+> 0.200
+> Clearance (m)
+> 0.11 0.12 0.11
+> 0.15 0.14
+> 0.17
+> 0.08
+> 0.11
+> 0.08
+> 0.12 0.13 0.12
+> Stroke-Pro Stroke-Uni Receive
+> 0.00
+> 0.05
+> 0.10
+> 0.15
+> 0.20
+> 0.25
+> Win Prob.
+> 0.20
+> 0.16 0.16
+> 0.09
+> 0.07
+> 0.17 0.17 0.18 0.17
+> 0.08
+> 0.12 0.12
+> Predictions from Real-world Predictor
+> Predictions from Physics-based Predictor
+> Predictions at 115 125 ms
+> Predictions at 170 180 ms
+
+Fig. 5: Shot quality comparison: Median values of four metrics-ball speed, spin rate, net clearance, and estimated winning probability-are shown for successfully returned shots in three datasets (Stroke-Pro, Stroke-Uni, Receive). Policies using the real-world predictor (blue) are compared with those using the physics-based predictor (orange) at two prediction horizons (115–125 ms (hatched); 170–180 ms (solid)). Using the real-world predictor consistently produces faster, higher-spin, and lower-clearance returns, resulting in higher esti-mated winning probabilities. 
+
+V. CONCLUSIONS 
+
+We presented a transformer-based approach for predicting the state of a table tennis ball, addressing limitations of physics-based methods that rely on accurate parameter iden-tification and precise initial states, as well as prior learning-based approaches that struggle with long-range temporal dependencies. To support robust training and generalization, we collected a large-scale and diverse real-world dataset and released testing samples to facilitate standardized evaluation. We demonstrated the effectiveness of the proposed predictor through real-world deployment on a robotic arm, enabling stable and responsive human–robot rallies. Furthermore, we introduced a sim-to-real transfer strategy in which the predic-tor used during simulation training is replaced at deployment with the proposed predictor trained on real-world data. Ex-periments show that this approach preserves the efficiency and scalability of simulation-based training while mitigating the sim-to-real gap. Future work will explore extending this strategy to other robotic systems where learned predictors provide structured inputs to control policies. 
+
+References 
+
+[1] A. Kyohei, N. Masamune, and Y. Satoshi, “The ping pong robot to return a ball precisely trajectory prediction and racket control for spinning balls,” Omron Technics , vol. 51, pp. 1–6, 2020. [2] T. Ding, L. Graesser, S. Abeyruwan, D. B. D’Ambrosio, A. Shankar, P. Sermanet, P. R. Sanketi, and C. Lynch, “Goalseye: Learning high speed precision table tennis on a physical robot,” arXiv preprint arXiv:2210.03662 , 2022. [3] D. B. D’Ambrosio, S. W. Abeyruwan, L. Graesser, A. Iscen, H. B. Amor, A. Bewley, B. Reed, K. Reymann, L. Takayama, Y. Tassa, 
+
+et al. , “Achieving human level competitive robot table tennis,” in 
+
+7th Robot Learning Workshop: Towards Robots with Human-Level Abilities , 2024. [4] X. Hu, Y. Mao, G. Wang, Q. Li, J. Zhang, and Y. Ji, “Catching spinning table tennis balls in simulation with end-to-end curriculum reinforce-ment learning,” Engineering Applications of Artificial Intelligence , vol. 158, p. 111285, 2025. [5] Y. Ji, X. Hu, Y. Chen, Y. Mao, G. Wang, Q. Li, and J. Zhang, “Model-based trajectory prediction and hitting velocity control for a new table tennis robot,” in 2021 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) . IEEE, 2021, pp. 2728– 2734. [6] J. Tebbe, L. Krauch, Y. Gao, and A. Zell, “Sample-efficient reinforce-ment learning in robotic table tennis,” in 2021 IEEE international conference on robotics and automation (ICRA) . IEEE, 2021, pp. 4171–4178. [7] D. Büchler, S. Guist, R. Calandra, V. Berenz, B. Schölkopf, and J. Peters, “Learning to play table tennis from scratch using muscular robots,” IEEE Transactions on Robotics , vol. 38, no. 6, pp. 3850–3860, 2022. [8] T. Hai-peng, M. Masato, and S. Toyoshimai, “Speed and spin charac-teristics of the 40mm table tennis ball,” Table tennis sciences , vol. 4, pp. 278–284, 2002. [9] H. Bao, X. Chen, Z. T. Wang, M. Pan, and F. Meng, “Bouncing model for the table tennis trajectory prediction and the strategy of hitting the ball,” in 2012 IEEE International Conference on Mechatronics and Automation . IEEE, 2012, pp. 2002–2006. [10] K. Yan, “Prediction of table tennis trajectory based on optimized unscented kalman filter algorithm,” in Image Processing, Electronics and Computers . IOS Press, 2024, pp. 110–123. [11] H. Su, Z. Fang, D. Xu, and M. Tan, “Trajectory prediction of spinning ball based on fuzzy filtering and local modeling for robotic ping–pong player,” IEEE Transactions on Instrumentation and Measurement ,vol. 62, no. 11, pp. 2890–2900, 2013. [12] F. He and Y. Li, “Modeling of spm-gru ping-pong ball trajectory prediction incorporating yolov4-tiny algorithm,” Plos one , vol. 19, no. 9, p. e0306483, 2024. [13] B. Toussaint and M. Raison, “Real-time trajectory prediction of a ping-pong ball using a gru-tae,” Applied Intelligence , vol. 55, no. 5, p. 339, 2025. [14] Z. Li and D. Yu, “A spatiotemporal graph transformer network for real-time ball trajectory monitoring and prediction in dynamic sports environments,” Alexandria Engineering Journal , vol. 119, pp. 246– 258, 2025. [15] A. Vaswani, N. Shazeer, N. Parmar, J. Uszkoreit, L. Jones, A. N. Gomez, Ł. Kaiser, and I. Polosukhin, “Attention is all you need,” 
+
+Advances in neural information processing systems , vol. 30, 2017. [16] H. Ma, D. Büchler, B. Schölkopf, and M. Muehlebach, “Reinforcement learning with model-based feedforward inputs for robotic table tennis,” 
+
+Autonomous Robots , vol. 47, no. 8, pp. 1387–1403, 2023. [17] S. Zhu, A. Kimmel, K. E. Bekris, and A. Boularias, “Model iden-tification via physics engines for improved policy search,” CoRR, abs/1710.08893 , 2017. [18] M. Kaspar, J. D. M. Osorio, and J. Bock, “Sim2real transfer for reinforcement learning without dynamics randomization,” in 2020 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) . IEEE, 2020, pp. 4383–4388. [19] N. Sobanbabu, G. He, T. He, Y. Yang, and G. Shi, “Sampling-based system identification with active exploration for legged sim2real learning,” in 9th Annual Conference on Robot Learning , 2025. [20] J. Tobin, R. Fong, A. Ray, J. Schneider, W. Zaremba, and P. Abbeel, “Domain randomization for transferring deep neural networks from simulation to the real world,” in 2017 IEEE/RSJ international con-ference on intelligent robots and systems (IROS) . IEEE, 2017, pp. 23–30. [21] A. Loquercio, E. Kaufmann, R. Ranftl, A. Dosovitskiy, V. Koltun, and D. Scaramuzza, “Deep drone racing: From simulation to reality with domain randomization,” IEEE Transactions on Robotics , vol. 36, no. 1, pp. 1–14, 2019. [22] Y. Ganin, E. Ustinova, H. Ajakan, P. Germain, H. Larochelle, F. Lavi-olette, M. March, and V. Lempitsky, “Domain-adversarial training of neural networks,” Journal of machine learning research , vol. 17, no. 59, pp. 1–35, 2016. [23] Y. Chebotar, A. Handa, V. Makoviychuk, M. Macklin, J. Issac, N. Ratliff, and D. Fox, “Closing the sim-to-real loop: Adapting simula-tion randomization with real world experience,” in 2019 International Conference on Robotics and Automation (ICRA) . IEEE, 2019, pp. 8973–8979. [24] X. B. Peng, M. Andrychowicz, W. Zaremba, and P. Abbeel, “Sim-to-real transfer of robotic control with dynamics randomization,” in 2018 IEEE international conference on robotics and automation (ICRA) .IEEE, 2018, pp. 3803–3810. [25] J. Tan, T. Zhang, E. Coumans, A. Iscen, Y. Bai, D. Hafner, S. Bo-hez, and V. Vanhoucke, “Sim-to-real: Learning agile locomotion for quadruped robots,” arXiv preprint arXiv:1804.10332 , 2018. [26] K. Ota, D. K. Jha, D. Romeres, J. van Baar, K. A. Smith, T. Semitsu, T. Oiki, A. Sullivan, D. Nikovski, and J. B. Tenenbaum, “To-wards human-level learning of complex physical puzzles,” CoRR, abs/2011.07193 , 2020. [27] A. Nakashima, Y. Kobayashi, Y. Ogawa, and Y. Hayakawa, “Modeling of rebound phenomenon between ball and racket rubber with spinning effect,” in 2009 ICCAS-SICE . IEEE, 2009, pp. 2295–2300. [28] Y. Zhao, R. Xiong, and Y. Zhang, “Rebound modeling of spinning ping-pong ball based on multiple visual measurements,” IEEE Trans-actions on Instrumentation and Measurement , vol. 65, no. 8, pp. 1836– 1846, 2016. [29] A. Nakashima, Y. Ogawa, Y. Kobayashi, and Y. Hayakawa, “Modeling of rebound phenomenon of a rigid ball with friction and elastic effects,” in Proceedings of the 2010 American Control Conference .IEEE, 2010, pp. 1410–1415. [30] H.-I. Lin, Z. Yu, and Y.-C. Huang, “Ball tracking and trajectory prediction for table-tennis robots,” Sensors , vol. 20, no. 2, p. 333, 2020. [31] H.-I. Lin and Y.-C. Huang, “Ball trajectory tracking and prediction for a ping-pong robot,” in 2019 9th International Conference on Information Science and Technology (ICIST) . IEEE, 2019, pp. 222– 227. [32] Q. Liu and H. Ding, “Application of table tennis ball trajectory and rotation-oriented prediction algorithm using artificial intelligence,” 
+
+Frontiers in Neurorobotics , vol. 16, p. 820028, 2022. [33] H.-I. Lin and C.-F. Syu, “Simulation for ball landing control of a robotic ping-pong system,” in 2019 9th International Conference on Information Science and Technology (ICIST) . IEEE, 2019, pp. 228– 233. [34] S. Gomez-Gonzalez, S. Prokudin, B. Schölkopf, and J. Peters, “Real time trajectory prediction using deep conditional generative models,” 
+
+IEEE Robotics and Automation Letters , vol. 5, no. 2, pp. 970–976, 2020. [35] Y. Gao, J. Tebbe, and A. Zell, “A model-free approach to stroke learn-ing for robotic table tennis,” in 2022 International Joint Conference on Neural Networks (IJCNN) . IEEE, 2022, pp. 1–8. [36] J. Achterhold, P. Tobuschat, H. Ma, D. Büchler, M. Muehlebach, and J. Stueckler, “Black-box vs. gray-box: A case study on learning table tennis ball trajectory prediction with spin and impacts,” in Learning for Dynamics and Control Conference . PMLR, 2023, pp. 878–890. [37] B. Toussaint and M. Raison, “Hybrid approach for ball trajectory prediction in table tennis: Combining machine learning and physical models,” Available at SSRN 5025167 .[38] A. Allevato, E. S. Short, M. Pryor, and A. Thomaz, “Tunenet: One-shot residual tuning for system identification and sim-to-real robot task transfer,” in Conference on Robot Learning . PMLR, 2020, pp. 445–455. [39] S. W. Abeyruwan, L. Graesser, D. B. D’Ambrosio, A. Singh, A. Shankar, A. Bewley, D. Jain, K. M. Choromanski, and P. R. Sanketi, “i-sim2real: Reinforcement learning of robotic policies in tight human-robot interaction loops,” in Conference on Robot Learning . PMLR, 2023, pp. 212–224. [40] D. B. D’Ambrosio, J. Abelian, S. Abeyruwan, M. Ahn, A. Bewley, J. Boyd, K. Choromanski, O. Cortes, E. Coumans, T. Ding, et al. ,“Robotic table tennis: A case study into a high speed learning system,” 
+
+arXiv preprint arXiv:2309.03315 , 2023. [41] P. Dürr, M. E. Gheche, G. J. Maeda, N. Mukai, N. Takahashi, S. Heusser, H. Sahloul, Y. Saraiji, P. Adodin, Y. Bi, S. Blakeman, C. Conti, D. F. Hitos, Y. Hu, F. Khadivar, R. Kreiser, L. Martinez, F. Schilling, R. T. Morales, G. Torrente, M. Y. Castro, L. Abecassis, A. Giammarino, Y. T. Huang, Y. Nagel, A. Scotti, A. Sigrist, T. Silva, E. Walther, J. Wong, B. Yang, A. Aydin, D. Grover, A. Saha, V. Cavinato, T. Kakinuma, T. Kunori, V. Monferrato, S. Richter, S. Charalambous, S. Guist, M. A. Kuhlmann-Jorgensen, L. Miele, A. Politis, M. Scardecchia, H. Kitano, P. R. Wurman, P. Stone, and M. Spranger, “Outplaying elite table tennis players with an autonomous robot,” Nature , vol. 652, pp. 886–891, 4 2026. [42] H. Zhou, S. Zhang, J. Peng, S. Zhang, J. Li, H. Xiong, and W. Zhang, “Informer: Beyond efficient transformer for long sequence time-series forecasting,” in Proceedings of the AAAI conference on artificial intelligence , vol. 35, no. 12, 2021, pp. 11 106–11 115. [43] H. Wu, J. Xu, J. Wang, and M. Long, “Autoformer: Decomposition transformers with auto-correlation for long-term series forecasting,” 
+
+Advances in neural information processing systems , vol. 34, pp. 22 419–22 430, 2021. [44] K. Nummiaro, E. Koller-Meier, and L. Van Gool, “An adaptive color-based particle filter,” Image and vision computing , vol. 21, no. 1, pp. 99–110, 2003. [45] H. J. Wolfson and I. Rigoutsos, “Geometric hashing: An overview,” 
+
+IEEE computational science and engineering , vol. 4, no. 4, pp. 10–21, 2002. [46] D. P. Kingma and J. Ba, “Adam: A method for stochastic optimization,” 
+
+arXiv preprint arXiv:1412.6980 , 2014. [47] D. Simon, Optimal state estimation: Kalman, H infinity, and nonlinear approaches . John Wiley & Sons, 2006. [48] A. Nakashima, Y. Ogawa, C. Liu, and Y. Hayakawa, “Robotic table tennis based on physical models of aerodynamics and rebounds,” in 
+
+2011 IEEE International Conference on Robotics and Biomimetics .IEEE, 2011, pp. 2348–2354. [49] T. Haarnoja, A. Zhou, P. Abbeel, and S. Levine, “Soft actor-critic: Off-policy maximum entropy deep reinforcement learning with a stochastic actor,” in International conference on machine learning . Pmlr, 2018, pp. 1861–1870. [50] T. Schaul, D. Horgan, K. Gregor, and D. Silver, “Universal value func-tion approximators,” in International conference on machine learning .PMLR, 2015, pp. 1312–1320. [51] J. Zabalza, Z. Fei, C. Wong, Y. Yan, C. Mineo, E. Yang, T. Rodden, J. Mehnen, Q.-C. Pham, and J. Ren, “Smart sensing and adaptive reasoning for enabling industrial robots with interactive human-robot capabilities in dynamic environments—a case study,” Sensors , vol. 19, no. 6, p. 1354, 2019. [52] T. Miyazaki, W. Sakai, T. Komatsu, N. Takahashi, and R. Himeno, “Lift crisis of a spinning table tennis ball,” European Journal of physics , vol. 38, no. 2, p. 024001, 2017. [53] The International Table Tennis Federation, “Statutes,” 2024. [Online]. Available: https://documents.ittf.sport/sites/default/files/ public/2024-02/2024_ITTF_Statutes_clean_version.pdf [54] Y. Liu, Y. Wang, and J. Zhang, “New machine learning algorithm: Random forest,” in International conference on information computing and applications . Springer, 2012, pp. 246–252.
