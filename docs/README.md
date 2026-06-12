@@ -6,82 +6,73 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-06-11
-- 运行时间：2026-06-11 21:32:14 UTC
+- 最新运行日期：2026-06-12
+- 运行时间：2026-06-12 21:53:48 UTC
 - 运行状态：成功
-- 本次总论文数：20
-- 精读区：9
+- 本次总论文数：17
+- 精读区：6
 - 速读区：11
 
 ### 今日简报（AI）
-今日推荐20篇论文，精读9篇，其中自主空中操控与几何感知动作表征研究拔得头筹。  
-最值得关注的方向：基于元强化学习的空中操控自主性，以及结合几何先验的机器人操作泛化能力。  
-普通读者可优先关注速读中“物理可行世界模型”与“LLM策略优化”的交叉视角，这对理解具身智能前沿至关重要。
-- 详情：[/202606/11/README](/202606/11/README)
+今天聚焦世界动作模型与机器人策略，重点分析了两种高效建模方法。  
+精读中《C$^3$ache》与《Efficient-WAM》均获9分，分别通过交叉推理缓存和低成本未来想象推进世界模型加速与轻量化，速读中《PACE》的相位感知分块执行也具启发性。  
+建议优先阅读精读两篇把握前沿，再结合速读中物理对象理解文章拓展应用思路。
+- 详情：[/202606/12/README](/202606/12/README)
 
 ### 精读区论文标签
-1. [Autonomous Aerial Manipulation via Contextual Contrastive Meta Reinforcement Learning](/202606/11/2606.08533v1-autonomous-aerial-manipulation-via-contextual-contrastive-meta-reinforcement-learning)  
-   标签：评分：10.0/10、query:embodied-ai
-   evidence：元强化学习实现自主空中操作
-2. [GEAR-VLA: Learning Geometry-Aware Action Representations for Generalizable Robotic Manipulation](/202606/11/2606.08530v2-gear-vla-learning-geometry-aware-action-representations-for-generalizable-robotic-manipulation)  
+1. [C$^3$ache: Accelerating World Action Models with Cross Inference Chunk Cache](/202606/12/2606.08962v1-c3ache-accelerating-world-action-models-with-cross-inference-chunk-cache)  
    标签：评分：9.0/10、query:embodied-ai
-   evidence：用于VLA模型的几何感知动作表示
-3. [Real-IKEA: Physical Fidelity is the Prerequisite for Robust Manipulation](/202606/11/2606.08564v1-real-ikea-physical-fidelity-is-the-prerequisite-for-robust-manipulation)  
+   evidence：通过缓存加速机器人世界动作模型
+2. [Efficient-WAM: A 1B-Parameter World-Action Model with Low-Cost Future Imagination](/202606/12/2606.10040v2-efficient-wam-a-1b-parameter-world-action-model-with-low-cost-future-imagination)  
    标签：评分：9.0/10、query:embodied-ai
-   evidence：通过高保真铰接物体仿真弥合仿真到真实差距
-4. [TORL-VLA: Tactile Guided Online Reinforcement Learning for Contact-Rich Manipulation](/202606/11/2606.09337v2-torl-vla-tactile-guided-online-reinforcement-learning-for-contact-rich-manipulation)  
+   evidence：用于具身控制的高效世界-动作模型，降低未来想象成本
+3. [Task Robustness via Re-Labelling Vision-Action Robot Data](/202606/12/2606.10918v1-task-robustness-via-re-labelling-vision-action-robot-data)  
    标签：评分：9.0/10、query:embodied-ai
-   evidence：结合触觉的在线强化学习的视觉-语言-动作模型
-5. [SARM2: Multi-Task Stage Aware Reward Modeling for Self Improving Robotic Manipulation](/202606/11/2606.10305v1-sarm2-multi-task-stage-aware-reward-modeling-for-self-improving-robotic-manipulation)  
+   evidence：使用视觉语言模型重新标注视觉-动作数据以增强机器人操作
+4. [Learning Object Manipulation from Scratch via Contrastive Interaction](/202606/12/2606.11525v1-learning-object-manipulation-from-scratch-via-contrastive-interaction)  
    标签：评分：9.0/10、query:embodied-ai
-   evidence：用于机器人操纵中强化学习的奖励建模
-6. [Bridging the sim2real gap in the table tennis robot with a transformer-based ball states predictor](/202606/11/2606.11464v1-bridging-the-sim2real-gap-in-the-table-tennis-robot-with-a-transformer-based-ball-states-predictor)  
+   evidence：对比强化学习用于物体操控
+5. [TacCoRL: Integrating Tactile Feedback into VLA via Simulation](/202606/12/2606.11743v1-taccorl-integrating-tactile-feedback-into-vla-via-simulation)  
    标签：评分：9.0/10、query:embodied-ai
-   evidence：基于变压器的球状态预测器弥合乒乓球机器人仿真到现实差距
-7. [KinematicRL: A Sim-to-Real Reinforcement Learning Framework For Social Navigation With Kinodynamic Feasibility](/202606/11/2606.12042v1-kinematicrl-a-sim-to-real-reinforcement-learning-framework-for-social-navigation-with-kinodynamic-feasibility)  
+   evidence：通过仿真-现实协同训练和强化学习将触觉反馈注入VLA模型
+6. [UniIntervene: Agentic Intervention for Efficient Real-World Reinforcement Learning](/202606/12/2606.12372v1-uniintervene-agentic-intervention-for-efficient-real-world-reinforcement-learning)  
    标签：评分：9.0/10、query:embodied-ai
-   evidence：面向社交导航的仿真到现实强化学习框架
-8. [World Model Self-Distillation: Training World Models to Solve General Tasks](/202606/11/2606.12072v1-world-model-self-distillation-training-world-models-to-solve-general-tasks)  
-   标签：评分：9.0/10、query:embodied-ai
-   evidence：使用自蒸馏和强化学习训练世界模型以解决任务
-9. [World Pilot: Steering Vision-Language-Action Models with World-Action Priors](/202606/11/2606.12403v1-world-pilot-steering-vision-language-action-models-with-world-action-priors)  
-   标签：评分：9.0/10、query:embodied-ai
-   evidence：用世界动作模型先验引导VLA
+   evidence：智能体干预实现高效真实世界机器人强化学习
 
 ### 速读区论文标签
-1. [Physically Viable World Models: A Case for Query-Conditioned Embodied AI](/202606/11/2605.30542v1-physically-viable-world-models-a-case-for-query-conditioned-embodied-ai)  
+1. [Behavior Cloning of MPC for 3-DOF Robotic Manipulators](/202606/12/2606.00383v1-behavior-cloning-of-mpc-for-3-dof-robotic-manipulators)  
    标签：评分：8.0/10、query:embodied-ai
-   evidence：面向查询条件具身AI的物理可行世界模型
-2. [When are LLMs Sufficient Policy Optimizers for Sequential RL Tasks?](/202606/11/2605.30719v1-when-are-llms-sufficient-policy-optimizers-for-sequential-rl-tasks)  
+   evidence：行为克隆近似MPC策略用于机械臂实时控制
+2. [Physical Object Understanding with a Physically Controllable World Model](/202606/12/2606.00439v1-physical-object-understanding-with-a-physically-controllable-world-model)  
    标签：评分：8.0/10、query:embodied-ai
-   evidence：使用LLM作为强化学习策略优化器，应用于机器人任务
-3. [GSAM: A Generalizable and Safe Robotic Framework for Articulated Object Manipulation](/202606/11/2605.30740v1-gsam-a-generalizable-and-safe-robotic-framework-for-articulated-object-manipulation)  
+   evidence：物理可控世界模型用于物体理解
+3. [PACE: Phase-Aware Chunk Execution for Robot Policies with Action Chunking](/202606/12/2606.00537v1-pace-phase-aware-chunk-execution-for-robot-policies-with-action-chunking)  
    标签：评分：8.0/10、query:embodied-ai
-   evidence：利用VLM学习策略实现可泛化安全的铰接物体操纵
-4. [From Noise to Control: Parameterized Diffusion Policies](/202606/11/2606.00336v1-from-noise-to-control-parameterized-diffusion-policies)  
+   evidence：VLA机器人策略中的动作分块
+4. [Global-Local Attention Decomposition for Terrain Encoding in Humanoid Perceptive Locomotion](/202606/12/2606.00637v1-global-local-attention-decomposition-for-terrain-encoding-in-humanoid-perceptive-locomotion)  
    标签：评分：8.0/10、query:embodied-ai
-   evidence：参数化扩散策略用于机器人操作中的行为引导
-5. [M3imic: Learning a Versatile Whole-Body Controller for Multimodal Motion Mimicking](/202606/11/2606.04829v1-m3imic-learning-a-versatile-whole-body-controller-for-multimodal-motion-mimicking)  
+   evidence：强化学习用于人形机器人地形编码的感知运动
+5. [Safe Embodied AI for Long-horizon Tasks: A Cross-layer Analysis of Robotic Manipulation](/202606/12/2606.05660v1-safe-embodied-ai-for-long-horizon-tasks-a-cross-layer-analysis-of-robotic-manipulation)  
    标签：评分：7.0/10、query:embodied-ai
-   evidence：通过多模态运动模仿的机器人学习从演示
-6. [ActionMap: Robot Policy Learning via Voxel Action Heatmap](/202606/11/2606.06904v2-actionmap-robot-policy-learning-via-voxel-action-heatmap)  
+   evidence：关于长时任务安全具身AI的综述
+6. [Mind Your Steps: A General Learning Framework for Accurate Humanoid Foothold Tracking](/202606/12/2606.08253v1-mind-your-steps-a-general-learning-framework-for-accurate-humanoid-foothold-tracking)  
    标签：评分：7.0/10、query:embodied-ai
-   evidence：为VLA模型设计的体素热图动作头，提升机器人策略学习
-7. [Shield-Loco: Shielding Locomotion Policies with Predictive Safety Filtering](/202606/11/2606.07193v1-shield-loco-shielding-locomotion-policies-with-predictive-safety-filtering)  
+   evidence：强化学习用于人形机器人足迹跟踪
+7. [SIMPLE: Simulation-Based Policy Learning and Evaluation for Humanoid Loco-manipulation](/202606/12/2606.08278v1-simple-simulation-based-policy-learning-and-evaluation-for-humanoid-loco-manipulation)  
    标签：评分：7.0/10、query:embodied-ai
-   evidence：强化学习在四足机器人 locomotion 中的应用，结合安全过滤
-8. [SynthICL: Scalable In-context Imitation Learning with Synthetic Data](/202606/11/2606.08154v1-synthicl-scalable-in-context-imitation-learning-with-synthetic-data)  
+   evidence：用于人形机器人策略学习和评估的仿真基准
+8. [EgoPriMo: Egocentric Motion Generation for Interactive Humanoid Control](/202606/12/2606.08495v1-egoprimo-egocentric-motion-generation-for-interactive-humanoid-control)  
    标签：评分：7.0/10、query:embodied-ai
-   evidence：基于合成数据的上下文模仿学习
-9. [VASO: Formally Verifiable Self-Evolving Skills for Physical AI Agents](/202606/11/2606.05395v1-vaso-formally-verifiable-self-evolving-skills-for-physical-ai-agents)  
+   evidence：从自我中心人类演示学习全身运动先验用于人形机器人控制
+9. [Towards a Data Flywheel for Embodied Intelligence in Logistics](/202606/12/2606.05960v1-towards-a-data-flywheel-for-embodied-intelligence-in-logistics)  
    标签：评分：6.0/10、query:embodied-ai
-   evidence：具身智能体的自进化技能验证框架
-10. [Cooperative Long Rope Skipping via Multi-Agent Reinforcement Learning](/202606/11/2606.08064v1-cooperative-long-rope-skipping-via-multi-agent-reinforcement-learning)  
+   evidence：利用世界模型为长尾包裹操作生成监督信号
+10. [PACT: Self-Evolving Physical Safety Alignment for Diffusion Policies in Embodied Manipulation](/202606/12/2606.08414v1-pact-self-evolving-physical-safety-alignment-for-diffusion-policies-in-embodied-manipulation)  
    标签：评分：6.0/10、query:embodied-ai
-   evidence：多智能体强化学习用于人形机器人运动
-11. [Continual Quadruped Robots Coordination via Semantic Skill Discovery](/202606/11/2606.08102v1-continual-quadruped-robots-coordination-via-semantic-skill-discovery)  
+   evidence：扩散策略在具身操作中的物理安全对齐
+11. [Guided Discovery of New Behaviors using Diffusion Policies](/202606/12/2606.08743v1-guided-discovery-of-new-behaviors-using-diffusion-policies)  
    标签：评分：6.0/10、query:embodied-ai
-   evidence：使用多智能体强化学习进行持续四足机器人协调
+   evidence：使用扩散策略和Feynman-Kac校正器引导行为发现
 
 
 <div class="dpr-home-promo-card">
