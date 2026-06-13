@@ -6,73 +6,80 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-06-12
-- 运行时间：2026-06-12 21:53:48 UTC
+- 最新运行日期：2026-06-13
+- 运行时间：2026-06-13 20:31:55 UTC
 - 运行状态：成功
-- 本次总论文数：17
-- 精读区：6
+- 本次总论文数：20
+- 精读区：9
 - 速读区：11
 
 ### 今日简报（AI）
-今天聚焦世界动作模型与机器人策略，重点分析了两种高效建模方法。  
-精读中《C$^3$ache》与《Efficient-WAM》均获9分，分别通过交叉推理缓存和低成本未来想象推进世界模型加速与轻量化，速读中《PACE》的相位感知分块执行也具启发性。  
-建议优先阅读精读两篇把握前沿，再结合速读中物理对象理解文章拓展应用思路。
-- 详情：[/202606/12/README](/202606/12/README)
+今日推荐聚焦机器人学习与视觉语言动作前沿，精读9篇高分论文。最值得关注的是《RhinoVLA Technical Report》和《Video2Sim2Real》两项突破，分别在高维动作理解和单视频技能迁移上展现高含金量。建议优先精读这两篇9.0分论文，速读可补充多形态设计与非可行优化方法。
+- 详情：[/202606/13/README](/202606/13/README)
 
 ### 精读区论文标签
-1. [C$^3$ache: Accelerating World Action Models with Cross Inference Chunk Cache](/202606/12/2606.08962v1-c3ache-accelerating-world-action-models-with-cross-inference-chunk-cache)  
+1. [RhinoVLA Technical Report](/202606/13/2606.07383v1-rhinovla-technical-report)  
    标签：评分：9.0/10、query:embodied-ai
-   evidence：通过缓存加速机器人世界动作模型
-2. [Efficient-WAM: A 1B-Parameter World-Action Model with Low-Cost Future Imagination](/202606/12/2606.10040v2-efficient-wam-a-1b-parameter-world-action-model-with-low-cost-future-imagination)  
+   evidence：面向部署的视觉-语言-动作机器人操作模型
+2. [Video2Sim2Real: Full-Stack Autonomous Dexterous Skill Acquisition from a Single Human Video](/202606/13/2606.08828v1-video2sim2real-full-stack-autonomous-dexterous-skill-acquisition-from-a-single-human-video)  
    标签：评分：9.0/10、query:embodied-ai
-   evidence：用于具身控制的高效世界-动作模型，降低未来想象成本
-3. [Task Robustness via Re-Labelling Vision-Action Robot Data](/202606/12/2606.10918v1-task-robustness-via-re-labelling-vision-action-robot-data)  
+   evidence：从人类视频到真实机器人的灵巧技能迁移
+3. [Shape Formation for the Cooperative Transportation of Arbitrary Objects Using Multi-Agent Reinforcement Learning](/202606/13/2606.09610v1-shape-formation-for-the-cooperative-transportation-of-arbitrary-objects-using-multi-agent-reinforcement-learning)  
    标签：评分：9.0/10、query:embodied-ai
-   evidence：使用视觉语言模型重新标注视觉-动作数据以增强机器人操作
-4. [Learning Object Manipulation from Scratch via Contrastive Interaction](/202606/12/2606.11525v1-learning-object-manipulation-from-scratch-via-contrastive-interaction)  
+   evidence：多智能体强化学习用于合作运输中的形状形成
+4. [MemoryVLA++: Temporal Modeling via Memory and Imagination in Vision-Language-Action Models](/202606/13/2606.09827v1-memoryvla-temporal-modeling-via-memory-and-imagination-in-vision-language-action-models)  
    标签：评分：9.0/10、query:embodied-ai
-   evidence：对比强化学习用于物体操控
-5. [TacCoRL: Integrating Tactile Feedback into VLA via Simulation](/202606/12/2606.11743v1-taccorl-integrating-tactile-feedback-into-vla-via-simulation)  
+   evidence：具有记忆和想象能力的视觉-语言-动作模型用于机器人操作
+5. [GHOST: Hierarchical Sub-Goal Policies for Generalizing Robot Manipulation](/202606/13/2606.10025v1-ghost-hierarchical-sub-goal-policies-for-generalizing-robot-manipulation)  
    标签：评分：9.0/10、query:embodied-ai
-   evidence：通过仿真-现实协同训练和强化学习将触觉反馈注入VLA模型
-6. [UniIntervene: Agentic Intervention for Efficient Real-World Reinforcement Learning](/202606/12/2606.12372v1-uniintervene-agentic-intervention-for-efficient-real-world-reinforcement-learning)  
+   evidence：机器人操作的分层次目标策略
+6. [MARCH: Model-Assisted Reinforcement Learning for the Perceptive Control of Humanoids over Sparse Footholds](/202606/13/2606.10288v1-march-model-assisted-reinforcement-learning-for-the-perceptive-control-of-humanoids-over-sparse-footholds)  
    标签：评分：9.0/10、query:embodied-ai
-   evidence：智能体干预实现高效真实世界机器人强化学习
+   evidence：模型辅助的强化学习用于感知型人形机器人行走
+7. [Embodied-R1.5: Evolving Physical Intelligence via Embodied Foundation Models](/202606/13/2606.11324v1-embodied-r15-evolving-physical-intelligence-via-embodied-foundation-models)  
+   标签：评分：9.0/10、query:embodied-ai
+   evidence：统一具身基础模型，含强化学习训练
+8. [Bridging the Morphology Gap: Adapting VLA Models to Dexterous Manipulation via Intent-Conditioned Fine-Tuning](/202606/13/2606.12109v1-bridging-the-morphology-gap-adapting-vla-models-to-dexterous-manipulation-via-intent-conditioned-fine-tuning)  
+   标签：评分：9.0/10、query:embodied-ai
+   evidence：将VLA模型适配到灵巧操作
+9. [Learning What to Say to Your VLA: Mostly Harmless Vision Language Action Model Steering](/202606/13/2606.12299v1-learning-what-to-say-to-your-vla-mostly-harmless-vision-language-action-model-steering)  
+   标签：评分：9.0/10、query:embodied-ai
+   evidence：通过语言反馈引导VLA模型
 
 ### 速读区论文标签
-1. [Behavior Cloning of MPC for 3-DOF Robotic Manipulators](/202606/12/2606.00383v1-behavior-cloning-of-mpc-for-3-dof-robotic-manipulators)  
+1. [Shape Your Body: Value Gradients for Multi-Embodiment Robot Design](/202606/13/2606.00702v1-shape-your-body-value-gradients-for-multi-embodiment-robot-design)  
    标签：评分：8.0/10、query:embodied-ai
-   evidence：行为克隆近似MPC策略用于机械臂实时控制
-2. [Physical Object Understanding with a Physically Controllable World Model](/202606/12/2606.00439v1-physical-object-understanding-with-a-physically-controllable-world-model)  
+   evidence：多具身机器人设计的强化学习方法
+2. [Infeasible optimization problems and the hierarchical augmented Lagrangian method in imitation learning](/202606/13/2606.00730v1-infeasible-optimization-problems-and-the-hierarchical-augmented-lagrangian-method-in-imitation-learning)  
    标签：评分：8.0/10、query:embodied-ai
-   evidence：物理可控世界模型用于物体理解
-3. [PACE: Phase-Aware Chunk Execution for Robot Policies with Action Chunking](/202606/12/2606.00537v1-pace-phase-aware-chunk-execution-for-robot-policies-with-action-chunking)  
+   evidence：用于不可行约束模仿学习的分层增广拉格朗日方法
+3. [Threading Optimization for Vision-Language-Action Model Inference in Low-Cost Smart Agricultural Manipulation](/202606/13/2606.00966v1-threading-optimization-for-vision-language-action-model-inference-in-low-cost-smart-agricultural-manipulation)  
    标签：评分：8.0/10、query:embodied-ai
-   evidence：VLA机器人策略中的动作分块
-4. [Global-Local Attention Decomposition for Terrain Encoding in Humanoid Perceptive Locomotion](/202606/12/2606.00637v1-global-local-attention-decomposition-for-terrain-encoding-in-humanoid-perceptive-locomotion)  
+   evidence：面向低成本机器人操作的VLA模型推理优化
+4. [Expanding Spatial and Temporal Context for Robotic Imitation Learning With Scene Graphs](/202606/13/2606.01072v1-expanding-spatial-and-temporal-context-for-robotic-imitation-learning-with-scene-graphs)  
    标签：评分：8.0/10、query:embodied-ai
-   evidence：强化学习用于人形机器人地形编码的感知运动
-5. [Safe Embodied AI for Long-horizon Tasks: A Cross-layer Analysis of Robotic Manipulation](/202606/12/2606.05660v1-safe-embodied-ai-for-long-horizon-tasks-a-cross-layer-analysis-of-robotic-manipulation)  
+   evidence：利用场景图扩展模仿学习中的空间时间上下文
+5. [Task Editing for Generalizable 3D Visuomotor Policy Learning](/202606/13/2606.07012v1-task-editing-for-generalizable-3d-visuomotor-policy-learning)  
    标签：评分：7.0/10、query:embodied-ai
-   evidence：关于长时任务安全具身AI的综述
-6. [Mind Your Steps: A General Learning Framework for Accurate Humanoid Foothold Tracking](/202606/12/2606.08253v1-mind-your-steps-a-general-learning-framework-for-accurate-humanoid-foothold-tracking)  
+   evidence：任务编辑增强演示数据用于3D视觉运动策略学习
+6. [VoLo: A Physical Orchestrator for Open-Vocabulary Long-Horizon Manipulation](/202606/13/2606.07723v1-volo-a-physical-orchestrator-for-open-vocabulary-long-horizon-manipulation)  
    标签：评分：7.0/10、query:embodied-ai
-   evidence：强化学习用于人形机器人足迹跟踪
-7. [SIMPLE: Simulation-Based Policy Learning and Evaluation for Humanoid Loco-manipulation](/202606/12/2606.08278v1-simple-simulation-based-policy-learning-and-evaluation-for-humanoid-loco-manipulation)  
+   evidence：使用VLM编排VLA/WAM作为可中断工具，用于长时操作任务
+7. [Continual Quadruped Robots Coordination via Semantic Skill Discovery](/202606/13/2606.08102v2-continual-quadruped-robots-coordination-via-semantic-skill-discovery)  
    标签：评分：7.0/10、query:embodied-ai
-   evidence：用于人形机器人策略学习和评估的仿真基准
-8. [EgoPriMo: Egocentric Motion Generation for Interactive Humanoid Control](/202606/12/2606.08495v1-egoprimo-egocentric-motion-generation-for-interactive-humanoid-control)  
+   evidence：多智能体强化学习用于四足机器人持续协调
+8. [CT-VAM: A Cerebello-Thalamic-Inspired Vision-Action Model for Efficient Visuomotor Control](/202606/13/2606.09572v1-ct-vam-a-cerebello-thalamic-inspired-vision-action-model-for-efficient-visuomotor-control)  
    标签：评分：7.0/10、query:embodied-ai
-   evidence：从自我中心人类演示学习全身运动先验用于人形机器人控制
-9. [Towards a Data Flywheel for Embodied Intelligence in Logistics](/202606/12/2606.05960v1-towards-a-data-flywheel-for-embodied-intelligence-in-logistics)  
+   evidence：小脑-丘脑启发的视觉-动作模型用于操作
+9. [Hierarchical Policies from Verbal and Egocentric Human Signals for Natural Human-Robot Interaction](/202606/13/2606.10276v1-hierarchical-policies-from-verbal-and-egocentric-human-signals-for-natural-human-robot-interaction)  
    标签：评分：6.0/10、query:embodied-ai
-   evidence：利用世界模型为长尾包裹操作生成监督信号
-10. [PACT: Self-Evolving Physical Safety Alignment for Diffusion Policies in Embodied Manipulation](/202606/12/2606.08414v1-pact-self-evolving-physical-safety-alignment-for-diffusion-policies-in-embodied-manipulation)  
+   evidence：通过第一人称视角和注视等非语言信号增强机器人政策以实现自然人机交互
+10. [GuideWalk: Learning Unified Autonomous Navigation and Locomotion for Humanoid Robots across Versatile Terrains](/202606/13/2606.10449v1-guidewalk-learning-unified-autonomous-navigation-and-locomotion-for-humanoid-robots-across-versatile-terrains)  
    标签：评分：6.0/10、query:embodied-ai
-   evidence：扩散策略在具身操作中的物理安全对齐
-11. [Guided Discovery of New Behaviors using Diffusion Policies](/202606/12/2606.08743v1-guided-discovery-of-new-behaviors-using-diffusion-policies)  
+   evidence：人形机器人统一导航与运动
+11. [Beyond APIs: Probing the Limits of MLLMs in Physical Tool Use](/202606/13/2606.10803v1-beyond-apis-probing-the-limits-of-mllms-in-physical-tool-use)  
    标签：评分：6.0/10、query:embodied-ai
-   evidence：使用扩散策略和Feynman-Kac校正器引导行为发现
+   evidence：评估多模态大模型在具身AI中的物理工具使用能力
 
 
 <div class="dpr-home-promo-card">
