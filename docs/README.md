@@ -6,80 +6,74 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-06-13
-- 运行时间：2026-06-13 20:31:55 UTC
+- 最新运行日期：2026-06-14
+- 运行时间：2026-06-14 20:55:19 UTC
 - 运行状态：成功
-- 本次总论文数：20
-- 精读区：9
+- 本次总论文数：18
+- 精读区：7
 - 速读区：11
 
 ### 今日简报（AI）
-今日推荐聚焦机器人学习与视觉语言动作前沿，精读9篇高分论文。最值得关注的是《RhinoVLA Technical Report》和《Video2Sim2Real》两项突破，分别在高维动作理解和单视频技能迁移上展现高含金量。建议优先精读这两篇9.0分论文，速读可补充多形态设计与非可行优化方法。
-- 详情：[/202606/13/README](/202606/13/README)
+今天推荐18篇机器人相关论文，精读7篇、速读11篇，聚焦人形机器人与分层策略。最值得关注的是《MotionWAM》（9.0）提出实时人形操作基础模型，以及《Orchestrating Robot Policies》（9.0）系统研究分层VLA智能体编排方法。建议读者优先精读这两篇高分论文，把握人形机器人灵巧操作与策略组合的最新进展。
+- 详情：[/202606/14/README](/202606/14/README)
 
 ### 精读区论文标签
-1. [RhinoVLA Technical Report](/202606/13/2606.07383v1-rhinovla-technical-report)  
+1. [MotionWAM: Towards Foundation World Action Models for Real-Time Humanoid Loco-Manipulation](/202606/14/2606.09215v1-motionwam-towards-foundation-world-action-models-for-real-time-humanoid-loco-manipulation)  
    标签：评分：9.0/10、query:embodied-ai
-   evidence：面向部署的视觉-语言-动作机器人操作模型
-2. [Video2Sim2Real: Full-Stack Autonomous Dexterous Skill Acquisition from a Single Human Video](/202606/13/2606.08828v1-video2sim2real-full-stack-autonomous-dexterous-skill-acquisition-from-a-single-human-video)  
+   evidence：世界动作模型用于实时人形机器人行走操作
+2. [What Matters in Orchestrating Robot Policies: A Systematic Study of Hierarchical VLA Agents](/202606/14/2606.10267v1-what-matters-in-orchestrating-robot-policies-a-systematic-study-of-hierarchical-vla-agents)  
    标签：评分：9.0/10、query:embodied-ai
-   evidence：从人类视频到真实机器人的灵巧技能迁移
-3. [Shape Formation for the Cooperative Transportation of Arbitrary Objects Using Multi-Agent Reinforcement Learning](/202606/13/2606.09610v1-shape-formation-for-the-cooperative-transportation-of-arbitrary-objects-using-multi-agent-reinforcement-learning)  
+   evidence：层次化VLA系统在机器人操作中的系统研究
+3. [DAM-VLA: Decoupled Asynchronous Multimodal Vision Language Action model](/202606/14/2606.12105v1-dam-vla-decoupled-asynchronous-multimodal-vision-language-action-model)  
    标签：评分：9.0/10、query:embodied-ai
-   evidence：多智能体强化学习用于合作运输中的形状形成
-4. [MemoryVLA++: Temporal Modeling via Memory and Imagination in Vision-Language-Action Models](/202606/13/2606.09827v1-memoryvla-temporal-modeling-via-memory-and-imagination-in-vision-language-action-models)  
+   evidence：提出解耦异步多模态VLA模型以更好对齐机器人控制中的时间频率
+4. [Learning to Assist: Collaborative VLAs for Implicit Human-Robot Collaboration](/202606/14/2606.12475v1-learning-to-assist-collaborative-vlas-for-implicit-human-robot-collaboration)  
    标签：评分：9.0/10、query:embodied-ai
-   evidence：具有记忆和想象能力的视觉-语言-动作模型用于机器人操作
-5. [GHOST: Hierarchical Sub-Goal Policies for Generalizing Robot Manipulation](/202606/13/2606.10025v1-ghost-hierarchical-sub-goal-policies-for-generalizing-robot-manipulation)  
+   evidence：视觉-语言-动作模型用于协作操作
+5. [EA-WM: Event-Aware World Models with Task-Specification Grounding for Long-Horizon Manipulation](/202606/14/2606.13053v1-ea-wm-event-aware-world-models-with-task-specification-grounding-for-long-horizon-manipulation)  
    标签：评分：9.0/10、query:embodied-ai
-   evidence：机器人操作的分层次目标策略
-6. [MARCH: Model-Assisted Reinforcement Learning for the Perceptive Control of Humanoids over Sparse Footholds](/202606/13/2606.10288v1-march-model-assisted-reinforcement-learning-for-the-perceptive-control-of-humanoids-over-sparse-footholds)  
+   evidence：面向长时程操作的事件感知世界模型
+6. [See Selectively, Act Adaptively: Dual-Level Structural Decomposition for Bimanual Robot Manipulation](/202606/14/2606.13279v1-see-selectively-act-adaptively-dual-level-structural-decomposition-for-bimanual-robot-manipulation)  
    标签：评分：9.0/10、query:embodied-ai
-   evidence：模型辅助的强化学习用于感知型人形机器人行走
-7. [Embodied-R1.5: Evolving Physical Intelligence via Embodied Foundation Models](/202606/13/2606.11324v1-embodied-r15-evolving-physical-intelligence-via-embodied-foundation-models)  
+   evidence：双手机器人操作的VLA策略
+7. [RepWAM: World Action Modeling with Representation Visual-Action Tokenizers](/202606/14/2606.13674v1-repwam-world-action-modeling-with-representation-visual-action-tokenizers)  
    标签：评分：9.0/10、query:embodied-ai
-   evidence：统一具身基础模型，含强化学习训练
-8. [Bridging the Morphology Gap: Adapting VLA Models to Dexterous Manipulation via Intent-Conditioned Fine-Tuning](/202606/13/2606.12109v1-bridging-the-morphology-gap-adapting-vla-models-to-dexterous-manipulation-via-intent-conditioned-fine-tuning)  
-   标签：评分：9.0/10、query:embodied-ai
-   evidence：将VLA模型适配到灵巧操作
-9. [Learning What to Say to Your VLA: Mostly Harmless Vision Language Action Model Steering](/202606/13/2606.12299v1-learning-what-to-say-to-your-vla-mostly-harmless-vision-language-action-model-steering)  
-   标签：评分：9.0/10、query:embodied-ai
-   evidence：通过语言反馈引导VLA模型
+   evidence：基于表示视觉-动作分词器的世界动作建模，用于机器人交互
 
 ### 速读区论文标签
-1. [Shape Your Body: Value Gradients for Multi-Embodiment Robot Design](/202606/13/2606.00702v1-shape-your-body-value-gradients-for-multi-embodiment-robot-design)  
+1. [Expanding Spatial and Temporal Context for Robotic Imitation Learning With Scene Graphs](/202606/14/2606.01072v2-expanding-spatial-and-temporal-context-for-robotic-imitation-learning-with-scene-graphs)  
    标签：评分：8.0/10、query:embodied-ai
-   evidence：多具身机器人设计的强化学习方法
-2. [Infeasible optimization problems and the hierarchical augmented Lagrangian method in imitation learning](/202606/13/2606.00730v1-infeasible-optimization-problems-and-the-hierarchical-augmented-lagrangian-method-in-imitation-learning)  
+   evidence：使用场景图进行机器人操作模仿学习
+2. [Lagrangian Perturbation Diffusion Steering: Latent Reinforcement Learning for Generative Policies](/202606/14/2606.01151v1-lagrangian-perturbation-diffusion-steering-latent-reinforcement-learning-for-generative-policies)  
    标签：评分：8.0/10、query:embodied-ai
-   evidence：用于不可行约束模仿学习的分层增广拉格朗日方法
-3. [Threading Optimization for Vision-Language-Action Model Inference in Low-Cost Smart Agricultural Manipulation](/202606/13/2606.00966v1-threading-optimization-for-vision-language-action-model-inference-in-low-cost-smart-agricultural-manipulation)  
+   evidence：使用强化学习微调生成策略，应用于RoboMimic操作任务
+3. [ImagineUAV: Aerial Vision-Language Navigation via World-Action Modeling and Kinodynamic Planning](/202606/14/2606.01205v1-imagineuav-aerial-vision-language-navigation-via-world-action-modeling-and-kinodynamic-planning)  
    标签：评分：8.0/10、query:embodied-ai
-   evidence：面向低成本机器人操作的VLA模型推理优化
-4. [Expanding Spatial and Temporal Context for Robotic Imitation Learning With Scene Graphs](/202606/13/2606.01072v1-expanding-spatial-and-temporal-context-for-robotic-imitation-learning-with-scene-graphs)  
+   evidence：世界-动作建模用于无人机视觉语言导航
+4. [All Models are Wrong, Knowing Where is Useful: On Model Uncertainty in Reinforcement Learning](/202606/14/2606.01363v1-all-models-are-wrong-knowing-where-is-useful-on-model-uncertainty-in-reinforcement-learning)  
    标签：评分：8.0/10、query:embodied-ai
-   evidence：利用场景图扩展模仿学习中的空间时间上下文
-5. [Task Editing for Generalizable 3D Visuomotor Policy Learning](/202606/13/2606.07012v1-task-editing-for-generalizable-3d-visuomotor-policy-learning)  
+   evidence：面向机器人的基于模型的强化学习不确定性框架
+5. [CLASP: Language-Driven Robot Skill Selection and Composition using Task-Parameterized Learning](/202606/14/2606.08169v1-clasp-language-driven-robot-skill-selection-and-composition-using-task-parameterized-learning)  
    标签：评分：7.0/10、query:embodied-ai
-   evidence：任务编辑增强演示数据用于3D视觉运动策略学习
-6. [VoLo: A Physical Orchestrator for Open-Vocabulary Long-Horizon Manipulation](/202606/13/2606.07723v1-volo-a-physical-orchestrator-for-open-vocabulary-long-horizon-manipulation)  
+   evidence：结合VLA与任务参数化模仿学习的技能选择
+6. [Uncovering Vulnerability of Vision-Language-Action Models under Joint-Level Physical Faults](/202606/14/2606.10501v1-uncovering-vulnerability-of-vision-language-action-models-under-joint-level-physical-faults)  
    标签：评分：7.0/10、query:embodied-ai
-   evidence：使用VLM编排VLA/WAM作为可中断工具，用于长时操作任务
-7. [Continual Quadruped Robots Coordination via Semantic Skill Discovery](/202606/13/2606.08102v2-continual-quadruped-robots-coordination-via-semantic-skill-discovery)  
+   evidence：VLA模型在关节级物理故障下的脆弱性
+7. [Dexterous Point Policy: Learning Point-based Dexterous Hand Policies from Human Demonstrations](/202606/14/2606.10614v1-dexterous-point-policy-learning-point-based-dexterous-hand-policies-from-human-demonstrations)  
    标签：评分：7.0/10、query:embodied-ai
-   evidence：多智能体强化学习用于四足机器人持续协调
-8. [CT-VAM: A Cerebello-Thalamic-Inspired Vision-Action Model for Efficient Visuomotor Control](/202606/13/2606.09572v1-ct-vam-a-cerebello-thalamic-inspired-vision-action-model-for-efficient-visuomotor-control)  
+   evidence：从人类演示学习灵巧手策略，无需机器人数据
+8. [Hand-centric Human-to-Robot Trajectory Transfer from Video Demonstrations via Open-World Contact Localization](/202606/14/2606.10743v1-hand-centric-human-to-robot-trajectory-transfer-from-video-demonstrations-via-open-world-contact-localization)  
    标签：评分：7.0/10、query:embodied-ai
-   evidence：小脑-丘脑启发的视觉-动作模型用于操作
-9. [Hierarchical Policies from Verbal and Egocentric Human Signals for Natural Human-Robot Interaction](/202606/13/2606.10276v1-hierarchical-policies-from-verbal-and-egocentric-human-signals-for-natural-human-robot-interaction)  
+   evidence：从人类视频演示迁移到机器人轨迹
+9. [X-OP: Cross-Morphology Whole-Body Teleoperation via MPC Retargeting](/202606/14/2606.07934v1-x-op-cross-morphology-whole-body-teleoperation-via-mpc-retargeting)  
    标签：评分：6.0/10、query:embodied-ai
-   evidence：通过第一人称视角和注视等非语言信号增强机器人政策以实现自然人机交互
-10. [GuideWalk: Learning Unified Autonomous Navigation and Locomotion for Humanoid Robots across Versatile Terrains](/202606/13/2606.10449v1-guidewalk-learning-unified-autonomous-navigation-and-locomotion-for-humanoid-robots-across-versatile-terrains)  
+   evidence：在遥操作中使用强化学习策略，服务于具身AI
+10. [IR-SIM: A Lightweight Skill-Native Simulator for Navigation, Learning, and Benchmarking](/202606/14/2606.08729v1-ir-sim-a-lightweight-skill-native-simulator-for-navigation-learning-and-benchmarking)  
    标签：评分：6.0/10、query:embodied-ai
-   evidence：人形机器人统一导航与运动
-11. [Beyond APIs: Probing the Limits of MLLMs in Physical Tool Use](/202606/13/2606.10803v1-beyond-apis-probing-the-limits-of-mllms-in-physical-tool-use)  
+   evidence：轻量级模拟器用于机器人导航、学习和基准测试
+11. [UMI-Bench 1.0: An Open and Reproducible Real-World Benchmark for Tabletop Robotic Manipulation with UMI Data](/202606/14/2606.10382v1-umi-bench-10-an-open-and-reproducible-real-world-benchmark-for-tabletop-robotic-manipulation-with-umi-data)  
    标签：评分：6.0/10、query:embodied-ai
-   evidence：评估多模态大模型在具身AI中的物理工具使用能力
+   evidence：用于评估UMI风格操作策略的实景基准
 
 
 <div class="dpr-home-promo-card">
