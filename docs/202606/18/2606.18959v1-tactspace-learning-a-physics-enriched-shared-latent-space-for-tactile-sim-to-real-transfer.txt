@@ -1,0 +1,276 @@
+Title: TactSpace: Learning a Physics-enriched Shared Latent Space for Tactile Sim-to-Real Transfer
+
+URL Source: https://arxiv.org/pdf/2606.18959v1
+
+Published Time: Thu, 18 Jun 2026 00:49:54 GMT
+
+Number of Pages: 9
+
+Markdown Content:
+# TactSpace: Learning a Physics-enriched Shared Latent Space for Tactile Sim-to-Real Transfer 
+
+Arunim Joarder 1, Arjun Bhardwaj 1, Ren´ e Zurbr¨ ugg 1,3, Mayank Mittal 1,4,Florin P¨ untener 2, Sira Bielefeldt 2, Cosmin Roman 2, Vaishakh Patil 1, Marco Hutter 1
+
+Abstract — Tactile sensing provides direct measurements of contact interactions that are essential for robotic manipulation. However, current simulators lack the fidelity to faithfully model the complex deformation and transduction mechanics of tactile sensors, severely hindering sim-to-real transfer in robot learning pipelines. To address this challenge, we pro-pose a multi-modal representation learning framework that aligns heterogeneous tactile modalities within a shared latent space, eliminating the need for accurate raw-signal simulation while preserving relevant contact information. Our approach employs modality-specific encoders to project diverse tactile observations, such as simulated penetration depth and real-world capacitance, into a common embedding space. The model is trained using self- and cross-reconstruction objectives along-side contrastive alignment, encouraging modality-invariant yet information-rich representations. We evaluate the learned em-beddings on indenter shape identification, force prediction, and geometric reconstruction tasks, training exclusively in simulation and testing directly on real sensor measurements. Our results demonstrate zero-shot sim-to-real transfer across physically dissimilar representations. Furthermore, incorporat-ing multi-physics simulation modalities yields more informative embeddings that transfer across diverse downstream tasks, demonstrating a 16.7% reduction in force prediction error and a 45.8% reduction in shape reconstruction error. Finally, we release an efficient Warp-based implementation of a penalty-based tactile simulation model for Isaac Lab, enabling scalable tactile data generation. For videos of the data collection and additional supplementary materials, please refer to the project website: https://leggedrobotics.github.io/tactspace-web/. 
+
+I. INTRODUCTION Tactile sensing is fundamental to contact-rich robotic manipulation, providing direct measurements of surface de-formation and contact forces. Consequently, a wide range of tactile sensors, ranging from high-resolution vision-based skins [1], [2] to robust capacitive [3], [4] and piezore-sistive arrays [5], has been deployed for tasks spanning slip detection [6], texture recognition [7], [8], and material classification. Despite its importance, learning-based tactile manipulation remains bottlenecked by the scarcity of large-scale, contact-rich interaction data [9]. Collecting tactile data on hardware is slow, costly, and unsafe, making simulation a necessary component of scalable tactile learning. While sim-to-real methods have become a standard paradigm for training robotic policies [10], [11], 
+
+This work was supported by an ETH Zurich Research Grant No. 22-2 ETH-47, Swiss National Science Foundation (NCCR Automation grant no. 51NF40 225155) and the ETH AI Center. 1Robotic Systems Lab, ETH Z¨ urich; 2Micro- and Nanosystems Lab, ETH Z¨ urich; 3 ETH AI Center; 
+
+> 4
+
+NVIDIA. Email: {ajoarder,abhardwaj,zrene }@ethz.ch Shared 
+
+> Representation
+> Space
+> Shape Reconstruction
+> Force Prediction
+> Stresses
+> Capacitances
+> Penetration Depths
+> Rigid Body
+> Simulator
+> Finite Element
+> Method
+> Real
+> Sensor
+> Self- and Cross- Reconstruction
+
+Latent 
+
+Alignment 
+
+Downstream 
+
+Tasks 
+
+> Shape Classification
+> Training in
+> Simulation
+> Zero-shot
+> Deployment
+
+Fig. 1: (Top) Multi-modal tactile inputs are aligned into a shared la-tent space, enabling self- and cross-modal reconstruction. (Bottom) A model trained exclusively on simulated embeddings generalizes zero-shot to real sensor data across downstream tasks including shape classification, reconstruction, and force prediction. 
+
+incorporating tactile sensing into this pipeline remains chal-lenging. Prior works attempt to bridge the sim-to-real gap by developing high-fidelity, sensor-specific simulations [12], [13]. However, such pipelines rely heavily on modeling assumptions, require substantial engineering effort, and do not readily extend to other types of tactile sensors, such as capacitive sensors, whose signals arise from complex electromechanical and material interactions. Furthermore, modern robot learning workflows often rely on hardware-accelerated physics-based simulators, that allow rapid, large-scale data generation. However, this scalability comes at the cost of physical accuracy: rigid-body simu-lators currently lack the ability to model complex material deformation, detailed contact mechanics, and realistic force propagation. As a result, the geometric proxies provided by these simulators differ substantially from real tactile sensor outputs. Consequently, when control policies are trained directly on these simulated tactile proxies, the severe domain gap prevents successful transfer to real-world hardware. 
+
+> arXiv:2606.18959v1 [cs.RO] 17 Jun 2026
+
+In this paper, we propose an autoencoder-based framework that explicitly constructs a shared representation between simulated observations and sensor measurements. Trained via self- and cross-reconstruction objectives alongside an InfoNCE contrastive [14] alignment, our architecture en-sures that corresponding physical interactions across domains produce similar embeddings, successfully abstracting away sensor-specific artifacts. A central advantage of our approach is the ability to integrate complementary simulation modal-ities that capture different levels of physical abstraction. We jointly leverage scalable contact geometry and kinemat-ics from rigid-body simulators (NVIDIA Isaac Lab [15]) alongside the detailed stress fields and dynamic material responses modeled by finite-element analysis (FEA) solvers (ABAQUS [16]). This constructs a latent space that encodes a richer contact phenomena than either modality may achieve on their own. We evaluate the learned representation by assessing sim-to-real transfer performance on downstream contact-rich prediction tasks, shown in Fig. 1. In addition, we release a tactile simulation plugin for Isaac Lab for scalable collection of contact geometry and force estimates within standard robot manipulation pipelines. In summary, our main contributions are:  
+
+> •
+
+A representation-learning framework for tactile sim-to-real transfer that aligns heterogeneous modalities within a shared latent space and allows for the zero-shot transfer of representations to raw sensor measurements,  
+
+> •
+
+A multimodal encoder–decoder framework that inte-grates cross-reconstruction with contrastive alignment to learn modality-invariant representations, improving performance with 16.7% reduction in force prediction error and 45.8% reduction in shape reconstruction error,  
+
+> •
+
+A tactile simulation plugin for Isaac Lab that facilitates scalable tactile data generation and seamless integration into modern robot learning workflows. II. RELATED WORK 
+
+A. Tactile Simulation and Sim-to-Real Transfer 
+
+Scalable tactile simulation has become increasingly es-sential for training robot learning algorithms [9]. The vast majority of these simulators are designed for vision-based tactile sensors, such as Digit [1] and GelSight [2]. To achieve realistic sensor simulation, early frameworks focused heavily on high-fidelity rendering, developing specialized pipelines to model complex soft-body deformations, optical responses, and marker motion fields [12], [13], [17]. More recent efforts have prioritized scalability by integrating tactile rendering and collision dynamics into GPU-accelerated physics en-gines [18]–[20]. Other works have developed simulators that explicitly model elastic deformation to generate dense force and stress fields [21]. By providing a physically grounded representation of contact mechanics rather than purely optical approximations, these dense models enable algorithms to reason directly about complex material interactions. Despite these advances in simulation, the transfer of learned policies to physical hardware remains a critical bot-tleneck [9]. To bridge the sim-to-real gap, prior works rely on image-to-image translation and domain adaptation, utilizing generative models and neural rendering to map real tactile images into simulated domains or vice versa [13], [22], [23]. While effective, these translation methods remain highly engineered for the specific optical mechanics of vision-based sensors. Similarly, physics-based and differentiable models still heavily rely on simplifying assumptions for material deformations [21], or require tedious sensor calibration based on localized physical quantities [10], [11]. In contrast, our approach sidesteps the limitations of aligning raw sensory distributions, making restrictive physical assumptions, and performing extensive hardware calibration. Instead, we re-produce identical physical stimuli across both high-fidelity simulations and real sensors, aligning these heterogeneous modalities directly within a shared embedding space. 
+
+B. Tactile Representation Learning 
+
+Recent advancements in representation learning have sig-nificantly enhanced the integration of tactile sensing with other modalities, most notably vision and language. A com-mon approach involves using self-supervised or contrastive learning objectives to project tactile signals into pre-trained visual or textual embedding spaces [24]–[26]. However, these methods focus primarily on the alignment of semantic material properties or global (scene-level) signals. They often abstract away the complex, dynamic contact mechanics and interaction forces that are essential for low-level robotic manipulation. A parallel line of research focuses on cross-sensor alignment to learn a unified latent space or explicitly translate the raw outputs of one type of tactile sensor into those of another [24], [27], [28]. While this cross-device standardization is highly beneficial for mitigating hardware fragmentation and reusing datasets, it relies on mapping between physical hardware domains, thereby leaving the sim-to-real gap unaddressed. More closely aligned with our objective are methods that leverage multi-modal tactile representations explicitly to solve contact-rich manipulation tasks [7], [29]–[31]. Works such as M2CURL [29] and ViTacFormer [31] demonstrate that explicitly aligning visual and tactile spaces can sig-nificantly accelerate policy learning and improve robust-ness during tasks like grasping and insertion. However, these representation methods predominantly train their latent spaces entirely within simulation. By assuming access to perfect, idealized tactile feedback during both training and deployment, these approaches effectively bypass the sim-to-real transfer problem altogether. For tactile sim-to-real transfer, the work most closely related to ours is by Narang et al. [32], which employs neural networks to bridge the gap between FEA simulations and real-world piezoresistive sensors. They achieve this by learning latent projections that map simulated electrical signals directly to real-world sensor outputs. However, their architecture functions primarily as an asymmetric translation mechanism, explicitly projecting one modality onto another rather than extracting a shared underlying structure. In con-trast, our framework leverages self- and cross-reconstruction objectives alongside contrastive alignment to project both Downstream Tasks  
+
+> Latent Space
+> Physical Stimulus
+> Penetration Depths
+> Stresses
+> Capacitance Signals
+> Decoder
+> Alignment Loss
+> Reconstruction
+> Loss
+> Task Loss
+> Task Network
+> Penetration Depths
+> Stresses
+> Capacitance Signals
+> Task
+> Output
+> Isaac Sim
+> FEM
+> Sensor
+> FEM
+> Encoder
+> Real
+> Encoder
+> RBS
+> Encoder Fig. 2: Overview of the proposed multi-modal latent alignment framework . Each modality is processed by a dedicated ViT encoder that maps observations into a shared latent space. A contrastive alignment loss encourages embeddings of the same stimulus to cluster together. A shared decoder reconstructs all modalities from any latent embedding, supervised by a reconstruction loss. The resulting representations are then used for downstream tasks, where a lightweight task network is trained on simulated embeddings and evaluated zero-shot on real sensor measurements.
+
+rigid-body kinematics and high-fidelity FEA stress fields into a shared, modality-invariant latent space. This ensures that fundamentally richer contact phenomena are encoded, which we demonstrate to be highly effective for robust transfer across a diverse set of downstream manipulation tasks. III. METHOD We propose a representation learning framework that maps heterogeneous tactile sensing modalities into a shared latent space, enabling sim-to-real transfer without requiring raw signal matching between simulation and hardware. The framework consists of two stages: (1) multi-modal latent alignment, which learns a modality-invariant embedding space via contrastive and reconstructive objectives, and (2) downstream evaluation, which probes the expressiveness and transfer capability of the learned representations by training on simulation-only data and testing on real sensor data. An overview of the full architecture is shown in Fig. 2. 
+
+A. Problem Formulation 
+
+A central challenge in tactile sim-to-real transfer is that simulated and real sensor signals differ fundamentally in structure, noise characteristics, and physical interpretation. Rather than attempting to close this gap at the signal level, we learn a shared latent space, which we refer to as TactSpace ,in which observations from different modalities, whether real sensor measurements or simulated representations, that correspond to the same underlying physical stimulus are embedded consistently. To this end, we assume access to a set of K sensing modalities M = {Mk}Kk=1, each representing a distinct ob-servation representation for tactile sensing. For any given physical stimulus, each modality produces a corresponding observation, and observations sharing the same stimulus are considered aligned . The objective is to learn encoders that map these heterogeneous observations into a common embedding space, such that observations are represented similarly regardless of their source modality. 
+
+B. Multi-Modal Latent Alignment 
+
+Architecture. Each input modality is processed by a ded-icated Vision Transformer (ViT) [33] encoder that maps observations into a shared latent space Z. The self-attention mechanism helps model global spatial structure, which is well-suited for grid-structured tactile observations where long-range correlations between sensing elements convey contact information. A multi-layer perceptron (MLP) decoder with a shared backbone and modality-specific heads reconstructs all modal-ities from a latent embedding. In this cross-reconstruction design, an embedding produced by one modality’s encoder must recover the observations of all modalities. This acts as a strong regularizer. It discourages modality-specific artifacts and encourages representations that capture the underlying physical interaction in a modality-agnostic form. 
+
+Training Objectives. The framework is trained jointly using two complementary objectives: Alignment Loss. A pairwise InfoNCE contrastive loss [14] is applied across all pairs of modalities in the latent space. For each batch, embeddings from different modalities corre-sponding to the same physical stimulus are attracted together, while other embeddings from distinct stimuli are pushed apart. This encourages the latent space to organize according to the structure of the stimuli rather than the characteristics of individual modalities. Reconstruction Loss. A mean-squared error loss is applied to all cross-modal reconstructions, ensuring that the latent embeddings retain sufficient physical information to recover any modality from any other. Together with the alignment loss, this prevents representational collapse and grounds the (a) (b) (c)   
+
+> Fig. 3: GPU-accelerated tactile simulation in NVIDIA Isaac Lab. (a) Massively parallelized tactile simulation running across hundreds of concurrent environments. (b) A simulated tactile sensor in contact with a rigid object. (c) Tactile sensor with the sensor mesh hidden, exposing the underlying raycasting rays. The red rays indicate sampling directions and green rays indicate collision of the ray with a rigid object.
+
+shared embedding space in the observable signal content of each modality. The overall training objective is a weighted combination of these two terms L = λalign Lalign +λrecon Lrecon , where λalign 
+
+and λrecon balance the relative contribution of each objective. 
+
+C. Downstream Evaluation 
+
+To assess the quality of the learned representations, we define a set of downstream tasks spanning classification and regression over various contact stimuli. In each case, a lightweight MLP is trained on top of frozen encoder embeddings using simulated data only and evaluated di-rectly on real sensor measurements without any fine-tuning. This zero-shot transfer protocol tests whether the alignment has successfully abstracted away modality-specific artifacts, yielding representations that bridge the sim-to-real gap. 
+
+D. Scalable Tactile Simulation 
+
+We present a custom plugin for NVIDIA Isaac Lab that en-ables scalable tactile simulation for robot learning. Building upon the penalty-based formulation by Xu et al. [34], the plugin models contact geometry and pressure distributions across tactile sensor surfaces via GPU-accelerated raycasting. All computations are implemented using NVIDIA Warp to run natively on the GPU. This allows the tactile simulation to be massively parallelized across thousands of concurrent environments, as shown in Fig. 3. The simulation framework is therefore well-suited for large-scale reinforcement learning and synthetic data generation pipelines. Importantly, this par-allelization does not compromise physical fidelity. However, the generated tactile data may not perfectly match real-world measurements due to unmodelled mechanical deformation and transduction effects. IV. EXPERIMENTAL SETUP This section presents the experimental evaluation of the proposed framework. We first describe the sensor, simulation environments, and dataset used for training and evaluation. 
+
+A. Data Collection 
+
+We define a physical stimulus as a probing interaction parameterized by:  
+
+> •
+
+Indenter geometry: the shape (e.g. curved, cylindrical, square) and size of the indenter;      
+
+> (a) Alignment Data (b) OOD-Size (c) OOD-Shape
+> Fig. 4: Indenter geometries used in this work. Set (a) is used during latent alignment, while sets (b) and (c) are reserved for downstream tasks.
+> •
+
+Probing location: the (x, y) position of the indenter relative to the sensor surface,  
+
+> •
+
+Probing displacement: the displacement of the indenter along the surface normal ( z-axis) relative to the unde-formed sensor surface. A physical stimulus is uniquely specified by a particular combination of these parameters and serves as a common reference for generating paired interactions across sensing modalities. Using this formulation, we collect dense tac-tile data from three sources: real-world capacitance mea-surements (Real), rigid body simulation (RBS) using Isaac Lab [15], and finite element method (FEM) simulations using ABAQUS [16]. Real. We use an artificial silicone fingertip [4] equipped with ntaxel × ntaxel array of capacitive tactile pixels ( taxels ). Each taxel produces a signal in response to local surface de-formation, resulting in an image of capacitive measurements. In our sensor setup, ntaxel = 12. The hysteresis in the sensor’s silicone layer introduces artifacts into the capacitive measurements. To address this, we incorporate temporal history by maintaining a short buffer of recent frames. This buffer helps to capture the evolution of the contact state over time. We refer to it as the capacitance modality , Mc ∈ Rntaxel ×ntaxel ×nhist , with nhist = 10. To generate the paired real-world dataset, a repurposed 5-axis CNC milling machine executes the probing interactions according to the exact parameters defining each physical stimulus. A 6-DOF force-torque (F/T) sensor, mounted in-line with the indenter, measures the precise net contact force applied to the sensor surface. For every physical stimulus, we synchronously log the positional coordinates from the CNC machine, the ground-truth force data from the F/T sensor, and the corresponding raw capacitance measurements ( Mc). RBS. Using the tactile simulation described in Section III-D, we treat the spatial locations of all taxels on the sensor surface as raycasting origins. Casting rays along each taxel’s surface normal allows us to measure the indenter penetration depth from compliant contacts, producing the penetration depth modality M p ∈ Rntaxel ×ntaxel  
+
+> ≥0
+
+.FEM. We use ABAQUS to simulate the probing process on a finite element model of the tactile sensor. The model tracks a stress field for different load cases, yielding the taxel stress modality M s ∈ Rntaxel ×ntaxel ×6. The FEM simulation addition-ally provides access to quantities not directly observable on the physical sensor, including indenter reaction forces, which are subsequently used as ground-truth labels for downstream force prediction tasks. B. Alignment and Downstream Data Splits 
+
+The dataset is organized into two non-overlapping sets based on the training phase. The alignment dataset, 
+
+DA = Dtrain  
+
+> A
+
+∪ Dtest  
+
+> A
+
+, consists of the indenter shapes used to train the multi-modal encoders, while the downstream dataset 
+
+DD = Dtrain  
+
+> D
+
+∪ Dtest  
+
+> D
+
+, is reserved for training and evaluating task performance. Fig. 4a shows the nine indenter geometries used for alignment. For downstream tasks on DD, we report performance on three test partitions of increasing difficulty. The in-distribution holdout contains the same geometries and sizes as the alignment data but uses held-out locations. The OOD-Size partition uses six indenters with the same shapes but with previously unseen sizes and orientations (Fig. 4b). The OOD-Shape partition contains four entirely new indenter geometries (Fig. 4c). Data is collected for each of the three modalities (Real, RBS, FEM) across 840 probing trajectories, yielding 32,942 samples for Mc and Mp each and 26,107 samples for Md . The physical stimuli span 19 indenters across 12 distinct shapes. Penetration depth has a median of 62.63 μm (range: 0.00– 1330.98 μm), and indenter force has a median of 498.66 mN (range: 1.02–6837.94 mN). The 840 trajectories are parti-tioned into three subsets: 462 in-distribution, 210 OOD-Size, and 168 OOD-Shape. The in-distribution trajectories are further divided equally, with 231 trajectories allocated to the alignment dataset DA and 231 to the in-distribution holdout for the downstream dataset DD. The OOD-Size and OOD-Shape trajectories are assigned exclusively to DD. Within each subset, trajectories are further divided into training and test sets using a 75%–25% split based on probing location. 
+
+C. Downstream Tasks 
+
+To assess the cross-modal transferability of the learned representation space, we define three downstream tasks: Indenter Shape Classification. Given a tactile observation, the model predicts the indenter shape category via a multi-label classification objective. Performance is measured by sample-weighted classification accuracy (in %), denoted Acc. 
+
+in Section V. Indenter Shape Reconstruction. The model predicts per-taxel penetration depths along surface normals, providing a ge-ometric reconstruction of the contact surface. Performance is measured by the pointwise mean absolute error over pre-dicted penetration depths (in μm), denoted Pen. in Section V. Indenter Force Prediction. The model estimates the total reaction force exerted on the indenter arising from the sensor-indenter mechanical interaction. Performance is measured by mean absolute error (in mN), denoted Force in Section V. It is important to note that the task networks are trained exclusively on simulated data and evaluated zero-shot on real capacitance measurements. V. RESULTS In this section, we empirically validate our multi-modal representation-learning framework. We first analyze the cross-modal alignment of the learned latent space (Section V-A) before demonstrating its effectiveness for zero-shot sim-to-real transfer on physical hardware (Section V-B). We then (a) d = 600 μm (b) d = 1400 μm (c) d = 2400 μmNo Alignment         
+
+> (a) (b) (c) (a) (b) (a) (b)
+> MSE
+> (a) (b) (a) (b) (a) (b) (c)
+> InfoNCE
+> (a) (b) (c) RBS FEM Real
+> Fig. 5: Shape reconstruction and force prediction. Indenter shape reconstruction and force prediction working in tandem. The probing depth dis defined as the downwards displacement of the indenter from the point of first contact. T-SNE visualization of latent embeddings. Embeddings generated from different modalities with no alignment loss, mean-squared error (MSE) alignment loss, and InfoNCE alignment loss. The highlighted points in the third row correspond to the physical stimuli as shown in the first row. 0.60.8Cosine Similarity
+
+with capacitive history      
+
+> 0.00.20.40.60.81.0Normalized Time 0.60.8Cosine Similarity
+
+without capacitive history              
+
+> RBS-FEM FEM-Real Real-RBS
+> Fig. 6: Cross-modal cosine similarity. Cross-modal cosine sim-ilarity between latent embeddings over a normalized contact tra-jectory, averaged across all probing experiments. Normalized time
+> t∈[0,0.5]corresponds to the indenter pressing into the sensor, while t∈[0.5,1]corresponds to the indenter retracting.
+
+present a comprehensive ablation study detailing the trade-offs of different modality and loss configurations (Section V-C). Finally, we explore the specific benefits and physical limitations of scaling up highly parallelizable simulated data for representation pre-training (Section V-D). TABLE I: ZERO -S HOT SIM -TO -R EAL TRANSFER ON DOWNSTREAM TASKS . Per task, a single network is trained on latents from the simulated modalities ( Mp, Ms) only. On the evaluation dataset, the network is tested on latents from each modality independently. Despite no real sensor data during downstream task training, performance on real-sensor latents is comparable, demonstrating effective zero-shot sim-to-real transfer. Values in parentheses denote the 20th–80th percentile range. Bold indicates best performance, underline indicates second best.                                                                        
+
+> Data Modality In-Distribution Holdout OOD-Size OOD-Shape Origin Acc. [%] ↑Pen. [μm] ↓Force [mN] ↓Acc. [%] ↑Pen. [μm] ↓Force [mN] ↓Acc. [%] ↑Pen. [μm] ↓Force [mN] ↓
+> RBS Penetration Depth ( Mp)64.30 16 (10 - 37) 65 (50 - 126) 71.75 18 (9 - 40) 67 (50 - 125) 44.50 20 (14 - 28) 85 (51 - 144)
+> FEM Taxel Stress ( Md)55.96 12 (5 - 25) 43 (23 - 79) 65.00 14 (9 - 37) 51 (26 - 85) 25.00 6(3 - 14) 27 (20 - 51)
+> Real Capacitance ( Mc)61.09 26 (9 - 59) 65 (37 - 118) 51.84 39 (16 - 76) 59 (38 - 95) 45.25 13 (6 - 41) 63 (36 - 112)
+
+TABLE II: EFFECT OF ALIGNMENT LOSS ON DOWNSTREAM PERFORMANCE . InfoNCE outperforms MSE and no-alignment baselines across nearly all metrics and evaluation splits. Values in parentheses denote the 20th–80th percentile range. Bold indicates best performance; underline indicates second best.                                                                  
+
+> Alignment Loss In-Distribution Holdout OOD-Size OOD-Shape Acc. [%] ↑Pen. [μm] ↓Force [mN] ↓Acc. [%] ↑Pen. [μm] ↓Force [mN] ↓Acc. [%] ↑Pen. [μm] ↓Force [mN] ↓
+> No Alignment 36.72 37 (12 - 82) 89 (66 - 131) 39.69 74 (49 - 111) 86 (66 - 122) 26.15 10 (2 - 55) 77 (57 - 107)
+> MSE 52.50 35 (21 - 66) 68 (38 - 122) 49.81 46 (19 - 84) 64 (38 - 113) 44.15 14 (6 - 51) 67 (40 - 111)
+> InfoNCE (Ours) 61.09 26 (9 - 59) 65 (37 - 118) 51.84 39 (16 - 76) 59 (38 - 95) 45.25 13 (6 - 41) 63 (36 - 112)
+
+A. Latent Space Alignment 
+
+We first assess whether the contrastive alignment objective produces a well-structured shared latent space across modal-ities. Fig. 5 shows two-dimensional t-SNE projections [35] of latent embeddings under three training configurations: no alignment loss, MSE alignment loss, and InfoNCE alignment loss. Without alignment, embeddings from different modali-ties form distinct clusters, indicating that the encoder outputs remain modality-specific. Introducing an MSE alignment loss reduces separation but fails to produce a coherent joint structure. In contrast, the InfoNCE objective results in a uniform intermixing of embeddings from all three modalities, confirming that the learned latent space is organized by the underlying physical stimulus rather than the observation source. Next, we examine the role of temporal history in the capacitive data. Fig. 6 illustrates the evolution of pairwise cosine similarity between cross-modal embeddings along the probing trajectory. When temporal (capacitive) history is included, the cosine similarity between embeddings from FEM, RBS, and real sensors remains consistently similar throughout the trajectory. Without history, we observe a pronounced drop in pairwise cosine similarity, particularly between FEM-Real and RBS-Real embeddings, toward the latter portion of the trajectory. This degradation arises from capacitive and material hysteresis effects. Lacking temporal context, the embeddings cannot capture history-dependent behavior in the capacitance signals, leading to misalignment. 
+
+B. Zero-Shot Sim-to-Real Transfer 
+
+Having established that the InfoNCE objective produces a well-aligned latent space, we evaluate whether this alignment translates into effective zero-shot sim-to-real transfer on downstream tasks. Task networks are trained on the embed-dings from simulated modalities ( Mp from Isaac Sim, Ms
+
+from FEM) and evaluated on real capacitance measurements (Mc), without any fine-tuning on real (capacitance) data .As shown in Table I, our aligned latent space, or 
+
+TactSpace , enables highly effective zero-shot sim-to-real transfer across all evaluation splits, robustly handling even out-of-distribution indentations. Although the task networks are trained exclusively on idealized and noiseless simulated data, their performance remains comparable when evaluated directly on real capacitance embeddings. This confirms that the latent alignment allows the model interpret raw hardware measurements despite never seeing them during training. Furthermore, the source modalities exhibit complementary strengths. Rigid-body representations ( Mp) excel at geo-metric predictions, while finite-element representations ( Ms)dominate force estimation. This validates that our framework is able to capture modality-agnostic contact physics. Table II further ablates the choice of alignment loss on downstream zero-shot transfer performance. Across all eval-uation splits and metrics, Task networks trained on InfoNCE-aligned latent spaces consistently outperform those trained on MSE-aligned or unaligned spaces. These results support the qualitative findings in Section V-A and confirm that the quality of cross-modal alignment directly affects sim-to-real transfer of the learned representations. 
+
+C. Representation Expressiveness and Modality Ablation 
+
+We now aim to answer two key questions: (1) how does the choice of simulated modality affect downstream task performance, and (2) to what extent does the cross-reconstruction objective improve the learned representation? Table III presents a comprehensive ablation over pre-training data sources, reconstruction loss configurations, and task training modalities. We also evaluate our zero-shot approach against a supervised baseline trained directly on real sensor measurements. Since this network predicts directly from physical sensor measurements, it completely bypasses the sim-to-real gap and serves as a practical upper bound for performance. As expected, the real-data baseline (trained directly on ca-pacitance measurements) achieves the highest overall perfor-mance. Our proposed latent representation model, however, TABLE III: REPRESENTATION EXPRESSIVENESS AND MODALITY ABLATION . Performance of models trained on different data and loss configurations, evaluated on in-distribution and out-of-distribution test sets. Alignment Data and Task Data indicate which data sources are used during latent alignment and downstream task training, respectively. Reconstruction Loss ( Recon. Loss ) denotes which signal modalities are reconstructed during latent alignment: capacitance ( Mc), penetration depth ( Mp), and stress ( Ms). Values in parentheses denote the 20th–80th percentile range, bold indicates best performance, underline indicates second best. The last row (in yellow) is a baseline trained only on real sensor data and serves as an upper bound on performance.                                                                                                                                                                                   
+
+> Alignment Data Recon. Loss Task Data In-Distribution Holdout OOD-Size OOD-Shape
+> McMpMsSplit McMpMsMcMpMsAcc. [%] ↑Pen. [μm] ↓Force [mN] ↓Acc. [%] ↑Pen. [μm] ↓Force [mN] ↓Acc. [%] ↑Pen. [μm] ↓Force [mN] ↓
+> ✓✓✓Dtrain
+> A––––✓✓56.35 45 (7 - 180) 60 (34 - 116) 42.58 79 (34 - 206) 61 (38 - 104) 41.70 7(1 - 50) 65 (38 - 123)
+> ✓✓–Dtrain
+> A✓✓––✓–55.49 58 (11 - 115) 78 (55 - 149) 47.44 68 (15 - 113) 75 (54 - 147) 42.80 13 (2 - 63) 74 (52 - 129)
+> ✓–✓Dtrain
+> A✓–✓––✓54.94 48 (8 - 186) 63 (37 - 103) 45.05 66 (13 - 186) 63 (38 - 95) 29.10 8(2 - 53) 51 (32 - 96)
+> ✓✓✓Dtrain
+> A✓✓✓–✓✓61.09 26 (9 - 59) 65 (37 - 118) 51.84 39 (16 - 76) 59 (38 - 95) 45.25 13 (6 - 41) 63 (36 - 112)
+> ✓✓✓Dtrain
+> A∪Dtrain
+> D✓✓✓–✓✓61.91 25 (6 - 60) 62 (41 - 109) 70.66 49 (29 - 85) 67 (44 - 124) 56.05 8(4 - 38) 72 (36 - 130)
+> ✓––Dtrain
+> A✓––✓––76.10 18 (8 - 51) 20 (10 - 46) 83.03 16 (7 - 36) 18 (10 - 34) 69.75 3(1 - 18) 19 (9 - 46)
+
+TABLE IV: SCALING UP WITH SIMULATED DATA . We evaluate the effect of augmenting training with large-scale simulated data across three downstream tasks and evaluation splits. Training configurations vary in the use of real capacitance data ( Mc), physics-based penetration depths ( Mp), and FEM-derived stress fields ( Ms). Values in parentheses denote the 20th–80th percentile range. Bold indicates best performance; underline indicates second best. The last row (in yellow) is a baseline trained only on real sensor data. 
+
+Training Data In-Distribution Holdout OOD-Size OOD-Shape Configurations Mc Mp Ms Acc. [%] ↑ Pen. [μm] ↓ Force [mN] ↓ Acc. [%] ↑ Pen. [μm] ↓ Force [mN] ↓ Acc. [%] ↑ Pen. [μm] ↓ Force [mN] ↓
+
+RBS + FEM – ✓ ✓ 61.09 26 (9 - 59) 65 (37 - 118) 51.84 39 (16 - 76) 59 (38 - 95) 45.25 13 (6 - 41) 63 (36 - 112) 
+
+RBS (1x) – ✓ – 58.78 34 (7 - 101) 76 (54 - 146) 49.41 80 (37 - 161) 77 (56 - 131) 38.90 10 (2 - 68) 72 (52 - 129) 
+
+RBS (5x) – ✓ – 65.32 38 (13 - 109) 75 (57 - 147) 58.84 48 (12 - 121) 79 (56 - 139) 40.50 8 (1 - 59) 73 (52 - 128) 
+
+RBS (15x) – ✓ – 70.81 34 (8 - 94) 78 (59 - 146) 64.33 47 (23 - 88) 81 (63 - 140) 46.80 8 (1 - 47) 75 (55 - 128) 
+
+RBS (30x) – ✓ – 70.85 33 (10 - 84) 77 (61 - 139) 63.37 49 (12 - 102) 80 (64 - 138) 45.45 9 (1 - 50) 73 (57 - 130) 
+
+RBS (30x) + FEM – ✓ ✓ 69.00 28 (10 - 74) 59 (35 - 96) 62.99 37 (12 - 87) 59 (37 - 91) 41.05 8 (3 - 39) 49 (30 - 87) 
+
+Real ✓ – – 76.10 18 (8 - 51) 20 (10 - 46) 83.03 16 (7 - 36) 18 (10 - 34) 69.75 3 (1 - 18) 19 (9 - 46) 
+
+delivers highly competitive results. The small gap in force prediction arises because the our models are trained on FEM approximations of the net force, whereas the baseline uses the ground-truth force-torque measurements, which are also used as evaluation labels. Despite this structural advantage, collecting labeled real-world data, especially on-policy, is prohibitively slow and requires specialized hardware, making it impractical for standard robot learning workflows. Among the latent representation models, the model pre-trained with all three modalities and full cross-reconstruction supervision achieves the best or near-best performance across all tasks, confirming that each modality contributes com-plementary physical information to the shared latent space. While joint training can introduce a slight performance penalty on any single task compared to the best specialist configuration, this reflects an inherent generalist–specialist tradeoff: the jointly trained encoder produces a richer, more broadly capable representation at a modest cost of task-specific optimality. Several trends are observable consistently across evalua-tion splits. Penetration-depth supervision is particularly ben-eficial for geometric tasks such as shape reconstruction and indenter classification, while FEM-based stress data provides strong signals for force prediction, consistent with the phys-ical quantities each simulation captures. This suggests that if the target task is known during deployment, a specialist encoder trained on the most task-relevant simulation source can yield peak performance on that specific task. However, such specialist models come at the cost of generality, result-ing in poor performance on other tasks because their latent embeddings lack complementary physical information. Crucially, our ablations validate the necessity of the joint training objective. Removing the reconstruction loss entirely while retaining the contrastive alignment objective results in a measurable drop in performance across downstream tasks. This indicates that the reconstruction objective is important for preventing representational collapse and preserving task-relevant information across modalities. Finally, we also report results for embeddings aligned on the entire dataset ( Dtrain 
+
+A ∪ Dtrain 
+
+D ), i.e., including out-of-distribution (OOD) indenters. Performance across OOD splits improves significantly when these OOD data are in-cluded in the latent alignment phase, demonstrating that the learned representation benefits greatly from data diversity. 
+
+D. Scaling Up with Simulated Data 
+
+With the ability to scale data generation using simulation, we investigate its impact on downstream task performance. Table IV shows the effects of increasing the volume of the geometric RBS data. We report the zero-shot transfer performance of downstream networks trained on progres-sively increasing number of simulated samples. We gen-erate data at more probing locations for the given set of indenters. We observe a clear positive trend for geometric tasks: indenter classification and penetration depth estimation improve noticeably, approaching the real-data upper bound on the in-distribution set. While scaling simulated data yields stronger performance on OOD splits, the performance gap to the real upper bound is noticeably wider than on the in-distribution set. This indicates that while massive simulation data improves the overall task performance, an underlying alignment gap persists when transferring to entirely novel shapes. Furthermore, while data scaling significantly en-hances geometric tasks, it provides negligible benefits for force prediction. In contrast, incorporating complementary multi-physics modalities, such as simulated stress, provides substantial gains for force metrics, outperforming the benefits of simply increasing the volume of single-modality data. VI. CONCLUSION We present a multi-modal representation learning frame-work for tactile sim-to-real transfer that aligns heteroge-neous sensing modalities within a shared latent space. By combining a cross-reconstruction objective with InfoNCE contrastive alignment, our approach learns modality-invariant embeddings that capture the physical structure of contact interactions without requiring raw-signal matching. Experiments demonstrate zero-shot transfer to real sensor measurements across diverse downstream tasks, including indenter shape identification, force prediction, and shape reconstruction. Furthermore, we show that complementary simulation modalities enrich the latent space in task-specific ways: rigid-body penetration depth aids geometric reasoning, while FEM-based stress fields improve force estimation. By decoupling representations from raw sensor outputs, this aligned latent framework lowers the barrier to efficient sim-to-real transfer, making it uniquely suited for data-intensive paradigms such as large-scale reinforcement learning. Several directions remain open for future work. First, re-laxing the requirement for strictly paired observations across modalities would improve scalability when full simulation coverage is unavailable. Second, extending the approach to dynamic manipulation sequences could leverage the rich information embedded in temporal contact evolution. Finally, as the framework is sensor-agnostic by design, evaluating its transferability across different tactile sensor platforms would further validate its utility as a foundation for scalable tactile-based robot learning. REFERENCES [1] M. Lambeta, P.-W. Chou, et al. , “Digit: A novel design for a low-cost compact high-resolution tactile sensor with application to in-hand manipulation,” IEEE Robotics and Automation Letters (RA-L) , vol. 5, no. 3, p. 3838–3845, July 2020. [2] W. Yuan, S. Dong, and E. H. Adelson, “Gelsight: High-resolution robot tactile sensors for estimating geometry and force,” Sensors , vol. 17, no. 12, 2017. [3] F. Liu, S. Deswal, et al. , “Printed synaptic transistor–based electronic skin for robots to feel and learn,” Science Robotics , vol. 7, no. 67, p. eabl7286, 2022. [4] J. Weichart, P. Sivananthaguru, et al. , “Artificial fingertip with embed-ded fiber-shaped sensing arrays for high resolution tactile sensing,” 
+
+Soft Robotics , vol. 11, no. 4, pp. 573–584, 2024, pMID: 38662448. [5] T. Taunyazov, L. S. Song, et al. , “Extended tactile perception: Vi-bration sensing through tools and grasped objects,” in Proc. of the IEEE/RSJ Int. Conf. on Intelligent Robots and Systems (IROS) , 2021, pp. 1755–1762. [6] F. Veiga, J. Peters, and T. Hermans, “Grip stabilization of novel objects using slip prediction,” IEEE Transactions on Haptics , vol. 11, no. 4, pp. 531–542, 2018. [7] G. Cao, J. Jiang, et al. , “Multimodal zero-shot learning for tactile texture recognition,” Robotics and Autonomous Systems , vol. 176, p. 104688, 2024. [8] G. Cao, Y. Zhou, et al. , “Spatio-temporal attention model for tactile texture recognition,” in Proc. of the IEEE/RSJ Int. Conf. on Intelligent Robots and Systems (IROS) , 2020, pp. 9896–9902. [9] S. Luo, N. F. Lepora, et al. , “Tactile robotics: An outlook,” IEEE Transactions on Robotics (T-RO) , vol. 41, pp. 5564–5583, 2025. [10] M. Yang, C. Lu, et al. , “Anyrotate: Gravity-invariant in-hand object rotation with sim-to-real touch,” in Conference on Robot Learning (CoRL) , vol. 270. PMLR, 2024, pp. 4727–4747. [11] H. Qi, B. Yi, et al. , “General in-hand object rotation with vision and touch,” in Conference on Robot Learning . PMLR, 2023, pp. 2549– 2564. [12] Z. Si and W. Yuan, “Taxim: An example-based simulation model for gelsight tactile sensors,” IEEE Robotics and Automation Letters (RA-L) , vol. 7, no. 2, pp. 2361–2368, 2022. [13] Y. Zhao, K. Qian, et al. , “Fots: A fast optical tactile simulator for sim2real learning of tactile-motor robot manipulation skills,” IEEE Robotics and Automation Letters , vol. 9, no. 6, pp. 5647–5654, 2024. [14] A. v. d. Oord, Y. Li, and O. Vinyals, “Representation learning with contrastive predictive coding,” arXiv preprint arXiv:1807.03748 , 2018. [15] M. Mittal, P. Roth, et al. , “Isaac lab: A gpu-accelerated simu-lation framework for multi-modal robot learning,” arXiv preprint arXiv:2511.04831 , 2025. [16] M. Smith, ABAQUS/Standard User’s Manual, Version 6.9 . United States: Dassault Syst` emes Simulia Corp, 2009. [17] Z. Shen, Y. Sun, et al. , “Simulation of optical tactile sensors supporting slip and rotation using path tracing and impm,” IEEE Robotics and Automation Letters (RA-L) , vol. 9, pp. 11 218–11 225, 2024. [18] I. Akinola, J. Xu, et al. , “Tacsl: A library for visuotactile sensor simulation and learning,” IEEE Transactions on Robotics (T-RO) ,vol. 41, pp. 2645–2661, 2025. [19] Y. Li, W. Du, et al. , “Taccel: Scaling up vision-based tactile robotics via high-performance GPU simulation,” in Neural Information Pro-cessing Systems (NeurIPS) , 2025. [20] B. Chen, W. Wan, et al. , “Univtac: A unified simulation platform for visuo-tactile manipulation data generation, learning, and benchmark-ing,” arXiv preprint arXiv:2602.10093 , 2026. [21] Y. Wang, W. Huang, et al. , “Elastic tactile simulation towards tactile-visual perception,” in Proc. of ACM International Conference on Multimedia , 2021, pp. 2690–2698. [22] A. Church, J. Lloyd, et al. , “Tactile sim-to-real policy transfer via real-to-sim image translation,” in Conference on Robot Learning (CoRL) ,vol. 164. PMLR, 2021, pp. 1645–1654. [23] S. Zhong, A. Albini, et al. , “Tactgen: Tactile sensory data generation via zero-shot sim-to-real transfer,” IEEE Transactions on Robotics (T-RO) , vol. 41, pp. 1316–1328, 2025. [24] F. Yang, C. Feng, et al. , “Binding touch to everything: Learning unified multimodal tactile representations,” in Proc. of the Conf. on Computer Vision and Pattern Recognition (CVPR) . IEEE, 2024, pp. 26 330– 26 343. [25] V. Dave, F. Lygerakis, and E. Rueckert, “Multimodal visual-tactile rep-resentation learning through self-supervised contrastive pre-training,” in Proc. of the IEEE Int. Conf. on Robotics and Automation (ICRA) .IEEE, 2024, pp. 8013–8020. [26] H.-G. Chi, J. Barreiros, et al. , “Multi-modal representation learning with tactile data,” in Proc. of the IEEE/RSJ Int. Conf. on Intelligent Robots and Systems (IROS) . IEEE, 2024, pp. 9660–9667. [27] S. Rodriguez, Y. Dou, et al. , “Contrastive touch-to-touch pretraining,” in Proc. of the IEEE Int. Conf. on Robotics and Automation (ICRA) .IEEE, 2025, pp. 5857–5863. [28] F. Yang, C. Ma, et al. , “Touch and go: Learning from human-collected vision and touch,” in Neural Information Processing Systems (NeurIPS) , vol. 35, 2022, pp. 8081–8103. [29] F. Lygerakis, V. Dave, and E. Rueckert, “M2curl: Sample-efficient multimodal reinforcement learning via self-supervised representation learning for robotic manipulation,” in Int. Conf. on Ubiquitous Robots (UR) . IEEE, 2024, pp. 490–497. [30] G. Han, Q. Liu, et al. , “Upvital: Unpaired visual-tactile self-supervised representation learning for dexterous robotic manipulation,” in Proc. of the IEEE Int. Conf. on Robotics and Automation (ICRA) . IEEE, 2025, pp. 11 838–11 844. [31] L. Heng, H. Geng, et al. , “Vitacformer: Learning cross-modal rep-resentation for visuo-tactile dexterous manipulation,” arXiv preprint arXiv:2506.15953 , 2025. [32] Y. Narang, B. Sundaralingam, et al. , “Sim-to-real for robotic tactile sensing via physics-based simulation and learned latent projections,” in Proc. of the IEEE Int. Conf. on Robotics and Automation (ICRA) .IEEE, 2021, pp. 6444–6451. [33] A. Dosovitskiy, L. Beyer, et al. , “An image is worth 16x16 words: Transformers for image recognition at scale,” in Int. Conf. on Learning Representations (ICLR) , 2021. [34] J. Xu, S. Kim, et al. , “Efficient tactile simulation with differentiability for robotic manipulation,” in Conference on Robot Learning (CoRL) ,vol. 205. PMLR, 14–18 Dec 2023, pp. 1488–1498. [35] L. van der Maaten and G. Hinton, “Visualizing data using t-sne,” 
+
+Journal of Machine Learning (JMLR) , vol. 9, no. 86, pp. 2579–2605, 2008.
