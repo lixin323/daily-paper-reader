@@ -1,0 +1,114 @@
+Title: Y-BotFrame: An Extensible Embodied Agent Framework for Quadruped Robot Assistants
+
+URL Source: https://arxiv.org/pdf/2606.13049v1
+
+Published Time: Fri, 12 Jun 2026 00:39:45 GMT
+
+Number of Pages: 3
+
+Markdown Content:
+# Y-BotFrame: An Extensible Embodied Agent Framework for Quadruped Robot Assistants 
+
+## Luyao Zhang 
+
+Xidian University Xi’an, China lyzhang_5@stu.xidian.edu.cn 
+
+## Ke Li 
+
+Xidian University Xi’an, China like0413@stu.xidian.edu.cn 
+
+## Yuan Ding 
+
+Xidian University Xi’an, China 25031110055@stu.xidian.edu.cn 
+
+## Xulong Zhao 
+
+Xidian University Xi’an, China xlzhao.apollo@stu.xidian.edu.cn 
+
+## Guo Yu 
+
+Xidian University Xi’an, China guoyu1999@stu.xidian.edu.cn 
+
+## Chengwei Yan 
+
+Xidian University Xi’an, China ycw@stu.xidian.edu.cn 
+
+## Fuyu Dong 
+
+Xidian University Xi’an, China fydong@stu.xidian.edu.cn 
+
+## Jiawei Hu 
+
+Xidian University Xi’an, China 21009200286@stu.xidian.edu.cn 
+
+## Di Wang ∗
+
+Xidian University Xi’an, China wangdi@xidian.edu.cn 
+
+## Nan Luo 
+
+Xidian University Xi’an, China nluo@xidian.edu.cn 
+
+## Gang Liu 
+
+Xidian University Xi’an, China gliu@xidian.edu.cn 
+
+## Quan Wang 
+
+Xidian University Xi’an, China qwang@xidian.edu.cn 
+
+Abstract 
+
+Quadruped robots are capable of traversing a wide range of com-plex terrains with high flexibility. As highly mobile ground-based intelligent platforms, they can be equipped with modules for naviga-tion control, environmental perception, and intelligent interaction, thereby serving as real-world mobile deployment platforms for various algorithms. In this paper, we introduce Y-BotFrame, an extensible embodied platform that turns a robot into an intelligent ground assistant. Y-BotFrame integrates multimodal perception ca-pabilities, including speech, vision, and LiDAR, and employs a large language model as the cognitive core for environmental understand-ing, contextual reasoning, and task planning. The system maps user natural-language instructions into executable embodied task units that can be carried out by the robot. Y-BotFrame supports natural interaction through voice commands and visual feedback, removing the need for a remote controller and enabling efficient human-robot collaboration. With a highly extensible framework, Y-BotFrame sup-ports plug-and-play integration of new functional modules as well as modular upgrades and iterative development, offering a reference implementation for the real-world deployment of general-purpose,  
+
+> ∗Corresponding author. Permission to make digital or hard copies of all or part of this work for personal or classroom use is granted without fee provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and the full citation on the first page. Copyrights for components of this work owned by others than the author(s) must be honored. Abstracting with credit is permitted. To copy otherwise, or republish, to post on servers or to redistribute to lists, requires prior specific permission and/or a fee. Request permissions from permissions@acm.org.
+> MM ’26, Rio de Janeiro, Brazil
+> ©2026 Copyright held by the owner/author(s). Publication rights licensed to ACM. ACM ISBN 978-1-4503-XXXX-X/2026/11 https://doi.org/XXXXXXX.XXXXXXX
+
+instruction-driven embodied agents.The supplementary video is available at https://xdei-group.github.io/Y-BotFrame/ 
+
+CCS Concepts 
+
+• Computing methodologies → Artificial intelligence ; Plan-ning and scheduling .
+
+Keywords 
+
+Quadruped robots, embodied agents, large language models, multi-modal interaction, autonomous navigation 
+
+ACM Reference Format: 
+
+Luyao Zhang, Ke Li, Yuan Ding, Xulong Zhao, Guo Yu, Chengwei Yan, Fuyu Dong, Jiawei Hu, Di Wang, Nan Luo, Gang Liu, and Quan Wang. 2026. Y-BotFrame: An Extensible Embodied Agent Framework for Quadruped Robot Assistants. In Proceedings of the 34th ACM International Conference on Multimedia (MM ’26). ACM, New York, NY, USA, 3 pages. https://doi.org/ XXXXXXX.XXXXXXX 
+
+1 Introduction 
+
+Quadruped robots have demonstrated significant potential as ground-based mobile platforms with strong adaptability to complex terrains. By leveraging various gait patterns, they can achieve stable locomo-tion in unstructured environments such as stairs, gravel paths, and grasslands. Compared with conventional ground robots, quadruped robots exhibit stronger mobility, flexibility, and traversability in complex terrains, making them promising platforms for deploying general-purpose embodied agents. However, most existing intelli-gent systems for quadruped robots focus primarily on high-level path planning [ 3 ], locomotion control [ 6], or task-specific policy learning [ 4]. Some recent systems adopt vision-language-action  
+
+> arXiv:2606.13049v1 [cs.RO] 11 Jun 2026 MM ’26, Nov. 10–14, 2026, Rio de Janeiro, Brazil Zhang et al.
+
+Figure 1: Overview of Y-BotFrame. The proposed system inte-grates multimodal human–robot interaction, an LLM-based task planner, executable tool modules, and robot-side execu-tion feedback to support instruction-driven embodied tasks on a quadruped robot. 
+
+models to formulate perception, planning, and control in an end-to-end manner [ 2]. Although such methods can achieve promising per-formance in constrained scenarios, they usually depend on specific task distributions and large-scale training data, making it difficult to meet the requirements for multitask execution, extensibility, and stable deployment in open environments. In this paper, we propose Y-BotFrame, an embodied intelligent system that seamlessly integrates quadruped mobility, visual per-ception, and the semantic understanding and task planning ca-pabilities of large language models. Y-BotFrame is designed as a hierarchical embodied platform for real-world deployment. Specifi-cally, at the lower level, Y-BotFrame encapsulates capabilities such as navigation, environmental perception, and embodied question answering into executable modules with clearly defined input and output interfaces. At the upper level, an LLM-based agent [ 5 ] serves as a task planner that analyzes user natural-language instructions, historical interaction records, and environmental priors to generate structured task plans. Through hierarchical decoupling and mod-ular coordination, Y-BotFrame avoids the strong dependence of end-to-end models on large-scale task-specific data while improv-ing the interpretability, extensibility, and stability of the system during real-world deployment. 
+
+2 System Framework 2.1 LLM Task Planner 
+
+The task planner is implemented with a single large language model that maps user instructions to executable module interfaces. The system maintains structured descriptions of callable modules, in-cluding their functions, input parameters, applicable conditions, and execution constraints. Given a natural-language instruction, the LLM selects suitable modules based on user intent and binds the corresponding interfaces and parameters to generate a struc-tured task plan. To ensure contextual consistency, the planner also incorporates historical plans and execution records, such as pre-vious module invocations and feedback. Low-level coordination, real-time control, and safety constraints are handled by the execu-tion modules, which continuously report task progress, exceptions, and final results to support monitoring and replanning. 
+
+2.2 Tool Factory 
+
+Y-BotFrame organizes its executable capabilities into a Tool Factory, which mainly includes speech interaction, autonomous naviga-tion, and embodied question answering. These modules provide standardized interfaces for the LLM agent, allowing the system to translate user instructions into executable robot actions. 
+
+Speech interaction. The speech interaction module enables natu-ral communication through ASR and TTS, while an LLM is used for dialogue understanding and response generation. To support domain-specific scenarios and long-term interaction, the module can further incorporate a knowledge base, voiceprint recognition, and dialogue memory. 
+
+Autonomous navigation. The navigation module provides local-ization, path planning, and safe motion for the quadruped robot. It fuses LiDAR, GNSS, and IMU measurements for global pose esti-mation, builds a local obstacle-aware grid map from LiDAR point clouds, and generates feasible paths using the A ∗ algorithm. The map and planned path are updated online according to real-time perception, enabling navigation in complex environments without pre-built maps. 
+
+Embodied question answering. Based on these core capabilities, Y-BotFrame supports embodied question answering. After reaching the target location, the robot performs a rotational scan, captures multi-view RGB observations, and uses Qwen3-VL-Flash [ 1] to generate scene descriptions. These descriptions, together with the user question and viewing angles, are then fused with an LLM to generate the final answer. 
+
+2.3 System Workflow and Infrastructure 
+
+The system supports natural human-robot interaction primarily through voice dialogue. Upon receiving a user request, the task plan-ner first retrieves callable functions according to the currently avail-able module interfaces and generates the corresponding module invocation instructions. If no suitable execution module is matched, the system parses the request as an open-ended dialogue task and returns a natural-language response to the user through speech synthesis. Within this framework, the task planner invokes functional mod-ules synchronously and receives asynchronous feedback over the same local area network. Modules can be deployed either on the robot or on a remote server according to computational load and real-time requirements. Heavy tasks such as model inference and visual understanding are handled on the server, while the robot retains lightweight perception, motion control, and result trans-mission. This distributed design reduces onboard computation and improves system extensibility, deployment flexibility, and opera-tional efficiency. Y-BotFrame: An Extensible Embodied Agent Framework for Quadruped Robot Assistants MM ’26, Nov. 10–14, 2026, Rio de Janeiro, Brazil 
+
+References 
+
+[1] Shuai Bai, Yuxuan Cai, Ruizhe Chen, Keqin Chen, Xionghui Chen, Zesen Cheng, Lianghao Deng, Wei Ding, Chang Gao, Chunjiang Ge, et al . 2025. Qwen3-vl technical report. arXiv preprint arXiv:2511.21631 (2025). [2] Pengxiang Ding, Han Zhao, Wenjie Zhang, Wenxuan Song, Min Zhang, Siteng Huang, Ningxi Yang, and Donglin Wang. 2024. Quar-vla: Vision-language-action model for quadruped robots. In European Conference on Computer Vision . Springer, 352–367. [3] David Hoeller, Nikita Rudin, Dhionis Sako, and Marco Hutter. 2024. Anymal parkour: Learning agile navigation for quadrupedal robots. Science Robotics 9, 88 (2024), eadi7566. [4] Runhan Huang, Shaoting Zhu, Yilun Du, and Hang Zhao. 2025. Moe-loco: Mixture of experts for multitask locomotion. In 2025 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) . IEEE, 14218–14225. [5] Zhiheng Xi, Wenxiang Chen, Xin Guo, Wei He, Yiwen Ding, Boyang Hong, Ming Zhang, Junzhe Wang, Senjie Jin, Enyu Zhou, et al . 2025. The rise and potential of large language model based agents: A survey. Science China Information Sciences 
+
+68, 2 (2025), 121101. [6] Wenhao Yu, Deepali Jain, Alejandro Escontrela, Atil Iscen, Peng Xu, Erwin Coumans, Sehoon Ha, Jie Tan, and Tingnan Zhang. 2021. Visual-locomotion: Learning to walk on complex terrains with vision. In 5th Annual Conference on Robot Learning .
