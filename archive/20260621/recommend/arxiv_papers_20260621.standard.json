@@ -1,0 +1,765 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-21T20:58:04.757044+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 13,
+    "deep_cap": 6,
+    "deep_selected": 6,
+    "quick_candidates": 15,
+    "quick_skim_target": 11,
+    "quick_selected": 11
+  },
+  "deep_dive": [
+    {
+      "id": "2606.16489v1",
+      "source": "arxiv",
+      "title": "BRICKS-WM: Building Reusability via Interface Composition Kinetics for Structured World Models",
+      "abstract": "Model-based Reinforcement Learning (MBRL) has achieved remarkable success in continuous control by leveraging latent world models. However, prevailing approaches typically rely on monolithic latent dynamics, entangling environment dynamics into a coupled process. This coupling severely limits reusability: altering the agent necessitates retraining the entire world from scratch, even if the environment remains constant. To address this, we introduce BRICKS-WM (Building Reusability via Interface Composition Kinetics for Structured World Models), a framework for the modular assembly of structured world models. Driven by the insight that the physical world is composed of independent entities, we posit that global dynamics can be modeled as a composition of distinct dynamical modules interacting via latent interfaces. As a minimal instantiation, we factorize the latent state space into an actuated Agent module and an external Background module, bridged by a learned latent interface. Unlike prior object-centric methods that prioritize visual segmentation, BRICKS-WM enforces a functional separation in transition dynamics, ensuring that background dynamics remains agnostic to the agent's dynamics. Empirically, BRICKS-WM achieves control performance comparable to strong monolithic baselines when trained from scratch, and enables the reuse of frozen background dynamics across agents.",
+      "authors": [
+        "Shaowei Zhang",
+        "Jiahan Cao",
+        "Xunlan Zhou",
+        "Shenghua Wan",
+        "De-Chuan Zhan"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-06-15T09:55:33+00:00",
+      "link": "https://arxiv.org/pdf/2606.16489v1",
+      "tags": [
+        "keyword:embodied-ai",
+        "query:embodied-ai"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Modular structured world models for model-based RL",
+      "llm_evidence_cn": "用于基于模型的强化学习的模块化结构化世界模型",
+      "llm_evidence": "用于基于模型的强化学习的模块化结构化世界模型",
+      "canonical_evidence": "用于基于模型的强化学习的模块化结构化世界模型",
+      "llm_tldr_en": "BRICKS-WM builds modular structured world models from independent entities, enabling reusability when agents change without full retraining.",
+      "llm_tldr_cn": "针对基于模型的强化学习中世界模型耦合严重、重用性差的问题，提出BRICKS-WM框架。将全局动力学分解为独立实体的交互模块，支持灵活组装世界模型，在改变智能体时无需重新训练整个模型，显著提升模型重用性和训练效率。",
+      "llm_tldr": "针对基于模型的强化学习中世界模型耦合严重、重用性差的问题，提出BRICKS-WM框架。将全局动力学分解为独立实体的交互模块，支持灵活组装世界模型，在改变智能体时无需重新训练整个模型，显著提升模型重用性和训练效率。",
+      "llm_tags": [
+        "query:embodied-ai"
+      ],
+      "matched_query_tag": "query:embodied-ai",
+      "matched_query_text": "world model in robotics",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.19784v1",
+      "source": "arxiv",
+      "title": "EquiVLA: A General Framework for Rotationally Equivariant Vision-Language-Action Models",
+      "abstract": "Vision-Language-Action (VLA) models have emerged as a powerful paradigm for generalist robot manipulation, yet they lack geometric inductive biases: policies trained at specific orientations require substantially more data to generalize across rotational configurations. We present \\textsc{EquiVLA}, the first general framework for end-to-end $\\mathrm{SO}(2)$-equivariant VLA models, applicable to any architecture coupling a frozen vision-language backbone with a flow-matching Diffusion Transformer action head. \\textsc{EquiVLA} introduces \\textsc{EquiPerceptor}, which produces approximately $\\mathrm{SO}(2)$-equivariant visual representations from frozen ViT features; and \\textsc{EquiActor}, an exactly $\\mathrm{SO}(2)$-equivariant flow-matching Diffusion Transformer action head. Together, they establish an approximate $\\mathrm{SO}(2)$ equivariance chain from camera observations to predicted action sequences. Instantiated on GR00T~N1.5 and evaluated across four LIBERO suites, CALVIN ABCD$\\to$D, and five real-robot tasks on Mobile ALOHA, \\textsc{EquiVLA} achieves $92.6\\%$ average success on LIBERO (vs. $78.1\\%$ baseline), an average sequence length of $4.03$ on CALVIN (vs. $3.45$), and improves real-robot success from $54\\%$ to $72\\%$.",
+      "authors": [
+        "Thien-Loc Ha",
+        "Quang-Tan Nguyen",
+        "Trong-Bao Ho",
+        "Long Dinh",
+        "Minh Duc Nguyen",
+        "Gia-Binh Nguyen",
+        "Pham Tri Quang",
+        "Minh N. Vu",
+        "Duy M. H. Nguyen",
+        "An Thai Le",
+        "Ngo Anh Vien"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-06-18T04:36:57+00:00",
+      "link": "https://arxiv.org/pdf/2606.19784v1",
+      "tags": [
+        "keyword:embodied-ai",
+        "query:embodied-ai"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "rotation equivariant Vision-Language-Action models for robot manipulation",
+      "llm_evidence_cn": "用于机器人操作的旋转等变视觉-语言-动作模型",
+      "llm_evidence": "用于机器人操作的旋转等变视觉-语言-动作模型",
+      "canonical_evidence": "用于机器人操作的旋转等变视觉-语言-动作模型",
+      "llm_tldr_en": "EquiVLA introduces SO(2)-equivariant VLA models with EquiPerceptor and EquiActor to improve data efficiency in robot manipulation across orientations.",
+      "llm_tldr_cn": "该工作针对现有视觉-语言-动作(VLA)模型缺乏几何归纳偏置、难以泛化到不同朝向的问题，提出了EquiVLA框架，该框架可应用于任何结合冻结视觉-语言骨干和流匹配扩散Transformer动作头的架构，通过引入近似SO(2)等变的视觉表示和严格等变的动作生成，大幅提高了旋转泛化能力，减少了数据需求。",
+      "llm_tldr": "该工作针对现有视觉-语言-动作(VLA)模型缺乏几何归纳偏置、难以泛化到不同朝向的问题，提出了EquiVLA框架，该框架可应用于任何结合冻结视觉-语言骨干和流匹配扩散Transformer动作头的架构，通过引入近似SO(2)等变的视觉表示和严格等变的动作生成，大幅提高了旋转泛化能力，减少了数据需求。",
+      "llm_tags": [
+        "query:embodied-ai"
+      ],
+      "matched_query_tag": "query:embodied-ai",
+      "matched_query_text": "Vision language action models for robotic manipulation",
+      "matched_requirement_id": "req-9",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.20031v1",
+      "source": "arxiv",
+      "title": "A Neuromorphic Reinforcement Learning Framework for Efficient Pathfinding in Robotic Mobile Fulfillment Systems",
+      "abstract": "Dynamic environmental changes, confined workspaces, and stringent real-time constraints make pathfinding in Robotic Mobile Fulfillment Systems (RMFS) a challenging problem for conventional search- and rule-based methods, which typically suffer from high computational complexity and long decision latency. While reinforcement learning (RL) has emerged as a powerful alternative, deploying learned policies with extreme energy efficiency on resource-constrained hardware remains an open challenge. We present SDQN-RMFS, an end-to-end framework that achieves high-fidelity deployment of an RL-trained policy from a full-precision artificial neural network (ANN) through to a neuromorphic chip. By computing only when triggered by sparse events, this framework unlocks ultra-low-power RMFS pathfinding. Our full-stack pipeline operates as follows: an ANN policy is first efficiently trained via a collision-allowing strategy to densify informative trajectories, and then converted into a spiking neural network (SNN) via a hard-label knowledge distillation approach. This effectively addresses the output distribution mismatch, preserving policy capability across the ANN-to-SNN pipeline while substantially reducing inference latency. Hardware experiments demonstrate up to 11,281$\\times$ energy savings and a nearly two-fold reduction in latency compared to a high-performance GPU baseline, while maintaining decision quality on par with the original trained policy. These results establish physical neuromorphic inference as a practical and energy-sustainable pathway for large-scale RMFS operations.",
+      "authors": [
+        "Junzhe Xu",
+        "Zecui Zeng",
+        "Lusong Li",
+        "Yuetong Fang",
+        "Renjing Xu"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-06-18T10:04:28+00:00",
+      "link": "https://arxiv.org/pdf/2606.20031v1",
+      "tags": [
+        "keyword:embodied-ai",
+        "query:embodied-ai"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "RL-based pathfinding deployed on neuromorphic chip for robotic mobile fulfillment systems",
+      "llm_evidence_cn": "基于强化学习的路径规划部署于神经形态芯片，用于机器人移动拣选系统",
+      "llm_evidence": "基于强化学习的路径规划部署于神经形态芯片，用于机器人移动拣选系统",
+      "canonical_evidence": "基于强化学习的路径规划部署于神经形态芯片，用于机器人移动拣选系统",
+      "llm_tldr_en": "Proposes SDQN-RMFS, an end-to-end framework that trains an RL policy for pathfinding in robotic warehouses and deploys it on neuromorphic hardware with extreme energy efficiency.",
+      "llm_tldr_cn": "针对机器人移动拣货系统中的路径规划问题，本文提出SDQN-RMFS，将强化学习策略从全精度神经网络高效部署到神经形态芯片。该方法在保证路径规划质量的同时，显著降低能耗和延迟，适合资源受限的硬件环境。",
+      "llm_tldr": "针对机器人移动拣货系统中的路径规划问题，本文提出SDQN-RMFS，将强化学习策略从全精度神经网络高效部署到神经形态芯片。该方法在保证路径规划质量的同时，显著降低能耗和延迟，适合资源受限的硬件环境。",
+      "llm_tags": [
+        "query:embodied-ai"
+      ],
+      "matched_query_tag": "query:embodied-ai",
+      "matched_query_text": "reinforcement learning for robotics",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.16178v1",
+      "source": "arxiv",
+      "title": "Scaling Short-Term Memory of Visuomotor Policies for Long-Horizon Tasks",
+      "abstract": "Many robotic tasks require short-term memory, whether it's retrieving an object that's no longer visible or turning off an appliance after a set period. Yet, most visuomotor policies trained via imitation learning rely only on immediate sensory input without using past experiences to guide decisions. We present PRISM, a transformer-based architecture for visuomotor policies to effectively use short-term memory via two key components: (i) gated attention, which filters retrieved information to suppress irrelevant details, improving performance by reducing the spurious correlations between the history and current action prediction, (ii) a hierarchical architecture that first compresses local information into compact tokens and then integrates them to capture temporally extended dependencies, improving its compute and memory footprint. Together, these mechanisms enable us to scale short-term memory in visuomotor policies for up to two minutes. To systematically evaluate memory in visuomotor control, we introduce ReMemBench -- a benchmark of eight diverse household manipulation tasks spanning four categories of short-term memory -- designed to foster general memory mechanisms rather than siloed, task-specific solutions. PRISM consistently outperforms prior works, including recurrent architectures, transformers, and their variants -- achieving an absolute improvement of 5%--12% over the strongest baseline. On the RoboCasa and LIBERO benchmarks, it achieves absolute improvements of 11%--15% over its no-memory variant and fine-tuned Vision-Language-Action baselines such as GR00T-N1-3B and OpenVLA, despite not leveraging any large-scale pretraining. Together, PRISM and ReMemBench establish a foundation for developing and evaluating short-term memory-augmented visuomotor policies that scale to long-horizon tasks. Additional materials are available at https://shahrutav.github.io/short-term-memory",
+      "authors": [
+        "Rutav Shah",
+        "Rajat Kumar Jenamani",
+        "Xiaohan Zhang",
+        "Lingfeng Sun",
+        "Roberto Martín-Martín",
+        "Yuke Zhu",
+        "Deva Ramanan",
+        "Karl Schmeckpeper"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-06-15T03:49:23+00:00",
+      "link": "https://arxiv.org/pdf/2606.16178v1",
+      "tags": [
+        "keyword:embodied-ai",
+        "query:embodied-ai"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "short-term memory for visuomotor manipulation policies",
+      "llm_evidence_cn": "为视觉运动操作策略添加短期记忆",
+      "llm_evidence": "为视觉运动操作策略添加短期记忆",
+      "canonical_evidence": "为视觉运动操作策略添加短期记忆",
+      "llm_tldr_en": "Proposes PRISM, a transformer architecture that equips visuomotor policies with short-term memory via gated attention and hierarchical compression for long-horizon tasks.",
+      "llm_tldr_cn": "大多数视觉运动策略仅依赖当前输入，无法处理需要记忆的任务。本文提出PRISM，一种基于Transformer的架构，通过门控注意力过滤历史信息，并采用层次化结构压缩局部信息，使策略能有效利用短期记忆。在长时操作任务上实验证明其优于基线。",
+      "llm_tldr": "大多数视觉运动策略仅依赖当前输入，无法处理需要记忆的任务。本文提出PRISM，一种基于Transformer的架构，通过门控注意力过滤历史信息，并采用层次化结构压缩局部信息，使策略能有效利用短期记忆。在长时操作任务上实验证明其优于基线。",
+      "llm_tags": [
+        "query:embodied-ai"
+      ],
+      "matched_query_tag": "query:embodied-ai",
+      "matched_query_text": "robotic manipulation using learned policies",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.16621v1",
+      "source": "arxiv",
+      "title": "Reinforcement Learning with Inner-loop Dynamics Estimator for Aerial Manipulation under Uncertainty",
+      "abstract": "Aerial manipulators enable physical interaction in hard-to-reach environments; however, the combined problem of direct whole-body aerial manipulation under rapid arm motion, payload changes, and related unknown dynamic uncertainty remains a largely unsolved problem. We present a hierarchical control framework that combines Reinforcement Learning (RL) with an inner-loop dynamics estimator to address this problem. The RL outer loop maps desired 6-degrees-of-freedom (DOF) end-effector targets to coordinated whole-body commands, enabling direct task-driven control without relying on a fully accurate coupled dynamic model in the policy layer. An inner loop then tracks these commands while compensating for transient inertial shifts and uncertainty during execution via a dynamics estimator scheme without requiring system model knowledge. We validate the proposed approach on a custom quadrotor equipped with a 3-DoF manipulator through hardware experiments under varying payload conditions. Compared with RL+PID and RL+INDI+PID baselines, the proposed method reduces end-effector tracking error and improves task success rate across the tested hardware conditions. These results show that combining learned whole-body coordination with estimator-based low-level compensation improves the precision and robustness of aerial manipulation under changing operating conditions.",
+      "authors": [
+        "Shivansh Pratap Singh",
+        "Samaksh Ujjwal",
+        "Ishita Chaudhary",
+        "V R Vasudevan",
+        "Rishabh Dev Yadav",
+        "Spandan Roy"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-06-15T12:16:01+00:00",
+      "link": "https://arxiv.org/pdf/2606.16621v1",
+      "tags": [
+        "keyword:embodied-ai",
+        "query:embodied-ai"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Combines reinforcement learning with dynamics estimator for aerial manipulation",
+      "llm_evidence_cn": "将强化学习与动力学估计器结合用于空中操作",
+      "llm_evidence": "将强化学习与动力学估计器结合用于空中操作",
+      "canonical_evidence": "将强化学习与动力学估计器结合用于空中操作",
+      "llm_tldr_en": "Proposes a hierarchical control framework combining RL with inner-loop dynamics estimator for aerial manipulation under uncertainty.",
+      "llm_tldr_cn": "该论文针对空中操作中快速臂动、载荷变化等动态不确定性，提出层次化控制框架：外环强化学习（RL）将6自由度末端执行器目标映射为整机协调指令，内环动力学估计器跟踪指令并补偿惯性变化。该方法无需精确耦合动力学模型，RL策略直接学习任务驱动控制。在仿真中验证了对未知动态的鲁棒性。",
+      "llm_tldr": "该论文针对空中操作中快速臂动、载荷变化等动态不确定性，提出层次化控制框架：外环强化学习（RL）将6自由度末端执行器目标映射为整机协调指令，内环动力学估计器跟踪指令并补偿惯性变化。该方法无需精确耦合动力学模型，RL策略直接学习任务驱动控制。在仿真中验证了对未知动态的鲁棒性。",
+      "llm_tags": [
+        "query:embodied-ai"
+      ],
+      "matched_query_tag": "query:embodied-ai",
+      "matched_query_text": "reinforcement learning for robotics",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.17055v1",
+      "source": "arxiv",
+      "title": "T-Rex: Tactile-Reactive Dexterous Manipulation",
+      "abstract": "The ability to react dynamically to tactile signals has long been considered crucial to agile human-level dexterity. Yet contemporary learning-based Vision-Language-Action (VLA) models for robotic manipulation generally either overlook the tactile modality or are limited to encoders with static cues, due in part to the scarcity of diverse training data and standardized evaluation, architectural constraints in current VLA models, and limitations of static tactile encoders. In this paper, we push the frontier of tactile-reactive manipulation by addressing all of these limitations. We propose a large-scale, 100-hour tactile-rich dataset collected via a novel, data-efficient recipe that prioritizes elementary motor primitives. To effectively exploit naturally high-frequency touch signals without sacrificing the existing capabilities of existing VLAs, we introduce a variable-rate Mixture-of-Transformers (MoT) architecture equipped with a novel temporal tactile VQ-VAE encoder. We demonstrate the effectiveness of tactile-reactive policies on 12 manipulation tasks requiring delicate force control and deformable object manipulation, achieving over 30% higher average success rate than the strongest baseline.",
+      "authors": [
+        "Dantong Niu",
+        "Zhuoyang Liu",
+        "Zekai Wang",
+        "Boning Shao",
+        "Zhao-Heng Yin",
+        "Anirudh Pai",
+        "Yuvan Sharma",
+        "Stefano Saravalle",
+        "Ruijie Zheng",
+        "Jing Wang",
+        "Ryan Punamiya",
+        "Mengda Xu",
+        "Yuqi Xie",
+        "Yunfan Jiang",
+        "Letian Fu",
+        "Konstantinos Kallidromitis",
+        "Matteo Gioia",
+        "Junyi Zhang",
+        "Jiaxin Ge",
+        "Haiwen Feng",
+        "Fabio Galasso",
+        "Wei Zhan",
+        "David M. Chan",
+        "Yutong Bai",
+        "Roei Herzig",
+        "Jiahui Lei",
+        "Fei-Fei Li",
+        "Ken Goldberg",
+        "Jitendra Malik",
+        "Pieter Abbeel",
+        "Yuke Zhu",
+        "Danfei Xu",
+        "Jim",
+        "Fan",
+        "Trevor Darrell"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-06-15T17:59:55+00:00",
+      "link": "https://arxiv.org/pdf/2606.17055v1",
+      "tags": [
+        "keyword:embodied-ai",
+        "query:embodied-ai"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Extends VLA models with tactile-reactive dexterous manipulation",
+      "llm_evidence_cn": "将VLA模型扩展到触觉反应式灵巧操作",
+      "llm_evidence": "将VLA模型扩展到触觉反应式灵巧操作",
+      "canonical_evidence": "将VLA模型扩展到触觉反应式灵巧操作",
+      "llm_tldr_en": "Pushes frontier of tactile-reactive manipulation by collecting a large tactile dataset and extending VLA models to incorporate high-frequency tactile signals.",
+      "llm_tldr_cn": "该论文针对当前VLA模型忽略或只能静态处理触觉模态的问题，推动触觉反应式操作。作者收集了100小时的大规模触觉丰富数据集，采用优先考虑基本运动基元的数据高效收集方案。提出新架构利用触觉的高频动态信号，使机器人能够实时响应触觉反馈。实验表明，触觉反应式控制显著提升了灵巧操作性能，为VLA模型融合触觉提供了新范式。",
+      "llm_tldr": "该论文针对当前VLA模型忽略或只能静态处理触觉模态的问题，推动触觉反应式操作。作者收集了100小时的大规模触觉丰富数据集，采用优先考虑基本运动基元的数据高效收集方案。提出新架构利用触觉的高频动态信号，使机器人能够实时响应触觉反馈。实验表明，触觉反应式控制显著提升了灵巧操作性能，为VLA模型融合触觉提供了新范式。",
+      "llm_tags": [
+        "query:embodied-ai"
+      ],
+      "matched_query_tag": "query:embodied-ai",
+      "matched_query_text": "Vision language action models for robotic manipulation",
+      "matched_requirement_id": "req-9",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2606.17256v1",
+      "source": "arxiv",
+      "title": "Contrastive Action-Image Pre-training for Visuomotor Control",
+      "abstract": "Existing vision encoders for robotics face a fundamental bottleneck: robotic datasets lack the scale necessary for large-scale pre-training. Prior work circumvents this data scarcity by turning to internet-scale image and language data or egocentric human video. While these models show promise, neither paradigm learns from paired vision and action data, which downstream visuomotor control policies require. However, robot trajectories, the most direct source of this paired signal, are not available at pre-training scale, motivating us to extract action signals from abundant human video instead. To this end, we introduce CAIP (Contrastive Action-Image Pre-training), a vision encoder that treats human hand poses from large-scale egocentric video as a proxy for end-effector actions. By extracting 3D hand keypoints, a representation that aligns naturally with downstream robot action spaces, CAIP learns a unified action-image representation through a contrastive objective. Leveraging 32,041 hours of egocentric human video and only 88 hours of robotic manipulation data, CAIP outperforms state-of-the-art vision encoders including DINOv2, SigLIP, MVP, and R3M. Evaluated on a challenging real-world dexterous manipulation setup using Dexmate Vega and Sharpa Wave hands, CAIP yields performance gains of more than 30% on tasks involving folding, pouring, and fine-grained manipulation. Our results show that our method of contrastive action-centric pre-training yields a scalable path to achieving robust visual representations better suited for physical interaction.",
+      "authors": [
+        "Yuvan Sharma",
+        "Dantong Niu",
+        "Anirudh Pai",
+        "Zekai Wang",
+        "Zhuoyang Liu",
+        "Baifeng Shi",
+        "Stefano Saravalle",
+        "Boning Shao",
+        "Ruijie Zheng",
+        "Jing Wang",
+        "Konstantinos Kallidromitis",
+        "Yusuke Kato",
+        "Fabio Galasso",
+        "Yuke Zhu",
+        "Danfei Xu",
+        "Linxi \"Jim\" Fan",
+        "Jitendra Malik",
+        "Trevor Darrell",
+        "Roei Herzig"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "published": "2026-06-15T20:00:20+00:00",
+      "link": "https://arxiv.org/pdf/2606.17256v1",
+      "tags": [
+        "keyword:embodied-ai",
+        "query:embodied-ai"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "contrastive pre-training from human video for robot visuomotor control",
+      "llm_evidence_cn": "从人类视频进行对比预训练，用于机器人视觉运动控制",
+      "llm_evidence": "从人类视频进行对比预训练，用于机器人视觉运动控制",
+      "canonical_evidence": "从人类视频进行对比预训练，用于机器人视觉运动控制",
+      "llm_tldr_en": "Introduces CAIP, a vision encoder pre-trained on egocentric human video using contrastive action-image pairs, serving as a backbone for downstream visuomotor control policies without large-scale robot data.",
+      "llm_tldr_cn": "针对机器人视觉编码器缺乏大规模配对视觉-动作数据的问题，本文提出CAIP，利用第一人称人类视频中手部姿态作为动作代理，通过对比学习预训练视觉编码器。该编码器可直接用于下游机器人控制策略，显著提升性能且无需机器人数据。",
+      "llm_tldr": "针对机器人视觉编码器缺乏大规模配对视觉-动作数据的问题，本文提出CAIP，利用第一人称人类视频中手部姿态作为动作代理，通过对比学习预训练视觉编码器。该编码器可直接用于下游机器人控制策略，显著提升性能且无需机器人数据。",
+      "llm_tags": [
+        "query:embodied-ai"
+      ],
+      "matched_query_tag": "query:embodied-ai",
+      "matched_query_text": "robotic manipulation using learned policies",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2606.16458v1",
+      "source": "arxiv",
+      "title": "RHO: Your Coding Agent is Secretly a Roboticist",
+      "abstract": "Code-as-Policies (CaP) has shown that large language models (LLMs) can write code to solve robotics tasks by composing perception, planning, and control primitives. Recent CaP systems, however, rely on multi-turn code-generation loops at test time, which is often infeasible for real-time robot control. We introduce Robotics Harness Optimization (RHO), a novel paradigm in which tool-enabled coding agents, at training time, propose and search for interpretable, neurosymbolic multi-file policy repositories (Repositories-as-Policies) that compose these primitives rather than a single prompt, function, or file. RHO searches with reflective feedback from environment reward and execution rather than teleoperation demonstrations. It generalizes to perturbed pick-and-place settings like LIBERO-PRO, where OpenVLA scores 0.0% and $π_{0.5}$ averages 12.83%. Using the same low-level primitives, RHO reaches a 45.0% success rate, 2.5x higher than the strongest multi-turn agentic system, and 3.5x higher than $π_{0.5}$. On Robosuite, RHO sets a new state-of-the-art of 70.0%, exceeding the prior multi-turn record of 68.29% using single-turn execution with no corrective LLM code edits at deployment. When an LLM is used in the control loop, as on RAI's O3DE benchmark, RHO optimizes the deployed agent's multi-file harness of prompts, tools, and control code, improving held-out success from 23.5% to 44.3% with 20% less wall-clock time and 27% fewer tool calls.",
+      "authors": [
+        "Karim Elmaaroufi",
+        "Justin Svegliato",
+        "Sarunas Kalade",
+        "Graham Schelle",
+        "Sanjit A. Seshia",
+        "Matei Zaharia"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-06-15T09:30:12+00:00",
+      "link": "https://arxiv.org/pdf/2606.16458v1",
+      "tags": [
+        "keyword:embodied-ai",
+        "query:embodied-ai"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "uses environment reward feedback to optimize robot policies",
+      "llm_evidence_cn": "使用环境奖励反馈优化机器人策略",
+      "llm_evidence": "使用环境奖励反馈优化机器人策略",
+      "canonical_evidence": "使用环境奖励反馈优化机器人策略",
+      "llm_tldr_en": "RHO uses LLM agents to search for policy repositories at training time, leveraging environment reward feedback instead of demonstrations, enabling efficient robot control generation.",
+      "llm_tldr_cn": "针对代码即策略方法在测试时多轮生成不可用于实时控制的问题，本文提出RHO范式，在训练时通过工具赋能的编码代理搜索可解释的多文件神经符号策略库，并利用环境奖励作为反馈信号。实验表明RHO能泛化到扰动抓取放置场景，为机器人策略生成提供了高效的新路径。",
+      "llm_tldr": "针对代码即策略方法在测试时多轮生成不可用于实时控制的问题，本文提出RHO范式，在训练时通过工具赋能的编码代理搜索可解释的多文件神经符号策略库，并利用环境奖励作为反馈信号。实验表明RHO能泛化到扰动抓取放置场景，为机器人策略生成提供了高效的新路径。",
+      "llm_tags": [
+        "query:embodied-ai"
+      ],
+      "matched_query_tag": "query:embodied-ai",
+      "matched_query_text": "reinforcement learning for robotics",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2606.18043v1",
+      "source": "arxiv",
+      "title": "Uncertainty Quantification for Flow-Based Vision-Language-Action Models",
+      "abstract": "Vision-language-action models (VLAs) combine vision-language backbones with expressive generative action heads trained via flow matching on large-scale robotic datasets. Despite their strong empirical performance in robotic manipulation, VLAs lack mechanisms to quantify confidence in their predictions and to detect when their actions may be unreliable. This presents a critical limitation for real-world deployment in non-stationary environments, where models inevitably encounter scenarios outside their pretraining distribution and may fail without warning. To address this, we derive an efficient method for quantifying epistemic uncertainty in flow-matching models by leveraging velocity-field disagreement (VFD) across a small ensemble. We successfully use this uncertainty estimate for failure detection during deployment and active fine-tuning of flow-based VLAs. To this end, we propose SAVE, a framework for uncertainty-guided active multitask fine-tuning that reduces the number of costly expert demonstrations required to adapt VLAs to new tasks. Through extensive experiments on the LIBERO benchmark, we demonstrate that VFD yields better-calibrated uncertainty estimates predictive of downstream performance, that VFD achieves strong performance in detecting failures, and that uncertainty-guided data acquisition with SAVE requires at least 22% fewer samples than baselines. In summary, our work shows that quantifying epistemic uncertainty in flow-based VLAs improves both failure awareness and adaptation. Project website: tum-lsy.github.io/uq_vla/.",
+      "authors": [
+        "Ralf Römer",
+        "Maximilian Seeliger",
+        "Saida Liu",
+        "Ben Sturgis",
+        "Marco Bagatella",
+        "Daniel Marta",
+        "Andreas Krause",
+        "Angela P. Schoellig"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.LG"
+      ],
+      "published": "2026-06-16T15:19:09+00:00",
+      "link": "https://arxiv.org/pdf/2606.18043v1",
+      "tags": [
+        "keyword:embodied-ai",
+        "query:embodied-ai"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "uncertainty quantification for VLA models in robotic manipulation",
+      "llm_evidence_cn": "VLA模型在机器人操作中的不确定性量化",
+      "llm_evidence": "VLA模型在机器人操作中的不确定性量化",
+      "canonical_evidence": "VLA模型在机器人操作中的不确定性量化",
+      "llm_tldr_en": "Derives an efficient epistemic uncertainty quantification method for flow-based VLA models using velocity-field disagreement, enabling reliability detection in manipulation tasks.",
+      "llm_tldr_cn": "针对VLA模型在真实部署中缺乏置信度量化的问题，提出基于速度场不一致性（VFD）的小集合方法，高效计算流匹配VLA模型的不确定性，成功预测操作失败并提升鲁棒性。",
+      "llm_tldr": "针对VLA模型在真实部署中缺乏置信度量化的问题，提出基于速度场不一致性（VFD）的小集合方法，高效计算流匹配VLA模型的不确定性，成功预测操作失败并提升鲁棒性。",
+      "llm_tags": [
+        "query:embodied-ai"
+      ],
+      "matched_query_tag": "query:embodied-ai",
+      "matched_query_text": "Vision language action models for robotic manipulation",
+      "matched_requirement_id": "req-9",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2606.16542v1",
+      "source": "arxiv",
+      "title": "ADAPT: Analytical Disturbance-Aware Policy Training for Humanoid Locomotion",
+      "abstract": "Humanoids deployed in human-centered environments must handle force-interactive tasks, where external contacts introduce unexpected disturbances that disrupt locomotion accuracy and stability. Existing learning-based approaches rely on broad domain randomization, task-specific force objectives, or learning-based force estimators from motion history, each of which compromises accuracy, task transferability, or out-of-distribution (OOD) robustness. We present Analytical Disturbance-Aware Policy Training (ADAPT), a framework that equips humanoid policies with a physically grounded disturbance observer. The core of ADAPT is an analytical whole-body disturbance observer that estimates residual force/torque online with the accessible robot dynamics, without requiring force/torque sensors. Fed directly into the policy, the estimated disturbances give the humanoid an explicit, physics-derived sense of external force/torque that can generalize across diverse unseen scenes. Experiments on a Unitree G1 humanoid show that ADAPT achieves accurate disturbance prediction and stronger robustness than a proprioception-only baseline under torso perturbations, standing pushes, and asymmetric hand payloads, with improved velocity tracking even on OOD disturbances. Moreover, ADAPT enables penalizing inferred disturbances at lower-body joints to encourage lighter locomotion.",
+      "authors": [
+        "Bofan Lyu",
+        "Jindou Jia",
+        "Kuangji Zuo",
+        "Yanshuo Lu",
+        "Shijia Han",
+        "Gen Li",
+        "Boyu Ma",
+        "Jingliang Li",
+        "Geng Li",
+        "Jianfei Yang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-06-15T10:47:18+00:00",
+      "link": "https://arxiv.org/pdf/2606.16542v1",
+      "tags": [
+        "keyword:embodied-ai",
+        "query:embodied-ai"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "RL for humanoid locomotion with disturbance observer",
+      "llm_evidence_cn": "用于人形机器人运动的强化学习，包含扰动观测器",
+      "llm_evidence": "用于人形机器人运动的强化学习，包含扰动观测器",
+      "canonical_evidence": "用于人形机器人运动的强化学习，包含扰动观测器",
+      "llm_tldr_en": "ADAPT equips humanoid RL policies with an analytical disturbance observer for robust locomotion under external forces.",
+      "llm_tldr_cn": "针对人形机器人在力交互任务中运动不稳定的问题，提出ADAPT框架，利用解析的全身扰动观测器在线估计外力/力矩，增强强化学习策略的抗扰动能力，提升准确性和任务迁移性。",
+      "llm_tldr": "针对人形机器人在力交互任务中运动不稳定的问题，提出ADAPT框架，利用解析的全身扰动观测器在线估计外力/力矩，增强强化学习策略的抗扰动能力，提升准确性和任务迁移性。",
+      "llm_tags": [
+        "query:embodied-ai"
+      ],
+      "matched_query_tag": "query:embodied-ai",
+      "matched_query_text": "reinforcement learning for robotics",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2606.19586v1",
+      "source": "arxiv",
+      "title": "One Demo is Worth a Thousand Trajectories: Action-View Augmentation for Visuomotor Policies",
+      "abstract": "Visuomotor policies for manipulation have demonstrated remarkable potential in modeling complex robotic behaviors, yet minor alterations in the robot's initial configuration and unseen obstacles easily lead to out-of-distribution observations. Without extensive data collection effort, these result in catastrophic execution failures. In this work, we introduce an effective data augmentation framework that generates visually realistic fisheye image sequences and corresponding physically feasible action trajectories from real-world eye-in-hand demonstrations, captured with a portable parallel gripper with a single fisheye camera. We introduce a novel Gaussian Splatting formulation, adapted to wide FoV fisheye cameras, to reconstruct and edit the 3D scene with unseen objects. We utilize trajectory optimization to generate smooth, collision-free, view-rendering-friendly action trajectories and render visual observations from corresponding novel views. Comprehensive experiments in simulation and the real world show that our augmentation framework improves the success rate for various manipulation tasks in both the same scene and the augmented scene with obstacles requiring collision avoidance.",
+      "authors": [
+        "Chuer Pan",
+        "Litian Liang",
+        "Dominik Bauer",
+        "Eric Cousineau",
+        "Benjamin Burchfiel",
+        "Siyuan Feng",
+        "Shuran Song"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-06-17T20:41:13+00:00",
+      "link": "https://arxiv.org/pdf/2606.19586v1",
+      "tags": [
+        "keyword:embodied-ai",
+        "query:embodied-ai"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "data augmentation for visuomotor manipulation policies",
+      "llm_evidence_cn": "面向视觉运动操作策略的数据增强",
+      "llm_evidence": "面向视觉运动操作策略的数据增强",
+      "canonical_evidence": "面向视觉运动操作策略的数据增强",
+      "llm_tldr_en": "Proposes a Gaussian Splatting-based data augmentation framework generating multi-view fisheye image sequences and corresponding action trajectories from a single demo to improve visuomotor policy generalization.",
+      "llm_tldr_cn": "现有视觉运动策略对初始配置和障碍变化敏感，导致泛化失败。本文提出一种数据增强框架，利用改进的高斯溅射从单次眼在手演示生成逼真的鱼眼图像序列和物理可行的动作轨迹，有效扩展训练数据分布。实验表明该方法显著提升策略在未见场景下的执行成功率。",
+      "llm_tldr": "现有视觉运动策略对初始配置和障碍变化敏感，导致泛化失败。本文提出一种数据增强框架，利用改进的高斯溅射从单次眼在手演示生成逼真的鱼眼图像序列和物理可行的动作轨迹，有效扩展训练数据分布。实验表明该方法显著提升策略在未见场景下的执行成功率。",
+      "llm_tags": [
+        "query:embodied-ai"
+      ],
+      "matched_query_tag": "query:embodied-ai",
+      "matched_query_text": "robotic manipulation using learned policies",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2606.16696v1",
+      "source": "arxiv",
+      "title": "VENOM: Versatile Embodied Network for Omni-bodied Motion tracking",
+      "abstract": "Achieving expert-level expressive full-body motion tracking across multiple humanoids solely from demonstration data remains a challenging and relatively an underexplored problem in humanoid robot learning. Cross-embodiment motion tracking policies are mostly trained by decoupling the control problem into upper and lower body control. This work proposes VENOM, a cross-embodiment full-body motion tracking model for humanoids in simulation. VENOM is a GPT-based motion tracker trained on multiple humanoid data that can track the entire body without the requirement to split into upper and lower body control. We curate a multi-humanoid motion tracking dataset called the VENOM dataset that contains states, actions, and rewards and train VENOM and the baselines on this dataset. In this letter, we evaluate VENOM's performance against baselines and show that we can achieve a stable motion tracker across different humanoids more capable than an MLP trained on multiple humanoid data with supervised learning alone, and also show that despite lack of reward feedback, VENOM closely matches the tracking capability of experts that were trained using asymmetric-actor critic reinforcement learning.",
+      "authors": [
+        "Siddharth Padmanabhan",
+        "Kazuki Miyazawa",
+        "Takato Horii"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-06-15T13:31:37+00:00",
+      "link": "https://arxiv.org/pdf/2606.16696v1",
+      "tags": [
+        "keyword:embodied-ai",
+        "query:embodied-ai"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "learning full-body motion tracking from demonstration data across multiple humanoids",
+      "llm_evidence_cn": "从多个人形机器人演示数据中学习全身运动跟踪",
+      "llm_evidence": "从多个人形机器人演示数据中学习全身运动跟踪",
+      "canonical_evidence": "从多个人形机器人演示数据中学习全身运动跟踪",
+      "llm_tldr_en": "VENOM is a GPT-based motion tracker trained on multi-humanoid demonstration data, achieving full-body tracking without splitting upper and lower body control.",
+      "llm_tldr_cn": "多个人形机器人的全身运动跟踪通常需要将上下身控制解耦，限制了表达力。本文提出VENOM，一个基于GPT的运动跟踪模型，在包含状态、动作和奖励的多个人形数据集上训练，直接输出全身控制信号。实验证明，VENOM能够实现专家级的全身运动跟踪，无需拆分控制器。",
+      "llm_tldr": "多个人形机器人的全身运动跟踪通常需要将上下身控制解耦，限制了表达力。本文提出VENOM，一个基于GPT的运动跟踪模型，在包含状态、动作和奖励的多个人形数据集上训练，直接输出全身控制信号。实验证明，VENOM能够实现专家级的全身运动跟踪，无需拆分控制器。",
+      "llm_tags": [
+        "query:embodied-ai"
+      ],
+      "matched_query_tag": "query:embodied-ai",
+      "matched_query_text": "robot learning from demonstration or reinforcement",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2606.19729v1",
+      "source": "arxiv",
+      "title": "VOiLA: Vectorized Online Planning with Learned Diffusion Model for POMDP Agents",
+      "abstract": "Planning under uncertainty is an essential capability for autonomous robots. The Partially Observable Markov Decision Process (POMDP) provides a powerful framework for such a capability. Although POMDP-based planning has advanced significantly, its application to real-world problems is often limited by the difficulty of obtaining faithful POMDP models. We present Vectorized Online planning wIth Learned diffusion model for POMDP Agents (VOiLA), a framework that learns task-agnostic POMDP models for online planning under uncertainty. VOiLA learns transition and observation samplers using conditional diffusion models and learns observation-likelihood models for particle-based belief updates. To enable efficient online planning, the diffusion samplers are distilled into compact feedforward generators and integrated with Vectorized Online POMDP Planner (VOPP), an online POMDP planner designed to leverage GPU parallelization. Experimental results indicate the distillation strategy reduces sampling cost by up to nearly three orders of magnitude, making learned generative POMDP models practical for online planning. Evaluation of VOiLA on three benchmark problems indicate that VOiLA achieves equal or better performance than Recurrent Soft Actor Critic while using less than 10% training data, and generalizes much better to unseen environment configurations. Physical robot evaluation indicates VOiLA uses the models learned using only simulated data and generates a policy that successfully accomplish the task in 10 of 10 runs.",
+      "authors": [
+        "Marcus Hoerger",
+        "Rishikesh Joshi",
+        "Rahul Shome",
+        "Ian Manchester",
+        "Hanna Kurniawati"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-06-18T02:51:54+00:00",
+      "link": "https://arxiv.org/pdf/2606.19729v1",
+      "tags": [
+        "keyword:embodied-ai",
+        "query:embodied-ai"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "learns world models (POMDP) for robot planning",
+      "llm_evidence_cn": "学习POMDP世界模型用于机器人规划",
+      "llm_evidence": "学习POMDP世界模型用于机器人规划",
+      "canonical_evidence": "学习POMDP世界模型用于机器人规划",
+      "llm_tldr_en": "VOiLA learns task-agnostic POMDP models using diffusion for online planning under uncertainty, enabling robots to plan in partially observable environments.",
+      "llm_tldr_cn": "现有POMDP规划受限于获取精确模型。本文提出VOiLA框架，利用条件扩散模型学习任务无关的转移和观测采样器，并学习观测似然模型用于粒子滤波信念更新，实现高效在线规划。实验表明该方法在不确定性下表现优异。",
+      "llm_tldr": "现有POMDP规划受限于获取精确模型。本文提出VOiLA框架，利用条件扩散模型学习任务无关的转移和观测采样器，并学习观测似然模型用于粒子滤波信念更新，实现高效在线规划。实验表明该方法在不确定性下表现优异。",
+      "llm_tags": [
+        "query:embodied-ai"
+      ],
+      "matched_query_tag": "query:embodied-ai",
+      "matched_query_text": "Learning world models for robot interaction",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2606.18132v1",
+      "source": "arxiv",
+      "title": "Knowledge Reutilization in Meta-Reinforcement Learning",
+      "abstract": "Meta-reinforcement learning enables fast adaptation by extracting shared structure from related tasks, but existing end-to-end methods often couple task inference with embodiment-specific control. This coupling can obscure non-parametric task semantics, reduce sample efficiency, and limit cross-agent reuse. We propose a meta-knowledge reutilization framework that learns task-level knowledge on a dynamics-simplified agent and transfers it to heterogeneous agents. The framework uses a Bayesian non-parametric prior to organize latent task modes and a high-level policy to generate task-level magnitude guidance. To bridge reusable task knowledge with different embodiments, we introduce a semantic-magnitude interface and a lightweight temporal adaptor, which convert frozen meta-knowledge into temporally aligned subgoals for embodiment-specific low-level controllers. Experiments on multiple locomotion agents show that our framework reduces final-step tracking error by 94.75% -- 99.79% compared with recent state-of-the-art baselines and achieves comparable deployment performance with about 23.8% of their interaction data.",
+      "authors": [
+        "Yuan Meng",
+        "Bo Wang",
+        "Juan de los Rios Ruiz",
+        "Xiangtong Yao",
+        "Zhenshan Bing",
+        "Fuchun Sun",
+        "Alois Knoll"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-06-16T16:32:28+00:00",
+      "link": "https://arxiv.org/pdf/2606.18132v1",
+      "tags": [
+        "keyword:embodied-ai",
+        "query:embodied-ai"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "meta-reinforcement learning for robotics with cross-embodiment knowledge transfer",
+      "llm_evidence_cn": "面向机器人的元强化学习，支持跨实体知识迁移",
+      "llm_evidence": "面向机器人的元强化学习，支持跨实体知识迁移",
+      "canonical_evidence": "面向机器人的元强化学习，支持跨实体知识迁移",
+      "llm_tldr_en": "Proposes a meta-knowledge reutilization framework that learns task-level knowledge on a simplified agent and transfers to heterogeneous robots via semantic-magnitude interface.",
+      "llm_tldr_cn": "提出元知识复用框架，在动力学简化智能体上学习任务级知识，通过语义-幅度接口和轻量时间适配器迁移到异构机器人，解耦任务推理与实体控制。",
+      "llm_tldr": "提出元知识复用框架，在动力学简化智能体上学习任务级知识，通过语义-幅度接口和轻量时间适配器迁移到异构机器人，解耦任务推理与实体控制。",
+      "llm_tags": [
+        "query:embodied-ai"
+      ],
+      "matched_query_tag": "query:embodied-ai",
+      "matched_query_text": "reinforcement learning for robotics",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2606.19980v1",
+      "source": "arxiv",
+      "title": "ENPIRE: Agentic Robot Policy Self-Improvement in the Real World",
+      "abstract": "Achieving dexterous robotic manipulation in the real world heavily relies on human supervision and algorithm engineering, which becomes a central bottleneck in the pursuit of general physical intelligence. Although emerging coding agents can generate code to automate algorithm search, their successes remain largely confined in digital environments. We conjecture that the missing abstraction to automate robotics research is a repeatable feedback loop for real-world policy improvement: reset the scene, execute a policy, verify the outcome, and refine the next iteration. To bridge this gap, we introduce ENPIRE, a harness framework for coding agents that instantiates this physical feedback routine with four core modules: an Environment module (EN) for automatic reset and verification, a Policy Improvement module (PI) that launches policy refinement, a Rollout module (R) to evaluate policies with one or multiple physical robots operating in parallel, and an Evolution module (E) in which coding agents analyze logs, consult literature, improve training infrastructure and algorithm code to address failure modes. This closed-loop system transforms real-world manipulation learning into a controllable optimization procedure, minimizing human effort while allowing fair ablations across training recipe and agent variants. Powered by ENPIRE, frontier coding agents can autonomously train a policy to achieve a 99% success rate on challenging, dexterous manipulation tasks, such as organizing a pin box, fastening a zip tie, and tool use, a process that further accelerates when we dispatch an agent team on a robot fleet. Our results suggest a practical and scalable path toward deploying coding agents to autonomously advancing robotics in the physical world.",
+      "authors": [
+        "Wenli Xiao",
+        "Jia Xie",
+        "Tonghe Zhang",
+        "Haotian Lin",
+        "Letian \"Max\" Fu",
+        "Haoru Xue",
+        "Jalen Lu",
+        "Yi Yang",
+        "Cunxi Dai",
+        "Zi Wang",
+        "Jimmy Wu",
+        "Guanzhi Wang",
+        "S. Shankar Sastry",
+        "Ken Goldberg",
+        "Linxi \"Jim\" Fan",
+        "Yuke Zhu",
+        "Guanya Shi"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-06-18T09:21:27+00:00",
+      "link": "https://arxiv.org/pdf/2606.19980v1",
+      "tags": [
+        "keyword:embodied-ai",
+        "query:embodied-ai"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "robot policy self-improvement via real-world feedback loop",
+      "llm_evidence_cn": "通过真实世界反馈循环实现机器人策略自我改进",
+      "llm_evidence": "通过真实世界反馈循环实现机器人策略自我改进",
+      "canonical_evidence": "通过真实世界反馈循环实现机器人策略自我改进",
+      "llm_tldr_en": "ENPIRE enables agentic robot policy self-improvement in the real world by instantiating a repeatable physical feedback loop of scene reset, execution, verification, and refinement.",
+      "llm_tldr_cn": "真实世界机器人策略改进依赖人工监督，成为瓶颈。ENPIRE通过编码智能体实现物理反馈循环：自动重置场景、执行策略、验证结果并迭代优化。四个核心模块（环境、策略、评估、重试）协同工作，减少人工干预。",
+      "llm_tldr": "真实世界机器人策略改进依赖人工监督，成为瓶颈。ENPIRE通过编码智能体实现物理反馈循环：自动重置场景、执行策略、验证结果并迭代优化。四个核心模块（环境、策略、评估、重试）协同工作，减少人工干预。",
+      "llm_tags": [
+        "query:embodied-ai"
+      ],
+      "matched_query_tag": "query:embodied-ai",
+      "matched_query_text": "robot learning from demonstration or reinforcement",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2606.20092v1",
+      "source": "arxiv",
+      "title": "EventVLA: Event-Driven Visual Evidence Memory for Long-Horizon Vision-Language-Action Policies",
+      "abstract": "Memory remains a critical bottleneck for long-horizon robotic manipulation, as standard Vision-Language-Action (VLA) policies often fail when task-relevant cues become occluded or unobservable over time. While existing memory-augmented methods utilize historical context, they either suffer from severe information bottlenecks, incur high latency via decoupled dual systems, or rely on unselective buffers that accumulate massive visual redundancies. To address these limitations, we introduce EventVLA, an end-to-end framework founded on the concept of sparse visual evidence memory that comprises two core components: foundational visual anchors to retain initial and short-term contexts, and a dynamic Keyframe Evidence Memory (KEM) module. Specifically, KEM directly predicts future keyframe probabilities from the VLA's latent embeddings to autonomously capture and store sparse, task-critical visual events. This foresight-driven mechanism empowers the policy to dynamically evaluate the future causal utility of current observations, preserving transient visual evidence before it becomes unobservable. Furthermore, we propose RoboTwin-MeM, a diagnostic benchmark specifically designed to evaluate non-Markovian manipulation tasks with interactive visual evidence. Extensive evaluations show that across 17 memory-requiring simulation tasks and 4 real-world bimanual tasks, EventVLA achieves an average success rate improvement of +40% over state-of-the-art memory-augmented VLAs.",
+      "authors": [
+        "Ganlin Yang",
+        "Zhangzheng Tu",
+        "Yuqiang Yang",
+        "Sitong Mao",
+        "Junyi Dong",
+        "Tianxing Chen",
+        "Jiaqi Peng",
+        "Jing Xiong",
+        "Jiafei Cao",
+        "Jifeng Dai",
+        "Wengang Zhou",
+        "Yao Mu",
+        "Tai Wang"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-06-18T11:11:37+00:00",
+      "link": "https://arxiv.org/pdf/2606.20092v1",
+      "tags": [
+        "keyword:embodied-ai",
+        "query:embodied-ai"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Event-driven visual evidence memory for long-horizon VLA policies",
+      "llm_evidence_cn": "事件驱动的视觉证据记忆用于长时域VLA策略",
+      "llm_evidence": "事件驱动的视觉证据记忆用于长时域VLA策略",
+      "canonical_evidence": "事件驱动的视觉证据记忆用于长时域VLA策略",
+      "llm_tldr_en": "EventVLA uses sparse visual evidence memory with foundational anchors and dynamic keyframe memory to retain task-relevant information over long horizons for VLA policies.",
+      "llm_tldr_cn": "本文提出EventVLA，针对长时域机器人操作中VLA策略的记忆瓶颈。利用基础视觉锚点保留初始和短期上下文，并引入动态关键帧证据记忆（KEM）选择性存储关键信息。该方法在多种长时域任务上实现了比现有记忆增强VLA更高的成功率，同时降低了计算开销，为长时域操作提供了高效记忆方案。",
+      "llm_tldr": "本文提出EventVLA，针对长时域机器人操作中VLA策略的记忆瓶颈。利用基础视觉锚点保留初始和短期上下文，并引入动态关键帧证据记忆（KEM）选择性存储关键信息。该方法在多种长时域任务上实现了比现有记忆增强VLA更高的成功率，同时降低了计算开销，为长时域操作提供了高效记忆方案。",
+      "llm_tags": [
+        "query:embodied-ai"
+      ],
+      "matched_query_tag": "query:embodied-ai",
+      "matched_query_text": "Vision language action models for robotic manipulation",
+      "matched_requirement_id": "req-9",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2606.20118v1",
+      "source": "arxiv",
+      "title": "Pose6DAug: Physically Plausible Multi-view Object Swapping for Robot Data Augmentation",
+      "abstract": "Vision-language-action (VLA) policies have shown strong potential for general-purpose manipulation, yet they often fail on novel, out-of-distribution objects whose appearance or geometry deviates from the training distribution. The standard remedy is to collect multi-view teleoperation data for every failure case, but this scales poorly in both cost and time. We introduce Pose6DAug, a failure-driven data augmentation framework that turns a policy's own successful episodes into targeted demonstrations for its failure modes, without any new data collection. Our key insight is that each successful episode already encodes a physically valid action trajectory together with calibrated multi-view observations. By swapping only the manipulated object while preserving this trajectory, we obtain new and physically grounded demonstrations. However, naive 2D video editing breaks multi-view consistency and physical plausibility, particularly under heavy occlusion and egocentric viewpoints. Our method instead operates directly in 3D, anchoring the target object with an explicit mesh driven by a temporally coherent 6D pose trajectory, ensuring geometrically consistent renderings across all camera views. Fine-tuning a VLA on data augmented by our method improves success rates by 16.5% relative to the state-of-the-art baseline on novel objects, while preserving in-distribution performance. These results show that multi-view and physically consistent augmentation is a practical path to scalable VLA generalization.",
+      "authors": [
+        "Jonghoon Lee",
+        "Seong Hyeon Park",
+        "Byungwoo Jeon",
+        "Minha Lee",
+        "Jinwoo Shin"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.LG"
+      ],
+      "published": "2026-06-18T11:41:25+00:00",
+      "link": "https://arxiv.org/pdf/2606.20118v1",
+      "tags": [
+        "keyword:embodied-ai",
+        "query:embodied-ai"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "data augmentation for VLA policies",
+      "llm_evidence_cn": "针对VLA策略的数据增强",
+      "llm_evidence": "针对VLA策略的数据增强",
+      "canonical_evidence": "针对VLA策略的数据增强",
+      "llm_tldr_en": "Pose6DAug swaps manipulated objects in successful episodes across views to generate targeted training data for failure cases, improving VLA policy robustness without new collection.",
+      "llm_tldr_cn": "VLA策略在遇到未见物体时容易失败，传统方案依赖采集新数据，成本高昂。Pose6DAug提出一种失败驱动的数据增强框架，将成功回合中操作物体进行多视角物理合理的交换，自动生成针对失败模式的新演示。该方法无需额外机器人数据，仅利用已有成功轨迹。实验证明增强后的VLA策略在未见物体上的成功率显著提升，同时保持了原策略在已知物体上的性能。",
+      "llm_tldr": "VLA策略在遇到未见物体时容易失败，传统方案依赖采集新数据，成本高昂。Pose6DAug提出一种失败驱动的数据增强框架，将成功回合中操作物体进行多视角物理合理的交换，自动生成针对失败模式的新演示。该方法无需额外机器人数据，仅利用已有成功轨迹。实验证明增强后的VLA策略在未见物体上的成功率显著提升，同时保持了原策略在已知物体上的性能。",
+      "llm_tags": [
+        "query:embodied-ai"
+      ],
+      "matched_query_tag": "query:embodied-ai",
+      "matched_query_text": "Vision language action models for robotic manipulation",
+      "matched_requirement_id": "req-9",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    }
+  ]
+}
