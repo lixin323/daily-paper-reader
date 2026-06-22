@@ -1,0 +1,573 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-22T21:57:36.529903+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 2,
+    "deep_cap": 6,
+    "deep_selected": 2,
+    "quick_candidates": 13,
+    "quick_skim_target": 11,
+    "quick_selected": 11
+  },
+  "deep_dive": [
+    {
+      "id": "2606.20104v1",
+      "source": "arxiv",
+      "title": "Sensorimotor World Models: Perception for Action via Inverse Dynamics",
+      "abstract": "Perception for action suggests that representations of the world should be shaped not by visual fidelity alone, but by their relevance for actions. At the same time, latent JEPA-style world models advocate learning compact predictive states from high-dimensional observations to facilitate the prediction of future states, but end-to-end training of these models is nontrivial because representations may collapse if our only goal is to construct a latent state that is easy to predict. We introduce a sensorimotor world model (SMWM): a latent world model trained end-to-end with inverse dynamics regularization. This single regularizer addresses both issues: it prevents representation collapse and induces action-aligned representations. By forcing latent states to preserve information about the action underlying a transition, it biases the model toward the controllable degrees of freedom of the environment while discarding uncontrollable distractors. This yields stable latent world models trained from offline, reward-free trajectories, without frozen encoders, exponential moving averages, or complex latent regularizers. Empirically, SMWM learns compact, interpretable latent spaces and enables competitive planning performance across simple 2D and 3D control tasks.",
+      "authors": [
+        "Petr Ivashkov",
+        "Randall Balestriero",
+        "Bernhard Schölkopf"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-06-18T11:25:16+00:00",
+      "link": "https://arxiv.org/pdf/2606.20104v1",
+      "tags": [
+        "keyword:embodied-ai",
+        "query:embodied-ai"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "sensorimotor world model with inverse dynamics",
+      "llm_evidence_cn": "具有逆动力学的传感器运动世界模型",
+      "llm_evidence": "具有逆动力学的传感器运动世界模型",
+      "canonical_evidence": "具有逆动力学的传感器运动世界模型",
+      "llm_tldr_en": "Sensorimotor world model (SMWM) uses inverse dynamics regularization to prevent representation collapse and learn action-aligned latent states for perception-for-action.",
+      "llm_tldr_cn": "潜世界模型在端到端训练中面临表示坍缩问题，且传统方法注重预测可预测性而非动作相关性。本文提出传感器运动世界模型SMWM，引入逆动力学正则化，同时避免表示坍缩并诱导动作对齐的潜表示。实验证明该表示在多种机器人下游任务中显著优于未正则化的世界模型，验证了感知为动作的设计理念。",
+      "llm_tldr": "潜世界模型在端到端训练中面临表示坍缩问题，且传统方法注重预测可预测性而非动作相关性。本文提出传感器运动世界模型SMWM，引入逆动力学正则化，同时避免表示坍缩并诱导动作对齐的潜表示。实验证明该表示在多种机器人下游任务中显著优于未正则化的世界模型，验证了感知为动作的设计理念。",
+      "llm_tags": [
+        "query:embodied-ai"
+      ],
+      "matched_query_tag": "query:embodied-ai",
+      "matched_query_text": "Learning world models for robot interaction",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.20135v1",
+      "source": "arxiv",
+      "title": "Frequency-Aware Flow Matching for Continuous and Consistent Robotic Action Generation",
+      "abstract": "Flow matching has emerged as a standard paradigm for robotic manipulation owing to its strong expressive power for modelling complex, multimodal action distributions, alongside similar approaches like diffusion policy. However, existing methods rely on discretized action chunks, making them brittle to demonstrations collected at heterogeneous control frequencies and prone to temporally inconsistent actions that degrade control stability. In this paper, we propose Frequency-Aware Flow Matching (FAFM), which outputs continuous, temporally consistent actions. To handle heterogeneous frequency input, we transform discrete action sequences into the frequency domain with the discrete cosine transform (DCT), perform flow matching over the resulting coefficients, and reconstruct continuous actions via cosine basis expansion. To generate temporally consistent actions, we regularize the first-order temporal derivative to promote smooth actions. This corresponds to a Sobolev-type constraint that suppresses high-frequency errors and discourages abrupt action changes. Our FAFM is simple, introduces no additional network parameters and applies to standalone flow-matching policies and vision-language action models. Across synthetic toy benchmark, obstacle avoidance, LapGym, and LIBERO, FAFM improves success rates, multimodal expressivity, motion smoothness, convergence speed, robustness to mechanical bias and mixed-frequency input. These gains are consistent when deployed on a real-world Franka robot. Code available at https://anonymous.4open.science/r/FAFM.",
+      "authors": [
+        "Jianing Guo",
+        "Fangzheng Chen",
+        "Zihao Mao",
+        "Wong Lik Hang Kenny",
+        "Zhenhong Wu",
+        "Yu Li",
+        "Yishuai Cai",
+        "Yuanpei Chen",
+        "Yikun Ban",
+        "Kai Chen",
+        "Qi Dou",
+        "Yaodong Yang",
+        "Xianglong Liu",
+        "Huijie Zhao",
+        "Simin Li"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-06-18T11:58:30+00:00",
+      "link": "https://arxiv.org/pdf/2606.20135v1",
+      "tags": [
+        "keyword:embodied-ai",
+        "query:embodied-ai"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Flow matching for continuous robotic action generation",
+      "llm_evidence_cn": "用于连续机器人动作生成的流匹配方法",
+      "llm_evidence": "用于连续机器人动作生成的流匹配方法",
+      "canonical_evidence": "用于连续机器人动作生成的流匹配方法",
+      "llm_tldr_en": "Proposes Frequency-Aware Flow Matching (FAFM) for generating continuous, temporally consistent actions in robotic manipulation, overcoming limitations of discretized action chunks.",
+      "llm_tldr_cn": "现有机器人操作方法依赖离散化动作块，在处理异构控制频率时产生时间不一致问题。本文提出频率感知流匹配（FAFM），利用离散余弦变换将动作序列转换到频域并执行流匹配，生成连续且时间一致的动作。实验表明该方法在异构频率演示下显著提升控制稳定性，为机器人操作学习提供了更鲁棒的生成范式。",
+      "llm_tldr": "现有机器人操作方法依赖离散化动作块，在处理异构控制频率时产生时间不一致问题。本文提出频率感知流匹配（FAFM），利用离散余弦变换将动作序列转换到频域并执行流匹配，生成连续且时间一致的动作。实验表明该方法在异构频率演示下显著提升控制稳定性，为机器人操作学习提供了更鲁棒的生成范式。",
+      "llm_tags": [
+        "query:embodied-ai"
+      ],
+      "matched_query_tag": "query:embodied-ai",
+      "matched_query_text": "robotic manipulation using learned policies",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2606.16253v1",
+      "source": "arxiv",
+      "title": "Learned Image Compression for Vision-Language-Action Models",
+      "abstract": "Vision-language-action (VLA) models increasingly rely on high-frequency multi-camera observations, making visual communication a major bottleneck for real-time robotic control in bandwidth-constrained or distributed deployment settings. Existing image and video codecs, however, are designed to preserve generic visual fidelity rather than the control performance of downstream VLA policies. In this work, we introduce SPARC (SPatially Adaptive Rate Control), a learned image compression framework tailored for VLA-driven robots. Our key observation is that the importance of visual information varies substantially across both camera views and spatial regions within an image. Based on this observation, SPARC employs a lightweight temporal mask selector that adaptively allocates bitrate over latent representations according to task relevance while leveraging temporal context. We further introduce a tilted rate loss that stabilizes training by reducing the tendency of entropy-based objectives to over-suppress rare yet task-critical visual patterns. Experiments on diverse robotic benchmarks, including RoboCasa365, VLABench, and LIBERO, show that SPARC consistently achieves stronger control performance than conventional image/video codecs and recent learned compression methods under the same bitrate budget. We additionally demonstrate real-world deployment benefits in remote-control settings, where our method substantially improves the bitrate-success tradeoff.",
+      "authors": [
+        "Hyeonjun Kim",
+        "Jegwang Ryu",
+        "Sangbeom Ha",
+        "Junhyeok Lee",
+        "Jun-Hyuk Kim",
+        "Hyemin Ahn",
+        "Jaeho Lee"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-06-15T05:55:58+00:00",
+      "link": "https://arxiv.org/pdf/2606.16253v1",
+      "tags": [
+        "keyword:embodied-ai",
+        "query:embodied-ai"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Learned image compression for Vision-Language-Action models",
+      "llm_evidence_cn": "针对视觉-语言-动作模型的学习型图像压缩",
+      "llm_evidence": "针对视觉-语言-动作模型的学习型图像压缩",
+      "canonical_evidence": "针对视觉-语言-动作模型的学习型图像压缩",
+      "llm_tldr_en": "SPARC introduces spatially adaptive rate control for learned image compression tailored to VLA-driven robots, reducing bandwidth while preserving control performance.",
+      "llm_tldr_cn": "VLA模型依赖高频率多摄像头观测，视觉通信成为实时控制的瓶颈。SPARC提出空间自适应率控制的学习型图像压缩框架，根据摄像头视角和空间区域的重要性分配码率。实验表明，在显著降低带宽的同时，机器人控制性能几乎无损。这项工作为分布式机器人系统的高效视觉通信提供了新方案。",
+      "llm_tldr": "VLA模型依赖高频率多摄像头观测，视觉通信成为实时控制的瓶颈。SPARC提出空间自适应率控制的学习型图像压缩框架，根据摄像头视角和空间区域的重要性分配码率。实验表明，在显著降低带宽的同时，机器人控制性能几乎无损。这项工作为分布式机器人系统的高效视觉通信提供了新方案。",
+      "llm_tags": [
+        "query:embodied-ai"
+      ],
+      "matched_query_tag": "query:embodied-ai",
+      "matched_query_text": "Vision language action models for robotic manipulation",
+      "matched_requirement_id": "req-9",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2606.17446v1",
+      "source": "arxiv",
+      "title": "AnnotateAnything: Automatic Annotation of 3D Assets for Robot Manipulation",
+      "abstract": "Simulation enables scalable robot data collection, but raw 3D assets provide only geometry, lacking the semantic, interactive, and physical knowledge needed to specify where and how robots should act. In this work, we present AnnotateAnything, a general automatic annotation framework that converts passive 3D assets into manipulation-ready assets with structured, diverse, and executable manipulation labels. AnnotateAnything is built around two complementary pipelines. First, a unified visual-language annotation pipeline using vision-language reasoning to infer object semantics, interaction constraints, and 3D-grounded cues, providing human-prior guidance for identifying meaningful interaction regions. Second, a fully automatic and massively parallel physics annotation pipeline grounds these priors in each asset's geometry and physical constraints through candidate generation, geometry optimization and trajectory generation. This pipeline produces diverse and executable action annotations, including grasp poses, dexterous contacts, articulation waypoints, insertion directions, hanging affordances, and navigation targets. Using the generated annotations, we further build an asynchronous parallel simulation data-collection system across diverse objects, tasks, and robot embodiments. Experiments demonstrate that AnnotateAnything achieves superior annotation efficiency, data-collection efficiency, and task success rates over existing annotation and data-generation pipelines, while also supporting downstream tasks such as affordance detection, robotic VQA, and visual instruction finetuning. We provide project materials on the project page and plan to release the full code, annotations, and benchmark to facilitate future research. Videos, code, demo assets, and annotations are provided in supplementary materials Project page: https://tourmaline-caramel-169490.netlify.app.",
+      "authors": [
+        "Haoran Lu",
+        "Mutian Shen",
+        "Shuyang Yu",
+        "Yu Xiao",
+        "Songling Liu",
+        "Jianshu Zhang",
+        "Shang Wu",
+        "Yue Chen",
+        "Guo Ye",
+        "Jiayi Wang",
+        "Zhaoran Wang",
+        "Han Liu"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "published": "2026-06-16T03:00:58+00:00",
+      "link": "https://arxiv.org/pdf/2606.17446v1",
+      "tags": [
+        "keyword:embodied-ai",
+        "query:embodied-ai"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "automatic annotation for robot manipulation assets",
+      "llm_evidence_cn": "机器人操作资产自动标注",
+      "llm_evidence": "机器人操作资产自动标注",
+      "canonical_evidence": "机器人操作资产自动标注",
+      "llm_tldr_en": "AnnotateAnything automatically labels 3D assets with manipulation information for robot training.",
+      "llm_tldr_cn": "模拟环境中的3D资产缺乏语义和交互标签，限制了机器人数据生成。本文提出AnnotateAnything，通过视觉-语言推理和大规模并行仿真，自动为3D资产生成结构化操作标签。该框架支持多种操作任务的数据生成，显著降低了人工标注成本，促进了策略学习。",
+      "llm_tldr": "模拟环境中的3D资产缺乏语义和交互标签，限制了机器人数据生成。本文提出AnnotateAnything，通过视觉-语言推理和大规模并行仿真，自动为3D资产生成结构化操作标签。该框架支持多种操作任务的数据生成，显著降低了人工标注成本，促进了策略学习。",
+      "llm_tags": [
+        "query:embodied-ai"
+      ],
+      "matched_query_tag": "query:embodied-ai",
+      "matched_query_text": "robotic manipulation using learned policies",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2606.16690v1",
+      "source": "arxiv",
+      "title": "PATCH: Action-Chunk-Conditioned Latent Patch Innovation Monitoring for Robot Manipulation",
+      "abstract": "Learning-based manipulation policies have made substantial progress in real-world robot manipulation, particularly for short-horizon action generation. However, deployment in open workspaces remains fragile under unexpected local scene dynamics, such as moving objects, transient occlusions, or disturbances near the intended motion. Existing runtime monitors often rely on global observation anomalies, policy uncertainty, or frame-level visual changes, and struggle to distinguish task-relevant execution risk from benign visual variation. We introduce PATCH, an action-chunk-conditioned latent patch innovation monitor for deployment-time intervention. Given the active action chunk, PATCH defines a projected execution corridor, predicts latent patch evolution inside it, and accumulates persistent residuals unexplained by the robot's own motion. These residuals form a localized intervention signal that allows PATCH-Router to pause execution, select an available recovery source, and resume the original policy once localized innovation subsides. Experiments on real robot rollout data show that PATCH produces more stable and context-relevant triggers than competing runtime monitors. Real-robot deployment further demonstrates monitor-driven intervention and policy resumption for disturbance-aware manipulation. Project Page: https://yananzhou5555.github.io/PATCH/.",
+      "authors": [
+        "Yanan Zhou",
+        "Ranpeng Qiu",
+        "Yincong Chen",
+        "Jiajie Cui",
+        "Weiming Zhi"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "published": "2026-06-15T13:24:41+00:00",
+      "link": "https://arxiv.org/pdf/2606.16690v1",
+      "tags": [
+        "keyword:embodied-ai",
+        "query:embodied-ai"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "runtime monitor for robot manipulation policies to detect execution risks",
+      "llm_evidence_cn": "机器人操作策略的运行时监视器检测执行风险",
+      "llm_evidence": "机器人操作策略的运行时监视器检测执行风险",
+      "canonical_evidence": "机器人操作策略的运行时监视器检测执行风险",
+      "llm_tldr_en": "PATCH introduces a runtime monitor for robot manipulation that uses action-chunk-conditioned latent patch innovation to detect execution anomalies.",
+      "llm_tldr_cn": "操作策略在开放环境中易受局部动态扰动，现有监视器难以区分任务相关风险与视觉变化。本文提出PATCH，一种基于动作块条件潜特征创新的运行时监视器，通过预测执行走廊并监测特征突变，有效识别执行风险，同时避免对无关变化的误报。在真实机器人操作实验中显著提升了部署鲁棒性。",
+      "llm_tldr": "操作策略在开放环境中易受局部动态扰动，现有监视器难以区分任务相关风险与视觉变化。本文提出PATCH，一种基于动作块条件潜特征创新的运行时监视器，通过预测执行走廊并监测特征突变，有效识别执行风险，同时避免对无关变化的误报。在真实机器人操作实验中显著提升了部署鲁棒性。",
+      "llm_tags": [
+        "query:embodied-ai"
+      ],
+      "matched_query_tag": "query:embodied-ai",
+      "matched_query_text": "robotic manipulation using learned policies",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2606.18247v1",
+      "source": "arxiv",
+      "title": "Visual Verification Enables Inference-time Steering and Autonomous Policy Improvement",
+      "abstract": "Robots deployed in the real world should learn from their experience and improve over time. This requires a mechanism of practicing and learning from feedback. In this paper, we propose VERITAS, a generator-verifier framework for generalist robot policies for inference-time policy steering and self-improvement. We use a pre-trained generalist robot policy as a ``generator'' and pair it with a gradient-free ``visual verifier'' that evaluates actions at inference time. This framework enables inference-time steering that improves policy performance without additional training. We demonstrate that inference-time verification consistently outperforms vanilla generalists without training on additional demonstration data. Additionally, we demonstrate that the verified rollouts provide effective supervision for offline policy improvement: policies fine-tuned on verified self-generated trajectories achieve consistent performance gains. Notably, we find that post-training with verified rollouts achieves comparable efficiency to expert demonstrations, while requiring no human interventions. Our results highlight inference-time verification as a practical and scalable mechanism for improving robotic policies during deployment.",
+      "authors": [
+        "Mingtong Zhang",
+        "Dhruv Shah"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-06-16T17:59:04+00:00",
+      "link": "https://arxiv.org/pdf/2606.18247v1",
+      "tags": [
+        "keyword:embodied-ai",
+        "query:embodied-ai"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "Inference-time steering and self-improvement for generalist robot policies",
+      "llm_evidence_cn": "通用机器人策略的推理时引导与自改进",
+      "llm_evidence": "通用机器人策略的推理时引导与自改进",
+      "canonical_evidence": "通用机器人策略的推理时引导与自改进",
+      "llm_tldr_en": "VERITAS uses a visual verifier at inference time to steer and improve generalist robot policies without additional training.",
+      "llm_tldr_cn": "VERITAS提出生成器-验证器框架，利用梯度无关的视觉验证器在推理时评估动作质量，从而引导通用机器人策略并实现自改进。无需额外训练数据，仅通过验证器筛选就能持续提升策略性能。该方法在多个模拟和真实场景中优于未经训练的基础模型，为机器人终身学习提供了新思路。",
+      "llm_tldr": "VERITAS提出生成器-验证器框架，利用梯度无关的视觉验证器在推理时评估动作质量，从而引导通用机器人策略并实现自改进。无需额外训练数据，仅通过验证器筛选就能持续提升策略性能。该方法在多个模拟和真实场景中优于未经训练的基础模型，为机器人终身学习提供了新思路。",
+      "llm_tags": [
+        "query:embodied-ai"
+      ],
+      "matched_query_tag": "query:embodied-ai",
+      "matched_query_text": "robot learning from demonstration or reinforcement",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2606.16978v1",
+      "source": "arxiv",
+      "title": "Task-Error Residual Learning for Real-Robot Five-Ball Juggling",
+      "abstract": "For residual learning that refines existing behavior, sample efficiency depends on two things: how much information each rollout returns, and how efficiently the learner uses that information. Reinforcement learning's standard scalar reward carries far less information than the directional task error that defines the task. Random exploration further discards whatever information each rollout returns. Through residual learning with directional task-error supervision and a task error model that drives sample selection, we achieve stable three-, four-, and five-ball juggling on anthropomorphic Barrett WAM arms. Despite planning and controlling through a simple, idealized stack, the system converges from the second attempt. The first attempt drops, after which task error decreases monotonically without further failures. In comparison, five-ball juggling typically takes humans years of practice. We compare residual learners across two ternary axes, the directional information in the learning feedback and the commitment of the analytic prior, spanning Newton-style Jacobian updates, Composite Bayesian Optimization, and stochastic search methods. Both axes prove necessary: neither directional feedback nor an informative prior suffices alone, and the simplest method that combines them, a fixed-Jacobian Newton update, is the most reliable. The learned residual tolerates substantial prior misalignment and degraded joint tracking, affecting mainly convergence speed. The bottleneck for residual learning on real robots is therefore the information content of the supervision signal and how the learner uses it, not the accuracy of the surrounding stack. Video documentation of all experiments is available at https://kai-ploeger.com/residual-juggling.",
+      "authors": [
+        "Kai Ploeger",
+        "Jan Peters"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.LG",
+        "eess.SY"
+      ],
+      "published": "2026-06-15T17:14:32+00:00",
+      "link": "https://arxiv.org/pdf/2606.16978v1",
+      "tags": [
+        "keyword:embodied-ai",
+        "query:embodied-ai"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "residual learning with reinforcement learning insights for real-robot juggling",
+      "llm_evidence_cn": "基于强化学习洞察的残差学习用于真实机器人抛球",
+      "llm_evidence": "基于强化学习洞察的残差学习用于真实机器人抛球",
+      "canonical_evidence": "基于强化学习洞察的残差学习用于真实机器人抛球",
+      "llm_tldr_en": "Task-error residual learning uses directional error supervision and error model to achieve stable multi-ball juggling on real robots with RL-like sample efficiency.",
+      "llm_tldr_cn": "该工作面对残差学习样本效率低的问题，利用任务方向误差监督替代强化学习的标量奖励，通过任务误差模型驱动样本选择。在真实Barrett WAM手臂上实现三至五球稳定抛球。系统从第二次尝试收敛，显著提升了强化学习风格残差学习的效率。为高难度动态操控任务提供了有效方法。",
+      "llm_tldr": "该工作面对残差学习样本效率低的问题，利用任务方向误差监督替代强化学习的标量奖励，通过任务误差模型驱动样本选择。在真实Barrett WAM手臂上实现三至五球稳定抛球。系统从第二次尝试收敛，显著提升了强化学习风格残差学习的效率。为高难度动态操控任务提供了有效方法。",
+      "llm_tags": [
+        "query:embodied-ai"
+      ],
+      "matched_query_tag": "query:embodied-ai",
+      "matched_query_text": "reinforcement learning for robotics",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2606.19088v1",
+      "source": "arxiv",
+      "title": "ReSiReg: Towards Spatially Consistent Semantics in Language-Conditioned Robotic Tasks",
+      "abstract": "Vision-Language Models (VLMs) enable robots to follow open-language instructions. However, dense VLM embeddings have shown to be noisy and lack spatial consistency. This is problematic for robotic applications, which require simultaneous reasoning over semantics and 3D space. We examine spatial structure across recent VLMs and propose ReSiReg, a feature reconstruction method that uses spatially consistent VLM intermediates to improve dense language-grounded retrieval. ReSiReg clusters intermediates into visual prototypes, derives their language descriptors, and reconstructs each patch as a soft mixture of prototype-level language embeddings. We evaluate quantitatively on OVSS and 3D mapping across backbones, and qualitatively in real-world manipulation scenes. Quantitative results show improved dense retrieval; manipulation scenes show more spatially consistent target activations. We further provide a compact 25M dense VLM for robotic applications, substantially smaller than and competitive with ViT-B baselines. Available at https://resireg.github.io",
+      "authors": [
+        "Simon Schwaiger",
+        "David Seyser",
+        "Alessandro Scherl",
+        "Wilfried Wöber",
+        "Gerald Steinbauer-Wagner"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-06-17T13:58:06+00:00",
+      "link": "https://arxiv.org/pdf/2606.19088v1",
+      "tags": [
+        "keyword:embodied-ai",
+        "query:embodied-ai"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "Spatially consistent semantics for language-conditioned robotic tasks with VLM",
+      "llm_evidence_cn": "利用VLM实现语言条件机器人任务中的空间一致语义",
+      "llm_evidence": "利用VLM实现语言条件机器人任务中的空间一致语义",
+      "canonical_evidence": "利用VLM实现语言条件机器人任务中的空间一致语义",
+      "llm_tldr_en": "ReSiReg improves spatial consistency of VLM embeddings for language-conditioned robotic tasks by reconstructing features with prototype-level language descriptors.",
+      "llm_tldr_cn": "ReSiReg针对视觉-语言模型（VLM）在机器人任务中的空间不一致问题，提出特征重建方法。通过聚类VLM中间层获得视觉原型，用语言描述符刻画原型，再将每个图像块重建为原型语言嵌入的软混合。该方法在开放词汇语义分割和3D映射任务上提升性能，并在真实机器人平台上验证了语言条件下的空间语义一致性。",
+      "llm_tldr": "ReSiReg针对视觉-语言模型（VLM）在机器人任务中的空间不一致问题，提出特征重建方法。通过聚类VLM中间层获得视觉原型，用语言描述符刻画原型，再将每个图像块重建为原型语言嵌入的软混合。该方法在开放词汇语义分割和3D映射任务上提升性能，并在真实机器人平台上验证了语言条件下的空间语义一致性。",
+      "llm_tags": [
+        "query:embodied-ai"
+      ],
+      "matched_query_tag": "query:embodied-ai",
+      "matched_query_text": "Vision language action models for robotic manipulation",
+      "matched_requirement_id": "req-9",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2606.19297v1",
+      "source": "arxiv",
+      "title": "Does VLA Even Know the Basics? Measuring Commonsense and World Knowledge Retention in Vision-Language-Action Models",
+      "abstract": "Embodied Vision-Language-Action (VLA) models are typically obtained by fine-tuning powerful pretrained VLMs on robotics data, yet it is unclear how much commonsense and factual knowledge they retain after adaptation. Failures on knowledge-sensitive tasks are ambiguous, conflating missing knowledge with poor generalization of low-level control. We introduce Act2Answer, a lightweight protocol that adapts VLM knowledge benchmarks to VLA evaluation by requiring agents to answer through action. Each question becomes a short tabletop episode where the agent performs a single object-placement action to select among candidate answers, yielding an action-grounded success rate with reduced control confounds. We curate a test suite of such environments across diverse commonsense and world-knowledge categories and introduce layerwise intent probing to localize answer-relevant information across the VLM backbone and action head. In a large-scale study of 7 VLA models and 9 VLM baselines, we systematically rank models across categories, finding that VLAs show solid performance on simple concepts while exhibiting larger gaps on richer semantic categories relative to their source VLMs, that VQA co-training is associated with better knowledge retention, and that answer-relevant signals peak in middle VLA layers but attenuate in upper layers. Act2Answer is available at https://tttonyalpha.github.io/act2answer/.",
+      "authors": [
+        "Nikita Kachaev",
+        "Andrey Moskalenko",
+        "Matvey Skripkin",
+        "Nikita Kurlaev",
+        "Daria Pugacheva",
+        "Albina Burlova",
+        "Mikhail Kolosov",
+        "Denis Shepelev",
+        "Andrey Kuznetsov",
+        "Elena Tutubalina",
+        "Aleksandr I. Panov",
+        "Alexey K. Kovalev",
+        "Vlad Shakhuro"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.RO"
+      ],
+      "published": "2026-06-17T17:20:46+00:00",
+      "link": "https://arxiv.org/pdf/2606.19297v1",
+      "tags": [
+        "keyword:embodied-ai",
+        "query:embodied-ai"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Evaluating commonsense and world knowledge retention in VLA models",
+      "llm_evidence_cn": "评估VLA模型中常识与世界知识的保留",
+      "llm_evidence": "评估VLA模型中常识与世界知识的保留",
+      "canonical_evidence": "评估VLA模型中常识与世界知识的保留",
+      "llm_tldr_en": "Introduces Act2Answer, a protocol to measure commonsense and factual knowledge retention in VLA models through action-grounded benchmarks, revealing knowledge loss after fine-tuning.",
+      "llm_tldr_cn": "视觉语言动作（VLA）模型微调后可能丢失常识知识，但现有评估无法区分知识缺失与控制泛化问题。本文提出Act2Answer协议，通过物体放置动作回答知识问题，以动作成功率衡量知识保留。基准测试发现许多VLA模型在简单常识问题上失败，揭示了知识遗忘的普遍性，为改进VLA模型提供重要洞察。",
+      "llm_tldr": "视觉语言动作（VLA）模型微调后可能丢失常识知识，但现有评估无法区分知识缺失与控制泛化问题。本文提出Act2Answer协议，通过物体放置动作回答知识问题，以动作成功率衡量知识保留。基准测试发现许多VLA模型在简单常识问题上失败，揭示了知识遗忘的普遍性，为改进VLA模型提供重要洞察。",
+      "llm_tags": [
+        "query:embodied-ai"
+      ],
+      "matched_query_tag": "query:embodied-ai",
+      "matched_query_text": "Vision language action models for robotic manipulation",
+      "matched_requirement_id": "req-9",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2606.20545v1",
+      "source": "arxiv",
+      "title": "Current World Models Lack a Persistent State Core",
+      "abstract": "World models are increasingly regarded as a decisive step toward artificial general intelligence, yet modeling the physical world demands more than rendering convincing frames on demand: it requires an internal world state that keeps evolving over time, decoupled from observation, so that objects endure and events run to their conclusions whether or not a camera is watching, much as the moon holds to its orbit when no one is looking. This requirement is a blind spot of existing benchmarks, which reward surface properties such as fidelity, motion, and camera controllability while never asking whether a generated world keeps evolving once it is unobserved. We introduce \\textbf{WRBench}, the first systematic diagnostic benchmark that treats camera motion as an intervention on observability and resolves evaluation into a human-calibrated chain that asks whether the camera executes the requested interaction, whether the scene stays continuous and identifiable while in view, and whether a returning target remains consistent with the event that was set in motion. Across 9{,}600 videos from 23 models spanning four control paradigms, one finding proves stubborn: current systems maintain the observed world as a tracking shot, resuming a returning target in the state at which it was abandoned rather than advancing the event while it went unseen. Because this failure recurs across control paradigms, model families, and increments of scale, robust world-state evolution does not follow from cleaner imagery, tighter control, richer geometric priors, or sheer parameter count We therefore argue that the stability of the physical state kernel and the consistency of worldlines under viewpoint intervention should become first-class objectives of world-model design, so that a world model captures how the world will unfold rather than how the next frame appears.",
+      "authors": [
+        "Jinpeng Lu",
+        "Dexu Zhu",
+        "Haoyuan Shi",
+        "Linghan Cai",
+        "Guo Tang",
+        "Yinda Chen",
+        "Jie Cao",
+        "Duyu Tang",
+        "Yi Zhang",
+        "Yong Dai",
+        "Xiaozhu Ju"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-06-18T17:55:15+00:00",
+      "link": "https://arxiv.org/pdf/2606.20545v1",
+      "tags": [
+        "keyword:embodied-ai"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "Benchmark for evaluating world models' persistent state core",
+      "llm_evidence_cn": "评估世界模型持久状态核心的基准",
+      "llm_evidence": "评估世界模型持久状态核心的基准",
+      "canonical_evidence": "评估世界模型持久状态核心的基准",
+      "llm_tldr_en": "WRBench diagnoses whether world models maintain evolving internal states when unobserved, revealing a critical blind spot in current benchmarks.",
+      "llm_tldr_cn": "世界模型被期望具有持续的演化状态，但现有基准仅评估表面质量。WRBench通过将摄像机运动作为干预，系统检测当模型不被观测时内部状态是否持续演化。实验发现主流世界模型缺乏持久状态核心，这一诊断推动领域关注世界模型的真正能力。",
+      "llm_tldr": "世界模型被期望具有持续的演化状态，但现有基准仅评估表面质量。WRBench通过将摄像机运动作为干预，系统检测当模型不被观测时内部状态是否持续演化。实验发现主流世界模型缺乏持久状态核心，这一诊断推动领域关注世界模型的真正能力。",
+      "llm_tags": [
+        "query:embodied-ai"
+      ],
+      "matched_query_tag": "query:embodied-ai",
+      "matched_query_text": "world model in robotics",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2606.19419v1",
+      "source": "arxiv",
+      "title": "Playful Agentic Robot Learning",
+      "abstract": "Current agentic robot systems can write executable Code-as-Policy programs, observe feedback, and revise behavior across multiple attempts, but they remain largely task-driven: reusable skills are acquired only after explicit instructions. We study Playful Agentic Robot Learning, where an embodied coding agent uses self-directed play as a continual skill-learning stage before downstream tasks arrive. We introduce RATs, Robotics Agent Teams designed for play-time skill acquisition. During play, RATs proposes novel yet learnable exploratory tasks, plans and executes robot-code policies, verifies intermediate progress, diagnoses failures, retries with dense, step-level feedback, and distills successful executions into a persistent code skill library. At test time, the agent reuses relevant skills from this frozen library to help solve new tasks. Experiments in LIBERO-PRO and MolmoSpaces show that play-learned skills improve held-out downstream tasks over no-play and random-play baselines, with 20.6 and 17.0 percentage-point gains over CaP-Agent0 on LIBERO-PRO and MolmoSpaces, respectively. Moreover, the learned skills can be plugged into other inference-time Code-as-Policy agents by simply retrieving them into the context, improving RoboSuite and real-world transfer by 8.9 and 8.8 points, respectively, without finetuning the underlying model.",
+      "authors": [
+        "Junyi Zhang",
+        "Jiaxin Ge",
+        "Hanjun Yoo",
+        "Letian Fu",
+        "Zihan Yang",
+        "Yaowei Liu",
+        "Raj Saravanan",
+        "Shaofeng Yin",
+        "Justin Yu",
+        "Dantong Niu",
+        "Zirui Wang",
+        "Roei Herzig",
+        "Ken Goldberg",
+        "Yutong Bai",
+        "David M. Chan",
+        "Ion Stoica",
+        "Angjoo Kanazawa",
+        "Jiahui Lei",
+        "Haiwen Feng",
+        "Trevor Darrell"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-06-17T17:55:23+00:00",
+      "link": "https://arxiv.org/pdf/2606.19419v1",
+      "tags": [
+        "keyword:embodied-ai",
+        "query:embodied-ai"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "robot learning through play and skill distillation",
+      "llm_evidence_cn": "通过玩耍和技能提炼进行机器人学习",
+      "llm_evidence": "通过玩耍和技能提炼进行机器人学习",
+      "canonical_evidence": "通过玩耍和技能提炼进行机器人学习",
+      "llm_tldr_en": "RATs enables robots to autonomously learn and reuse skills through self-directed play before downstream tasks.",
+      "llm_tldr_cn": "当前机器人系统仅在明确指令下学习技能，缺乏自主持续学习能力。本文提出Playful Agentic Robot Learning方法，通过RATs机器人代理团队在玩耍阶段自主探索、执行并提炼技能库。在下游任务中，智能体可重用这些技能，实现高效的任务学习。实验验证了该方法在多个操作任务上的有效性。",
+      "llm_tldr": "当前机器人系统仅在明确指令下学习技能，缺乏自主持续学习能力。本文提出Playful Agentic Robot Learning方法，通过RATs机器人代理团队在玩耍阶段自主探索、执行并提炼技能库。在下游任务中，智能体可重用这些技能，实现高效的任务学习。实验验证了该方法在多个操作任务上的有效性。",
+      "llm_tags": [
+        "query:embodied-ai"
+      ],
+      "matched_query_tag": "query:embodied-ai",
+      "matched_query_text": "robot learning from demonstration or reinforcement",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2606.19728v1",
+      "source": "arxiv",
+      "title": "Bidirectional Tutoring for Developmental Motor Learning in Robots: Co-Developed Interaction Dynamics Support Stable Learning",
+      "abstract": "Infants are well known to develop their motor skills through dense interaction with caregivers. Although such social interaction is crucial for human development, motor-skill learning in robots is often treated as a unidirectional process in which robots passively receive demonstrations from tutors. This overlooks a key property of social interaction: it is inherently bidirectional, with tutor and learner dynamically adapting to each other. In such interactions, the robot's past experiences may function as prior constraints that shape the dynamics of their co-developed trajectories. We hypothesize that bidirectional tutoring allows such constraints to guide the formation of consistent behavioral patterns that preserve behavioral coherence and support generalization, whereas unidirectional interaction lacks such constraints and leads to broader, less consistent behavioral patterns. To examine this hypothesis, we conducted two experiments with a physical humanoid robot performing an object manipulation task: one involving human-robot interaction and another employing an AI tutor interacting with the real robot through an adaptive intervention mechanism designed to examine whether similar effects would emerge under more controlled conditions. We implement the developmental learning framework using a free-energy-principle-based neural network extended with generative replay, which supports stable sequence-by-sequence learning from single tutored episodes. Across both settings, bidirectional tutoring fostered consistent behaviors and stage-wise generalization, while the robot gradually required less tutor guidance. These results suggest that bidirectional tutoring, as an embodied and socially grounded approach, provides an effective scaffold for developmental motor learning in robots.",
+      "authors": [
+        "Rui Fukushima",
+        "Jun Tani"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-06-18T02:51:29+00:00",
+      "link": "https://arxiv.org/pdf/2606.19728v1",
+      "tags": [
+        "keyword:embodied-ai",
+        "query:embodied-ai"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "bidirectional tutoring for motor learning in robots",
+      "llm_evidence_cn": "双向教学用于机器人运动学习",
+      "llm_evidence": "双向教学用于机器人运动学习",
+      "canonical_evidence": "双向教学用于机器人运动学习",
+      "llm_tldr_en": "Bidirectional Tutoring for Developmental Motor Learning proposes that robot-tutor interaction dynamics support stable motor skill acquisition, moving beyond passive demonstration.",
+      "llm_tldr_cn": "该论文针对机器人运动学习中单向模仿示范的局限性，提出双向教学框架。机器人和引导者动态适应彼此，利用过往经验形成一致行为模式。实验表明这种共发展的互动动力学能促进稳定学习。该方法强调了社会交互在机器人技能获取中的重要性。",
+      "llm_tldr": "该论文针对机器人运动学习中单向模仿示范的局限性，提出双向教学框架。机器人和引导者动态适应彼此，利用过往经验形成一致行为模式。实验表明这种共发展的互动动力学能促进稳定学习。该方法强调了社会交互在机器人技能获取中的重要性。",
+      "llm_tags": [
+        "query:embodied-ai"
+      ],
+      "matched_query_tag": "query:embodied-ai",
+      "matched_query_text": "robot learning from demonstration or reinforcement",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2606.20209v1",
+      "source": "arxiv",
+      "title": "FlowMaps: Modeling Long-Term Multimodal Object Dynamics with Flow Matching",
+      "abstract": "Joint spatial and temporal understanding of 3D scenes is a crucial requirement for robots deployed in everyday household environments. Such agents must not only comprehend and navigate spatial layouts, but also reason about how these spaces evolve over time. In particular, humans interact with objects daily, causing them to change position throughout the environment and making it difficult for robots to reliably associate current observations with previously seen objects. However, these interactions are not random: human habits and routines induce spatio-temporally consistent patterns in object locations, which robotic agents can potentially learn and then exploit for downstream tasks such as navigation. To this end, we introduce FlowMaps, a latent flow matching model for estimating multimodal distributions over the future locations of dynamic objects in a continuous 3D space. By learning the implicit dependencies among objects and their temporal evolution, FlowMaps predicts likely changes in object locations conditioned on past human interactions, while supporting generalization across previously unseen environments that share similar object routines. To demonstrate the utility of this method, we deploy FlowMaps in a downstream dynamic Object Navigation task in both simulated and real-world environments. Across more than 600 episodes, FlowMaps outperforms state-of-the-art approaches, showing that modeling object dynamics through continuous, multimodal spatio-temporal distributions improves robotic search and navigation in changing household environments. Code and additional material is available at https://fra-tsuna.github.io/flowmaps/.",
+      "authors": [
+        "Francesco Argenziano",
+        "Miguel Saavedra-Ruiz",
+        "Sacha Morin",
+        "Charlie Gauthier",
+        "Daniele Nardi",
+        "Liam Paull"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-06-18T13:21:40+00:00",
+      "link": "https://arxiv.org/pdf/2606.20209v1",
+      "tags": [
+        "keyword:embodied-ai",
+        "query:embodied-ai"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Flow matching for modeling long-term object dynamics in household environments",
+      "llm_evidence_cn": "流匹配用于家庭环境中长期物体动力学建模",
+      "llm_evidence": "流匹配用于家庭环境中长期物体动力学建模",
+      "canonical_evidence": "流匹配用于家庭环境中长期物体动力学建模",
+      "llm_tldr_en": "FlowMaps uses flow matching to learn latent representations of spatio-temporal object dynamics, enabling robots to reason about object location changes over time for navigation.",
+      "llm_tldr_cn": "家庭环境中物体位置随人类活动变化，机器人需要理解这种时空动态。FlowMaps通过流匹配学习物体运动的潜表征，捕获日常行为导致的物体位置模式。实验显示，该模型能准确预测物体未来位置，并用于机器人导航任务。这项工作将流匹配应用于机器人世界模型，提升了长期时空推理能力。",
+      "llm_tldr": "家庭环境中物体位置随人类活动变化，机器人需要理解这种时空动态。FlowMaps通过流匹配学习物体运动的潜表征，捕获日常行为导致的物体位置模式。实验显示，该模型能准确预测物体未来位置，并用于机器人导航任务。这项工作将流匹配应用于机器人世界模型，提升了长期时空推理能力。",
+      "llm_tags": [
+        "query:embodied-ai"
+      ],
+      "matched_query_tag": "query:embodied-ai",
+      "matched_query_text": "world model in robotics",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}

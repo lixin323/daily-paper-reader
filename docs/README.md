@@ -6,71 +6,61 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-06-21
-- 运行时间：2026-06-21 21:09:39 UTC
+- 最新运行日期：2026-06-22
+- 运行时间：2026-06-22 22:10:02 UTC
 - 运行状态：成功
-- 本次总论文数：17
-- 精读区：6
+- 本次总论文数：13
+- 精读区：2
 - 速读区：11
 
 ### 今日简报（AI）
-今日推荐17篇论文，精读2篇高分工作，聚焦机器人世界模型与视觉-语言-动作系统的结构化与等变性突破。最值得关注BRICKS-WM的接口组合动力学可重用性框架，以及EquiVLA的旋转等变通用范式。速读中对比动作图像预训练与流式不确定性量化方法，建议优先阅读以拓展多模态控制思路。
-- 详情：[/202606/21/README](/202606/21/README)
+今日精选2篇精读与3篇速读，聚焦机器人感知-动作闭环与动作生成新方法。  
+最值得关注的是满分论文《Sensorimotor World Models》通过逆动力学提升感知-动作闭环，以及《Frequency-Aware Flow Matching》实现连续一致的动作生成。  
+建议优先精读这两篇高分论文，探索世界模型驱动的机器人操作新范式。
+- 详情：[/202606/22/README](/202606/22/README)
 
 ### 精读区论文标签
-1. [BRICKS-WM: Building Reusability via Interface Composition Kinetics for Structured World Models](/202606/21/2606.16489v1-bricks-wm-building-reusability-via-interface-composition-kinetics-for-structured-world-models)  
-   标签：评分：9.0/10、query:embodied-ai
-   evidence：用于基于模型的强化学习的模块化结构化世界模型
-2. [EquiVLA: A General Framework for Rotationally Equivariant Vision-Language-Action Models](/202606/21/2606.19784v1-equivla-a-general-framework-for-rotationally-equivariant-vision-language-action-models)  
-   标签：评分：9.0/10、query:embodied-ai
-   evidence：用于机器人操作的旋转等变视觉-语言-动作模型
-3. [A Neuromorphic Reinforcement Learning Framework for Efficient Pathfinding in Robotic Mobile Fulfillment Systems](/202606/21/2606.20031v1-a-neuromorphic-reinforcement-learning-framework-for-efficient-pathfinding-in-robotic-mobile-fulfillment-systems)  
-   标签：评分：9.0/10、query:embodied-ai
-   evidence：基于强化学习的路径规划部署于神经形态芯片，用于机器人移动拣选系统
-4. [Scaling Short-Term Memory of Visuomotor Policies for Long-Horizon Tasks](/202606/21/2606.16178v1-scaling-short-term-memory-of-visuomotor-policies-for-long-horizon-tasks)  
+1. [Sensorimotor World Models: Perception for Action via Inverse Dynamics](/202606/22/2606.20104v1-sensorimotor-world-models-perception-for-action-via-inverse-dynamics)  
+   标签：评分：10.0/10、query:embodied-ai
+   evidence：具有逆动力学的传感器运动世界模型
+2. [Frequency-Aware Flow Matching for Continuous and Consistent Robotic Action Generation](/202606/22/2606.20135v1-frequency-aware-flow-matching-for-continuous-and-consistent-robotic-action-generation)  
    标签：评分：8.0/10、query:embodied-ai
-   evidence：为视觉运动操作策略添加短期记忆
-5. [Reinforcement Learning with Inner-loop Dynamics Estimator for Aerial Manipulation under Uncertainty](/202606/21/2606.16621v1-reinforcement-learning-with-inner-loop-dynamics-estimator-for-aerial-manipulation-under-uncertainty)  
-   标签：评分：8.0/10、query:embodied-ai
-   evidence：将强化学习与动力学估计器结合用于空中操作
-6. [T-Rex: Tactile-Reactive Dexterous Manipulation](/202606/21/2606.17055v1-t-rex-tactile-reactive-dexterous-manipulation)  
-   标签：评分：8.0/10、query:embodied-ai
-   evidence：将VLA模型扩展到触觉反应式灵巧操作
+   evidence：用于连续机器人动作生成的流匹配方法
 
 ### 速读区论文标签
-1. [Contrastive Action-Image Pre-training for Visuomotor Control](/202606/21/2606.17256v1-contrastive-action-image-pre-training-for-visuomotor-control)  
-   标签：评分：8.0/10、query:embodied-ai
-   evidence：从人类视频进行对比预训练，用于机器人视觉运动控制
-2. [Uncertainty Quantification for Flow-Based Vision-Language-Action Models](/202606/21/2606.18043v1-uncertainty-quantification-for-flow-based-vision-language-action-models)  
-   标签：评分：8.0/10、query:embodied-ai
-   evidence：VLA模型在机器人操作中的不确定性量化
-3. [One Demo is Worth a Thousand Trajectories: Action-View Augmentation for Visuomotor Policies](/202606/21/2606.19586v1-one-demo-is-worth-a-thousand-trajectories-action-view-augmentation-for-visuomotor-policies)  
-   标签：评分：8.0/10、query:embodied-ai
-   evidence：面向视觉运动操作策略的数据增强
-4. [VOiLA: Vectorized Online Planning with Learned Diffusion Model for POMDP Agents](/202606/21/2606.19729v1-voila-vectorized-online-planning-with-learned-diffusion-model-for-pomdp-agents)  
-   标签：评分：8.0/10、query:embodied-ai
-   evidence：学习POMDP世界模型用于机器人规划
-5. [ENPIRE: Agentic Robot Policy Self-Improvement in the Real World](/202606/21/2606.19980v1-enpire-agentic-robot-policy-self-improvement-in-the-real-world)  
-   标签：评分：8.0/10、query:embodied-ai
-   evidence：通过真实世界反馈循环实现机器人策略自我改进
-6. [EventVLA: Event-Driven Visual Evidence Memory for Long-Horizon Vision-Language-Action Policies](/202606/21/2606.20092v1-eventvla-event-driven-visual-evidence-memory-for-long-horizon-vision-language-action-policies)  
-   标签：评分：8.0/10、query:embodied-ai
-   evidence：事件驱动的视觉证据记忆用于长时域VLA策略
-7. [Pose6DAug: Physically Plausible Multi-view Object Swapping for Robot Data Augmentation](/202606/21/2606.20118v1-pose6daug-physically-plausible-multi-view-object-swapping-for-robot-data-augmentation)  
-   标签：评分：8.0/10、query:embodied-ai
-   evidence：针对VLA策略的数据增强
-8. [RHO: Your Coding Agent is Secretly a Roboticist](/202606/21/2606.16458v1-rho-your-coding-agent-is-secretly-a-roboticist)  
+1. [Learned Image Compression for Vision-Language-Action Models](/202606/22/2606.16253v1-learned-image-compression-for-vision-language-action-models)  
    标签：评分：7.0/10、query:embodied-ai
-   evidence：使用环境奖励反馈优化机器人策略
-9. [ADAPT: Analytical Disturbance-Aware Policy Training for Humanoid Locomotion](/202606/21/2606.16542v1-adapt-analytical-disturbance-aware-policy-training-for-humanoid-locomotion)  
+   evidence：针对视觉-语言-动作模型的学习型图像压缩
+2. [PATCH: Action-Chunk-Conditioned Latent Patch Innovation Monitoring for Robot Manipulation](/202606/22/2606.16690v1-patch-action-chunk-conditioned-latent-patch-innovation-monitoring-for-robot-manipulation)  
    标签：评分：7.0/10、query:embodied-ai
-   evidence：用于人形机器人运动的强化学习，包含扰动观测器
-10. [VENOM: Versatile Embodied Network for Omni-bodied Motion tracking](/202606/21/2606.16696v1-venom-versatile-embodied-network-for-omni-bodied-motion-tracking)  
+   evidence：机器人操作策略的运行时监视器检测执行风险
+3. [Task-Error Residual Learning for Real-Robot Five-Ball Juggling](/202606/22/2606.16978v1-task-error-residual-learning-for-real-robot-five-ball-juggling)  
    标签：评分：7.0/10、query:embodied-ai
-   evidence：从多个人形机器人演示数据中学习全身运动跟踪
-11. [Knowledge Reutilization in Meta-Reinforcement Learning](/202606/21/2606.18132v1-knowledge-reutilization-in-meta-reinforcement-learning)  
+   evidence：基于强化学习洞察的残差学习用于真实机器人抛球
+4. [Does VLA Even Know the Basics? Measuring Commonsense and World Knowledge Retention in Vision-Language-Action Models](/202606/22/2606.19297v1-does-vla-even-know-the-basics-measuring-commonsense-and-world-knowledge-retention-in-vision-language-action-models)  
    标签：评分：7.0/10、query:embodied-ai
-   evidence：面向机器人的元强化学习，支持跨实体知识迁移
+   evidence：评估VLA模型中常识与世界知识的保留
+5. [Playful Agentic Robot Learning](/202606/22/2606.19419v1-playful-agentic-robot-learning)  
+   标签：评分：7.0/10、query:embodied-ai
+   evidence：通过玩耍和技能提炼进行机器人学习
+6. [Bidirectional Tutoring for Developmental Motor Learning in Robots: Co-Developed Interaction Dynamics Support Stable Learning](/202606/22/2606.19728v1-bidirectional-tutoring-for-developmental-motor-learning-in-robots-co-developed-interaction-dynamics-support-stable-learning)  
+   标签：评分：7.0/10、query:embodied-ai
+   evidence：双向教学用于机器人运动学习
+7. [FlowMaps: Modeling Long-Term Multimodal Object Dynamics with Flow Matching](/202606/22/2606.20209v1-flowmaps-modeling-long-term-multimodal-object-dynamics-with-flow-matching)  
+   标签：评分：7.0/10、query:embodied-ai
+   evidence：流匹配用于家庭环境中长期物体动力学建模
+8. [AnnotateAnything: Automatic Annotation of 3D Assets for Robot Manipulation](/202606/22/2606.17446v1-annotateanything-automatic-annotation-of-3d-assets-for-robot-manipulation)  
+   标签：评分：6.0/10、query:embodied-ai
+   evidence：机器人操作资产自动标注
+9. [Visual Verification Enables Inference-time Steering and Autonomous Policy Improvement](/202606/22/2606.18247v1-visual-verification-enables-inference-time-steering-and-autonomous-policy-improvement)  
+   标签：评分：6.0/10、query:embodied-ai
+   evidence：通用机器人策略的推理时引导与自改进
+10. [ReSiReg: Towards Spatially Consistent Semantics in Language-Conditioned Robotic Tasks](/202606/22/2606.19088v1-resireg-towards-spatially-consistent-semantics-in-language-conditioned-robotic-tasks)  
+   标签：评分：6.0/10、query:embodied-ai
+   evidence：利用VLM实现语言条件机器人任务中的空间一致语义
+11. [Current World Models Lack a Persistent State Core](/202606/22/2606.20545v1-current-world-models-lack-a-persistent-state-core)  
+   标签：评分：6.0/10、query:embodied-ai
+   evidence：评估世界模型持久状态核心的基准
 
 
 <div class="dpr-home-promo-card">
