@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-26T21:47:03.289486+00:00",
-  "updated_date": "20260626",
+  "generated_at": "2026-06-27T20:43:53.589583+00:00",
+  "updated_date": "20260627",
   "carryover_days": 9,
   "tag_states": {
     "embodied-ai": {
-      "updated_date": "20260626",
+      "updated_date": "20260627",
       "carryover_days": 9,
       "items": [
         {
@@ -30,13 +30,13 @@
             "query:embodied-ai"
           ],
           "llm_score": 8.0,
-          "llm_evidence_en": "sim-to-real RL for dexterous hand using vibration sensing",
-          "llm_evidence_cn": "基于振动传感的灵巧手仿真到实物强化学习迁移",
-          "llm_evidence": "基于振动传感的灵巧手仿真到实物强化学习迁移",
-          "canonical_evidence": "基于振动传感的灵巧手仿真到实物强化学习迁移",
-          "llm_tldr_en": "VibeAct bridges real vibrotactile sensing with simulation-based RL for dexterous hand by replaying real vibration data in a calibrated digital clone for contact labeling.",
-          "llm_tldr_cn": "灵巧手强化学习需要精确接触信号，但真实振动传感难以仿真。VibeAct框架在真实灵巧手中嵌入压电麦克风收集振动数据，在标定数字孪生中回放并自动标注接触与滑动，从而实现仿真RL训练并迁移至实物。实验展示复杂灵巧操作任务的成功迁移。",
-          "llm_tldr": "灵巧手强化学习需要精确接触信号，但真实振动传感难以仿真。VibeAct框架在真实灵巧手中嵌入压电麦克风收集振动数据，在标定数字孪生中回放并自动标注接触与滑动，从而实现仿真RL训练并迁移至实物。实验展示复杂灵巧操作任务的成功迁移。",
+          "llm_evidence_en": "sim-to-real RL with vibration sensing for dexterous manipulation",
+          "llm_evidence_cn": "结合振动传感的仿真到现实强化学习用于灵巧操作",
+          "llm_evidence": "结合振动传感的仿真到现实强化学习用于灵巧操作",
+          "canonical_evidence": "结合振动传感的仿真到现实强化学习用于灵巧操作",
+          "llm_tldr_en": "VibeAct bridges real vibrotactile sensing and sim-to-real RL by using a shared physical representation of contact and slip, enabling reactive dexterous manipulation policies.",
+          "llm_tldr_cn": "该论文针对振动声学信号难以真实仿真、无法用于仿真到现实策略学习的问题，提出VibeAct框架，通过共享接触与滑动的物理表示，将真实压电麦克风信号与仿真强化学习连接起来。在真实灵巧手上，学习到的策略能利用振动信号实现快速反应性操作。",
+          "llm_tldr": "该论文针对振动声学信号难以真实仿真、无法用于仿真到现实策略学习的问题，提出VibeAct框架，通过共享接触与滑动的物理表示，将真实压电麦克风信号与仿真强化学习连接起来。在真实灵巧手上，学习到的策略能利用振动信号实现快速反应性操作。",
           "llm_tags": [
             "query:embodied-ai"
           ],
@@ -48,79 +48,37 @@
           "carry_days": 1
         },
         {
-          "id": "2606.26025v2",
+          "id": "2606.27353v1",
           "source": "arxiv",
-          "title": "In-Context World Modeling for Robotic Control",
-          "abstract": "Modern Vision-Language-Action (VLA) models often fail to generalize to novel setups, such as altered camera viewpoints or robot morphologies, because they are typically conditioned only on current observations and language instructions. By ignoring the underlying system configuration as a variable, these models implicitly assume a fixed execution context encountered during training, necessitating data-intensive fine-tuning for any new environment. In this work, we introduce In-Context World Modeling (ICWM), a framework that treats system identification as an in-context adaptation problem. ICWM enables robot policies to autonomously infer essential system variables from a short history of self-generated, task-agnostic interactions. Unlike traditional In-Context Learning that uses demonstrations to specify what task to perform, ICWM leverages the context window to understand how the system operates. By processing these interactions before task execution, the model implicitly captures the world dynamics of the current system, enabling adaptation to novel configurations without parameter updates. Extensive experiments in simulation and on real-world robot platforms demonstrate that ICWM significantly outperforms standard VLA baselines on novel camera viewpoints.",
+          "title": "Continual Robot Policy Learning via Variational Neural Dynamics",
+          "abstract": "Robots deployed in the real world rarely operate under a single fixed dynamics model: wind changes, payloads vary, batteries drain, contacts shift, and hardware wears. Yet most learning-based controllers are trained once and deployed as if learning were complete. This prevents the robot from using deployment experience to further improve task performance. In this work, we propose a continual learning framework that uses real-world experience to improve robot policies under hidden and recurring dynamics. Our method learns a condition-aware dynamics model from real state-action trajectories by combining an analytical physics prior with a neural residual for unmodeled effects. A recurrent encoder infers the current hidden condition from recent interaction, and this estimate conditions both the residual model and the policy. Policy learning is performed via differentiable simulation using diverse learned dynamics sampled from the latent model. At deployment, these sampled conditions are replaced by conditions inferred online from recent real interaction, allowing the policy to recover recurring dynamics by recognition rather than residual re-fitting. Through extensive simulation studies and real-world experiments, we demonstrate that the framework improves policy performance under diverse unobserved disturbances. On real quadrotor trajectory tracking under changing wind, the policy recovers from recurring disturbances in roughly 1s, about 5x faster than online residual re-fitting. It also reduces large-disturbance hover and tracking errors by 65.7% and 53.3% over the state-of-the-art online adaptation approaches",
           "authors": [
-            "Siyin Wang",
-            "Junhao Shi",
-            "Senyu Fei",
-            "Zhaoyang Fu",
-            "Li Ji",
-            "Jingjing Gong",
-            "Xipeng Qiu"
+            "Jiaxu Xing",
+            "Zhiyuan Zhu",
+            "Yunfan Ren",
+            "Ismail Geles",
+            "Yifan Zhai",
+            "Rudolf Reiter",
+            "Davide Scaramuzza"
           ],
           "primary_category": "cs.RO",
           "categories": [
-            "cs.RO",
-            "cs.CV"
+            "cs.RO"
           ],
-          "published": "2026-06-24T16:53:36+00:00",
-          "link": "https://arxiv.org/pdf/2606.26025v2",
+          "published": "2026-06-25T17:56:04+00:00",
+          "link": "https://arxiv.org/pdf/2606.27353v1",
           "tags": [
             "keyword:embodied-ai",
             "query:embodied-ai"
           ],
           "llm_score": 8.0,
-          "llm_evidence_en": "Introduces In-Context World Modeling for robotic control to infer system variables from interaction history",
-          "llm_evidence_cn": "提出上下文世界模型用于机器人控制，从交互历史推断系统变量",
-          "llm_evidence": "提出上下文世界模型用于机器人控制，从交互历史推断系统变量",
-          "canonical_evidence": "提出上下文世界模型用于机器人控制，从交互历史推断系统变量",
-          "llm_tldr_en": "ICWM enables VLA models to autonomously infer system configuration from a short history of self-generated interactions, improving generalization to novel setups.",
-          "llm_tldr_cn": "该论文针对VLA模型在新环境下需要大量微调的问题，提出上下文世界建模（ICWM）框架，将系统识别视为上下文适应问题，使机器人策略能从短暂的自生成交互中自动推断关键系统变量。实验表明ICWM显著提升了VLA模型在视角变化等新场景下的泛化能力。",
-          "llm_tldr": "该论文针对VLA模型在新环境下需要大量微调的问题，提出上下文世界建模（ICWM）框架，将系统识别视为上下文适应问题，使机器人策略能从短暂的自生成交互中自动推断关键系统变量。实验表明ICWM显著提升了VLA模型在视角变化等新场景下的泛化能力。",
-          "llm_tags": [
-            "query:embodied-ai"
-          ],
-          "matched_query_tag": "query:embodied-ai",
-          "matched_query_text": "Learning world models for robot interaction",
-          "matched_requirement_id": "req-8",
-          "selection_source": "carryover_cache",
-          "paper_id": "2606.26025v2",
-          "carry_days": 1
-        },
-        {
-          "id": "2606.27374v1",
-          "source": "arxiv",
-          "title": "World Action Models Enable Continual Imitation Learning with Recurrent Generative Replays",
-          "abstract": "Going beyond predicting robot actions, World Action Models (WAMs) can also generate future visual observations. We build on this generative capability to propose Recurrent Generative Replay (REGEN), a continual imitation learning framework that synthesizes pseudo-replay trajectories, enabling a robot policy to rehearse previously learned tasks without storing their original human demonstrations. During continual adaptation, REGEN recursively queries the WAM to synthesize pseudo-replay trajectories conditioned only on prior task instructions and current-task observations. Experiments in both simulation and real-world manipulation settings show that REGEN reduces catastrophic forgetting by up to $50\\%$ relative to sequential fine-tuning, while approaching the performance of privileged experience replay methods that require access to real replay data. Finally, we analyze the factors limiting generated replay, identifying long-horizon visual degradation and action-observation inconsistency as the primary bottlenecks. Our results establish WAMs as a promising foundation for continual robot learning without stored demonstrations.",
-          "authors": [
-            "Manish Kumar Govind",
-            "Dominick Reilly",
-            "Smit Patel",
-            "Hieu Le",
-            "Srijan Das"
-          ],
-          "primary_category": "cs.RO",
-          "categories": [
-            "cs.RO",
-            "cs.CV"
-          ],
-          "published": "2026-06-25T17:59:56+00:00",
-          "link": "https://arxiv.org/pdf/2606.27374v1",
-          "tags": [
-            "keyword:embodied-ai",
-            "query:embodied-ai"
-          ],
-          "llm_score": 8.0,
-          "llm_evidence_en": "World Action Models generate future visual observations for continual imitation learning in manipulation",
-          "llm_evidence_cn": "世界动作模型生成未来视觉观测以支持持续模仿学习",
-          "llm_evidence": "世界动作模型生成未来视觉观测以支持持续模仿学习",
-          "canonical_evidence": "世界动作模型生成未来视觉观测以支持持续模仿学习",
-          "llm_tldr_en": "World Action Models (WAMs) generate future visual observations for continual imitation learning, using REGEN to synthesize replay trajectories and reduce forgetting in manipulation tasks.",
-          "llm_tldr_cn": "持续学习中的灾难性遗忘是机器人模仿学习的主要挑战。本文提出World Action Models（WAM）能够生成未来视觉观测，并基于此构建REGEN持续模仿学习框架，通过合成伪回放轨迹减少遗忘。在仿真和真实操作实验中，REGEN将遗忘率降低最多50%。",
-          "llm_tldr": "持续学习中的灾难性遗忘是机器人模仿学习的主要挑战。本文提出World Action Models（WAM）能够生成未来视觉观测，并基于此构建REGEN持续模仿学习框架，通过合成伪回放轨迹减少遗忘。在仿真和真实操作实验中，REGEN将遗忘率降低最多50%。",
+          "llm_evidence_en": "Continual learning with neural dynamics model for robot policy improvement",
+          "llm_evidence_cn": "使用神经动力学模型进行持续机器人策略学习",
+          "llm_evidence": "使用神经动力学模型进行持续机器人策略学习",
+          "canonical_evidence": "使用神经动力学模型进行持续机器人策略学习",
+          "llm_tldr_en": "Proposes a continual learning framework that uses a condition-aware dynamics model combining analytical physics prior and neural residual, enabling robots to improve policies from real-world experience under changing dynamics.",
+          "llm_tldr_cn": "针对机器人部署环境动态变化导致策略失效的问题，本文提出持续学习框架，学习条件感知的动力学模型（结合物理先验和神经残差），并利用循环编码器推断当前隐藏条件。机器人能在真实交互中持续改进策略，适应隐藏且重复出现的动力学变化，提升了长期任务表现。",
+          "llm_tldr": "针对机器人部署环境动态变化导致策略失效的问题，本文提出持续学习框架，学习条件感知的动力学模型（结合物理先验和神经残差），并利用循环编码器推断当前隐藏条件。机器人能在真实交互中持续改进策略，适应隐藏且重复出现的动力学变化，提升了长期任务表现。",
           "llm_tags": [
             "query:embodied-ai"
           ],
@@ -128,88 +86,41 @@
           "matched_query_text": "world model in robotics",
           "matched_requirement_id": "req-3",
           "selection_source": "carryover_cache",
-          "paper_id": "2606.27374v1",
+          "paper_id": "2606.27353v1",
           "carry_days": 1
         },
         {
-          "id": "2606.26392v1",
+          "id": "2606.27146v1",
           "source": "arxiv",
-          "title": "MPC-Injection: Biasing Off-Policy Locomotion RL Toward Controller-Induced Behavior Basins",
-          "abstract": "Reinforcement learning (RL) for locomotion frequently converges to locally optimal but undeployable behaviors, such as vibrating limbs or scooting on the torso, that maximize return without producing a usable gait. We present MPC-Injection, a low-overhead method that steers RL toward a designer-preferred gait by inserting transitions into the replay buffer from a model predictive controller solving the same Markov decision process. Unlike reward shaping, MPC-Injection does not require redesigning the task reward, and unlike adversarial imitation learning, it adds no discriminator, no kinematic retargeting, and no auxiliary objective. Instead, the controller's preferred behavior is transferred to the policy purely through the replay state distribution. On a 2D walker in simulation and with sim-to-real evaluation on a Go2 quadruped, we show that MPC-Injection drives the policy into the controller's behavior basin using a one to two-term task reward, producing gaits qualitatively comparable to those of reward shaping with twenty-one tuned terms and of adversarial motion priors without their discriminator and retargeting overhead. We further analyze how the injected transitions bias actor-critic updates toward controller-visited states, allowing the policy to learn behaviors that pure RL may fail to reach under simple reward functions.",
+          "title": "PhysReflect-VLA: Physical Feasibility and Self-Reflective Regulation for Reliable Vision-Language-Action Policies",
+          "abstract": "Long-horizon robotic manipulation is highly sensitive to physically infeasible transitions, contact-induced disturbances, and the lack of effective self-correction during execution. Although Vision-Language-Action (VLA) models provide strong task grounding through multimodal learning, they typically generate actions in a feed-forward manner without explicitly checking physical feasibility or diagnosing execution errors online. We present PhysReflect-VLA, a plug-and-play execution-time reliability framework that augments VLA policies with physical feasibility evaluation and structured self-reflection in a closed-loop control pipeline. A Feasibility Operator evaluates whether candidate actions induce dynamically consistent state transitions; an Action Explanation Operator verifies transition coherence; and an LLM-based Reflection Module analyzes state discrepancies to generate corrective guidance for subsequent actions. A two-stage training procedure stabilizes feasibility modeling and integrates reflection into the control loop. Experiments on multi-stage, contact-rich real-world manipulation tasks show consistent improvements in stage-wise stability and overall task success compared with representative VLA baselines with an average gain of 5.4\\%. Ablation results further indicate that feasibility checking and reflection-based correction both contribute to improved execution robustness. These results highlight the importance of embedding physical consistency checks and online self-reflection for reliable long-horizon robotic manipulation.",
           "authors": [
-            "Roy Xing",
-            "Seyoung Ree",
-            "Brian Plancher"
+            "Jiayu Yang",
+            "Tao Yang",
+            "Weijun Li",
+            "Xiang Chang",
+            "Fei Chao",
+            "Changjing Shang",
+            "Qiang Shen"
           ],
           "primary_category": "cs.RO",
           "categories": [
             "cs.RO"
           ],
-          "published": "2026-06-24T21:23:22+00:00",
-          "link": "https://arxiv.org/pdf/2606.26392v1",
+          "published": "2026-06-25T15:18:10+00:00",
+          "link": "https://arxiv.org/pdf/2606.27146v1",
           "tags": [
             "keyword:embodied-ai",
             "query:embodied-ai"
           ],
           "llm_score": 8.0,
-          "llm_evidence_en": "MPC-Injection steers locomotion RL toward desired gaits by inserting MPC transitions into replay buffer",
-          "llm_evidence_cn": "MPC注入通过向回放缓冲区插入MPC转移来引导运动RL走向期望步态",
-          "llm_evidence": "MPC注入通过向回放缓冲区插入MPC转移来引导运动RL走向期望步态",
-          "canonical_evidence": "MPC注入通过向回放缓冲区插入MPC转移来引导运动RL走向期望步态",
-          "llm_tldr_en": "MPC-Injection biases off-policy RL for locomotion toward designer-preferred gaits by inserting controller transitions into the replay buffer, avoiding reward redesign.",
-          "llm_tldr_cn": "运动强化学习常收敛到非期望但局部最优的行为。本文提出MPC-Injection方法，通过将模型预测控制器的转移插入强化学习的回放缓冲区，引导策略朝向设计者期望的步态，无需修改奖励函数或额外判别器。实验证明该方法有效生成可用步态。",
-          "llm_tldr": "运动强化学习常收敛到非期望但局部最优的行为。本文提出MPC-Injection方法，通过将模型预测控制器的转移插入强化学习的回放缓冲区，引导策略朝向设计者期望的步态，无需修改奖励函数或额外判别器。实验证明该方法有效生成可用步态。",
-          "llm_tags": [
-            "query:embodied-ai"
-          ],
-          "matched_query_tag": "query:embodied-ai",
-          "matched_query_text": "reinforcement learning for robotics",
-          "matched_requirement_id": "req-1",
-          "selection_source": "carryover_cache",
-          "paper_id": "2606.26392v1",
-          "carry_days": 1
-        },
-        {
-          "id": "2606.27295v1",
-          "source": "arxiv",
-          "title": "LA4VLA: Learning to Act without Seeing via Language-Action Pretraining",
-          "abstract": "Vision-Language-Action (VLA) models are commonly pretrained on robot demonstrations by jointly mapping visual observations and language instructions to actions. However, dense visual-action supervision can dominate the comparatively sparse language-action signal. As a result, policies may rely on visual shortcuts rather than learn how language conditions action execution, making them sensitive to visual variations. To address this limitation, we propose LA4VLA, a language-action pretraining framework that enables policies to acquire language-conditioned action priors without visual observations. These priors capture reusable manipulation skills shared across tasks and scenes, reducing reliance on scene-specific visual cues. Specifically, LA4VLA decomposes expert demonstration trajectories into atomic action segments and pairs each segment with a corresponding low-level action description. This yields LA4-33K, a dataset of 33K Language-Action (LA) episodes derived entirely from existing demonstrations without additional robot data collection. We further develop LA4VLA-1B, a lightweight 1B-parameter VLA model, and investigate three paradigms for incorporating language-action supervision into VLA learning: LA-only pretraining, sequential LA-to-VLA pretraining, and mixed LA-VLA pretraining. Across simulation and real-world tasks, LA-pretrained policies consistently outperform matched VLA-pretrained counterparts, while combining LA and VLA supervision leads to further gains. In particular, mixed LA-VLA pretraining improves the average success rate of LA4VLA-1B over the no-pretraining baseline by up to 17.8 and 45.0 percentage points in simulation and real-world tasks, respectively. These results establish LA4VLA as an effective and complementary pretraining strategy for building stronger and more robust VLA policies.",
-          "authors": [
-            "Tao Lin",
-            "Yuxin Du",
-            "Yiran Mao",
-            "Zewei Ye",
-            "Yilei Zhong",
-            "Bing Cheng",
-            "Yiming Wang",
-            "Jiting Liu",
-            "Yang Tian",
-            "Junchi Yan",
-            "Feiran Wu",
-            "Zenan Meng",
-            "Hu Wei",
-            "Yuqian Fu",
-            "Gen Li",
-            "Bo Zhao"
-          ],
-          "primary_category": "cs.RO",
-          "categories": [
-            "cs.RO"
-          ],
-          "published": "2026-06-25T17:13:02+00:00",
-          "link": "https://arxiv.org/pdf/2606.27295v1",
-          "tags": [
-            "keyword:embodied-ai",
-            "query:embodied-ai"
-          ],
-          "llm_score": 8.0,
-          "llm_evidence_en": "language-action pretraining for VLA robotic manipulation",
-          "llm_evidence_cn": "用于VLA机器人操作的语言-动作预训练",
-          "llm_evidence": "用于VLA机器人操作的语言-动作预训练",
-          "canonical_evidence": "用于VLA机器人操作的语言-动作预训练",
-          "llm_tldr_en": "Proposes LA4VLA, a language-action pretraining framework for VLA models that learns action priors without visual observations, reducing reliance on visual shortcuts and improving generalization in robotic manipulation.",
-          "llm_tldr_cn": "针对视觉-语言-动作（VLA）模型在机器人操作中过度依赖视觉线索的问题，提出LA4VLA框架，通过无视觉的语言-动作预训练学习可复用的操作技能先验，减少对场景特定视觉信息的依赖。实验表明该方法能够提升策略的泛化能力，为VLA模型的高效训练提供了新思路。",
-          "llm_tldr": "针对视觉-语言-动作（VLA）模型在机器人操作中过度依赖视觉线索的问题，提出LA4VLA框架，通过无视觉的语言-动作预训练学习可复用的操作技能先验，减少对场景特定视觉信息的依赖。实验表明该方法能够提升策略的泛化能力，为VLA模型的高效训练提供了新思路。",
+          "llm_evidence_en": "Physical feasibility and self-reflection for reliable VLA policies",
+          "llm_evidence_cn": "为可靠VLA策略引入物理可行性和自反思机制",
+          "llm_evidence": "为可靠VLA策略引入物理可行性和自反思机制",
+          "canonical_evidence": "为可靠VLA策略引入物理可行性和自反思机制",
+          "llm_tldr_en": "Proposes PhysReflect-VLA, a plug-and-play framework that adds physical feasibility checking and structured self-reflection to VLA policies, enabling online error detection and correction.",
+          "llm_tldr_cn": "VLA模型前馈生成动作，不检查物理可行性或在线诊断错误。本文提出PhysReflect-VLA，在执行时添加物理可行性评估和结构化自反思模块，形成闭环控制。可行性算子评估候选动作是否导致动态不合法，自反思模块基于视觉反馈修正动作。实验表明该方法显著提高了长期操作任务的可靠性和成功率。",
+          "llm_tldr": "VLA模型前馈生成动作，不检查物理可行性或在线诊断错误。本文提出PhysReflect-VLA，在执行时添加物理可行性评估和结构化自反思模块，形成闭环控制。可行性算子评估候选动作是否导致动态不合法，自反思模块基于视觉反馈修正动作。实验表明该方法显著提高了长期操作任务的可靠性和成功率。",
           "llm_tags": [
             "query:embodied-ai"
           ],
@@ -217,90 +128,7 @@
           "matched_query_text": "Vision language action models for robotic manipulation",
           "matched_requirement_id": "req-9",
           "selection_source": "carryover_cache",
-          "paper_id": "2606.27295v1",
-          "carry_days": 1
-        },
-        {
-          "id": "2606.26183v1",
-          "source": "arxiv",
-          "title": "LiMoDE: Rethinking Lifelong Robot Manipulation from a Mixture-of-Dynamic-Experts Perspective",
-          "abstract": "Building a generalist robot that can leverage prior knowledge for continuous task adaptation remains a significant challenge. Previous works alleviate the catastrophic forgetting problem by parameter-efficient fine-tuning for single-task adaptation. However, they fail to extract reusable skills and model the interaction with other skills effectively. Recent works try to address these issues by learning prompts. Differently, this paper presents an architectural perspective on the Lifelong Mixture of Dynamic Experts (\\textit{LiMoDE}), a novel two-stage learning scheme for lifelong robot manipulation. Specifically, a dynamic MoE structure is first proposed in the multi-task pre-training stage to learn prior knowledge, where a varied number of heterogeneous experts are activated based on the motion information to address different short-term manipulations. Subsequently, in the task adaptation stage, we design a lifelong MoE adaptation mechanism % (LiMoEAM) that learns lifelong experts and dynamically combines them with frozen ones for new tasks, facilitating the knowledge transfer during adaptation. The proposed \\textit{LiMoDE} is evaluated on both the simulated lifelong learning benchmark and real-world tasks. Extensive experiments demonstrate its effectiveness in achieving superior performance and strong lifelong adaptation by introducing a moderate number of additional trainable parameters and inference overhead.",
-          "authors": [
-            "Zhihao Gu",
-            "Lin Wang"
-          ],
-          "primary_category": "cs.RO",
-          "categories": [
-            "cs.RO",
-            "cs.AI",
-            "cs.LG"
-          ],
-          "published": "2026-06-24T13:18:43+00:00",
-          "link": "https://arxiv.org/pdf/2606.26183v1",
-          "tags": [
-            "keyword:embodied-ai",
-            "query:embodied-ai"
-          ],
-          "llm_score": 8.0,
-          "llm_evidence_en": "lifelong robot manipulation with mixture of dynamic experts",
-          "llm_evidence_cn": "终身机器人操作中的混合动态专家方法",
-          "llm_evidence": "终身机器人操作中的混合动态专家方法",
-          "canonical_evidence": "终身机器人操作中的混合动态专家方法",
-          "llm_tldr_en": "LiMoDE proposes a mixture-of-dynamic-experts architecture for lifelong robot manipulation, enabling continual learning and reuse of skills across tasks.",
-          "llm_tldr_cn": "LiMoDE提出了一种混合动态专家架构，用于终身机器人操作，解决了灾难性遗忘和技能重用问题。该方法通过两阶段学习（多任务预训练和快速适应）实现持续学习。实验表明，LiMoDE在多个操作任务上提升了泛化和适应能力。",
-          "llm_tldr": "LiMoDE提出了一种混合动态专家架构，用于终身机器人操作，解决了灾难性遗忘和技能重用问题。该方法通过两阶段学习（多任务预训练和快速适应）实现持续学习。实验表明，LiMoDE在多个操作任务上提升了泛化和适应能力。",
-          "llm_tags": [
-            "query:embodied-ai"
-          ],
-          "matched_query_tag": "query:embodied-ai",
-          "matched_query_text": "robotic manipulation using learned policies",
-          "matched_requirement_id": "req-5",
-          "selection_source": "carryover_cache",
-          "paper_id": "2606.26183v1",
-          "carry_days": 1
-        },
-        {
-          "id": "2606.26801v1",
-          "source": "arxiv",
-          "title": "Improving Vision-Language-Action Model Fine-Tuning with Structured Stage and Keyframe Supervision",
-          "abstract": "Vision-Language-Action (VLA) models have shown strong potential for generalizable robotic manipulation. During fine-tuning, however, action supervision applies equally across all timesteps, without structured supervision on which manipulation stage the robot is in or what the next gripper-event target should be. This causes failures to concentrate around challenging gripper-event transitions. To address this, we propose StaKe, a plug-in auxiliary supervision framework that automatically derives two complementary signals from demonstration gripper states without manual annotation: a stage classifier that identifies the current manipulation stage, and a keyframe predictor that estimates the target joint action at the next gripper transition. Both are modeled as lightweight auxiliary heads that enrich the learned representations during training, while leaving the base VLA policy architecture and inference loop unchanged. Experiments on bimanual simulation and single-arm Franka real-robot tasks show that StaKe consistently improves success rates (relative gains of 14% and 56%, respectively), with larger improvements on longer-horizon tasks that involve more gripper-event transitions. Ablation studies validate each design choice, and qualitative analysis confirms that the learned representations faithfully track manipulation stages. These results indicate that structured supervision is an effective and general strategy for enhancing VLA fine-tuning in long-horizon manipulation. Project website: https://hi-yuanxu.github.io/StaKe-Web/",
-          "authors": [
-            "Yuan Xu",
-            "Yixiang Chen",
-            "Kai Wang",
-            "Jiabing Yang",
-            "Peiyan Li",
-            "Qisen Ma",
-            "Yan Huang",
-            "Liang Wang"
-          ],
-          "primary_category": "cs.RO",
-          "categories": [
-            "cs.RO",
-            "cs.CV"
-          ],
-          "published": "2026-06-25T09:38:11+00:00",
-          "link": "https://arxiv.org/pdf/2606.26801v1",
-          "tags": [
-            "keyword:embodied-ai",
-            "query:embodied-ai"
-          ],
-          "llm_score": 8.0,
-          "llm_evidence_en": "structured stage and keyframe supervision for VLA fine-tuning",
-          "llm_evidence_cn": "结构化阶段和关键帧监督用于VLA微调",
-          "llm_evidence": "结构化阶段和关键帧监督用于VLA微调",
-          "canonical_evidence": "结构化阶段和关键帧监督用于VLA微调",
-          "llm_tldr_en": "Proposes StaKe, a plug-in auxiliary supervision framework for VLA fine-tuning that automatically provides stage and keyframe signals, improving gripper-event transitions.",
-          "llm_tldr_cn": "VLA模型微调中动作监督均匀施加，缺乏对操作阶段和关键帧的结构化指导，导致握爪事件转换失败。本文提出StaKe，从演示握爪状态自动推导阶段分类器和关键帧预测器，作为辅助监督，显著减少了转换错误，提升了操作成功率。该方法即插即用，无需人工标注。",
-          "llm_tldr": "VLA模型微调中动作监督均匀施加，缺乏对操作阶段和关键帧的结构化指导，导致握爪事件转换失败。本文提出StaKe，从演示握爪状态自动推导阶段分类器和关键帧预测器，作为辅助监督，显著减少了转换错误，提升了操作成功率。该方法即插即用，无需人工标注。",
-          "llm_tags": [
-            "query:embodied-ai"
-          ],
-          "matched_query_tag": "query:embodied-ai",
-          "matched_query_text": "Vision language action models for robotic manipulation",
-          "matched_requirement_id": "req-9",
-          "selection_source": "carryover_cache",
-          "paper_id": "2606.26801v1",
+          "paper_id": "2606.27146v1",
           "carry_days": 1
         }
       ]
