@@ -6,73 +6,71 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-06-27
-- 运行时间：2026-06-27 20:52:54 UTC
+- 最新运行日期：2026-06-28
+- 运行时间：2026-06-28 21:28:10 UTC
 - 运行状态：成功
 - 本次总论文数：17
 - 精读区：6
 - 速读区：11
 
 ### 今日简报（AI）
-今日重点关注机器人世界建模与交互仿真，精读两篇高评分论文聚焦上下文推理与运动学-物理解耦。
-最值得精读的是《In-Context World Modeling for Robotic Control》与《IOI》，分别从语言模型上下文学习和解耦框架提升世界模型泛化性与交互精度。
-建议优先精读这两篇高分论文，再结合速读中《Deep Reinforcement Learning-Enhanced Event-Triggered Data-Driven Predictive Control》了解软体机器人控制的新方法。
-- 详情：[/202606/27/README](/202606/27/README)
+今日推荐17篇论文，精读两篇最高分9.0，聚焦零样本奖励设计实现自动化技能生成与基于世界模型的平滑楼梯运动控制。最值得关注的方向是因果奖励世界模型和动态感知蒸馏，前者颠覆传统奖励工程，后者攻克连续地形行走难题。建议优先精读这两篇高分论文，再通过速读中的VLA泛化与人形机器人操作拓展应用视野。
+- 详情：[/202606/28/README](/202606/28/README)
 
 ### 精读区论文标签
-1. [In-Context World Modeling for Robotic Control](/202606/27/2606.26025v2-in-context-world-modeling-for-robotic-control)  
-   标签：评分：10.0/10、query:embodied-ai
-   evidence：用于机器人控制的上下文世界建模（与v1相同）
-2. [IOI: Decoupling Kinematics and Physics for Interactive World Models](/202606/27/2606.23296v1-ioi-decoupling-kinematics-and-physics-for-interactive-world-models)  
+1. [Causal Reward World Models: Zero-shot Reward Design for Automated Skill Generation](/202606/28/2606.23280v1-causal-reward-world-models-zero-shot-reward-design-for-automated-skill-generation)  
    标签：评分：9.0/10、query:embodied-ai
-   evidence：解耦运动学与物理的混合交互世界模型用于具身代理
-3. [Play2Perfect: What Matters in Dexterous Play Pretraining for Precise Assembly?](/202606/27/2606.26428v1-play2perfect-what-matters-in-dexterous-play-pretraining-for-precise-assembly)  
+   evidence：因果奖励世界模型用于强化学习中的零样本奖励设计
+2. [DynaWM: Dynamics-Aware Distillation with World Model and Momentum Targets for Smooth Locomotion over Continuous Stairs](/202606/28/2606.24089v1-dynawm-dynamics-aware-distillation-with-world-model-and-momentum-targets-for-smooth-locomotion-over-continuous-stairs)  
    标签：评分：9.0/10、query:embodied-ai
-   evidence：使用玩耍数据通过RL预训练灵巧操作
-4. [Improving Vision-Language-Action Model Fine-Tuning with Structured Stage and Keyframe Supervision](/202606/27/2606.26801v1-improving-vision-language-action-model-fine-tuning-with-structured-stage-and-keyframe-supervision)  
+   evidence：世界模型作为正则化器用于动力学感知的步态控制
+3. [Learning Robot Visual Navigation in Crowds via Intention-Aware Scene Representations](/202606/28/2606.26047v1-learning-robot-visual-navigation-in-crowds-via-intention-aware-scene-representations)  
    标签：评分：9.0/10、query:embodied-ai
-   evidence：VLA模型微调，使用阶段和关键帧监督进行机器人操作
-5. [LA4VLA: Learning to Act without Seeing via Language-Action Pretraining](/202606/27/2606.27295v1-la4vla-learning-to-act-without-seeing-via-language-action-pretraining)  
+   evidence：深度强化学习用于机器人人群导航
+4. [PAMAE: Phase-Aware-MoE Action Experts Towards Reliable Flow-Matching Vision-Language-Action Policies](/202606/28/2606.27144v1-pamae-phase-aware-moe-action-experts-towards-reliable-flow-matching-vision-language-action-policies)  
    标签：评分：9.0/10、query:embodied-ai
-   evidence：无需视觉观察的语言-动作预训练用于VLA模型
-6. [World Action Models Enable Continual Imitation Learning with Recurrent Generative Replays](/202606/27/2606.27374v1-world-action-models-enable-continual-imitation-learning-with-recurrent-generative-replays)  
-   标签：评分：9.0/10、query:embodied-ai
-   evidence：世界动作模型结合生成回放实现持续模仿学习
+   evidence：面向可靠流匹配VLA策略的相位感知混合专家
+5. [OpenHLM: An Empirical Recipe for Whole-Body Humanoid Loco-Manipulation](/202606/28/2606.22174v1-openhlm-an-empirical-recipe-for-whole-body-humanoid-loco-manipulation)  
+   标签：评分：8.0/10、query:embodied-ai
+   evidence：全身VLA模型用于人形机器人移动操作
+6. [InSight: Self-Guided Skill Acquisition via Steerable VLAs](/202606/28/2606.24884v1-insight-self-guided-skill-acquisition-via-steerable-vlas)  
+   标签：评分：8.0/10、query:embodied-ai
+   evidence：通过可操控的VLA模型实现自主技能习得
 
 ### 速读区论文标签
-1. [Long-Distance Real-World Navigation of the Legged-Wheeled Robot Go2-W Using Deep Reinforcement Learning](/202606/27/2606.21387v1-long-distance-real-world-navigation-of-the-legged-wheeled-robot-go2-w-using-deep-reinforcement-learning)  
+1. [Reflective VLA: In-Context Action Consequences Make VLAs Generalize](/202606/28/2606.25215v1-reflective-vla-in-context-action-consequences-make-vlas-generalize)  
    标签：评分：8.0/10、query:embodied-ai
-   evidence：深度强化学习用于真实世界机器人导航
-2. [GCT-MARL: Graph-Based Contrastive Transfer for Sample-Efficient Cooperative Multi-Agent Reinforcement Learning](/202606/27/2606.25073v1-gct-marl-graph-based-contrastive-transfer-for-sample-efficient-cooperative-multi-agent-reinforcement-learning)  
+   evidence：具有上下文动作后果的VLA模型
+2. [Humanoid-DART: Humanoid Loco-Manipulation using Diffusion-guided Augmentation through Relabeling and Tracking](/202606/28/2606.26855v1-humanoid-dart-humanoid-loco-manipulation-using-diffusion-guided-augmentation-through-relabeling-and-tracking)  
    标签：评分：8.0/10、query:embodied-ai
-   evidence：多智能体强化学习中的迁移学习
-3. [Deep Reinforcement Learning-Enhanced Event-Triggered Data-Driven Predictive Control for a 3D Cable-Driven Soft Robotic Arm](/202606/27/2606.26048v1-deep-reinforcement-learning-enhanced-event-triggered-data-driven-predictive-control-for-a-3d-cable-driven-soft-robotic-arm)  
+   evidence：结合扩散轨迹生成与强化学习，从稀疏演示中学习人形机器人全身操控
+3. [PhysReflect-VLA: Physical Feasibility and Self-Reflective Regulation for Reliable Vision-Language-Action Policies](/202606/28/2606.27146v1-physreflect-vla-physical-feasibility-and-self-reflective-regulation-for-reliable-vision-language-action-policies)  
    标签：评分：8.0/10、query:embodied-ai
-   evidence：强化学习增强的软体机器人控制
-4. [Humanoid-DART: Humanoid Loco-Manipulation using Diffusion-guided Augmentation through Relabeling and Tracking](/202606/27/2606.26855v1-humanoid-dart-humanoid-loco-manipulation-using-diffusion-guided-augmentation-through-relabeling-and-tracking)  
+   evidence：为VLA策略提供物理可行性评估
+4. [VibeAct: Vibration to Actions for Contact-Rich Reactive Robot Dexterity](/202606/28/2606.27344v1-vibeact-vibration-to-actions-for-contact-rich-reactive-robot-dexterity)  
    标签：评分：8.0/10、query:embodied-ai
-   evidence：结合扩散轨迹生成与强化学习进行人形机器人操作，符合具身智能、强化学习和操作主题
-5. [GRAFT: Graph-Based Affordance Transfer via Part Correspondence](/202606/27/2606.25241v1-graft-graph-based-affordance-transfer-via-part-correspondence)  
+   evidence：桥接真实振动触觉传感与基于仿真的强化学习，实现灵巧操作
+5. [Verifiable Foundation Models for Robot Safety](/202606/28/2606.23754v1-verifiable-foundation-models-for-robot-safety)  
    标签：评分：7.0/10、query:embodied-ai
-   evidence：利用基于图的可操作属性从少量示范进行零样本操作迁移
-6. [LiMoDE: Rethinking Lifelong Robot Manipulation from a Mixture-of-Dynamic-Experts Perspective](/202606/27/2606.26183v1-limode-rethinking-lifelong-robot-manipulation-from-a-mixture-of-dynamic-experts-perspective)  
+   evidence：使用模块化学习的具身AI机器人安全框架
+6. [NavWM: A Unified Navigation World Model for Foresight-Driven Planning](/202606/28/2606.24101v1-navwm-a-unified-navigation-world-model-for-foresight-driven-planning)  
    标签：评分：7.0/10、query:embodied-ai
-   evidence：使用混合动态专家进行终身机器人操作
-7. [Inference-Time Robot Behavior Steering through Physically-Aware Reconfiguration of Task-Structure](/202606/27/2606.26588v1-inference-time-robot-behavior-steering-through-physically-aware-reconfiguration-of-task-structure)  
-   标签：评分：7.0/10、query:embodied-ai
-   evidence：对已学习机器人策略进行推理时行为引导
-8. [RelAfford6D: Relational 6D Affordance Graphs for Constraint-Driven Robotic Manipulation](/202606/27/2606.27036v1-relafford6d-relational-6d-affordance-graphs-for-constraint-driven-robotic-manipulation)  
-   标签：评分：7.0/10、query:embodied-ai
-   evidence：基于语义驱动的机器人操作框架
-9. [Learning Asynchronous Upper-body Task-space Trajectory Tracking Policy for Humanoid Robots](/202606/27/2606.25706v1-learning-asynchronous-upper-body-task-space-trajectory-tracking-policy-for-humanoid-robots)  
+   evidence：用于前瞻驱动的统一导航世界模型
+7. [Asymmetric physics enables efficient learning in quadrupedal robot swarms](/202606/28/2606.23153v1-asymmetric-physics-enables-efficient-learning-in-quadrupedal-robot-swarms)  
    标签：评分：6.0/10、query:embodied-ai
-   evidence：学习人形机器人上肢任务空间轨迹跟踪策略
-10. [MPC-Injection: Biasing Off-Policy Locomotion RL Toward Controller-Induced Behavior Basins](/202606/27/2606.26392v1-mpc-injection-biasing-off-policy-locomotion-rl-toward-controller-induced-behavior-basins)  
+   evidence：强化学习用于四足机器人群体视觉协调
+8. [Themis: An explainable AI-enabled framework for Reinforcement Learning with Human Feedback](/202606/28/2606.24622v1-themis-an-explainable-ai-enabled-framework-for-reinforcement-learning-with-human-feedback)  
    标签：评分：6.0/10、query:embodied-ai
-   evidence：通过MPC注入改进运动强化学习
-11. [HumanoidUMI: Bridging Robot-Free Demonstrations and Humanoid Whole-Body Manipulation](/202606/27/2606.27239v1-humanoidumi-bridging-robot-free-demonstrations-and-humanoid-whole-body-manipulation)  
+   evidence：结合人类反馈和可解释性的RL框架
+9. [TACTFUL: Tactile-Driven Exploration For Object Localization and Identification in Confined Environments](/202606/28/2606.24712v1-tactful-tactile-driven-exploration-for-object-localization-and-identification-in-confined-environments)  
    标签：评分：6.0/10、query:embodied-ai
-   evidence：免机器人的演示收集用于人形机器人操作
+   evidence：基于触觉的探索与策略学习用于机器人操作
+10. [RigPI: Dynamic Parameter Identification of Rigid Body via VLM-Seeded Differentiable Simulation](/202606/28/2606.25212v2-rigpi-dynamic-parameter-identification-of-rigid-body-via-vlm-seeded-differentiable-simulation)  
+   标签：评分：6.0/10、query:embodied-ai
+   evidence：使用可微仿真和VLM的动态参数辨识
+11. [Continual Robot Policy Learning via Variational Neural Dynamics](/202606/28/2606.27353v1-continual-robot-policy-learning-via-variational-neural-dynamics)  
+   标签：评分：6.0/10、query:embodied-ai
+   evidence：变动态下的持续机器人策略学习
 
 
 <div class="dpr-home-promo-card">
