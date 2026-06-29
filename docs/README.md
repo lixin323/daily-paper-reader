@@ -6,71 +6,79 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-06-28
-- 运行时间：2026-06-28 21:28:10 UTC
+- 最新运行日期：2026-05-31 ~ 2026-06-29
+- 运行时间：2026-06-29 03:27:09 UTC
 - 运行状态：成功
-- 本次总论文数：17
-- 精读区：6
-- 速读区：11
+- 本次总论文数：19
+- 精读区：7
+- 速读区：12
 
 ### 今日简报（AI）
-今日推荐17篇论文，精读两篇最高分9.0，聚焦零样本奖励设计实现自动化技能生成与基于世界模型的平滑楼梯运动控制。最值得关注的方向是因果奖励世界模型和动态感知蒸馏，前者颠覆传统奖励工程，后者攻克连续地形行走难题。建议优先精读这两篇高分论文，再通过速读中的VLA泛化与人形机器人操作拓展应用视野。
-- 详情：[/202606/28/README](/202606/28/README)
+1) 本期共综述19篇，精读7篇，聚焦物理人机交互安全与生理评估，其中两篇获9分高分。  
+2) 最值得关注全身阻抗模型预测控制（浮动基座平台交互安全）与多模态生理信号评估（环境变化下的接触式交互）。  
+3) 建议后续可结合速读中的人体追踪（面部vs身体）及制造环境中的安全运动生成，深化人机交互实用部署。
+- 详情：[/20260531-20260629/README](/20260531-20260629/README)
 
 ### 精读区论文标签
-1. [Causal Reward World Models: Zero-shot Reward Design for Automated Skill Generation](/202606/28/2606.23280v1-causal-reward-world-models-zero-shot-reward-design-for-automated-skill-generation)  
+1. [Whole-Body Impedance Model Predictive Control for Safe Physical Human--Robot Interaction on Floating-Base Platforms](/20260531-20260629/2606.14617v1-whole-body-impedance-model-predictive-control-for-safe-physical-human--robot-interaction-on-floating-base-platforms)  
+   标签：评分：9.0/10、query:hri
+   evidence：全身阻抗模型预测控制用于安全物理人机交互
+2. [Multimodal Physiological Assessment of Contact-Rich Physical Human-Robot Interaction Under Varying Environmental Conditions](/20260531-20260629/2606.14969v1-multimodal-physiological-assessment-of-contact-rich-physical-human-robot-interaction-under-varying-environmental-conditions)  
+   标签：评分：9.0/10、query:hri
+   evidence：接触密集型物理人机交互的多模态生理评估
+3. [Geometric Action Model for Robot Policy Learning](/20260531-20260629/2606.17046v2-geometric-action-model-for-robot-policy-learning)  
    标签：评分：9.0/10、query:embodied-ai
-   evidence：因果奖励世界模型用于强化学习中的零样本奖励设计
-2. [DynaWM: Dynamics-Aware Distillation with World Model and Momentum Targets for Smooth Locomotion over Continuous Stairs](/202606/28/2606.24089v1-dynawm-dynamics-aware-distillation-with-world-model-and-momentum-targets-for-smooth-locomotion-over-continuous-stairs)  
+   evidence：语言条件操作策略重用几何基础模型
+4. [Beyond Failure Recovery: An Engagement-Aware Human-in-the-loop Framework for Robotic Systems](/20260531-20260629/2606.18189v1-beyond-failure-recovery-an-engagement-aware-human-in-the-loop-framework-for-robotic-systems)  
+   标签：评分：9.0/10、query:hri
+   evidence：关注用户参与的人机交互框架
+5. [SafeDojo: Safe Reinforcement Learning for VLA via Interactive World Model](/20260531-20260629/2606.20698v1-safedojo-safe-reinforcement-learning-for-vla-via-interactive-world-model)  
    标签：评分：9.0/10、query:embodied-ai
-   evidence：世界模型作为正则化器用于动力学感知的步态控制
-3. [Learning Robot Visual Navigation in Crowds via Intention-Aware Scene Representations](/202606/28/2606.26047v1-learning-robot-visual-navigation-in-crowds-via-intention-aware-scene-representations)  
-   标签：评分：9.0/10、query:embodied-ai
-   evidence：深度强化学习用于机器人人群导航
-4. [PAMAE: Phase-Aware-MoE Action Experts Towards Reliable Flow-Matching Vision-Language-Action Policies](/202606/28/2606.27144v1-pamae-phase-aware-moe-action-experts-towards-reliable-flow-matching-vision-language-action-policies)  
-   标签：评分：9.0/10、query:embodied-ai
-   evidence：面向可靠流匹配VLA策略的相位感知混合专家
-5. [OpenHLM: An Empirical Recipe for Whole-Body Humanoid Loco-Manipulation](/202606/28/2606.22174v1-openhlm-an-empirical-recipe-for-whole-body-humanoid-loco-manipulation)  
-   标签：评分：8.0/10、query:embodied-ai
-   evidence：全身VLA模型用于人形机器人移动操作
-6. [InSight: Self-Guided Skill Acquisition via Steerable VLAs](/202606/28/2606.24884v1-insight-self-guided-skill-acquisition-via-steerable-vlas)  
-   标签：评分：8.0/10、query:embodied-ai
-   evidence：通过可操控的VLA模型实现自主技能习得
+   evidence：使用交互世界模型进行视觉-语言-动作策略的安全强化学习
+6. [Human-Robot Shared Control for Humanized End-Effector Teleoperation](/20260531-20260629/2606.24629v1-human-robot-shared-control-for-humanized-end-effector-teleoperation)  
+   标签：评分：9.0/10、query:hri
+   evidence：人机共享控制框架，用于远程操作的物理交互
+7. [GROVE: Grounded Pedestrian Simulation via Natural Language for Interactive Social Robot Navigation](/20260531-20260629/2606.25504v1-grove-grounded-pedestrian-simulation-via-natural-language-for-interactive-social-robot-navigation)  
+   标签：评分：9.0/10、query:hri
+   evidence：面向交互式社交机器人导航的接地行人仿真
 
 ### 速读区论文标签
-1. [Reflective VLA: In-Context Action Consequences Make VLAs Generalize](/202606/28/2606.25215v1-reflective-vla-in-context-action-consequences-make-vlas-generalize)  
+1. [Face versus Body Tracking for Human-Robot Interaction: An Egocentric Dataset](/20260531-20260629/2606.03694v1-face-versus-body-tracking-for-human-robot-interaction-an-egocentric-dataset)  
+   标签：评分：8.0/10、query:hri
+   evidence：用于人机交互追踪的自我中心数据集
+2. [Safe, Fluent and Acceptable Motion Generation and Execution for Human--Robot Interaction in Manufacturing Environments](/20260531-20260629/2606.08741v1-safe-fluent-and-acceptable-motion-generation-and-execution-for-human--robot-interaction-in-manufacturing-environments)  
+   标签：评分：8.0/10、query:hri
+   evidence：人机交互运动生成安全流畅
+3. [Targeting World Models to Compromise Robot Learning Pipelines](/20260531-20260629/2606.09499v1-targeting-world-models-to-compromise-robot-learning-pipelines)  
    标签：评分：8.0/10、query:embodied-ai
-   evidence：具有上下文动作后果的VLA模型
-2. [Humanoid-DART: Humanoid Loco-Manipulation using Diffusion-guided Augmentation through Relabeling and Tracking](/202606/28/2606.26855v1-humanoid-dart-humanoid-loco-manipulation-using-diffusion-guided-augmentation-through-relabeling-and-tracking)  
+   evidence：世界模型在机器人学习管道中的安全漏洞
+4. [Beyond Usability: A UX Case Study on Using "Withdrawal Design" to Challenge Engagement Metrics in Social Robotics](/20260531-20260629/2606.16439v1-beyond-usability-a-ux-case-study-on-using-withdrawal-design-to-challenge-engagement-metrics-in-social-robotics)  
+   标签：评分：8.0/10、query:hri
+   evidence：社交机器人交互用户实验
+5. [Generating Robot Hands from Human Demonstrations](/20260531-20260629/2606.20549v1-generating-robot-hands-from-human-demonstrations)  
    标签：评分：8.0/10、query:embodied-ai
-   evidence：结合扩散轨迹生成与强化学习，从稀疏演示中学习人形机器人全身操控
-3. [PhysReflect-VLA: Physical Feasibility and Self-Reflective Regulation for Reliable Vision-Language-Action Policies](/202606/28/2606.27146v1-physreflect-vla-physical-feasibility-and-self-reflective-regulation-for-reliable-vision-language-action-policies)  
-   标签：评分：8.0/10、query:embodied-ai
-   evidence：为VLA策略提供物理可行性评估
-4. [VibeAct: Vibration to Actions for Contact-Rich Reactive Robot Dexterity](/202606/28/2606.27344v1-vibeact-vibration-to-actions-for-contact-rich-reactive-robot-dexterity)  
-   标签：评分：8.0/10、query:embodied-ai
-   evidence：桥接真实振动触觉传感与基于仿真的强化学习，实现灵巧操作
-5. [Verifiable Foundation Models for Robot Safety](/202606/28/2606.23754v1-verifiable-foundation-models-for-robot-safety)  
+   evidence：从人类演示生成机器人手的设计
+6. [Legible and Intuitive Multi-modal Robot State and Intent Communication Validated in Online and Real-world Studies](/20260531-20260629/2606.24445v1-legible-and-intuitive-multi-modal-robot-state-and-intent-communication-validated-in-online-and-real-world-studies)  
+   标签：评分：8.0/10、query:hri
+   evidence：人机通信验证
+7. [PhyRoGen: Synthetic Generation of Physical Robot Manipulation Puzzles Using Procedural Content Generation](/20260531-20260629/2606.06569v1-phyrogen-synthetic-generation-of-physical-robot-manipulation-puzzles-using-procedural-content-generation)  
    标签：评分：7.0/10、query:embodied-ai
-   evidence：使用模块化学习的具身AI机器人安全框架
-6. [NavWM: A Unified Navigation World Model for Foresight-Driven Planning](/202606/28/2606.24101v1-navwm-a-unified-navigation-world-model-for-foresight-driven-planning)  
-   标签：评分：7.0/10、query:embodied-ai
-   evidence：用于前瞻驱动的统一导航世界模型
-7. [Asymmetric physics enables efficient learning in quadrupedal robot swarms](/202606/28/2606.23153v1-asymmetric-physics-enables-efficient-learning-in-quadrupedal-robot-swarms)  
+   evidence：合成数据集生成用于机器人操作学习
+8. [Personalized and Robust Proactive Robot Assistance with Uncertainty-Guided LLM Reasoning](/20260531-20260629/2606.08458v1-personalized-and-robust-proactive-robot-assistance-with-uncertainty-guided-llm-reasoning)  
+   标签：评分：7.0/10、query:hri
+   evidence：家庭环境中主动机器人辅助，预测人类活动并利用LLM推理
+9. [Proprioceptive-visual correspondence enables self-other distinction in humanoid robots](/20260531-20260629/2606.13222v1-proprioceptive-visual-correspondence-enables-self-other-distinction-in-humanoid-robots)  
+   标签：评分：7.0/10、query:hri
+   evidence：人形机器人社交智能中的自我-他人区分
+10. [What Robots Do Matters More Than What They Look Like: Task Context Shapes Trust in Educational HRI](/20260531-20260629/2606.14602v1-what-robots-do-matters-more-than-what-they-look-like-task-context-shapes-trust-in-educational-hri)  
+   标签：评分：7.0/10、query:hri
+   evidence：研究机器人外观和任务上下文如何影响教育人机交互中的信任
+11. [PAWS: Preference Learning with Advantage-Weighted Segments](/20260531-20260629/2606.11982v1-paws-preference-learning-with-advantage-weighted-segments)  
    标签：评分：6.0/10、query:embodied-ai
-   evidence：强化学习用于四足机器人群体视觉协调
-8. [Themis: An explainable AI-enabled framework for Reinforcement Learning with Human Feedback](/202606/28/2606.24622v1-themis-an-explainable-ai-enabled-framework-for-reinforcement-learning-with-human-feedback)  
+   evidence：基于偏好的强化学习方法，使用优势加权片段
+12. [Stealthy World Model Manipulation via Data Poisoning](/20260531-20260629/2606.18697v1-stealthy-world-model-manipulation-via-data-poisoning)  
    标签：评分：6.0/10、query:embodied-ai
-   evidence：结合人类反馈和可解释性的RL框架
-9. [TACTFUL: Tactile-Driven Exploration For Object Localization and Identification in Confined Environments](/202606/28/2606.24712v1-tactful-tactile-driven-exploration-for-object-localization-and-identification-in-confined-environments)  
-   标签：评分：6.0/10、query:embodied-ai
-   evidence：基于触觉的探索与策略学习用于机器人操作
-10. [RigPI: Dynamic Parameter Identification of Rigid Body via VLM-Seeded Differentiable Simulation](/202606/28/2606.25212v2-rigpi-dynamic-parameter-identification-of-rigid-body-via-vlm-seeded-differentiable-simulation)  
-   标签：评分：6.0/10、query:embodied-ai
-   evidence：使用可微仿真和VLM的动态参数辨识
-11. [Continual Robot Policy Learning via Variational Neural Dynamics](/202606/28/2606.27353v1-continual-robot-policy-learning-via-variational-neural-dynamics)  
-   标签：评分：6.0/10、query:embodied-ai
-   evidence：变动态下的持续机器人策略学习
+   evidence：针对基于模型的学习智能体中世界模型的数据投毒攻击
 
 
 <div class="dpr-home-promo-card">

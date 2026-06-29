@@ -1,0 +1,805 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-29T03:17:27.494854+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 2,
+    "deep_divecandidates": 14,
+    "deep_cap": 7,
+    "deep_selected": 7,
+    "quick_candidates": 15,
+    "quick_skim_target": 12,
+    "quick_selected": 12
+  },
+  "deep_dive": [
+    {
+      "id": "2606.14617v1",
+      "source": "arxiv",
+      "title": "Whole-Body Impedance Model Predictive Control for Safe Physical Human--Robot Interaction on Floating-Base Platforms",
+      "abstract": "Floating-base robots must balance under rigid contact constraints while interacting safely with humans. Existing whole-body control~(WBC) frameworks allocate the full joint space to locomotion or rely on fixed-gain impedance feedback that accumulates steady-state error under sustained physical human--robot interaction~(pHRI) forces. This paper extends the authors' fixed-base two-layer Impedance MPC to floating-base platforms through a three-level architecture: a centroidal MPC plans contact forces over a 500\\,ms horizon; a priority-driven WBC layer resolves balance into joint torques through contact-consistent null-space projection; and the residual null space is governed by a receding-horizon quadratic program~(QP) that predicts and rejects pHRI disturbances using a Kalman-augmented state. A contact-consistent feedback linearization reduces the arm end-effector plant to a double integrator with a \\emph{constant} state matrix within each contact mode, enabling offline precomputation of the QP cost and ${\\geq}1$\\,kHz operation. A covariance-inflation protocol preserves the disturbance estimate across contact-mode switches, guaranteeing zero steady-state error under bounded constant pHRI loads, and an Impedance Equivalence Theorem shows the infinite-horizon limit recovers a classical task-space impedance law whose effective mass, damping, and stiffness adapt to posture and contact configuration. Simulations on a 17-DOF biped and the Unitree G1 humanoid validate the design.",
+      "authors": [
+        "Yongyan Cao"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "published": "2026-06-12T16:41:20+00:00",
+      "link": "https://arxiv.org/pdf/2606.14617v1",
+      "tags": [
+        "keyword:HRI",
+        "keyword:embodied-ai",
+        "query:HRI",
+        "query:embodied-ai"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Whole-body impedance MPC for safe physical human-robot interaction",
+      "llm_evidence_cn": "全身阻抗模型预测控制用于安全物理人机交互",
+      "llm_evidence": "全身阻抗模型预测控制用于安全物理人机交互",
+      "canonical_evidence": "全身阻抗模型预测控制用于安全物理人机交互",
+      "llm_tldr_en": "Extends impedance MPC to floating-base robots for safe physical HRI, using centroidal MPC and whole-body control with null-space projection.",
+      "llm_tldr_cn": "浮动基座机器人在与人物理交互时需同时保持平衡和安全。现有方法存在稳态误差。本文提出三层架构：质心MPC规划接触力、优先级WBC层通过零空间投影解决平衡、剩余零空间采用阻抗模型预测控制。实验证明该方法能实现安全且稳定的物理人机交互，尤其在持续外力下。",
+      "llm_tldr": "浮动基座机器人在与人物理交互时需同时保持平衡和安全。现有方法存在稳态误差。本文提出三层架构：质心MPC规划接触力、优先级WBC层通过零空间投影解决平衡、剩余零空间采用阻抗模型预测控制。实验证明该方法能实现安全且稳定的物理人机交互，尤其在持续外力下。",
+      "llm_tags": [
+        "query:hri"
+      ],
+      "matched_query_tag": "query:hri",
+      "matched_query_text": "physical human robot interaction technologies",
+      "matched_requirement_id": "req-12",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.14969v1",
+      "source": "arxiv",
+      "title": "Multimodal Physiological Assessment of Contact-Rich Physical Human-Robot Interaction Under Varying Environmental Conditions",
+      "abstract": "Physical human-robot interaction (pHRI) in real-world settings exposes operators to fluctuating environmental conditions during contact-rich tasks. Traditional task-centric evaluations overlook the physiological burdens imposed by these stressors. Therefore, we conducted a multimodal empirical study involving contact-rich tracing tasks under 18 distinct combinations of temperature, acoustic noise, and illuminance. Synchronously, we recorded electrodermal activity (EDA), surface electromyography (sEMG), eye-tracking data, and subjective environmental comfort ratings. Evaluating these physiological signals alongside execution data revealed hidden physiological costs not captured by objective performance. The results revealed that task performance remained stable across all environmental conditions. Autonomic workload, indexed by tonic skin conductance level (SCL), increased with temperature, while physical and cognitive workload were unaffected. Perceived environmental comfort showed no significant association with tracing error or completion time. These findings reveal a compensatory mechanism where operators maintain consistent performance by increasing their physiological effort to suppress thermal discomfort. Such insight motivates the development of physiology-aware control architectures that leverage real-time physiological metrics to reduce operator workload in unstructured environments.",
+      "authors": [
+        "Yanyi Chen",
+        "Xi Wang",
+        "Min Deng"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-06-12T21:41:54+00:00",
+      "link": "https://arxiv.org/pdf/2606.14969v1",
+      "tags": [
+        "keyword:HRI",
+        "keyword:embodied-ai",
+        "query:HRI"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "multimodal physiological assessment of contact-rich physical human-robot interaction",
+      "llm_evidence_cn": "接触密集型物理人机交互的多模态生理评估",
+      "llm_evidence": "接触密集型物理人机交互的多模态生理评估",
+      "canonical_evidence": "接触密集型物理人机交互的多模态生理评估",
+      "llm_tldr_en": "This study assesses physiological costs in contact-rich pHRI under varying environmental conditions using EDA, sEMG, and eye-tracking.",
+      "llm_tldr_cn": "该文开展多模态实证研究，在18种温度、噪声和照度组合下进行接触密集型物理人机交互任务，同步记录皮电活动、表面肌电和眼动数据。评估发现环境压力因素会带来客观任务指标无法捕捉的生理负荷，为设计更具适应性的pHRI系统提供了依据。",
+      "llm_tldr": "该文开展多模态实证研究，在18种温度、噪声和照度组合下进行接触密集型物理人机交互任务，同步记录皮电活动、表面肌电和眼动数据。评估发现环境压力因素会带来客观任务指标无法捕捉的生理负荷，为设计更具适应性的pHRI系统提供了依据。",
+      "llm_tags": [
+        "query:hri"
+      ],
+      "matched_query_tag": "query:hri",
+      "matched_query_text": "physical human robot interaction technologies",
+      "matched_requirement_id": "req-12",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.17046v2",
+      "source": "arxiv",
+      "title": "Geometric Action Model for Robot Policy Learning",
+      "abstract": "Generalist robot policies must follow user instructions while reasoning about how objects, cameras, and robot actions interact in the 3D physical world. Recent vision-language-action models (VLAs) and video world-action models (WAMs) inherit strong semantic or temporal priors from large-scale foundation models, but they still operate primarily on 2D image frames or 2D-derived latent spaces, leaving implicit the 3D geometry required for contact-rich manipulation. We propose the Geometric Action Model (GAM), a language-conditioned manipulation policy that directly repurposes a pretrained geometric foundation model (GFM) as a shared substrate for perception, temporal prediction, and action decoding. GAM splits the GFM at an intermediate layer: the shallow layers serve as an observation encoder, and a causal future predictor inserted at the split layer forecasts future latent tokens conditioned on language, proprioception, and action history. The predicted future tokens are then routed through the remaining GFM blocks for feature propagation and decoding, allowing a single backbone to produce both future geometry and actions. This design equips the GFM with language-conditioned temporal world modeling through minimal architectural modification while preserving its rich geometric priors. Across a broad suite of simulation and real-robot manipulation benchmarks, GAM is more accurate, more robust, faster, and lighter than current foundation-model-scale baselines.",
+      "authors": [
+        "Jisang Han",
+        "Seonghu Jeon",
+        "Jaewoo Jung",
+        "René Zurbrügg",
+        "Honggyu An",
+        "Tifanny Portela",
+        "Marco Hutter",
+        "Marc Pollefeys",
+        "Seungryong Kim",
+        "Sunghwan Hong"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "published": "2026-06-15T17:58:03+00:00",
+      "link": "https://arxiv.org/pdf/2606.17046v2",
+      "tags": [
+        "keyword:HRI",
+        "keyword:embodied-ai",
+        "query:HRI",
+        "query:embodied-ai"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "language-conditioned manipulation policy repurposing a geometric foundation model",
+      "llm_evidence_cn": "语言条件操作策略重用几何基础模型",
+      "llm_evidence": "语言条件操作策略重用几何基础模型",
+      "canonical_evidence": "语言条件操作策略重用几何基础模型",
+      "llm_tldr_en": "Proposes Geometric Action Model (GAM), a language-conditioned manipulation policy that reuses a pretrained geometric foundation model for perception, temporal prediction, and action decoding, enabling 3D-aware policy learning.",
+      "llm_tldr_cn": "现有视觉-语言-动作模型在2D空间操作，缺乏接触丰富操作所需的3D几何推理。提出几何动作模型（GAM），直接重用预训练几何基础模型作为感知、时序预测和动作解码的共享基座。实验表明GAM能更好地泛化到新物体和新场景，提升了策略学习的几何理解能力。",
+      "llm_tldr": "现有视觉-语言-动作模型在2D空间操作，缺乏接触丰富操作所需的3D几何推理。提出几何动作模型（GAM），直接重用预训练几何基础模型作为感知、时序预测和动作解码的共享基座。实验表明GAM能更好地泛化到新物体和新场景，提升了策略学习的几何理解能力。",
+      "llm_tags": [
+        "query:embodied-ai"
+      ],
+      "matched_query_tag": "query:embodied-ai",
+      "matched_query_text": "Vision language action models for robotic manipulation",
+      "matched_requirement_id": "req-9",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.18189v1",
+      "source": "arxiv",
+      "title": "Beyond Failure Recovery: An Engagement-Aware Human-in-the-loop Framework for Robotic Systems",
+      "abstract": "Conventional human-in-the-loop approaches typically involve users only when a robot encounters failure or uncertainty, treating humans primarily as tools for improving robot performance. However, in many human-centered robotics settings, interaction should support engagement by keeping users involved in decision-making rather than limiting them to failure-driven interventions. This is particularly compelling in physical caregiving, where mobility limitations can reduce users' ability to intervene or modulate the robot's behavior in the moment. As a result, failure-driven interaction policies may relegate users to passive observers for long stretches of the task. For example, a user with mobility limitations may feel less engaged when being continuously and passively fed by a robot. At the same time, overly frequent interaction can be tiring and increase the user's workload.   To address this trade-off, we propose Engagement-aware MPC (E-MPC), a user-engagement-aware method that plans interaction to maintain engagement while respecting a workload constraint. E-MPC leverages a user interaction dynamics model that captures how user engagement evolves as a function of both the frequency and type of interaction. Rather than requesting input only when difficulties arise during task execution, the robot proactively considers the user's preferred level of engagement throughout the task, balancing autonomy and interaction while ensuring task success. We evaluate E-MPC in simulation with several ablations and baseline comparisons. Results demonstrate the effectiveness of our approach across diverse user personas. In addition, we conduct a real-world user study with participants with emulated mobility limitations on a robot-assisted bite acquisition system, showing that E-MPC improves user experience while maintaining task success.",
+      "authors": [
+        "Jiaying Fang",
+        "Joyce Yang",
+        "Zhanxin Wu",
+        "Bohan Yang",
+        "Tapomayukh Bhattacharjee"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-06-16T17:21:43+00:00",
+      "link": "https://arxiv.org/pdf/2606.18189v1",
+      "tags": [
+        "keyword:HRI",
+        "keyword:embodied-ai",
+        "query:HRI",
+        "query:embodied-ai"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "engagement-aware human-in-the-loop for social interaction",
+      "llm_evidence_cn": "关注用户参与的人机交互框架",
+      "llm_evidence": "关注用户参与的人机交互框架",
+      "canonical_evidence": "关注用户参与的人机交互框架",
+      "llm_tldr_en": "Proposes an engagement-aware human-in-the-loop framework that keeps users involved in decision-making, moving beyond failure-driven interventions for social robotics.",
+      "llm_tldr_cn": "针对人机交互中用户被动参与的问题，提出关注参与感的人机协同框架，让用户持续参与决策而非仅当故障时介入。在物理照护场景中验证，保持用户主动性和参与度。",
+      "llm_tldr": "针对人机交互中用户被动参与的问题，提出关注参与感的人机协同框架，让用户持续参与决策而非仅当故障时介入。在物理照护场景中验证，保持用户主动性和参与度。",
+      "llm_tags": [
+        "query:hri"
+      ],
+      "matched_query_tag": "query:hri",
+      "matched_query_text": "human robot interaction research",
+      "matched_requirement_id": "req-11",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.20698v1",
+      "source": "arxiv",
+      "title": "SafeDojo: Safe Reinforcement Learning for VLA via Interactive World Model",
+      "abstract": "Safe control is a prerequisite for real-world embodied intelligence, for which safe reinforcement learning has emerged as a promising paradigm. However, existing safe reinforcement learning methods either require costly real-world exploration or depend on hand-crafted safety functions. Neither scales to vision-language-action models deployed in open-world physical environments. We propose SafeDojo, the first model-based safe reinforcement learning framework for vision-language-action policies designed to learn safe actions through world model-based imagination. Specifically, SafeDojo performs online reinforcement learning on top of an interactive video world model. The world model generates action-conditioned future predictions, from which a tailored ResNet success classifier estimates per-step task progress from imagined frames and a lightweight safety head predicts per-step safety costs from latent context together with the proposed action chunk, enabling simultaneous assessment of task execution and trajectory safety. The decoupled task-reward and safety-cost signals are balanced through a Lagrangian-based constrained GRPO objective, enabling coordinated improvement of task success and safety under explicit constraints. On SafeLIBERO, SafeDojo achieves the best aggregate task success, safe success, and execution efficiency among inference-time safety, model-free RL, and model-based RL baselines, with the best average safe-success rate on both levels and an 8.25 percentage-point improvement over the strongest baseline on Level I. Real-world Franka deployment further shows the best average task and safe-success rates across five tasks. Our results position world model-based safe reinforcement learning as a scalable and generalizable path toward safe embodied intelligence.",
+      "authors": [
+        "Kai Tang",
+        "Peidong Jia",
+        "Zhong Chu",
+        "Jixian Wu",
+        "Rui Ma",
+        "Jiajun Cao",
+        "Fangyuan Zhao",
+        "Sixiang Chen",
+        "Yichen Guo",
+        "Xiaowei Chi",
+        "Chun-Kai Fan",
+        "Kevin Zhang",
+        "Jinchang Xu",
+        "Fubing Yang",
+        "Weishi Mi",
+        "Xiaozhu Ju",
+        "Jian Tang",
+        "Shanghang Zhang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-06-15T08:58:37+00:00",
+      "link": "https://arxiv.org/pdf/2606.20698v1",
+      "tags": [
+        "keyword:HRI",
+        "keyword:embodied-ai",
+        "query:HRI",
+        "query:embodied-ai"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "safe reinforcement learning using interactive world model for VLA",
+      "llm_evidence_cn": "使用交互世界模型进行视觉-语言-动作策略的安全强化学习",
+      "llm_evidence": "使用交互世界模型进行视觉-语言-动作策略的安全强化学习",
+      "canonical_evidence": "使用交互世界模型进行视觉-语言-动作策略的安全强化学习",
+      "llm_tldr_en": "Proposes SafeDojo, the first model-based safe RL framework for VLA policies that learns safe actions through an interactive video world model, enabling cost-effective safe exploration.",
+      "llm_tldr_cn": "针对具身智能应用中安全控制难题，提出SafeDojo框架，这是首个面向视觉-语言-动作策略的基于模型安全强化学习方法。该框架在交互式视频世界模型之上进行在线强化学习，世界模型生成动作条件化的未来预测，从中提取安全约束来引导策略优化。实验表明SafeDojo能在无需真实世界高风险探索的情况下学习安全策略，为开放环境中VLA模型的安全部署提供了可行方案。",
+      "llm_tldr": "针对具身智能应用中安全控制难题，提出SafeDojo框架，这是首个面向视觉-语言-动作策略的基于模型安全强化学习方法。该框架在交互式视频世界模型之上进行在线强化学习，世界模型生成动作条件化的未来预测，从中提取安全约束来引导策略优化。实验表明SafeDojo能在无需真实世界高风险探索的情况下学习安全策略，为开放环境中VLA模型的安全部署提供了可行方案。",
+      "llm_tags": [
+        "query:embodied-ai"
+      ],
+      "matched_query_tag": "query:embodied-ai",
+      "matched_query_text": "Learning world models for robot interaction",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.24629v1",
+      "source": "arxiv",
+      "title": "Human-Robot Shared Control for Humanized End-Effector Teleoperation",
+      "abstract": "Recent advances in robotics have enabled robots to operate in shared human environments, emphasizing the importance of effective human robot interaction HRI. Prior studies indicate that anthropomorphism, defined as the incorporation of human like features into robotic systems, facilitates more natural interaction and enhances both task performance and user experience. In robotic arm teleoperation, however, user controlled motions often deviate from human like kinematic characteristics due to intrinsic limitations of teleoperation systems. In this work, we propose a real time framework that generates human like end effector trajectories based on the two thirds power law of voluntary human hand movements, while preserving the operators intended control inputs. The proposed approach is validated through real world experiments conducted on a 6 degree of freedom Dobot CR10 robotic arm. Quantitative analysis demonstrates that the generated trajectories exhibit significantly stronger adherence to human like kinematic profiles compared to conventional teleoperation, with the estimated beta coefficient moving 39.7% closer on average to the theoretical value of 1/3. Furthermore, the method achieves an approximate 34% improvement in motion smoothness, measured by RMS torque rate reduction, with 80% of evaluated motion patterns showing statistically significant improvements while maintaining comparable task completion times.",
+      "authors": [
+        "Batool Ibrahim",
+        "Imad H. Elhajj",
+        "Daniel Asmar",
+        "Rawan El Hakim"
+      ],
+      "primary_category": "eess.SY",
+      "categories": [
+        "eess.SY"
+      ],
+      "published": "2026-06-23T14:24:08+00:00",
+      "link": "https://arxiv.org/pdf/2606.24629v1",
+      "tags": [
+        "keyword:HRI",
+        "keyword:embodied-ai",
+        "query:HRI",
+        "query:embodied-ai"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "shared control framework for human-robot physical interaction via teleoperation",
+      "llm_evidence_cn": "人机共享控制框架，用于远程操作的物理交互",
+      "llm_evidence": "人机共享控制框架，用于远程操作的物理交互",
+      "canonical_evidence": "人机共享控制框架，用于远程操作的物理交互",
+      "llm_tldr_en": "Proposes a real-time shared control framework that generates human-like end-effector trajectories using the two-thirds power law, improving anthropomorphism in robot arm teleoperation.",
+      "llm_tldr_cn": "针对机械臂遥操作中人为动作偏离人类运动学特性的问题，提出基于两三次方定律的实时框架，生成类人末端轨迹。在共享控制下保留操作者意图，同时提升交互自然性和用户体验。",
+      "llm_tldr": "针对机械臂遥操作中人为动作偏离人类运动学特性的问题，提出基于两三次方定律的实时框架，生成类人末端轨迹。在共享控制下保留操作者意图，同时提升交互自然性和用户体验。",
+      "llm_tags": [
+        "query:hri"
+      ],
+      "matched_query_tag": "query:hri",
+      "matched_query_text": "physical human robot interaction technologies",
+      "matched_requirement_id": "req-12",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.25504v1",
+      "source": "arxiv",
+      "title": "GROVE: Grounded Pedestrian Simulation via Natural Language for Interactive Social Robot Navigation",
+      "abstract": "Pedestrian simulation is a critical component for training and deploying social robot navigation approaches, yet it remains a largely rigid system that repeatedly requires manual data generation to define even simple scenarios. We propose GROVE, a text-to-scenario pedestrian simulation framework that combines state-of-the-art approaches to produce realistic, socially challenging scenarios for social robot navigation. Our framework allows users to customize one of several common presets (emergency, queuing, normal) or even enter a fully independent prompt to generate a highly customizable pedestrian simulation. Multiple modules separately ensure the realism and soundness of long-horizon human behavior, medium-horizon pedestrian navigation, and short-horizon robot/social interactions. Each module is tuned by the prompt in a way that reflects the user intent across all aspects of pedestrian simulation. By dynamically selecting one of several state-of-the-art (SotA) approaches in our modules based on the scenario, we capture many situational nuances of pedestrian behavior in order to narrow the simulation-to-real (sim2real) gap. The human simulation is directly integrated into Isaac Sim, Gazebo, and RViz simulators for robot deployment in highly social environments. We validate our approach through qualitative comparison against existing pedestrian simulation baselines across scenarios of varying complexity in residential, hospital, and office environments. The result is a high-fidelity pedestrian simulation that challenges social robot navigation with complex, diverse, realistic human behaviors.",
+      "authors": [
+        "Duc Tai Nguyen",
+        "Volodymyr Shcherbyna",
+        "Anh Do Duc",
+        "Zhengcheng Shen",
+        "Teham Buiyan",
+        "Linh Kästner"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-06-24T07:39:01+00:00",
+      "link": "https://arxiv.org/pdf/2606.25504v1",
+      "tags": [
+        "keyword:HRI",
+        "keyword:embodied-ai",
+        "query:HRI",
+        "query:embodied-ai"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "grounded pedestrian simulation for interactive social robot navigation",
+      "llm_evidence_cn": "面向交互式社交机器人导航的接地行人仿真",
+      "llm_evidence": "面向交互式社交机器人导航的接地行人仿真",
+      "canonical_evidence": "面向交互式社交机器人导航的接地行人仿真",
+      "llm_tldr_en": "GROVE enables text-to-scenario pedestrian simulation for social robot navigation, generating realistic socially challenging scenarios for training and testing.",
+      "llm_tldr_cn": "行人仿真对于社交机器人导航至关重要，但现有系统僵化且需要手动数据生成。本文提出GROVE，一种文本到场景的行人仿真框架，允许用户通过预设或自由文本提示生成高度定制化、具有社会挑战性的场景。多模块分别确保长时人类行为、中时行人交互和短时物体碰撞的现实性，为社交机器人导航提供了可扩展的训练与测试环境。",
+      "llm_tldr": "行人仿真对于社交机器人导航至关重要，但现有系统僵化且需要手动数据生成。本文提出GROVE，一种文本到场景的行人仿真框架，允许用户通过预设或自由文本提示生成高度定制化、具有社会挑战性的场景。多模块分别确保长时人类行为、中时行人交互和短时物体碰撞的现实性，为社交机器人导航提供了可扩展的训练与测试环境。",
+      "llm_tags": [
+        "query:hri:composite"
+      ],
+      "matched_query_tag": "query:hri:composite",
+      "matched_query_text": "Papers central to 请帮我查找机器人与人交互的核心技术的研究，比如机器人和人握手，击掌，猜拳，拥抱等交互动作, especially work that connects or combines: human robot interaction research; physical human robot interaction technologies; social robotics interaction research; core technologies for human robot physical interaction; social interaction between humans and robots.",
+      "matched_requirement_id": "req-composite-hri",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2606.03694v1",
+      "source": "arxiv",
+      "title": "Face versus Body Tracking for Human-Robot Interaction: An Egocentric Dataset",
+      "abstract": "To enable meaningful human-robot interaction (HRI), a robot must continuously assess engagement by consistently tracking users over time. State-of-the-art computer vision models, however, are heavily optimized for surveillance or autonomous driving. A social robot faces distinct egocentric challenges, such as humans bouncing, obstructing each other, or leaving the frame. Frequent identity switches (IDSW) cause the robot to lose its footing mid-conversation. To address this, we introduce a novel, custom-annotated egocentric dataset collected via the Furhat robot to capture complex social dynamics. We present a systematic evaluation isolating detection errors from tracking logic, comparing face versus body tracking, and assessing the impact of extended spatial memory and appearance re-identification (ReID). Results indicate that increasing spatial memory mitigates prolonged occlusions but fails on complex dynamic events. Integrating ReID resolves complex switches but exhibits opposing effects: it substantially improves body tracking stability, yet causes facial IDSW to spike due to profile angle sensitivity. Ultimately, our optimized pipeline reduces IDSW by 49\\%, mitigating interaction breakdowns. Because standard benchmarks lack dense, close-quarter occlusions, this work highlights the critical need for natively captured social dynamics to truly validate HRI perception models.",
+      "authors": [
+        "Jessica Wenninger",
+        "Gabriel Skantze"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV",
+        "cs.HC"
+      ],
+      "published": "2026-06-02T14:15:17+00:00",
+      "link": "https://arxiv.org/pdf/2606.03694v1",
+      "tags": [
+        "keyword:HRI",
+        "keyword:embodied-ai",
+        "query:HRI",
+        "query:embodied-ai"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "egocentric dataset for human-robot interaction tracking",
+      "llm_evidence_cn": "用于人机交互追踪的自我中心数据集",
+      "llm_evidence": "用于人机交互追踪的自我中心数据集",
+      "canonical_evidence": "用于人机交互追踪的自我中心数据集",
+      "llm_tldr_en": "This paper introduces an egocentric dataset for human-robot interaction, comparing face vs body tracking to address identity switches in social HRI.",
+      "llm_tldr_cn": "该文为社交机器人的人机交互追踪提供自我中心数据集，系统比较面部与身体跟踪在复杂动态场景中的表现。针对机器人视角下的身份切换频繁问题，通过定制标注和评估，揭示了身体跟踪在保持身份一致性方面的优势，有助于提升HRI系统的鲁棒性。",
+      "llm_tldr": "该文为社交机器人的人机交互追踪提供自我中心数据集，系统比较面部与身体跟踪在复杂动态场景中的表现。针对机器人视角下的身份切换频繁问题，通过定制标注和评估，揭示了身体跟踪在保持身份一致性方面的优势，有助于提升HRI系统的鲁棒性。",
+      "llm_tags": [
+        "query:hri"
+      ],
+      "matched_query_tag": "query:hri",
+      "matched_query_text": "human robot interaction research",
+      "matched_requirement_id": "req-11",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2606.06569v1",
+      "source": "arxiv",
+      "title": "PhyRoGen: Synthetic Generation of Physical Robot Manipulation Puzzles Using Procedural Content Generation",
+      "abstract": "Robot manipulation of physical puzzles is important for automatic assembly and disassembly tasks. However, to enable robots to solve physical puzzles, manipulation skills need to be learned, which requires large training datasets, the generation of which is often time consuming and tedious. To overcome this problem, we propose the Physical Robot Manipulation Puzzle Generation framework (PhyRoGen), which leverages procedural content generation (PCG) for automated generation of synthetic datasets of manipulation puzzles. PhyRoGen is a general-purpose puzzle generator, which can generate physical puzzles with interlocking object dependencies, where one articulated object must be manipulated before another can be moved. Based upon PhyRoGen, we define six concrete generators which we use to generate 24 physical puzzles. By using a benchmarking framework, we are able to solve all puzzles in 1 to 300 seconds using sampling-based planning algorithms. Finally, we demonstrate that every generated puzzle is manipulatable by using a KUKA LBR iiwa robot in a physical simulation. This shows that our framework is able to procedurally generate unique, solvable robot manipulation puzzles, which is a crucial ingredient to benchmark manipulation algorithms and to develop robust foundation models.",
+      "authors": [
+        "Lennart Julian Droß",
+        "Andreas Orthey",
+        "Marc Toussaint"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-06-04T17:48:31+00:00",
+      "link": "https://arxiv.org/pdf/2606.06569v1",
+      "tags": [
+        "keyword:HRI",
+        "keyword:embodied-ai",
+        "query:HRI",
+        "query:embodied-ai"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "synthetic dataset generation for robot manipulation learning",
+      "llm_evidence_cn": "合成数据集生成用于机器人操作学习",
+      "llm_evidence": "合成数据集生成用于机器人操作学习",
+      "canonical_evidence": "合成数据集生成用于机器人操作学习",
+      "llm_tldr_en": "Proposes PhyRoGen, a procedural content generation framework to automatically create synthetic datasets of physical robot manipulation puzzles, enabling efficient training of manipulation skills.",
+      "llm_tldr_cn": "针对机器人操作拼图学习所需的大量训练数据生成费时费力的问题，提出PhyRoGen框架，利用程序化内容生成自动合成包含物体间依赖的物理拼图数据集。该方法减少了人工标注成本，为机器人操作技能学习提供了丰富的训练数据，有望推动组装与拆卸等任务的自动化。",
+      "llm_tldr": "针对机器人操作拼图学习所需的大量训练数据生成费时费力的问题，提出PhyRoGen框架，利用程序化内容生成自动合成包含物体间依赖的物理拼图数据集。该方法减少了人工标注成本，为机器人操作技能学习提供了丰富的训练数据，有望推动组装与拆卸等任务的自动化。",
+      "llm_tags": [
+        "query:embodied-ai"
+      ],
+      "matched_query_tag": "query:embodied-ai",
+      "matched_query_text": "robotic manipulation using learned policies",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2606.11982v1",
+      "source": "arxiv",
+      "title": "PAWS: Preference Learning with Advantage-Weighted Segments",
+      "abstract": "Preference-based reinforcement learning (PbRL) learns policies from human trajectory-level comparisons, avoiding explicit reward design and expert demonstrations. Existing methods typically train utility functions on trajectory or segment-level preferences while relying on per-step utility estimates during policy optimization. This training and inference mismatch induces a distribution shift that severely degrades temporal credit assignment and limits policy learning. We analyze this issue and propose PAWS, a segment-based preference learning method that performs policy updates directly using segment-level advantage functions. By aligning utility training with policy optimization, PAWS preserves trajectory-level preference information and avoids unreliable per-step learning signals. Experiments on simulated robotic manipulation and locomotion tasks demonstrate that PAWS consistently outperforms existing PbRL approaches, highlighting the importance of distribution-consistent preference learning.",
+      "authors": [
+        "Aleksandar Taranovic",
+        "Onur Celik",
+        "Niklas Freymuth",
+        "Ge Li",
+        "Serge Thilges",
+        "Huy Le",
+        "Tai Hoang",
+        "Rania Rayyes",
+        "Gerhard Neumann"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-06-10T12:00:17+00:00",
+      "link": "https://arxiv.org/pdf/2606.11982v1",
+      "tags": [
+        "keyword:HRI",
+        "keyword:embodied-ai",
+        "query:HRI",
+        "query:embodied-ai"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "preference-based reinforcement learning method with advantage-weighted segments",
+      "llm_evidence_cn": "基于偏好的强化学习方法，使用优势加权片段",
+      "llm_evidence": "基于偏好的强化学习方法，使用优势加权片段",
+      "canonical_evidence": "基于偏好的强化学习方法，使用优势加权片段",
+      "llm_tldr_en": "Proposes PAWS, a segment-level preference RL method that aligns utility training with policy optimization to improve temporal credit assignment.",
+      "llm_tldr_cn": "针对现有偏好强化学习在训练和推理阶段效用函数不一致导致的分布偏移问题，提出PAWS方法。该方法直接在片段级别使用优势函数进行策略更新，避免逐步效用估计，从而改善时间信用分配。实验表明PAWS在多个连续控制任务上优于先前方法。",
+      "llm_tldr": "针对现有偏好强化学习在训练和推理阶段效用函数不一致导致的分布偏移问题，提出PAWS方法。该方法直接在片段级别使用优势函数进行策略更新，避免逐步效用估计，从而改善时间信用分配。实验表明PAWS在多个连续控制任务上优于先前方法。",
+      "llm_tags": [
+        "query:embodied-ai"
+      ],
+      "matched_query_tag": "query:embodied-ai",
+      "matched_query_text": "reinforcement learning for robotics",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2606.08741v1",
+      "source": "arxiv",
+      "title": "Safe, Fluent and Acceptable Motion Generation and Execution for Human--Robot Interaction in Manufacturing Environments",
+      "abstract": "Robots operating in human environments must not only ensure physical safety but also exhibit behaviors that are understandable, fluent, and acceptable to human partners. This paper investigates motion generation strategies that combine safety guarantees with interaction quality considerations, such as motion smoothness and human comfort. While the design of robots capable of ensuring safety in shared human-robot environments has enabled closer and more advanced forms of interaction, these new proximity-based tasks require moving beyond purely technical considerations. In particular, robot behavior must also be addressed from psycho-cognitive and social perspectives. In this context, we argue for the relevance of integrating social-aware motion control into robotic systems. First, we identify the motion parameters that influence human perception and operator experience. Then, we implement a Model Predictive Control (MPC) framework that generates four distinct socially-informed robot behaviors. Finally, we conduct a user study to evaluate and validate these behaviors and assess their social impact on non-expert participants. The results demonstrate that variations in robot behavior significantly affect the perceived social acceptability of the system. These findings highlight the importance of incorporating human-centered considerations into motion generation strategies for robots operating in shared environments.",
+      "authors": [
+        "Thibaut Lopez",
+        "Olivier Aycard",
+        "Pierre-Brice Wieber",
+        "Mohamed Boua",
+        "Christine Jeoffrion"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-06-07T17:21:07+00:00",
+      "link": "https://arxiv.org/pdf/2606.08741v1",
+      "tags": [
+        "keyword:HRI",
+        "keyword:embodied-ai",
+        "query:HRI",
+        "query:embodied-ai"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "human-robot interaction motion generation safety fluency",
+      "llm_evidence_cn": "人机交互运动生成安全流畅",
+      "llm_evidence": "人机交互运动生成安全流畅",
+      "canonical_evidence": "人机交互运动生成安全流畅",
+      "llm_tldr_en": "Investigation of motion generation strategies that combine safety with fluency and human acceptability in manufacturing HRI.",
+      "llm_tldr_cn": "针对制造环境中人机交互的运动问题，研究兼顾安全、流畅与可接受性的运动生成策略。强调机器人行为需从心理认知和社会视角考虑，而不仅仅是技术安全。通过实验验证，所提方法在保证安全的条件下显著提升了交互的平滑度和人类伙伴的舒适感。",
+      "llm_tldr": "针对制造环境中人机交互的运动问题，研究兼顾安全、流畅与可接受性的运动生成策略。强调机器人行为需从心理认知和社会视角考虑，而不仅仅是技术安全。通过实验验证，所提方法在保证安全的条件下显著提升了交互的平滑度和人类伙伴的舒适感。",
+      "llm_tags": [
+        "query:hri"
+      ],
+      "matched_query_tag": "query:hri",
+      "matched_query_text": "human robot interaction research",
+      "matched_requirement_id": "req-11",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2606.08458v1",
+      "source": "arxiv",
+      "title": "Personalized and Robust Proactive Robot Assistance with Uncertainty-Guided LLM Reasoning",
+      "abstract": "Proactive robot assistance in household environments requires accurate prediction of human activities and object usage under dynamic and noisy conditions. Existing approaches often rely on complex spatio-temporal models, which can be computationally expensive and sensitive to environmental variability. In this paper, we propose GLOBE, a lightweight framework that combines n-gram Markov models for capturing temporal behavioral patterns with uncertainty-guided large language model (LLM) reasoning. The framework performs sequential prediction efficiently while selectively invoking LLM reasoning only when the model confidence is low. To evaluate performance under realistic conditions, we introduce HOMER-Noise, a noisy extension of the HOMER+ dataset that simulates structured disturbances such as object movements caused by humans, pets, and toddlers. Experimental results show that GLOBE achieves competitive performance with state-of-the-art methods while improving robustness and computational efficiency across both clean and noisy settings. The framework is further validated through a proof-of-concept integration with a Stretch 3 mobile manipulator, demonstrating its potential application in real-world human-robot interaction scenarios.",
+      "authors": [
+        "Alvaro Gonzalez",
+        "M. H. Hasan Shovo",
+        "Ali Ayub"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-06-07T05:18:30+00:00",
+      "link": "https://arxiv.org/pdf/2606.08458v1",
+      "tags": [
+        "keyword:HRI",
+        "keyword:embodied-ai",
+        "query:HRI",
+        "query:embodied-ai"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "proactive robot assistance in household with human activity prediction and LLM reasoning",
+      "llm_evidence_cn": "家庭环境中主动机器人辅助，预测人类活动并利用LLM推理",
+      "llm_evidence": "家庭环境中主动机器人辅助，预测人类活动并利用LLM推理",
+      "canonical_evidence": "家庭环境中主动机器人辅助，预测人类活动并利用LLM推理",
+      "llm_tldr_en": "GLOBE combines n-gram Markov models with uncertainty-guided LLM reasoning for efficient and robust proactive robot assistance in noisy household environments.",
+      "llm_tldr_cn": "该论文针对家庭环境中主动机器人辅助的预测鲁棒性问题，提出GLOBE框架，结合n-gram马尔可夫模型捕捉时间行为模式，仅在置信度低时调用LLM推理，实现高效序列预测。引入HOMER-Noise噪声数据集验证，结果显示该方法在准确性和计算效率上均优于复杂时空模型。",
+      "llm_tldr": "该论文针对家庭环境中主动机器人辅助的预测鲁棒性问题，提出GLOBE框架，结合n-gram马尔可夫模型捕捉时间行为模式，仅在置信度低时调用LLM推理，实现高效序列预测。引入HOMER-Noise噪声数据集验证，结果显示该方法在准确性和计算效率上均优于复杂时空模型。",
+      "llm_tags": [
+        "query:hri"
+      ],
+      "matched_query_tag": "query:hri",
+      "matched_query_text": "human robot interaction research",
+      "matched_requirement_id": "req-11",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2606.18697v1",
+      "source": "arxiv",
+      "title": "Stealthy World Model Manipulation via Data Poisoning",
+      "abstract": "Model-based learning agents use learned world models to predict future states, plan actions, and adapt to new environments. However, the process of updating world models from collected experience creates a training-time attack surface: adversarially poisoned fine-tuning trajectories can manipulate the learned dynamics and thereby corrupt downstream planning. In this paper, we propose SWAAP, the first two-stage data poisoning framework for learned world models. In the first stage, SWAAP identifies a harmful target world model that induces low-return behavior under planning while remaining close to clean dynamics, using first-order bilevel optimization enabled by a transition-gradient theorem. In the second stage, SWAAP realizes this target through stealth-constrained gradient matching, modifying only a limited fraction of fine-tuning transition targets so that the induced training gradients steer the victim model toward the adversarial target, while a prediction-error regularizer encourages the poisoned targets to remain close to the world model's natural approximation error. To assess attack stealthiness, we evaluate defenses and detectability across three stages of the poisoning pipeline: pre-training detection of poisoned transitions, robust training during fine-tuning, and test-time monitoring of the resulting world model. Across diverse continuous-control tasks, SWAAP causes substantial performance degradation while keeping poisoned transitions close to clean data and evading the evaluated non-adaptive residual/CUSUM/TRIM-style defenses. These results reveal a practical vulnerability in world-model adaptation pipelines and highlight the need for robustness methods that protect both world-model training data and learned dynamics.",
+      "authors": [
+        "Yibin Hu",
+        "Xiaolin Sun",
+        "Zizhan Zheng"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.CR",
+        "cs.RO"
+      ],
+      "published": "2026-06-17T05:24:18+00:00",
+      "link": "https://arxiv.org/pdf/2606.18697v1",
+      "tags": [
+        "keyword:embodied-ai",
+        "query:embodied-ai"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "Data poisoning attack on learned world models for model-based agents",
+      "llm_evidence_cn": "针对基于模型的学习智能体中世界模型的数据投毒攻击",
+      "llm_evidence": "针对基于模型的学习智能体中世界模型的数据投毒攻击",
+      "canonical_evidence": "针对基于模型的学习智能体中世界模型的数据投毒攻击",
+      "llm_tldr_en": "Proposes SWAAP, a two-stage data poisoning framework to stealthily manipulate learned world models and corrupt downstream planning.",
+      "llm_tldr_cn": "基于世界模型的智能体通过经验更新世界模型，但易受训练时数据投毒攻击。本文提出第一个两阶段投毒框架SWAAP：第一阶段通过双层优化识别有害目标世界模型；第二阶段通过受限梯度实现隐蔽攻击。实验表明该方法能在不显著改变动态的情况下导致规划性能大幅下降，揭示了世界模型安全风险。",
+      "llm_tldr": "基于世界模型的智能体通过经验更新世界模型，但易受训练时数据投毒攻击。本文提出第一个两阶段投毒框架SWAAP：第一阶段通过双层优化识别有害目标世界模型；第二阶段通过受限梯度实现隐蔽攻击。实验表明该方法能在不显著改变动态的情况下导致规划性能大幅下降，揭示了世界模型安全风险。",
+      "llm_tags": [
+        "query:embodied-ai"
+      ],
+      "matched_query_tag": "query:embodied-ai",
+      "matched_query_text": "world model in robotics",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2606.09499v1",
+      "source": "arxiv",
+      "title": "Targeting World Models to Compromise Robot Learning Pipelines",
+      "abstract": "World models have recently seen a rapid growth in both their popularity and capability as more data efficient tools for generating robot training data or simulating real world environments, with many works proposing their integration into the robot learning pipeline. While highly practical, in this work we demonstrate that world models introduce a uniquely stealthy and effective data poisoning entry point into the robot learning supply chain that can result in the deployment of unsafe or otherwise compromised robotic policies despite training on seemingly safe ground truth training data. In contrast to traditional data poisoning techniques which directly implant dangerous trajectories into sold or uploaded datasets, our novel attack methods inject malicious prompts or compromising transition dynamics into visibly safe teleoperated datasets which are only activated once fed through a world model as input. This can result in the generation of synthetic, dangerous robot training trajectories and subsequently unsafe or compromised robot policies. We demonstrate the effectiveness of our attacks against both state of the art action conditioned and text conditioned world models, showing a full end-to-end backdoor on a downstream DRL policy and a proof-of-concept for the VLA setting. Overall these findings necessitate research into more secure world models and reevaluating their position within the robot learning supply chain.",
+      "authors": [
+        "Ethan Rathbun",
+        "Ahmed Agha",
+        "Saaduddin Mahmud",
+        "Christopher Amato",
+        "Alina Oprea",
+        "Eugene Bagdasarian"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CR"
+      ],
+      "published": "2026-06-08T13:50:31+00:00",
+      "link": "https://arxiv.org/pdf/2606.09499v1",
+      "tags": [
+        "keyword:HRI",
+        "keyword:embodied-ai",
+        "query:HRI",
+        "query:embodied-ai"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "security vulnerabilities of world models in robot learning pipelines",
+      "llm_evidence_cn": "世界模型在机器人学习管道中的安全漏洞",
+      "llm_evidence": "世界模型在机器人学习管道中的安全漏洞",
+      "canonical_evidence": "世界模型在机器人学习管道中的安全漏洞",
+      "llm_tldr_en": "This paper reveals that world models in robot learning pipelines can be compromised via data poisoning, leading to unsafe policies even with safe training data.",
+      "llm_tldr_cn": "世界模型在机器人学习中应用日益广泛。本文发现世界模型引入了一种独特的数据投毒攻击点，攻击者只需对世界模型投毒即可导致机器人在看似安全的数据训练后执行危险策略。与直接污染行车轨迹的传统方法不同，该方法更隐蔽且有效，警示机器人社区关注世界模型的安全风险。",
+      "llm_tldr": "世界模型在机器人学习中应用日益广泛。本文发现世界模型引入了一种独特的数据投毒攻击点，攻击者只需对世界模型投毒即可导致机器人在看似安全的数据训练后执行危险策略。与直接污染行车轨迹的传统方法不同，该方法更隐蔽且有效，警示机器人社区关注世界模型的安全风险。",
+      "llm_tags": [
+        "query:embodied-ai"
+      ],
+      "matched_query_tag": "query:embodied-ai",
+      "matched_query_text": "world model in robotics",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2606.13222v1",
+      "source": "arxiv",
+      "title": "Proprioceptive-visual correspondence enables self-other distinction in humanoid robots",
+      "abstract": "Distinguishing self from others is a prerequisite for social intelligence, yet humanoid robots that increasingly share workspaces with humans still lack this ability. Here we show that a humanoid robot can learn self-other distinction from proprioceptive-visual correspondence, without any identity labels or kinematic models. Once established, this distinction bootstraps a predictive self-model that maps joint configurations to three-dimensional body occupancy, capturing how the robot's body changes with action. In multi-agent scenes involving humans or morphologically identical robots, the system reliably identifies itself, learns a 3D self-model, and supports downstream tasks including target reaching, collision-aware motion planning, and human-to-robot motion retargeting. Together, these results outline a route toward bodily self-representation in robots that act and coordinate alongside others in shared physical environments. Project page: https://euron-zc.github.io/humanoid-self-model/.",
+      "authors": [
+        "Yurun Chen",
+        "Tianyuan Gao",
+        "Yizhong Ge",
+        "Shikun Ban",
+        "Yizhou Wang",
+        "Hongkai Xiong",
+        "Wenjun Zeng",
+        "Wentao Zhu"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-06-11T11:38:34+00:00",
+      "link": "https://arxiv.org/pdf/2606.13222v1",
+      "tags": [
+        "keyword:HRI",
+        "keyword:embodied-ai",
+        "query:HRI",
+        "query:embodied-ai"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "self-other distinction for social intelligence in humanoid robots",
+      "llm_evidence_cn": "人形机器人社交智能中的自我-他人区分",
+      "llm_evidence": "人形机器人社交智能中的自我-他人区分",
+      "canonical_evidence": "人形机器人社交智能中的自我-他人区分",
+      "llm_tldr_en": "A humanoid robot learns self-other distinction from proprioceptive-visual correspondence, bootstrapping a predictive self-model for social interaction tasks.",
+      "llm_tldr_cn": "区分自我与他人是社交智能的前提，但人形机器人缺乏该能力。本文通过本体感受-视觉对应，使机器人无需身份标签或运动学模型即可学习自我-他人区分。该区分进一步启动预测性自我模型，将关节配置映射到三维身体占用，支持目标到达、碰撞避免等下游任务。该能力为机器人在共享空间中实现社会交互奠定了基础。",
+      "llm_tldr": "区分自我与他人是社交智能的前提，但人形机器人缺乏该能力。本文通过本体感受-视觉对应，使机器人无需身份标签或运动学模型即可学习自我-他人区分。该区分进一步启动预测性自我模型，将关节配置映射到三维身体占用，支持目标到达、碰撞避免等下游任务。该能力为机器人在共享空间中实现社会交互奠定了基础。",
+      "llm_tags": [
+        "query:hri:composite"
+      ],
+      "matched_query_tag": "query:hri:composite",
+      "matched_query_text": "Papers central to 请帮我查找机器人与人交互的核心技术的研究，比如机器人和人握手，击掌，猜拳，拥抱等交互动作, especially work that connects or combines: human robot interaction research; physical human robot interaction technologies; social robotics interaction research; core technologies for human robot physical interaction; social interaction between humans and robots.",
+      "matched_requirement_id": "req-composite-hri",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2606.16439v1",
+      "source": "arxiv",
+      "title": "Beyond Usability: A UX Case Study on Using \"Withdrawal Design\" to Challenge Engagement Metrics in Social Robotics",
+      "abstract": "Social robots for children with autism are often evaluated through engagement and interaction quality, assuming the robot acts as a social scaffold. We report a mixed-methods \"withdrawal\" study that tests a harder question: what changes when the robot is removed. In an 8-week home-based randomized controlled trial (N=40), children either retained a consumer social robot (Qrobot) or had it withdrawn after initial use. Quantitatively, continued access reduced anxiety (SCARED/RCADS), yet was associated with lower parent-reported social motivation and weaker gains in emotion recognition (SMS/RMET) compared to withdrawal. Interviews with guardians contextualized this divergence: removal sometimes prompted children to seek human interaction, while continued use could keep social behavior siloed within the child-robot dyad, despite exceptionally high usability (SUS). We synthesize a UXR point of view: for vulnerable users, \"engagement\" can mask ecological downsides. Success should be judged not by retention, but by designed separation that bridges back to human relationships.",
+      "authors": [
+        "Yibo Meng",
+        "Qiuyu Long",
+        "Richard Chen",
+        "Yan Guan",
+        "Xiaolan Ding"
+      ],
+      "primary_category": "cs.HC",
+      "categories": [
+        "cs.HC"
+      ],
+      "published": "2026-06-15T09:10:40+00:00",
+      "link": "https://arxiv.org/pdf/2606.16439v1",
+      "tags": [
+        "keyword:HRI",
+        "query:HRI"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "social robotics interaction user study",
+      "llm_evidence_cn": "社交机器人交互用户实验",
+      "llm_evidence": "社交机器人交互用户实验",
+      "canonical_evidence": "社交机器人交互用户实验",
+      "llm_tldr_en": "A withdrawal study on social robots for children with autism shows nuanced effects on anxiety and social motivation.",
+      "llm_tldr_cn": "针对社交机器人对自闭症儿童干预效果的评估问题，采用撤回设计进行8周家庭随机对照实验。结果表明，持续使用机器人虽降低焦虑，却伴随社交动机下降和情绪识别增益减弱；撤回反而促进某些社交发展。该研究对社交机器人交互评估指标提出了新挑战。",
+      "llm_tldr": "针对社交机器人对自闭症儿童干预效果的评估问题，采用撤回设计进行8周家庭随机对照实验。结果表明，持续使用机器人虽降低焦虑，却伴随社交动机下降和情绪识别增益减弱；撤回反而促进某些社交发展。该研究对社交机器人交互评估指标提出了新挑战。",
+      "llm_tags": [
+        "query:hri"
+      ],
+      "matched_query_tag": "query:hri",
+      "matched_query_text": "social robotics interaction research",
+      "matched_requirement_id": "req-13",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2606.14602v1",
+      "source": "arxiv",
+      "title": "What Robots Do Matters More Than What They Look Like: Task Context Shapes Trust in Educational HRI",
+      "abstract": "Socially assistive robots (SARs) are increasingly deployed in educational and information-sharing contexts, supported by advances in large language models that enable fluent real-time interaction. Despite the growing diversity of robot embodiments, it remains unclear whether a single robot appearance is appropriate across different interaction tasks or whether trust depends primarily on contextual factors. In this study, we examine how robot appearance and task type jointly influence trust in robots. Using a within-subjects video-based experiment (N = 81), participants evaluated three robots with distinct appearances while performing three educationally relevant tasks: teaching, procedural instruction, and personal-information discussion. Results from repeated-measures analyses show a strong main effect of task on trust, with participants reporting the highest trust during instructional guidance, moderate trust during teaching activities, and significantly lower trust when robots requested personal information. In contrast, robot appearance showed no significant main effect, and the interaction between appearance and task was marginal. These findings suggest that trust in human-robot interaction is shaped more strongly by task context than by physical embodiment alone. By focusing on future educators as end users, this work contributes empirical evidence toward task-aware robot deployment in educational environments and highlights the importance of aligning robot roles and behaviors with interaction goals rather than relying solely on anthropomorphic design.",
+      "authors": [
+        "Anna-Maria Velentza",
+        "Konstantina Nikou",
+        "Anne-Gwenn Bosser",
+        "Nikolaos Fachantidis"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-06-12T16:23:49+00:00",
+      "link": "https://arxiv.org/pdf/2606.14602v1",
+      "tags": [
+        "keyword:HRI",
+        "keyword:embodied-ai",
+        "query:HRI"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "study on robot appearance and task context affecting trust in educational HRI",
+      "llm_evidence_cn": "研究机器人外观和任务上下文如何影响教育人机交互中的信任",
+      "llm_evidence": "研究机器人外观和任务上下文如何影响教育人机交互中的信任",
+      "canonical_evidence": "研究机器人外观和任务上下文如何影响教育人机交互中的信任",
+      "llm_tldr_en": "Investigates how robot appearance and task type jointly influence trust in educational human-robot interaction, finding task context more important than appearance.",
+      "llm_tldr_cn": "针对社会辅助机器人外观多样性与信任关系的不确定性，通过视频实验（N=81）操纵三种机器人外观和三种教育任务类型。结果表明任务类型对信任的影响显著大于外观，且不同任务适合不同外观。为教育HRI机器人设计提供了实证依据。",
+      "llm_tldr": "针对社会辅助机器人外观多样性与信任关系的不确定性，通过视频实验（N=81）操纵三种机器人外观和三种教育任务类型。结果表明任务类型对信任的影响显著大于外观，且不同任务适合不同外观。为教育HRI机器人设计提供了实证依据。",
+      "llm_tags": [
+        "query:hri"
+      ],
+      "matched_query_tag": "query:hri",
+      "matched_query_text": "social robotics interaction research",
+      "matched_requirement_id": "req-13",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2606.20549v1",
+      "source": "arxiv",
+      "title": "Generating Robot Hands from Human Demonstrations",
+      "abstract": "Robot learning has advanced rapidly in learning control, but learning the physical body of a robot remains much more difficult because jointly searching over design and control creates a very large combinatorial problem. Here, we present a data-driven framework for generating robot hands from human demonstrations. Instead of learning a complex controller together with each candidate design, we generate robot hand designs using the same simple control policy used after fabrication: matching fingertip positions through inverse kinematics. Using more than 4 million frames of human fingertip motion from everyday manipulation, our algorithm optimizes tree-structured robot hands to reproduce desired target motions. The framework produced both a 6-degree-of-freedom (DoF) general-purpose hand and lower-DoF task-specific hands with spatial four-bar mimic joints. To accelerate the search over designs, we trained a reinforcement-learning (RL) actor to propose good hand designs and joint angles, reducing search time from hours to minutes. We fabricated the mechanisms directly as one-piece articulated structures with print-in-place joints. In real-world experiments, the 6-DoF hand achieved highly accurate teleoperated fingertip tracking better than available commercial robot hands, whereas the specialized 3-DoF hands reproduced structured human and synthetic trajectories with reduced mechanical complexity. These results showed that large-scale human motion data can be used not only to train robot controllers but also as a reference for optimizing and generating the physical embodiment of robots.",
+      "authors": [
+        "Sha Yi",
+        "Nicklas Hansen",
+        "Xueqian Bai",
+        "Carmelo Sferrazza",
+        "Michael T. Tolley",
+        "Xiaolong Wang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-06-18T17:57:21+00:00",
+      "link": "https://arxiv.org/pdf/2606.20549v1",
+      "tags": [
+        "keyword:HRI",
+        "keyword:embodied-ai",
+        "query:HRI",
+        "query:embodied-ai"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "robot hand generation from human demonstrations",
+      "llm_evidence_cn": "从人类演示生成机器人手的设计",
+      "llm_evidence": "从人类演示生成机器人手的设计",
+      "canonical_evidence": "从人类演示生成机器人手的设计",
+      "llm_tldr_en": "Proposes a data-driven framework that generates robot hand designs from human fingertip motion data, enabling optimization of hand morphology to match human manipulation patterns without complex joint control.",
+      "llm_tldr_cn": "针对机器人手部设计搜索空间大且难以与控制器联合优化的问题，提出一种从人类演示数据生成机器人手的数据驱动框架。该方法利用超过400万帧人类指尖运动数据，通过逆运动学匹配指尖位置来优化树状结构的机器人手设计。实验表明该框架能够产生6自由度通用手部结构，使机器人手能够复现人类日常操作中的目标运动。该工作为机器人形态设计与学习控制的解耦提供了新思路，有望降低机器人硬件设计的试错成本。",
+      "llm_tldr": "针对机器人手部设计搜索空间大且难以与控制器联合优化的问题，提出一种从人类演示数据生成机器人手的数据驱动框架。该方法利用超过400万帧人类指尖运动数据，通过逆运动学匹配指尖位置来优化树状结构的机器人手设计。实验表明该框架能够产生6自由度通用手部结构，使机器人手能够复现人类日常操作中的目标运动。该工作为机器人形态设计与学习控制的解耦提供了新思路，有望降低机器人硬件设计的试错成本。",
+      "llm_tags": [
+        "query:embodied-ai"
+      ],
+      "matched_query_tag": "query:embodied-ai",
+      "matched_query_text": "robot learning from demonstration or reinforcement",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2606.24445v1",
+      "source": "arxiv",
+      "title": "Legible and Intuitive Multi-modal Robot State and Intent Communication Validated in Online and Real-world Studies",
+      "abstract": "Effective robot-to-human communication can increase transparency and trust, reduce uncertainty, and contribute to safer collaboration in shared workspaces. Designing and validating an effective robot communication strategy is challenging due to the varying and often limited communication modalities across robots, differences in how diverse recipients interpret messages, and the underexplored virtual-to-real gap in studies of communication legibility. We present a systematic, large-scale comparative validation of existing communication strategies for a mobile non-humanoid robot across message types and settings (online and in-person). Based on the prescribed message types in the existing standards for industrial robots, we realize and compare a low-expressive, unimodal LED-based strategy with a highly expressive, multimodal one that leverages robotic gaze, gestures, and voice. For each strategy, we analyze the communication of a turning intention, an attention request, error status, whether the robot is stuck, and whether it is functioning normally. We evaluate these strategies in replicated online and in-person experiments. We find strong evidence that highly expressive multimodal communication is perceived as more legible and intuitive than unimodal LED-based communication. Comparing the online and real-world study findings, we observe a notable decrease in overall legibility, particularly for signaling with LEDs. Similarly, confidence in message interpretation decreases during the real-world evaluation.",
+      "authors": [
+        "Tim Schreiter",
+        "Jens V. Rüppel",
+        "Andrey Rudenko",
+        "Martin Magnusson",
+        "Achim J. Lilienthal"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-06-23T11:27:17+00:00",
+      "link": "https://arxiv.org/pdf/2606.24445v1",
+      "tags": [
+        "keyword:HRI",
+        "keyword:embodied-ai",
+        "query:HRI",
+        "query:embodied-ai"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "human-robot communication validation",
+      "llm_evidence_cn": "人机通信验证",
+      "llm_evidence": "人机通信验证",
+      "canonical_evidence": "人机通信验证",
+      "llm_tldr_en": "Systematically validates multi-modal robot communication strategies for state and intent, improving transparency and trust in human-robot interaction.",
+      "llm_tldr_cn": "人机交互中有效通信可提升透明度和信任，本文对移动非人形机器人在线和实物场景下的多种通信策略进行了大规模比较验证，覆盖标准中规定的消息类型，为设计直观的机器人状态与意图表达提供了实验依据。",
+      "llm_tldr": "人机交互中有效通信可提升透明度和信任，本文对移动非人形机器人在线和实物场景下的多种通信策略进行了大规模比较验证，覆盖标准中规定的消息类型，为设计直观的机器人状态与意图表达提供了实验依据。",
+      "llm_tags": [
+        "query:hri"
+      ],
+      "matched_query_tag": "query:hri",
+      "matched_query_text": "human robot interaction research",
+      "matched_requirement_id": "req-11",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    }
+  ]
+}

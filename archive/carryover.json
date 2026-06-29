@@ -1,10 +1,15 @@
 {
-  "generated_at": "2026-06-28T21:19:31.219430+00:00",
-  "updated_date": "20260628",
+  "generated_at": "2026-06-29T03:17:27.496327+00:00",
+  "updated_date": "20260531-20260629",
   "carryover_days": 9,
   "tag_states": {
     "embodied-ai": {
-      "updated_date": "20260628",
+      "updated_date": "20260531-20260629",
+      "carryover_days": 9,
+      "items": []
+    },
+    "HRI": {
+      "updated_date": "20260531-20260629",
       "carryover_days": 9,
       "items": []
     }
