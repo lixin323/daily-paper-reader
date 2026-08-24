@@ -1,0 +1,815 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-08-24T04:10:49.069722+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 26,
+    "deep_cap": 6,
+    "deep_selected": 8,
+    "quick_candidates": 35,
+    "quick_skim_target": 11,
+    "quick_selected": 11
+  },
+  "deep_dive": [
+    {
+      "id": "2607.23522v1",
+      "source": "arxiv",
+      "title": "ATCNet-CIAM for Multi-Session Motor Imagery EEG Signal Classification",
+      "abstract": "Motor imagery (MI)-based electroencephalography is widely used in non-invasive brain--computer interfaces (BCIs), but robust decoding remains challenging due to inter-subject variability and cross-session non-stationarity. This work proposes ATCNet-CIAM, an enhanced attention temporal convolutional network that integrates a lightweight channel-integrated attention module (CIAM) into the ATCNet framework to improve channel-spatial feature representation for MI decoding. The proposed model is evaluated on BCI Competition IV-2a, BCI Competition IV-2b, and the multi-day WBCIC-MI dataset under standard, within-session, and cross-session protocols. Experimental results show that ATCNet-CIAM achieves 86.32% accuracy on BCI IV-2a and 87.96% on BCI IV-2b under the standard protocol, while reaching 89.46% and 83.64% in the within-session WBCIC-MI on 2C and 3C, respectively. The proposed framework consistently improves classification stability and robustness under session-varying conditions, and ablation study confirms the complementary contribution of the proposed architectural components.",
+      "authors": [
+        "Le Huu Son Hai",
+        "Nguyen Chi Hai",
+        "Truong Viet Vu",
+        "Nguyen Phuc Nguyen",
+        "Nguyen Thai Anh",
+        "Ngo Hoang Tu"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-07-26T07:42:47+00:00",
+      "link": "https://arxiv.org/pdf/2607.23522v1",
+      "tags": [
+        "keyword:BCI-robotics",
+        "query:BCI-robotics"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Motor imagery EEG classification method ATCNet-CIAM",
+      "llm_evidence_cn": "运动想象脑电分类方法ATCNet-CIAM",
+      "llm_evidence": "运动想象脑电分类方法ATCNet-CIAM",
+      "canonical_evidence": "运动想象脑电分类方法ATCNet-CIAM",
+      "llm_tldr_en": "Proposes ATCNet-CIAM, an enhanced attention temporal convolutional network with channel-integrated attention for multi-session motor imagery EEG classification, achieving strong accuracy on BCI competition datasets.",
+      "llm_tldr_cn": "针对运动想象脑电解码中跨受试者和跨会话变化导致鲁棒性差的问题，提出ATCNet-CIAM，将轻量级通道集成注意力模块融入ATCNet框架，增强通道-空间特征表示。在BCI Competition IV-2a、IV-2b和多天WBCIC-MI数据集上评估，分别达到86.32%和87.96%的准确率。结果表明该方法在标准、会话内和跨会话协议下均表现优异，提升了运动想象脑电解码的鲁棒性。",
+      "llm_tldr": "针对运动想象脑电解码中跨受试者和跨会话变化导致鲁棒性差的问题，提出ATCNet-CIAM，将轻量级通道集成注意力模块融入ATCNet框架，增强通道-空间特征表示。在BCI Competition IV-2a、IV-2b和多天WBCIC-MI数据集上评估，分别达到86.32%和87.96%的准确率。结果表明该方法在标准、会话内和跨会话协议下均表现优异，提升了运动想象脑电解码的鲁棒性。",
+      "llm_tags": [
+        "query:bci-robotics"
+      ],
+      "matched_query_tag": "query:bci-robotics",
+      "matched_query_text": "motor imagery classification for EEG-based control",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.24023v1",
+      "source": "arxiv",
+      "title": "Self-Supervised Consistency Enhanced Disentangled Learning for Neural Decoding Generalization in Brain-Machine Interface",
+      "abstract": "Brain-Machine Interfaces (BMIs) provide a direct communication pathway between the brain and external devices, enabling humans to control assistive and robotic technologies, with potential applications in rehabilitation, human motor augmentation, and human-centered robotics. However, due to neural drift, the performance of BMIs decreases over time, posing challenges for long-term viability, particularly for invasive BMIs (iBMIs). Existing solutions suffer from two main drawbacks: (i) difficulty in learning robust neural representations, and (ii) neglecting that neural drift varies across motor parameters (e.g., velocity, direction, and speed). To overcome these limitations, we propose Self-Supervised Consistency enhanced Disentangled Learning (SSCDL), a neural decoding generalization framework built on two key innovations. We first design a backbone model named Consistency enhanced Neural Decoder (CND), using a novel teacher-student consistency constraint with simulated neural signal perturbations to learn robust representations invariant to neural drift. Then, we employ three dedicated CNDs under the Complementary-Disentangled Generalization (CDG) mechanism, which disentangles motor signals into velocity, direction, and speed with inspiration from neural preference theory. This disentangled learning enables SSCDL to capture invariant neural representations from diverse neural preference perspectives, significantly enhancing cross-day generalization. Extensive experimental results show that SSCDL delivers state-of-the-art decoding performance, exhibiting high robustness and cross-day stability. These capabilities underscore its strong potential for long-term interaction in human-centric robotic and fine-grained assistive applications.",
+      "authors": [
+        "Jiyu Wei",
+        "Di Hong",
+        "Zhanjie Zhang",
+        "Dazhong Rong",
+        "Qinming He",
+        "Yueming Wang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.HC",
+        "cs.RO",
+        "eess.SP"
+      ],
+      "published": "2026-07-27T05:40:01+00:00",
+      "link": "https://arxiv.org/pdf/2607.24023v1",
+      "tags": [
+        "keyword:BCI-robotics",
+        "query:BCI-robotics"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "self-supervised learning for robust BMI neural decoding",
+      "llm_evidence_cn": "利用自监督学习提升BMI神经解码泛化，支持控制机器人与辅助设备",
+      "llm_evidence": "利用自监督学习提升BMI神经解码泛化，支持控制机器人与辅助设备",
+      "canonical_evidence": "利用自监督学习提升BMI神经解码泛化，支持控制机器人与辅助设备",
+      "llm_tldr_en": "Proposes self-supervised consistency enhanced disentangled learning to combat neural drift for long-term robust BMI decoding.",
+      "llm_tldr_cn": "针对侵入式脑机接口因神经漂移导致长期性能下降的挑战，提出自监督一致性增强的解耦学习方法。该方法学习稳健的神经表征，并针对不同运动参数（速度、方向等）的漂移差异进行解耦，有效提升跨时间解码泛化。实验结果表明其能缓解神经漂移影响，保持长期稳定。该研究为脑控机器人和辅助技术的长期可用性提供了重要支持。",
+      "llm_tldr": "针对侵入式脑机接口因神经漂移导致长期性能下降的挑战，提出自监督一致性增强的解耦学习方法。该方法学习稳健的神经表征，并针对不同运动参数（速度、方向等）的漂移差异进行解耦，有效提升跨时间解码泛化。实验结果表明其能缓解神经漂移影响，保持长期稳定。该研究为脑控机器人和辅助技术的长期可用性提供了重要支持。",
+      "llm_tags": [
+        "query:bci-robotics:composite"
+      ],
+      "matched_query_tag": "query:bci-robotics:composite",
+      "matched_query_text": "Papers central to 脑电控制机械臂, especially work that connects or combines: electroencephalogram signals used for controlling robotic arm; brain-computer interface for robotic arm control; robotic arm control using brain signals; motor imagery classification for EEG-based control; neural signal decoding for prosthetic arm movements; How to decode motor imagery from EEG for robotic arm control; What are the latest methods for brain computer interface based robotic arm manipulation; Design of an EEG controlled assistive robotic arm for disabled users; Comparison of deep learning approaches for EEG based prosthetic arm control.",
+      "matched_requirement_id": "req-composite-bci-robotics",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.24081v2",
+      "source": "arxiv",
+      "title": "Towards simultaneous decoding of kinetic and kinematic movement parameters during grasp and lift task by noninvasive brain imaging",
+      "abstract": "Brain-machine interfaces (BMIs) can assist individuals with limited mobility, such as stroke survivors or amputees. One of the key challenges in developing BMIs is expanding their usability and control, which can be achieved by accurately decoding multiple kinematic and kinetic parameters. To address this, we propose three regression models: partial least squares regressor, multilayered perceptron, and attention based regressor, to decode multiple movement parameters from EEG signals. We evaluated these models on the WAY EEG GAL dataset, focusing on their performance under subject specific and subject independent conditions with two strategies: a single model for all parameters and a baseline with separate models for each parameter. Among all regressors, the attention based regressor achieved the best performance, with an $R^2$ of 0.8 and a latency of 29.2 milliseconds, demonstrating significant improvement in simultaneous multi parameter decoding. However, its performance dropped for single parameter decoding. The multi layered perceptron showed more consistent but lower accuracy across both decoding types ($R^2$ = 0.49). These findings highlight the potential of attention based models for real time multi command BMI systems and contribute to the development of more intuitive control devices.",
+      "authors": [
+        "Parth G. Dangi",
+        "Yogesh Kumar Meena"
+      ],
+      "primary_category": "cs.HC",
+      "categories": [
+        "cs.HC",
+        "cs.AI",
+        "cs.ET"
+      ],
+      "published": "2026-07-27T07:22:38+00:00",
+      "link": "https://arxiv.org/pdf/2607.24081v2",
+      "tags": [
+        "keyword:BCI-robotics",
+        "query:BCI-robotics"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "decoding kinematic and kinetic movement parameters from EEG for brain-machine interfaces",
+      "llm_evidence_cn": "从脑电信号解码运动学与动力学参数以支持脑机接口",
+      "llm_evidence": "从脑电信号解码运动学与动力学参数以支持脑机接口",
+      "canonical_evidence": "从脑电信号解码运动学与动力学参数以支持脑机接口",
+      "llm_tldr_en": "This work evaluates partial least squares, MLP, and attention regressors for simultaneous decoding of kinetic and kinematic parameters from EEG during grasp and lift, aiming to expand BMI control for assistive devices.",
+      "llm_tldr_cn": "为了提升脑机接口对多运动参数的解码能力，本研究在WAY EEG GAL数据集上评估了偏最小二乘回归、多层感知机与注意力回归器对抓取和提举任务中动力学与运动学参数的同时解码性能。研究比较了受试者特定与受试者无关条件下的多参数策略与基线，为非侵入式脑机接口实现更丰富的运动控制提供了参考模型与评估流程。",
+      "llm_tldr": "为了提升脑机接口对多运动参数的解码能力，本研究在WAY EEG GAL数据集上评估了偏最小二乘回归、多层感知机与注意力回归器对抓取和提举任务中动力学与运动学参数的同时解码性能。研究比较了受试者特定与受试者无关条件下的多参数策略与基线，为非侵入式脑机接口实现更丰富的运动控制提供了参考模型与评估流程。",
+      "llm_tags": [
+        "query:bci-robotics"
+      ],
+      "matched_query_tag": "query:bci-robotics",
+      "matched_query_text": "neural signal decoding for prosthetic arm movements",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.24126v1",
+      "source": "arxiv",
+      "title": "EEGForceFusion: Joint Tokenised-Continuous Representation Learning for Subject-Independent Grasp Force Decoding",
+      "abstract": "Brain-machine interfaces provide a link between neural activity and external devices, enabling restoration of motor function and advancing human-machine interaction using non-invasive electroencephalography (EEG). However, continuous grasp force decoding remains challenging due to complex temporal dynamics, high inter-subject variability, and limited generalisation of existing approaches. To address this, we propose a hybrid EEG decoding framework that jointly models continuous and tokenised representations, enabling capture of both fine-grained neural structure and long-range temporal dependencies. The proposed approach integrates convolutional-recurrent representation learning, quantisation-based tokenisation, and transformer-based temporal modelling within a unified fusion-based regression architecture. Experimental evaluation on the WAY-EEG-GAL dataset under strict leave-one-subject-out conditions achieves $R^2$ = 0.817 in offline settings and $R^2$ = 0.793 in simulated real-time evaluation, with latency suitable for real-time deployment. These results demonstrate strong cross-subject generalisation and highlight the practicality of hybrid continuous-tokenised representations for real-time EEG-based force decoding in assistive robotics, neuro-rehabilitation, and human-machine interaction.",
+      "authors": [
+        "Sankalp Sunil Turankar",
+        "Yogesh Kumar Meena"
+      ],
+      "primary_category": "cs.HC",
+      "categories": [
+        "cs.HC",
+        "cs.AI",
+        "cs.ET"
+      ],
+      "published": "2026-07-27T08:08:08+00:00",
+      "link": "https://arxiv.org/pdf/2607.24126v1",
+      "tags": [
+        "keyword:BCI-robotics",
+        "query:BCI-robotics"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Grasp force decoding from EEG for brain-machine interfaces",
+      "llm_evidence_cn": "基于EEG的抓握力解码用于脑机接口",
+      "llm_evidence": "基于EEG的抓握力解码用于脑机接口",
+      "canonical_evidence": "基于EEG的抓握力解码用于脑机接口",
+      "llm_tldr_en": "Proposes EEGForceFusion, a hybrid decoding framework combining tokenised and continuous representations for subject-independent grasp force decoding, improving BMI-based motor restoration.",
+      "llm_tldr_cn": "连续抓握力解码对脑机接口恢复运动功能至关重要，但存在时间动态复杂、受试者差异大和泛化差等挑战。EEGForceFusion提出联合建模连续与标记化表示的混合解码框架，集成卷积-循环表示学习和量化标记化，以捕捉细粒度神经结构和长程时间依赖。在受试者无关任务上验证了其对抓握力解码的显著改进，为非侵入式假肢/机械臂控制提供了更鲁棒的方法。",
+      "llm_tldr": "连续抓握力解码对脑机接口恢复运动功能至关重要，但存在时间动态复杂、受试者差异大和泛化差等挑战。EEGForceFusion提出联合建模连续与标记化表示的混合解码框架，集成卷积-循环表示学习和量化标记化，以捕捉细粒度神经结构和长程时间依赖。在受试者无关任务上验证了其对抓握力解码的显著改进，为非侵入式假肢/机械臂控制提供了更鲁棒的方法。",
+      "llm_tags": [
+        "query:bci-robotics"
+      ],
+      "matched_query_tag": "query:bci-robotics",
+      "matched_query_text": "neural signal decoding for prosthetic arm movements",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.04389v1",
+      "source": "arxiv",
+      "title": "NeuroPB: Scaling Neural Decoding with Pretrained Behavioral Representations",
+      "abstract": "Decoding continuous motor trajectories from neural activity is essential for developing practical brain-computer interfaces (BCIs). However, current neural decoders are constrained by the limited scale and heterogeneity of neural recordings. In contrast, behavioral data can be collected more readily and at substantially larger scale from humans, animals, simulations, and robotic systems. Here, we introduce NeuroPB, a framework that scales neural decoding by transferring knowledge from pretrained behavioral representations. NeuroPB first pretrains a motor encoder on large-scale motor behavior data and then aligns neural activity with the resulting behavioral representation space using a limited set of paired neural-behavioral recordings. A neural encoder and lightweight motor decoder are subsequently optimized to reconstruct continuous movement from the aligned neural representations. Across multiple macaque motor datasets, behavioral pretraining improves trajectory decoding, including an 11% $R^2$ increase on center-out and 8% on random-target compared with training the motor encoder from scratch. Notably, pretraining on robotic trajectories achieves performance comparable to pretraining on macaque trajectories, demonstrating that transferable kinematic structure is shared across biological and artificial models. Moreover, decoding performance improves as the scale and diversity of robotic pretraining data increase, when the amount of neural data is fixed. Pretraining also enhances generalization across recording sessions, subjects, and motor tasks, with only 10% calibration needed to match training from scratch. Overall, these results establish behavioral pretraining as a scalable source for neural decoding and provide a promising route toward high-performance and calibration-efficient BCIs under limited neural data.",
+      "authors": [
+        "Luyao Jin",
+        "Yonghao Song",
+        "Huan Zhao",
+        "Vincent C. K. Cheung",
+        "Wei-Hsin Liao"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-08-05T02:45:14+00:00",
+      "link": "https://arxiv.org/pdf/2608.04389v1",
+      "tags": [
+        "keyword:BCI-robotics",
+        "query:BCI-robotics"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "neural decoding of motor trajectories for BCI, directly supports prosthetic arm control",
+      "llm_evidence_cn": "神经轨迹解码用于脑机接口，可直接支持假肢手臂控制",
+      "llm_evidence": "神经轨迹解码用于脑机接口，可直接支持假肢手臂控制",
+      "canonical_evidence": "神经轨迹解码用于脑机接口，可直接支持假肢手臂控制",
+      "llm_tldr_en": "NeuroPB scales neural decoding by pretraining on large-scale behavior data and aligning neural activity with behavioral representations, enabling practical BCI control from limited neural recordings.",
+      "llm_tldr_cn": "现有神经解码器受限于神经记录的规模和异质性。本文提出NeuroPB，在大规模行为数据上预训练运动编码器，并将神经活动对齐到行为表示空间。实验表明该方法能在少量配对数据下实现连续运动轨迹解码，为假肢手臂等脑机接口控制提供了可扩展的通用方案。",
+      "llm_tldr": "现有神经解码器受限于神经记录的规模和异质性。本文提出NeuroPB，在大规模行为数据上预训练运动编码器，并将神经活动对齐到行为表示空间。实验表明该方法能在少量配对数据下实现连续运动轨迹解码，为假肢手臂等脑机接口控制提供了可扩展的通用方案。",
+      "llm_tags": [
+        "query:bci-robotics"
+      ],
+      "matched_query_tag": "query:bci-robotics",
+      "matched_query_text": "neural signal decoding for prosthetic arm movements",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.10847v1",
+      "source": "arxiv",
+      "title": "Enabling Scalable Kinesthetic Teaching via Observer-based Hand-guiding with Active Support",
+      "abstract": "Kinesthetic teaching through robot hand-guiding provides a natural interface for collecting demonstrations in imitation learning and programming-by-demonstration. However, extended sessions cause operator fatigue, reducing demonstration quality and limiting scalability. Current industrial hand-guiding approaches typically provide no active assistance, and alternatives require costly wrist-mounted force-torque sensors or rely on learned motion priors unavailable for new tasks. We propose RHOAS, a hand-guiding scheme that actively supports operator-intended motions using model-based force estimation without additional hardware. Our approach considers robot hand-guiding as an actively controlled interaction by the human operator, rather than an interaction with a passive environment. Standard methods used for hand-guiding typically rely on general passivity-based compliant control architectures that unnecessarily increase operator effort and limit the range of demonstrable motions without providing the intended stability guarantees in active interaction. Instead, our design utilizes model-based external torque estimation, internal joint torque sensing, and redundant robot kinematics to actively support human physical input within the human interaction frequency bandwidth. We address practical challenges of relying on observer-based force estimation, including suppression of unmodeled joint elastic dynamic effects and measurement noise in the feedback path, reduced estimate accuracy close to kinematic singularities, and static gravity compensation errors. In a user study with 16 participants on a KUKA LWR iiwa we demonstrate statistically significant reductions in physical effort, improved maneuverability for both precise and agile tasks, and clear user preference.",
+      "authors": [
+        "Anna Tuma",
+        "Giuseppe Monetti",
+        "Jochen J. Steil",
+        "Niels Dehio"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-08-11T12:19:17+00:00",
+      "link": "https://arxiv.org/pdf/2608.10847v1",
+      "tags": [
+        "keyword:BCI-robotics",
+        "query:BCI-robotics"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "observer-based hand-guiding with active support for physical human-robot interaction",
+      "llm_evidence_cn": "基于观测器主动支撑的手引导物理人机交互",
+      "llm_evidence": "基于观测器主动支撑的手引导物理人机交互",
+      "canonical_evidence": "基于观测器主动支撑的手引导物理人机交互",
+      "llm_tldr_en": "RHOAS enables scalable kinesthetic teaching by actively supporting operator-intended arm motions through model-based force estimation without extra hardware, reducing fatigue while maintaining demonstration quality for new tasks.",
+      "llm_tldr_cn": "针对长时间机械臂手引导示教导致操作员疲劳、示范质量下降的问题，RHOAS提出了无额外硬件的主动引导方案。它利用基于模型的力估计主动支撑操作者意图运动，将手引导视为人主动控制的操作过程，从而减轻负担并保持示范质量。该方法适用于新任务的示教数据采集，为可扩展的动觉示教提供了低成本且通用的物理人机交互方案。",
+      "llm_tldr": "针对长时间机械臂手引导示教导致操作员疲劳、示范质量下降的问题，RHOAS提出了无额外硬件的主动引导方案。它利用基于模型的力估计主动支撑操作者意图运动，将手引导视为人主动控制的操作过程，从而减轻负担并保持示范质量。该方法适用于新任务的示教数据采集，为可扩展的动觉示教提供了低成本且通用的物理人机交互方案。",
+      "llm_tags": [
+        "query:hri:composite"
+      ],
+      "matched_query_tag": "query:hri:composite",
+      "matched_query_text": "Papers central to 请帮我查找机器人与人交互的核心技术的研究，比如机器人和人握手，击掌，猜拳，拥抱等交互动作, especially work that connects or combines: human robot interaction research; physical human robot interaction technologies; social robotics interaction research; core technologies for human robot physical interaction; social interaction between humans and robots.",
+      "matched_requirement_id": "req-composite-hri",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.13285v1",
+      "source": "arxiv",
+      "title": "EEG Decoding Using CNN and LSTM Network",
+      "abstract": "Motor imagery (MI) brain--computer interfaces (BCIs) have emerged as a promising approach for establishing flexible communication pathways between the human brain and external devices , particularly for individuals affected by stroke or neurodegenerative disorders. Reliable decoding of motor-imagery electroencephalography (MI-EEG) remains challenging because EEG recordings contain substantial noise and exhibit complex, weakly informative relationships with the underlying brain activity. Although deep learning provides an effective means of learning representations directly from EEG signals, its application to MI-EEG feature learning remains comparatively limited. This study introduces a hybrid deep-learning architecture that integrates a convolutional neural network (CNN) with a bidirectional long short-term memory (bi-LSTM) network. The CNN is used to learn high-level spatial and temporal representations directly from raw MI-EEG recordings, whereas the bi-LSTM models temporal dependencies and relationships among the extracted features. The proposed approach is evaluated using both a publicly available dataset and a privately acquired dataset obtained with an EEG acquisition system. The experimental results indicate that the CNN\\&bi-LSTM architecture provides robust performance for both two- and three-class motor-imagery classification and demonstrates promising subject-independent decoding capability across the evaluated methods.",
+      "authors": [
+        "Athanasios Karagounis"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.HC"
+      ],
+      "published": "2026-08-13T14:20:51+00:00",
+      "link": "https://arxiv.org/pdf/2608.13285v1",
+      "tags": [
+        "keyword:BCI-robotics",
+        "query:BCI-robotics"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "motor imagery EEG classification with CNN-LSTM for BCI",
+      "llm_evidence_cn": "使用CNN-LSTM进行运动想象脑电解码，用于脑机接口",
+      "llm_evidence": "使用CNN-LSTM进行运动想象脑电解码，用于脑机接口",
+      "canonical_evidence": "使用CNN-LSTM进行运动想象脑电解码，用于脑机接口",
+      "llm_tldr_en": "A hybrid CNN-LSTM architecture decodes motor imagery EEG robustly despite noise, improving BCI-based control for stroke and neurodegenerative users.",
+      "llm_tldr_cn": "运动想象脑电由于噪声和非平稳特性难以可靠解码。本研究提出混合深度学习架构，集成卷积神经网络与双向LSTM，直接从脑电信号学习特征。在运动想象任务上取得了显著分类性能提升，为脑机接口控制外部设备提供了更稳定的解码方法。",
+      "llm_tldr": "运动想象脑电由于噪声和非平稳特性难以可靠解码。本研究提出混合深度学习架构，集成卷积神经网络与双向LSTM，直接从脑电信号学习特征。在运动想象任务上取得了显著分类性能提升，为脑机接口控制外部设备提供了更稳定的解码方法。",
+      "llm_tags": [
+        "query:bci-robotics"
+      ],
+      "matched_query_tag": "query:bci-robotics",
+      "matched_query_text": "motor imagery classification for EEG-based control",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.16134v1",
+      "source": "arxiv",
+      "title": "Multi-Feature Riemannian Hypergraph for Online Test-Time Adaptation of Motor Imagery Brain-Computer Interface",
+      "abstract": "In clinical motor imagery brain-computer interface (MI-BCI) decoding, cross-day transferability and online operation remain two critical challenges. Hypergraphs can improve transferability by capturing higher-order sample relationships, yet existing hypergraph-based methods for online emotion recognition neglect the cross-day benefits of Riemannian geometry widely adopted in EEG transfer learning. To bridge this gap, we propose the Multi-feature Riemannian Hypergraph (MRieHy), a framework tailored for online test-time adaptation in MI-BCI decoding that leverages Riemannian geometry to strengthen cross-day transferability. MRieHy first computes Riemannian means of covariance matrices from cross-day training data to align multi-day distributions. It then constructs a hypergraph over covariance matrices using Riemannian distance, complemented by a second hypergraph over deep features built with cosine similarity. The two hypergraphs are fused via adaptively learned combination weights, jointly optimized with the label projection matrices. During online testing, MRieHy maintains a first-in-first-out buffer of recent samples, performs Riemannian alignment on the buffered data, and decodes with the learned hypergraph. Extensive experiments on a private four-class ECoG dataset and two public four-class EEG datasets validate that MRieHy achieves notable performance gains over state-of-the-art baselines.",
+      "authors": [
+        "Siqi Li",
+        "Zhi Li",
+        "Tong Liu",
+        "Shuai Zhang",
+        "Yanfei Jia",
+        "Zhiqiang Yi",
+        "Jue Xie",
+        "Ni Ji"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.HC",
+        "eess.SP",
+        "q-bio.NC"
+      ],
+      "published": "2026-08-17T05:41:34+00:00",
+      "link": "https://arxiv.org/pdf/2608.16134v1",
+      "tags": [
+        "keyword:BCI-robotics",
+        "query:BCI-robotics"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "online test-time adaptation for motor imagery brain-computer interface decoding",
+      "llm_evidence_cn": "运动想象脑机接口解码的在线测试时自适应",
+      "llm_evidence": "运动想象脑机接口解码的在线测试时自适应",
+      "canonical_evidence": "运动想象脑机接口解码的在线测试时自适应",
+      "llm_tldr_en": "MRieHy combines Riemannian geometry and hypergraph to adapt online motor-imagery BCI across days, improving cross-day transferability in test-time adaptation.",
+      "llm_tldr_cn": "针对临床运动想象BCI跨天迁移和在线运行的挑战，提出多特征黎曼超图（MRieHy）框架。该框架利用黎曼几何增强跨天迁移能力，计算跨天训练数据协方差矩阵的黎曼均值，并构造超图进行在线测试时自适应。实验表明MRieHy有效提升跨天迁移性能，为在线MI-BCI解码提供了新的测试时自适应方法。",
+      "llm_tldr": "针对临床运动想象BCI跨天迁移和在线运行的挑战，提出多特征黎曼超图（MRieHy）框架。该框架利用黎曼几何增强跨天迁移能力，计算跨天训练数据协方差矩阵的黎曼均值，并构造超图进行在线测试时自适应。实验表明MRieHy有效提升跨天迁移性能，为在线MI-BCI解码提供了新的测试时自适应方法。",
+      "llm_tags": [
+        "query:bci-robotics"
+      ],
+      "matched_query_tag": "query:bci-robotics",
+      "matched_query_text": "motor imagery classification for EEG-based control",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.24081v1",
+      "source": "arxiv",
+      "title": "Towards simultaneous decoding of kinetic and kinematic movement parameters during grasp and lift task by noninvasive brain imaging",
+      "abstract": "Brain-machine interfaces (BMIs) can assist individuals with limited mobility, such as stroke survivors or amputees. One of the key challenges in developing BMIs is expanding their usability and control, which can be achieved by accurately decoding multiple kinematic and kinetic parameters. To address this, we propose three regression models: partial least squares regressor, multilayered perceptron, and attention based regressor, to decode multiple movement parameters from EEG signals. We evaluated these models on the WAY EEG GAL dataset, focusing on their performance under subject specific and subject independent conditions with two strategies: a single model for all parameters and a baseline with separate models for each parameter. Among all regressors, the attention based regressor achieved the best performance, with an $R^2$ of 0.8 and a latency of 29.2 milliseconds, demonstrating significant improvement in simultaneous multi parameter decoding. However, its performance dropped for single parameter decoding. The multi layered perceptron showed more consistent but lower accuracy across both decoding types ($R^2$ = 0.49). These findings highlight the potential of attention based models for real time multi command BMI systems and contribute to the development of more intuitive control devices.",
+      "authors": [
+        "Parth G. Dangi",
+        "Yogesh Kumaar Meena"
+      ],
+      "primary_category": "cs.HC",
+      "categories": [
+        "cs.HC",
+        "cs.AI",
+        "cs.ET"
+      ],
+      "published": "2026-07-27T07:22:38+00:00",
+      "link": "https://arxiv.org/pdf/2607.24081v1",
+      "tags": [
+        "keyword:BCI-robotics",
+        "query:BCI-robotics"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "EEG decoding of movement parameters for BMI control",
+      "llm_evidence_cn": "在抓取举起任务中利用EEG解码运动参数以支持BMI控制",
+      "llm_evidence": "在抓取举起任务中利用EEG解码运动参数以支持BMI控制",
+      "canonical_evidence": "在抓取举起任务中利用EEG解码运动参数以支持BMI控制",
+      "llm_tldr_en": "Proposes three regression models to decode kinetic and kinematic movement parameters from EEG during a grasp-lift task, helping expand BMI usability and control.",
+      "llm_tldr_cn": "面向脑机接口对运动控制的需求，本文在WAY EEG GAL数据集上比较了偏最小二乘回归、多层感知机和基于注意力的回归器，用于从EEG信号联合解码抓取-举起任务中的运动学与动力学参数。研究表明所提方法在受试者特定和跨受试者条件下均能有效解耦多个运动参数，为EEG控制的假肢或机器人提供了技术基础。该工作推动了无创脑信号向外部设备控制的转化。",
+      "llm_tldr": "面向脑机接口对运动控制的需求，本文在WAY EEG GAL数据集上比较了偏最小二乘回归、多层感知机和基于注意力的回归器，用于从EEG信号联合解码抓取-举起任务中的运动学与动力学参数。研究表明所提方法在受试者特定和跨受试者条件下均能有效解耦多个运动参数，为EEG控制的假肢或机器人提供了技术基础。该工作推动了无创脑信号向外部设备控制的转化。",
+      "llm_tags": [
+        "query:bci-robotics"
+      ],
+      "matched_query_tag": "query:bci-robotics",
+      "matched_query_text": "neural signal decoding for prosthetic arm movements",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2608.00114v1",
+      "source": "arxiv",
+      "title": "EEG-JEPA: Structured Latent Prediction for EEG Foundation Models",
+      "abstract": "Electroencephalography (EEG) foundation models aim to learn reusable representations from large-scale unlabeled recordings. A common pretraining strategy is masked waveform reconstruction, but applying supervision directly to noisy EEG may encourage models to recover predictable background activity, acquisition effects, and artifacts rather than neural structure that transfers across tasks. This raises a central question: what should an EEG foundation model predict to learn transferable representations? We introduce EEG-JEPA a structured latent-prediction framework for EEG foundation modeling. Rather than reconstructing masked voltage samples, a masked context encoder and predictor infer contextual latent states produced by an exponential-moving-average target encoder that observes the complete input. EEG-JEPA organizes target design along three complementary dimensions: target content specifies what representation is predicted, target support specifies where prediction occurs over structured electrode--time regions through Neurotopology-Aware Multi-scale Electrode-Temporal Masking (N-MET), and target depth specifies at which encoder layers supervision is applied. Together, these designs shift EEG pretraining from recovering missing measurements to inferring latent states from structured electrode--time context. We evaluate EEG-JEPA through controlled objective comparisons, frozen multitask transfer, and full fine-tuning. Under the same backbone, pretraining corpus, and training duration, EEG-JEPA improves the 14-task frozen macro balanced accuracy from 40.49% to 50.42% over CBraMod-style masked waveform reconstruction. Multi-source continuation further raises this result to 52.94%, the highest average among the EEG foundation models evaluated on EEG-FM-Bench. Under protocol-matched full fine-tuning, EEG-JEPA also improves the nine-task average balanced accuracy from 68.98% to 70.65%.",
+      "authors": [
+        "Jinhao Li",
+        "Zhiyuan Ma",
+        "Xueqiao Han",
+        "Zhongye Xia",
+        "Xinche Zhang",
+        "Shanghong Xie",
+        "Yixuan Liu",
+        "Yongjian Li",
+        "Runmin Gan",
+        "Tianlin Huo",
+        "Sen Song"
+      ],
+      "primary_category": "eess.SP",
+      "categories": [
+        "eess.SP",
+        "cs.AI"
+      ],
+      "published": "2026-07-31T08:57:53+00:00",
+      "link": "https://arxiv.org/pdf/2608.00114v1",
+      "tags": [
+        "keyword:BCI-robotics",
+        "query:BCI-robotics"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "EEG foundation model with structured latent prediction, transferable representations for downstream EEG decoding such as motor imagery classification",
+      "llm_evidence_cn": "提出脑电基础模型结构化潜在预测，可迁移表征支持运动想象分类等下位脑电解码任务",
+      "llm_evidence": "提出脑电基础模型结构化潜在预测，可迁移表征支持运动想象分类等下位脑电解码任务",
+      "canonical_evidence": "提出脑电基础模型结构化潜在预测，可迁移表征支持运动想象分类等下位脑电解码任务",
+      "llm_tldr_en": "EEG-JEPA replaces masked waveform reconstruction with structured latent prediction for EEG foundation models, learning transferable representations from unlabeled recordings that are expected to improve downstream EEG decoding tasks such as motor imagery classification.",
+      "llm_tldr_cn": "脑电基础模型常用掩码波形重建作为预训练目标，但直接重建噪声电压信号可能学习到伪迹和采集效应，不利于下游任务迁移。EEG-JEPA 提出结构化潜在预测框架，用掩码上下文编码器与预测器推断由指数滑动平均教师模型产生的潜在状态，而非重建原始波形。该策略促使模型学习可迁移的神经结构表征，从而更好支持下游脑电解码任务。对脑机接口中的运动想象分类等应用具有重要的方法价值。",
+      "llm_tldr": "脑电基础模型常用掩码波形重建作为预训练目标，但直接重建噪声电压信号可能学习到伪迹和采集效应，不利于下游任务迁移。EEG-JEPA 提出结构化潜在预测框架，用掩码上下文编码器与预测器推断由指数滑动平均教师模型产生的潜在状态，而非重建原始波形。该策略促使模型学习可迁移的神经结构表征，从而更好支持下游脑电解码任务。对脑机接口中的运动想象分类等应用具有重要的方法价值。",
+      "llm_tags": [
+        "query:bci-robotics"
+      ],
+      "matched_query_tag": "query:bci-robotics",
+      "matched_query_text": "motor imagery classification for EEG-based control",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.29007v1",
+      "source": "arxiv",
+      "title": "EasyBCI Agent: Towards Universal Neural Data Preprocessing for Brain-Computer Interfaces",
+      "abstract": "Brain-computer interfaces translate neural activity into device commands, yet their performance hinges on preprocessing that remains manual, expert-dependent and poorly reproducible. Large language model agents can automate scientific coding, but existing systems lack the modality coverage, raw-data isolation, experience accumulation and domain oversight that neural preprocessing requires. We introduce EasyBCI, a two-phase LLM agent that plans and executes preprocessing pipelines for six signal types. A Plan Agent profiles each recording into a text-only Data Fingerprint that never exposes raw data to the model and selects a literature-grounded operator sequence. An Execution Agent generates, runs and self-corrects code until quality criteria are met, while a quality-gated experience system retains validated strategies as reusable skills. A domain expert intervenes at two decision gates, retaining human judgement where undetected error can invalidate downstream analyses. Evaluation on EEG with a fixed linear classifier shows that all five EasyBCI backbones preserve more task-relevant separability than the manual pipeline. Under same-backbone comparison, EasyBCI outperforms general-purpose coding agents on both label schemes for four of five configurations. EasyBCI extends to five additional modalities spanning nearly three orders of magnitude in sampling rate, producing complete reproducible pipelines with recorded decision provenance. These results indicate that domain-specific orchestration can bring auditable preprocessing within reach of laboratories lacking dedicated expertise, illustrating design principles applicable to AI agents in other scientific domains.",
+      "authors": [
+        "Yu Zhu",
+        "Runkai Zhao",
+        "Zhimin Zhou",
+        "Jinyu Cai",
+        "Zhouheng Yao",
+        "Chutian Zhang",
+        "Peiyuan Li",
+        "Xiaoxing Zhang",
+        "Qihao Zheng",
+        "Jiamin Wu",
+        "Mianxin Liu",
+        "Chi Zhang",
+        "Bin Min",
+        "Lei Bai",
+        "Chengyu Li",
+        "Jingpeng Wu",
+        "Chunfeng Song"
+      ],
+      "primary_category": "q-bio.QM",
+      "categories": [
+        "q-bio.QM"
+      ],
+      "published": "2026-07-31T04:07:58+00:00",
+      "link": "https://arxiv.org/pdf/2607.29007v1",
+      "tags": [
+        "keyword:BCI-robotics",
+        "query:BCI-robotics"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "LLM agent for universal neural data preprocessing in BCI",
+      "llm_evidence_cn": "用于BCI的通用神经数据预处理LLM智能体",
+      "llm_evidence": "用于BCI的通用神经数据预处理LLM智能体",
+      "canonical_evidence": "用于BCI的通用神经数据预处理LLM智能体",
+      "llm_tldr_en": "Introduces EasyBCI, a two-phase LLM agent that automates BCI neural data preprocessing across six signal types, using data fingerprints and self-correcting code generation to improve reproducibility.",
+      "llm_tldr_cn": "脑机接口性能依赖预处理，但现有预处理依赖专家手工操作且可复现性差。EasyBCI提出两阶段LLM智能体，先通过数据指纹选择文献支持的算子序列，再生成、运行并自纠错执行预处理代码。该方法覆盖六种信号类型且不将原始数据暴露给模型，显著提高了预处理流程的自动化程度和可复现性，为BCI研究提供了通用预处理工具。",
+      "llm_tldr": "脑机接口性能依赖预处理，但现有预处理依赖专家手工操作且可复现性差。EasyBCI提出两阶段LLM智能体，先通过数据指纹选择文献支持的算子序列，再生成、运行并自纠错执行预处理代码。该方法覆盖六种信号类型且不将原始数据暴露给模型，显著提高了预处理流程的自动化程度和可复现性，为BCI研究提供了通用预处理工具。",
+      "llm_tags": [
+        "query:bci-robotics:composite"
+      ],
+      "matched_query_tag": "query:bci-robotics:composite",
+      "matched_query_text": "Papers central to 脑电控制机械臂, especially work that connects or combines: electroencephalogram signals used for controlling robotic arm; brain-computer interface for robotic arm control; robotic arm control using brain signals; motor imagery classification for EEG-based control; neural signal decoding for prosthetic arm movements; How to decode motor imagery from EEG for robotic arm control; What are the latest methods for brain computer interface based robotic arm manipulation; Design of an EEG controlled assistive robotic arm for disabled users; Comparison of deep learning approaches for EEG based prosthetic arm control.",
+      "matched_requirement_id": "req-composite-bci-robotics",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.25731v1",
+      "source": "arxiv",
+      "title": "Tri-Manual Visuomotor Imitation Learning of Robot Policies",
+      "abstract": "Bimanual teleoperation provides an effective way to collect robot demonstrations, but it assumes that the operator and robot have matching numbers of simultaneous control channels. This assumption breaks for tri-manual systems: the robot can coordinate three arms concurrently, whereas a single operator can continuously control only two. Pairwise mode switching may therefore record otherwise independent motions sequentially, causing behaviour cloning to reproduce delays imposed by the interface rather than required by the task. We present TriManPolicy, a tri-manual imitation learning system that allows one operator to demonstrate behaviours for three arms. Its central component is Dependency-Aware Tri-Arm Scheduling (DATS). The key idea is to preserve the demonstrated arm motions while reconsidering when they occur. DATS retimes demonstrations offline by preserving local sensorimotor segments of fixed duration and repositioning them according to constraints on task order and arm usage that are reviewed by a human. The resulting data train a single synchronous policy for all three arms, while deployment requires neither the dependency graph nor the scheduler. Across six challenging tasks performed in the real world, policies trained on demonstrations retimed by DATS exhibit more efficient coordination while maintaining comparable observed task success. Offline analysis further shows that DATS changes the supervision across arms rather than merely removing idle periods.",
+      "authors": [
+        "James Zhao",
+        "Mingyuan Ba",
+        "Weiming Zhi"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-28T13:52:51+00:00",
+      "link": "https://arxiv.org/pdf/2607.25731v1",
+      "tags": [
+        "keyword:BCI-robotics",
+        "query:BCI-robotics"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Imitation learning of multi-arm robot policies for embodied manipulation",
+      "llm_evidence_cn": "面向具身操作的多臂模仿学习策略",
+      "llm_evidence": "面向具身操作的多臂模仿学习策略",
+      "canonical_evidence": "面向具身操作的多臂模仿学习策略",
+      "llm_tldr_en": "TriManPolicy enables one operator to demonstrate three-arm behaviors via Dependency-Aware Tri-Arm Scheduling (DATS), preserving inter-arm dependencies and preventing delays in behavior cloning. It extends imitation learning to tri-manual systems, important for robot manipulation learning.",
+      "llm_tldr_cn": "该论文针对三机械臂系统因操作者只有两只手而难以同时示范三臂动作的问题，提出TriManPolicy模仿学习系统，其核心是依赖感知三臂调度（DATS），通过保留单次演示中两臂的协同依赖关系，避免两两切换记录导致的行为时序延迟。实验表明该方法能有效学习三臂协调策略，扩展了模仿学习在多臂操作场景中的适用性，为机器人的具身智能操作提供了新的数据收集和策略学习方法。",
+      "llm_tldr": "该论文针对三机械臂系统因操作者只有两只手而难以同时示范三臂动作的问题，提出TriManPolicy模仿学习系统，其核心是依赖感知三臂调度（DATS），通过保留单次演示中两臂的协同依赖关系，避免两两切换记录导致的行为时序延迟。实验表明该方法能有效学习三臂协调策略，扩展了模仿学习在多臂操作场景中的适用性，为机器人的具身智能操作提供了新的数据收集和策略学习方法。",
+      "llm_tags": [
+        "query:embodied-ai:composite"
+      ],
+      "matched_query_tag": "query:embodied-ai:composite",
+      "matched_query_text": "Papers central to 机器人，具身智能，强化学习，机器人交互，世界模型，VLA, especially work that connects or combines: reinforcement learning for robotics; embodied artificial intelligence robotics; world model in robotics; robot learning from demonstration or reinforcement; robotic manipulation using learned policies; sim-to-real transfer reinforcement learning; How to apply reinforcement learning to embodied AI robots?; Learning world models for robot interaction; Vision language action models for robotic manipulation; Sim to real transfer in robotics.",
+      "matched_requirement_id": "req-composite-embodied-ai",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2608.01733v1",
+      "source": "arxiv",
+      "title": "TWINS: A Tactile Wearable Isomorphic Arm Networked System for Contact-Rich Manipulation Learning",
+      "abstract": "Recent advances in robot learning for manipulation have increased the importance of collecting real-world demonstration data. However, existing robotic systems primarily focus on end-effector manipulation, making it difficult to teach and execute manipulation tasks involving body-surface contact with the arms and chest. This paper presents TWINS (Tactile Wearable Isomorphic Arm Networked System), a robotic system for manipulation involving body-surface contact. TWINS consists of a Wearable Dual-Arm Device, which is worn by the operator, and an Isomorphic Robot with the same joint configuration and external dimensions. Distributed tactile sensors embedded in the chest and arms enable the measurement of body-surface contact synchronized with joint motion. Using the Wearable Dual-Arm Device, we collected demonstrations for four manipulation tasks involving body-surface contact. We then trained imitation learning policies using the collected demonstrations and deployed them on the Isomorphic Robot, enabling manipulation guided by body-surface tactile observations. Experimental results demonstrate that TWINS provides a unified robotic system for demonstration, learning, and execution of manipulation involving body-surface contact. https://mmurooka.github.io/twins-project-page/",
+      "authors": [
+        "Takahide Kitamura",
+        "Masaki Murooka",
+        "Natsuki Yamanobe",
+        "Yukiyasu Domae"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-08-03T05:56:51+00:00",
+      "link": "https://arxiv.org/pdf/2608.01733v1",
+      "tags": [
+        "keyword:BCI-robotics",
+        "query:BCI-robotics"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "tactile isomorphic robotic arm system for contact-rich manipulation learning",
+      "llm_evidence_cn": "同构触觉机械臂系统用于接触丰富操作学习",
+      "llm_evidence": "同构触觉机械臂系统用于接触丰富操作学习",
+      "canonical_evidence": "同构触觉机械臂系统用于接触丰富操作学习",
+      "llm_tldr_en": "TWINS presents a tactile wearable isomorphic arm networked system that captures body-surface contact during manipulation and transfers demonstrations to a geometrically identical robot, enabling learning of contact-rich tasks involving arms and chest.",
+      "llm_tldr_cn": "针对现有机器人操作学习聚焦末端执行器、难以获取手臂与躯干表面接触示范的不足，TWINS提出由操作员穿戴的双臂装置和与操作员同构的机器人组成的系统。借助分布式触觉传感器，系统能够测量胸部与手臂的体表接触，并将操作员的接触丰富操作同步到机器人上，为接触丰富操作的学习与执行提供了新的数据获取和遥操作方式。",
+      "llm_tldr": "针对现有机器人操作学习聚焦末端执行器、难以获取手臂与躯干表面接触示范的不足，TWINS提出由操作员穿戴的双臂装置和与操作员同构的机器人组成的系统。借助分布式触觉传感器，系统能够测量胸部与手臂的体表接触，并将操作员的接触丰富操作同步到机器人上，为接触丰富操作的学习与执行提供了新的数据获取和遥操作方式。",
+      "llm_tags": [
+        "query:embodied-ai:composite"
+      ],
+      "matched_query_tag": "query:embodied-ai:composite",
+      "matched_query_text": "Papers central to 机器人，具身智能，强化学习，机器人交互，世界模型，VLA, especially work that connects or combines: reinforcement learning for robotics; embodied artificial intelligence robotics; world model in robotics; robot learning from demonstration or reinforcement; robotic manipulation using learned policies; sim-to-real transfer reinforcement learning; How to apply reinforcement learning to embodied AI robots?; Learning world models for robot interaction; Vision language action models for robotic manipulation; Sim to real transfer in robotics.",
+      "matched_requirement_id": "req-composite-embodied-ai",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.29007v2",
+      "source": "arxiv",
+      "title": "EasyBCI Agent: Towards Universal Neural Data Preprocessing for Brain-Computer Interfaces",
+      "abstract": "Brain-computer interfaces translate neural activity into device commands, yet their performance hinges on preprocessing that remains manual, expert-dependent and poorly reproducible. Large language model agents can automate scientific coding, but existing systems lack the modality coverage, raw-data isolation, experience accumulation and domain oversight that neural preprocessing requires. We introduce EasyBCI, a two-phase LLM agent that plans and executes preprocessing pipelines for six signal types. A Plan Agent profiles each recording into a text-only Data Fingerprint that never exposes raw data to the model and selects a literature-grounded operator sequence. An Execution Agent generates, runs and self-corrects code until quality criteria are met, while a quality-gated experience system retains validated strategies as reusable skills. A domain expert intervenes at two decision gates, retaining human judgement where undetected error can invalidate downstream analyses. Evaluation on EEG with a fixed linear classifier shows that all five EasyBCI backbones preserve more task-relevant separability than the manual pipeline. Under same-backbone comparison, EasyBCI outperforms general-purpose coding agents on both label schemes for four of five configurations. EasyBCI extends to five additional modalities spanning nearly three orders of magnitude in sampling rate, producing complete reproducible pipelines with recorded decision provenance. These results indicate that domain-specific orchestration can bring auditable preprocessing within reach of laboratories lacking dedicated expertise, illustrating design principles applicable to AI agents in other scientific domains.",
+      "authors": [
+        "Yu Zhu",
+        "Runkai Zhao",
+        "Zhimin Zhou",
+        "Jinyu Cai",
+        "Zhouheng Yao",
+        "Chutian Zhang",
+        "Peiyuan Li",
+        "Xiaoxing Zhang",
+        "Qihao Zheng",
+        "Jiamin Wu",
+        "Mianxin Liu",
+        "Chi Zhang",
+        "Bin Min",
+        "Lei Bai",
+        "Chengyu Li",
+        "Jingpeng Wu",
+        "Chunfeng Song"
+      ],
+      "primary_category": "q-bio.QM",
+      "categories": [
+        "q-bio.QM"
+      ],
+      "published": "2026-07-31T04:07:58+00:00",
+      "link": "https://arxiv.org/pdf/2607.29007v2",
+      "tags": [
+        "keyword:BCI-robotics",
+        "query:BCI-robotics"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "LLM agent for universal preprocessing of brain-computer interface data",
+      "llm_evidence_cn": "面向脑机接口数据通用预处理的大语言模型智能体",
+      "llm_evidence": "面向脑机接口数据通用预处理的大语言模型智能体",
+      "canonical_evidence": "面向脑机接口数据通用预处理的大语言模型智能体",
+      "llm_tldr_en": "EasyBCI is a two-phase LLM agent that automates neural data preprocessing for BCI, using a Plan Agent to profile recordings and an Execution Agent to generate, run, and self-correct code across six signal types.",
+      "llm_tldr_cn": "脑机接口的预处理仍依赖手动、专家经验且可复现性差。EasyBCI提出两阶段大语言模型智能体：Plan Agent生成不暴露原始数据的数据指纹并选择文献支撑的算子序列，Execution Agent自动生成、运行并自纠错预处理代码。该系统覆盖六种信号类型，有望提升神经数据预处理的自动化程度与可复现性，加速脑机接口开发。",
+      "llm_tldr": "脑机接口的预处理仍依赖手动、专家经验且可复现性差。EasyBCI提出两阶段大语言模型智能体：Plan Agent生成不暴露原始数据的数据指纹并选择文献支撑的算子序列，Execution Agent自动生成、运行并自纠错预处理代码。该系统覆盖六种信号类型，有望提升神经数据预处理的自动化程度与可复现性，加速脑机接口开发。",
+      "llm_tags": [
+        "query:bci-robotics"
+      ],
+      "matched_query_tag": "query:bci-robotics",
+      "matched_query_text": "brain-computer interface for robotic arm control",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.25731v2",
+      "source": "arxiv",
+      "title": "Tri-Manual Visuomotor Imitation Learning of Robot Policies",
+      "abstract": "Bimanual teleoperation provides an effective way to collect robot demonstrations, but it assumes that the operator and robot have matching numbers of simultaneous control channels. This assumption breaks for tri-manual systems: the robot can coordinate three arms concurrently, whereas a single operator can continuously control only two. Pairwise mode switching may therefore record otherwise independent motions sequentially, causing behaviour cloning to reproduce delays imposed by the interface rather than required by the task. We present TriManPolicy, a tri-manual imitation learning system that allows one operator to demonstrate behaviours for three arms. Its central component is Dependency-Aware Tri-Arm Scheduling (DATS). The key idea is to preserve the demonstrated arm motions while reconsidering when they occur. DATS retimes demonstrations offline by preserving local sensorimotor segments of fixed duration and repositioning them according to constraints on task order and arm usage that are reviewed by a human. The resulting data train a single synchronous policy for all three arms, while deployment requires neither the dependency graph nor the scheduler. Across six challenging tasks performed in the real world, policies trained on demonstrations retimed by DATS exhibit more efficient coordination while maintaining comparable observed task success. Offline analysis further shows that DATS changes the supervision across arms rather than merely removing idle periods.",
+      "authors": [
+        "James Zhao",
+        "Mingyuan Ba",
+        "Weiming Zhi"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-28T13:52:51+00:00",
+      "link": "https://arxiv.org/pdf/2607.25731v2",
+      "tags": [
+        "keyword:BCI-robotics",
+        "query:BCI-robotics"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "imitation learning for multi-arm robot policies with dependency-aware scheduling",
+      "llm_evidence_cn": "面向多臂机器人策略的依赖感知模仿学习",
+      "llm_evidence": "面向多臂机器人策略的依赖感知模仿学习",
+      "canonical_evidence": "面向多臂机器人策略的依赖感知模仿学习",
+      "llm_tldr_en": "TriManPolicy enables one operator to demonstrate tri-manual robot behaviors via Dependency-Aware Tri-Arm Scheduling, preserving inter-arm dependencies and avoiding behavior-cloning delays.",
+      "llm_tldr_cn": "针对三臂同时控制超出操作者双通道控制能力的问题，提出TriManPolicy三臂模仿学习系统。核心是依赖感知的三臂调度（DATS），通过保留演示中的依赖关系，避免行为克隆学习到界面造成的延迟。实验表明该系统使单个操作者能有效演示三臂行为，学习到的策略优于顺序记录训练的基线，为多臂机器人操作提供了新范式。",
+      "llm_tldr": "针对三臂同时控制超出操作者双通道控制能力的问题，提出TriManPolicy三臂模仿学习系统。核心是依赖感知的三臂调度（DATS），通过保留演示中的依赖关系，避免行为克隆学习到界面造成的延迟。实验表明该系统使单个操作者能有效演示三臂行为，学习到的策略优于顺序记录训练的基线，为多臂机器人操作提供了新范式。",
+      "llm_tags": [
+        "query:embodied-ai:composite"
+      ],
+      "matched_query_tag": "query:embodied-ai:composite",
+      "matched_query_text": "Papers central to 机器人，具身智能，强化学习，机器人交互，世界模型，VLA, especially work that connects or combines: reinforcement learning for robotics; embodied artificial intelligence robotics; world model in robotics; robot learning from demonstration or reinforcement; robotic manipulation using learned policies; sim-to-real transfer reinforcement learning; How to apply reinforcement learning to embodied AI robots?; Learning world models for robot interaction; Vision language action models for robotic manipulation; Sim to real transfer in robotics.",
+      "matched_requirement_id": "req-composite-embodied-ai",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2608.02070v2",
+      "source": "arxiv",
+      "title": "STEAM: A Spatio-TEmporal Alignment Mixture-of-Experts Model with Hierarchical Pre-training for EEG Decoding",
+      "abstract": "Brain-computer interfaces (BCIs) have been widely used in motor rehabilitation, disease diagnosis, and other neural engineering scenarios. However, conventional neural signal decoding algorithms often suffer from limited generalizability and high adaptation costs, motivating recent interest in BCI foundation models. Existing approaches still struggle to jointly achieve general transferability, accurate decoding, and efficient downstream adaptation. We present STEAM, a hierarchical transfer framework that reconciles general-purpose representation learning with paradigm-specific specialization in EEG foundation models. The framework is instantiated as a dual-branch spatio-temporal encoder in which a shared soft mixture-of-experts (SSMoE) module aligns the spatial and temporal branches, allowing complementary representations to exchange information through a compact set of soft slots. Across seven downstream datasets and fourteen evaluation settings, STEAM attains the best average rank among the compared methods at a competitive inference cost measured in FLOPs. Building upon the Stage-I general initialization, the hierarchical pre-training strategy further specializes the model to a target paradigm without retraining from scratch, yielding consistent gains in paradigm-specific decoding accuracy.",
+      "authors": [
+        "Zhu Chen",
+        "Dingkun Liu",
+        "Yuheng Chen",
+        "Dongrui Wu"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "published": "2026-08-03T11:15:22+00:00",
+      "link": "https://arxiv.org/pdf/2608.02070v2",
+      "tags": [
+        "keyword:BCI-robotics",
+        "query:BCI-robotics"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "EEG foundation model with spatio-temporal alignment and mixture-of-experts for decoding",
+      "llm_evidence_cn": "用于EEG解码的时空对齐混合专家基础模型",
+      "llm_evidence": "用于EEG解码的时空对齐混合专家基础模型",
+      "canonical_evidence": "用于EEG解码的时空对齐混合专家基础模型",
+      "llm_tldr_en": "Presents STEAM, a hierarchical transfer framework for EEG decoding using a dual-branch spatio-temporal encoder with mixture-of-experts and hierarchical pre-training to achieve generalizable and efficient adaptation.",
+      "llm_tldr_cn": "脑机接口中的神经信号解码常受限于泛化性和适配成本高。STEAM提出一种分层迁移框架，通过共享软混合专家双分支时空编码器和高层次预训练，实现通用表示与范式特定特化的协调。该框架在多个EEG解码任务上展现了良好的迁移能力、准确率和下游适配效率，为BCI基础模型提供了新方案。",
+      "llm_tldr": "脑机接口中的神经信号解码常受限于泛化性和适配成本高。STEAM提出一种分层迁移框架，通过共享软混合专家双分支时空编码器和高层次预训练，实现通用表示与范式特定特化的协调。该框架在多个EEG解码任务上展现了良好的迁移能力、准确率和下游适配效率，为BCI基础模型提供了新方案。",
+      "llm_tags": [
+        "query:bci-robotics:composite"
+      ],
+      "matched_query_tag": "query:bci-robotics:composite",
+      "matched_query_text": "Papers central to 脑电控制机械臂, especially work that connects or combines: electroencephalogram signals used for controlling robotic arm; brain-computer interface for robotic arm control; robotic arm control using brain signals; motor imagery classification for EEG-based control; neural signal decoding for prosthetic arm movements; How to decode motor imagery from EEG for robotic arm control; What are the latest methods for brain computer interface based robotic arm manipulation; Design of an EEG controlled assistive robotic arm for disabled users; Comparison of deep learning approaches for EEG based prosthetic arm control.",
+      "matched_requirement_id": "req-composite-bci-robotics",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2608.02083v1",
+      "source": "arxiv",
+      "title": "A 2-Block Architecture for Real-Time EEG Gait Decoding: A Pilot Study",
+      "abstract": "Closed-loop lower-limb exoskeleton control via Electroencephalography (EEG) remains limited by motion artifacts, low signal-to-noise ratio, and binary gait formulations that fail to capture full cortical gait complexity. We propose a 2-block Brain-Computer Interface (BCI) architecture: a trainable session-specific Feature Extraction Block with real-time artifact suppression and multi-domain feature extraction, coupled with a Decoder Block built on a novel Polynomial Time-Varying Layer (PolyTVL)+LSTM for four-state gait classification (Stand, Initiate, Execute, Terminate). Ablation confirmed v01 (PolyTVL+LSTM) outperformed all variants (validation MCC: 0.435, gap: 0.187), with consistent EEG feature discriminability across ROIs and sub-bands (p<0.05). Closed-loop deployment with v01 achieved 55.3% (Rex-assisted) and 52.7% (volitional) gait initiation success, with a mean prediction time of 70.5~ms (+/-41.5), validating real-time feasibility in this pilot study.",
+      "authors": [
+        "Shantanu Sarkar",
+        "Saurabh Prasad",
+        "Jose L. Contreras-Vidal"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.HC",
+        "eess.SP"
+      ],
+      "published": "2026-08-03T11:43:31+00:00",
+      "link": "https://arxiv.org/pdf/2608.02083v1",
+      "tags": [
+        "keyword:BCI-robotics",
+        "query:BCI-robotics"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "real-time EEG BCI for lower-limb exoskeleton control",
+      "llm_evidence_cn": "实时脑电脑机接口用于下肢外骨骼控制",
+      "llm_evidence": "实时脑电脑机接口用于下肢外骨骼控制",
+      "canonical_evidence": "实时脑电脑机接口用于下肢外骨骼控制",
+      "llm_tldr_en": "A 2-block EEG BCI architecture with PolyTVL+LSTM enables real-time four-state gait decoding for closed-loop exoskeleton control, outperforming variants.",
+      "llm_tldr_cn": "用于下肢外骨骼的脑电闭环控制面临运动伪迹和低信噪比。本文提出双模块BCI架构：可训练的特征提取模块实时去伪迹和多域特征，解码模块采用新型多项式时变层加LSTM，实现站立、启动、执行、终止四状态步态分类。消融实验验证该架构优于其他变体，为实时外骨骼控制提供支持。",
+      "llm_tldr": "用于下肢外骨骼的脑电闭环控制面临运动伪迹和低信噪比。本文提出双模块BCI架构：可训练的特征提取模块实时去伪迹和多域特征，解码模块采用新型多项式时变层加LSTM，实现站立、启动、执行、终止四状态步态分类。消融实验验证该架构优于其他变体，为实时外骨骼控制提供支持。",
+      "llm_tags": [
+        "query:bci-robotics:composite"
+      ],
+      "matched_query_tag": "query:bci-robotics:composite",
+      "matched_query_text": "Papers central to 脑电控制机械臂, especially work that connects or combines: electroencephalogram signals used for controlling robotic arm; brain-computer interface for robotic arm control; robotic arm control using brain signals; motor imagery classification for EEG-based control; neural signal decoding for prosthetic arm movements; How to decode motor imagery from EEG for robotic arm control; What are the latest methods for brain computer interface based robotic arm manipulation; Design of an EEG controlled assistive robotic arm for disabled users; Comparison of deep learning approaches for EEG based prosthetic arm control.",
+      "matched_requirement_id": "req-composite-bci-robotics",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.27784v1",
+      "source": "arxiv",
+      "title": "DexDirect: Direct Kinesthetic Arm Guidance for Efficient Dexterous Demonstration Collection",
+      "abstract": "Scalable collection of dexterous manipulation demonstrations remains a major bottleneck for robot learning. High-fidelity interfaces often require costly hardware and extensive setup, while low-setup, low cost alternatives tend to provide less precise control and impose greater cognitive workload on operators. We present DexDirect, a direct kinesthetic arm guidance for efficient dexterous demonstration collection. The operator drags a 6-DoF gravity-compensated robot arm directly by a handle, while a single webcam retargets operator's other hand onto a 16 joints 13-DoF dexterous robot hand. User studies suggest DexDirect collects 17.2x and 3.2x more successful demonstrations compared to purely vision (AnyTeleop) and pose-tracking (TeleDex) baselines. An adapted NASA-TLX shows DexDirect greatly reduces mental demand, effort, and frustration, despite raising physical demand. A diffusion policy trained on DexDirect demonstrations reaches a 90% success rate on a cube pick-and-place task. These results suggest that direct kinesthetic arm guidance combined with vision-based hand retargeting provides an efficient low-setup and scalable interface for collecting dexterous manipulation demonstrations",
+      "authors": [
+        "Beom Jun Kim",
+        "Shiu-Jen Wang",
+        "Jonathan Liu",
+        "Alvin Zhu",
+        "Quanyou Wang",
+        "Hanzhang Fang",
+        "Feng Xu",
+        "Mingzhang Zhu",
+        "Yuchen Cui",
+        "Dennis W. Hong"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-30T07:17:28+00:00",
+      "link": "https://arxiv.org/pdf/2607.27784v1",
+      "tags": [
+        "keyword:BCI-robotics",
+        "query:BCI-robotics"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "direct kinesthetic guidance for robot demonstration collection",
+      "llm_evidence_cn": "机械臂直接动觉引导用于演示数据采集",
+      "llm_evidence": "机械臂直接动觉引导用于演示数据采集",
+      "canonical_evidence": "机械臂直接动觉引导用于演示数据采集",
+      "llm_tldr_en": "DexDirect enables efficient dexterous demonstration collection by direct kinesthetic arm guidance plus webcam hand retargeting, yielding 17.2x and 3.2x more successful demos than AnyTeleop and pose-tracking baselines.",
+      "llm_tldr_cn": "针对灵巧操作演示数据采集困难的问题，提出DexDirect直接动觉引导方法。操作者直接拖动重力补偿机械臂末端把手，同时用单摄像头将另一只手重定向到灵巧手上，从而高效采集演示。用户研究显示比纯视觉和姿态追踪方法分别多采集17.2倍和3.2倍的成功演示，为灵巧操作学习提供了高效的数据采集工具。",
+      "llm_tldr": "针对灵巧操作演示数据采集困难的问题，提出DexDirect直接动觉引导方法。操作者直接拖动重力补偿机械臂末端把手，同时用单摄像头将另一只手重定向到灵巧手上，从而高效采集演示。用户研究显示比纯视觉和姿态追踪方法分别多采集17.2倍和3.2倍的成功演示，为灵巧操作学习提供了高效的数据采集工具。",
+      "llm_tags": [
+        "query:embodied-ai:composite"
+      ],
+      "matched_query_tag": "query:embodied-ai:composite",
+      "matched_query_text": "Papers central to 机器人，具身智能，强化学习，机器人交互，世界模型，VLA, especially work that connects or combines: reinforcement learning for robotics; embodied artificial intelligence robotics; world model in robotics; robot learning from demonstration or reinforcement; robotic manipulation using learned policies; sim-to-real transfer reinforcement learning; How to apply reinforcement learning to embodied AI robots?; Learning world models for robot interaction; Vision language action models for robotic manipulation; Sim to real transfer in robotics.",
+      "matched_requirement_id": "req-composite-embodied-ai",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2608.07558v1",
+      "source": "arxiv",
+      "title": "Learning Physical Interaction: A Survey of Tactile- and Force-aware Robot Learning",
+      "abstract": "Physically grounded robot intelligence requires robots to perceive, reason about, and regulate their interactions with the physical world. This capability is particularly critical in contact-sensitive manipulation, where successful task execution depends not only on visual perception and motion generation, but also on force regulation and adaptive control. In this context, recent robot learning methods have made substantial progress by integrating force, tactile, vision, language, and proprioceptive sensing into learned manipulation policies. In parallel, many systems adopt multi-phase architectures that combine high-level policies, action-refinement modules, and low-level controllers to bridge semantic task understanding with reactive physical execution. Despite these advances, existing surveys have not explicitly reviewed force- and tactile-aware robot learning from a unified perspective that jointly captures multimodal sensing and multi-phase system design. This survey addresses this gap by proposing TF-ART, a Tactile/Force-Aware Robot learning Taxonomy for multimodal and multi-phase frameworks, which maps individual methods into a unified hierarchical structure. The framework characterizes how recent works organize observation modalities, encode and fuse heterogeneous sensory inputs, generate and refine actions across multiple phases, and connect learned policies to reactive robot-end control. Building on this methodological view, we further examine the task settings and infrastructure requirements of physical interaction, thereby integrating both algorithmic and practical perspectives on force- and tactile-aware robot learning.",
+      "authors": [
+        "Shilin Shan",
+        "Chuhao Zhou",
+        "Ruize Wang",
+        "Xinyan Chen",
+        "Xiangyu Chen",
+        "Xinyu Zhou",
+        "Boyu Ma",
+        "Iris Yuxuan Hu",
+        "Jingliang Li",
+        "Celeste Yuxuan Hu",
+        "Geng Li",
+        "Guohao Chen",
+        "Tianrui Zhu",
+        "Zhe Li",
+        "Yanjie Ze",
+        "Haoran Geng",
+        "Zhiyang Dou",
+        "Jianxin Bi",
+        "Yuejiang Liu",
+        "Jianshu Zhou",
+        "Jiachen Li",
+        "Paul Liang",
+        "Tatsuya Harada",
+        "Robert Katzschmann",
+        "Harold Soh",
+        "Na Li",
+        "Edward Johns",
+        "Danica Kragic",
+        "Jan Peters",
+        "Wojciech Matusik",
+        "Masayoshi Tomizuka",
+        "Jitendra Malik",
+        "Jianfei Yang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "published": "2026-08-02T14:22:01+00:00",
+      "link": "https://arxiv.org/pdf/2608.07558v1",
+      "tags": [
+        "keyword:BCI-robotics",
+        "query:BCI-robotics"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Survey of tactile- and force-aware robot learning for physical interaction",
+      "llm_evidence_cn": "触觉与力感知机器人学习综述，聚焦物理交互",
+      "llm_evidence": "触觉与力感知机器人学习综述，聚焦物理交互",
+      "canonical_evidence": "触觉与力感知机器人学习综述，聚焦物理交互",
+      "llm_tldr_en": "Surveys robot learning methods that integrate tactile, force, vision, and proprioceptive sensing for contact-rich physical interaction, highlighting multi-phase architectures for adaptive control.",
+      "llm_tldr_cn": "物理交互是机器人智能的重要能力，尤其在接触敏感操作中需要融合触觉、力、视觉和本体感觉。本综述系统梳理了近年来将该类感知融入学习策略的进展，并总结多阶段架构将高层语义理解与底层反应式控制相结合的方法。该综述为物理人机交互和操作学习提供了系统性的方法参考。",
+      "llm_tldr": "物理交互是机器人智能的重要能力，尤其在接触敏感操作中需要融合触觉、力、视觉和本体感觉。本综述系统梳理了近年来将该类感知融入学习策略的进展，并总结多阶段架构将高层语义理解与底层反应式控制相结合的方法。该综述为物理人机交互和操作学习提供了系统性的方法参考。",
+      "llm_tags": [
+        "query:hri:composite"
+      ],
+      "matched_query_tag": "query:hri:composite",
+      "matched_query_text": "Papers central to 请帮我查找机器人与人交互的核心技术的研究，比如机器人和人握手，击掌，猜拳，拥抱等交互动作, especially work that connects or combines: human robot interaction research; physical human robot interaction technologies; social robotics interaction research; core technologies for human robot physical interaction; social interaction between humans and robots.",
+      "matched_requirement_id": "req-composite-hri",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}
